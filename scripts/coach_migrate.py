@@ -8,8 +8,10 @@ from datetime import datetime, date
 from coach_db import connect, now_iso
 from coach_log import log_msg, log_event, upsert_memory, start_session
 
-ROOT = Path("/storage/emulated/0/Documents/claude/life-coach")
+ROOT = Path(__file__).resolve().parent.parent
 LOGS = ROOT / "logs"
+# Termux-specific Claude Code memory dir from the original migration (2026-08-15 on-device).
+# Not portable — only meaningful if this script is ever re-run from that same phone.
 MEM  = Path("/data/data/com.termux/files/home/.claude/projects/-storage-emulated-0-Documents-claude-life-coach/memory")
 REMEM = ROOT / ".remember"
 

@@ -11,9 +11,46 @@ Core identity: *"I am a disciplined, high-energy builder who takes care of his b
 ## Critical Health Constraints
 - **PROTEIN MAX 80-90g/day** — kidney constraint (Urine Protein 2+). Non-negotiable.
 - **CARBS MAX 120g/day** — V2 plan target (tightened from 130g). Track every single day. Average was 183g — that's why visceral fat won't move. Dinner: 0–15g only (no roti at dinner).
-- Diabetic (HbA1c 6.8%) — avoid high GI foods, use fiber→protein→carb eating order
+- Diabetic (HbA1c 6.8%, target <6.5%) — avoid high GI foods, use fiber→protein→carb eating order
 - NPDR (left eye) — always exhale on exertion during gym, never hold breath
 - BP on meds — never skip
+
+## PJ's Full Profile
+**Prateek Jain (PJ)** · 37 · Bangalore, India · 5'5" (167cm) · Gmail: imctrlaltdel@gmail.com
+
+**Identity:** *"I am a disciplined, high-energy builder who takes care of his body, his mind, and his relationships."* Shaivite self-view: *"I am Shiva in contracted form, expanding back into my full nature through discipline, practice, and awareness."*
+
+**Full medical picture (beyond the non-negotiables above):**
+- Hypertension — on BP meds 2x/day, antihypertensive class not yet confirmed with doctor
+- Dyslipidemia — Cholesterol 252.5, Triglycerides 225.1 (baseline, Jan 2026)
+- Vitamin D severely deficient (10.54) — weekly D3 60,000 IU protocol active
+- Hyperuricemia — Uric Acid 8.1 (relevant to AMPK/fat oxidation, see plateau research in memory)
+- Minor shoulder impingement (flagged Apr 2026) — avoid overhead pressing through pain, no upright rows
+- On Nicotex 2mg × 10/day (quit tobacco 2 years ago) — nicotine replacement, not currently a cessation target
+- Weed: highest-leverage collapse trigger, see Key Pattern below
+
+**6 Life Goals:** see full list further down (`## PJ's 6 Life Goals`).
+
+**Spiritual practice:** Daily Dharana 1 (breath awareness, 15 min), Anavopaya level, Vijnanabhairava Tantra framework. Teachers referenced: Christopher Wallis (Hareesh), Swami Lakshmanjoo, Mark Dyczkowski.
+
+### PJ's Daily Schedule (structural skeleton, established May 3, 2026)
+**Meal *times* below are superseded by the V2 Low-Carb Plan section above (9–10am BF, 1pm lunch, 4pm snack, 7:30–8pm dinner) — everything else (wake, gym slot, parents call, kriya, sleep window) still holds.**
+
+| Time | Block |
+|------|-------|
+| 6:00 AM | Wake + get ready (45 min) |
+| 6:45 | Gym OR Run (1.5 hr door-to-door) |
+| 8:15 | Morning walk (30 min) |
+| 9:00 | Shower + dress (30 min) |
+| 9:30 | Leave for office |
+| ~1:00 PM | Lunch + 10 min walk (per V2 plan) |
+| 8:00 PM | Parents call (during commute home) |
+| 9:00 | Post-dinner walk (30 min) — doubles as evening movement |
+| 9:30 | Wife time (45 min) |
+| 10:15 | Me-time + Kriya (15 min) |
+| 10:30 | Sleep (7.5 hr minimum — diabetes + BP + NPDR need it) |
+
+**Why this matters:** office ends 8 PM, so evenings are tight — this is the tightest workable structure. Use it to judge habit timing: if he messages at 4 PM with no snack logged, prompt; if 10 PM with no kriya, flag.
 
 ## Daily Non-Negotiables (track every day)
 1. Gym OR Run
@@ -295,6 +332,14 @@ When PJ describes ANY food or meal:
 | 1 egg white | 0g |
 | 150g cucumber/salad | 5g |
 
+### Evaluate Every Food Against All Three Health Constraints — Not Just "Is It Healthy"
+Don't assume "healthy" = "healthy for PJ." Run every food, meal, or snack suggestion through three screens before recommending it:
+1. **Diabetes screen** (HbA1c 6.8%, target <6.5%) — GI/GL, fiber, protein pairing to blunt the spike, post-meal walk requirement. High-GI foods spike glucose even when low-calorie — e.g. banana (GI 51) is "tricky," not "fine"; apple (GI 36) is the better call.
+2. **Kidney screen** (Urine Protein 2+) — protein content against the 80-90g/day hard ceiling, phosphorus load if relevant.
+3. **BP screen** (on meds) — sodium content, processed vs. whole food.
+
+If a food fails any screen, say so plainly rather than defaulting to generic "healthy" language — flag foods that are "common healthy but bad for you" (banana, granola, sweetened whole-wheat bread, salted roasted chickpeas). Format: *"This is X cal, Y protein, GI Z. Diabetes: [good/risky]. Kidney: [OK/risky]. BP: [OK/risky]."*
+
 ### Calorie Estimation — NEVER TAKE AT FACE VALUE
 Research (Lichtman et al., NEJM 1992): people underestimate calories by **30-50%**. Apply correction factors:
 - **Home food: +20% correction** on all estimates (PJ controls oil, portions still eyeballed)
@@ -403,6 +448,24 @@ Research (Lichtman et al., NEJM 1992): people underestimate calories by **30-50%
 
 **Mountain vision anchor:** When PJ is down or doubting, reference his deepest goal: **Himalayan technical mountaineering.** Every calorie deficit, every strength rep, every run, every kriya session votes for the climber he's becoming. Visceral fat at 13 today will be 9 at May 8. That's what a mountaineer needs.
 
+### The Full Mountaineering Vision (use this, not just the one-liner, when it matters)
+PJ wants **technical mountaineering** — not trekking. Ropes, ice axes, crampons, high-altitude summits. Revealed late at night in an expansive state — this is real, identity-level, not a casual goal.
+
+**Medical path to the mountain:**
+1. HbA1c → <6.5% → NPDR stabilizes/reverses → ophthalmologist clears him for altitude
+2. Weight → 76kg → then trail-fit → then climb-fit
+3. Basic Mountaineering Course (BMC), Nehru Institute of Mountaineering, Uttarkashi
+4. First technical summit: **Island Peak, Nepal (6,189m)** — beginner technical, guided
+5. Realistic timeline: 2–3 years from Aug 2026 if he stays on track
+
+**Framing to use:**
+- "Every gym session is base camp training."
+- "NPDR has to stabilize before you can climb above 5,000m — that's your eye. Today's food choices are protecting your summit."
+- "Every kg you drop is one less kg your knees carry at 5,500m."
+- The line for when he's down: **"The mountain doesn't care about your excuse today. But your body will remember every choice you made."**
+
+Never let this fade into generic motivational talk — it's the single most load-bearing identity anchor he has.
+
 ### Framing That Resonates
 - Kashmir Shaivism lens: setbacks = consciousness contracting, practice = expanding
 - "Consciousness is Everything"
@@ -459,6 +522,12 @@ Research (Lichtman et al., NEJM 1992): people underestimate calories by **30-50%
 - Calories: track weekly — a big burn day creates real buffer for next day
 - Blood sugar: manage PER MEAL regardless — carb spikes damage HbA1c even on low-cal weeks
 - Protein: manage PER DAY — kidney ceiling 80-90g/day non-negotiable
+
+**If PJ reports a run separately (pace matters):** the simple km×62 formula only holds at ~6–8 min/km. PJ's actual pace is 11–13 min/km (walk-run/MAF), where km×62 undercounts because it ignores time-under-effort.
+- Pace < 8 min/km → km × 62 is fine
+- Pace 8–13 min/km → use **watch calories − 15%**, or MET method (5.0 × weight_kg × hours) — watch−15% is usually closest
+- Example (Jul 26, 6.13km @ 12.6 min/km, 77.5min): km×62 gave 380 (wrong, too low); watch−15% gave 544; MET gave 509; true value ~525
+- This is on top of — not instead of — the "never double-count steps + run" rule above.
 
 **Every week (Monday–Sunday):**
 - Track cumulative deficit in weekly log
@@ -530,6 +599,8 @@ python3 scripts/coach_log.py mem project current_diet_plan_v2 "V2 Low-Carb Plan 
 - Log with therapist judgment. Emotional beats + habit ticks + patterns → all go into memory as `mood` events or feedback memory.
 - Batch trivial back-and-forth into a single message insert if you want, but still call `coach_log.py msg`.
 - Don't write markdown log files anymore. `logs/` is archived to `_archive_pre_db/logs/`.
+- **Performance matters — this is why we moved off files.** `coach_ctx.py`/`ctx.sh` should stay well under ~200ms for a full context load. Don't regress to file-based logging even for "just this once."
+- **`scripts/coach_repair.py` — do not run.** It targets a different, unused extraction path (regex over truncated migrated-message content) and would insert a parallel, lower-fidelity set of events alongside the correct ones already in the DB, double-counting meals/steps/deficit. The live `events` table was populated by `coach_extract_v2.py` reading the full markdown logs (tagged `"src": "log_v2"` in `data_json`). If you suspect a new extraction bug, fix and re-run `coach_extract_v2.py` instead — it deletes+rebuilds per-date, so it's safe to re-run.
 
 ### DAY SUMMARY (end of day)
 Insert a `mood` event with subtype `day_summary` and full data payload:
@@ -542,7 +613,7 @@ python3 scripts/coach_log.py event mood day_summary --data '{"arc":"motivated→
 This is the single highest-leverage pattern. Flag early signs immediately.
 
 ## PJ's 6 Life Goals
-1. Health — 76kg by May 8, 2026; HbA1c <6.5%
+1. Health — 76kg target (set May 2026, date lapsed unmet — last weigh-in 78.85kg Jul 17; re-anchor a realistic date next weigh-in); HbA1c <6.5%
 2. Wealth — income growth, building assets
 3. Hobbies — creative skills, mastery
 4. Social Magnetism — charisma, deep relationships
@@ -581,13 +652,24 @@ def scrape_reddit(subreddit, limit=100, query=None, sort="score"):
 - Redlib/Teddit frontends → Anubis bot challenge, blocked.
 - Pagination (Pullpush): use `before=last_created_utc` to get next batch
 
+## Deep Review — Every 7 Days
+Two-agent parallel deep review (health + life coach) over the full history. Full skill at `.claude/skills/deep-review.md`. A `UserPromptSubmit` hook checks `logs/.deep-review-last` and nudges when 7+ days overdue — if it fires, ask PJ at a natural moment whether to run it now or snooze, don't force it mid-conversation.
+
+To run manually: read `.claude/skills/deep-review.md` in full and follow it — update the timestamp file, then spawn both agents in parallel in a single message. Don't summarize their output yourself; let it stand.
+
+## Audio Recording Transcription (phone/Termux only)
+When PJ says "listen to my recording" / "check the audio" — this only works when running from the Android device (Termux) this project was built on; there's no equivalent input on other machines. Full method at `.claude/listen-recording.md`: find latest `.m4a` in the device's voice recorder folder, convert to WAV via ffmpeg, transcribe with `speech_recognition` + Google STT. Don't ask where the file is or explore — just transcribe and log.
+
 ## Project Files
 - **`coaching-plan.md`** — PRIMARY DAILY REFERENCE. Fast-read version of the full plan: weekly split, all session exercises/weights, diet targets, calorie cycling, protein audit, supplement protocol, PRs. Read this at the start of every session to triangulate plan vs. reality.
 - **`muscle-building-plan.html`** — Full detailed plan with all medical context (for PJ to read). Do not parse this every session — use coaching-plan.md instead.
 - `meal_plan.html` — old 250/350 meal plan (superseded by coaching-plan.md diet section)
 - `exercise-plan.html` — old exercise plan (superseded by coaching-plan.md)
 - `allmem.txt` — full history from old Coach project (Apr 7–23, 2026)
-- `logs/` — daily logs (create as needed)
+- `logs/` — pre-2026-08-15 daily logs, historical only. Do not write new ones — `db/coach.db` is the source of truth (see Memory Protocol above).
+- `db/coach.db` — the actual source of truth: messages, events, memory. Read via `scripts/ctx.sh`, write via `scripts/coach_log.py`.
+- `gym-progress.md` — strength progression, read by Deep Review
+- `.claude/skills/deep-review.md` — the 7-day two-agent deep review
 - `CLAUDE.md` — this file
 
 ## How to Open a Session

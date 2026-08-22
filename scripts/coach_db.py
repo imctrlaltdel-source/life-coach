@@ -8,7 +8,7 @@ import sqlite3, os, json, time
 from datetime import datetime, timedelta, date
 from pathlib import Path
 
-DB_PATH = Path("/storage/emulated/0/Documents/claude/life-coach/db/coach.db")
+DB_PATH = Path(__file__).resolve().parent.parent / "db" / "coach.db"
 
 SCHEMA = """
 PRAGMA journal_mode=WAL;

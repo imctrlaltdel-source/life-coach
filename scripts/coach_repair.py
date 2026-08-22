@@ -1,5 +1,19 @@
 """Repair script — fix event extraction issues found by QA.
 
+STATUS (2026-08-23): NOT NEEDED / DO NOT RUN as-is. The live `events` table
+(248 rows as of this check) was populated by `coach_extract_v2.py` reading
+the full markdown logs directly (`data_json` tagged `"src": "log_v2"`), not
+by extracting from the truncated `[migrated ...]` message rows this script
+targets. `events WHERE msg_id IN (migrated message ids)` is empty — this
+script's dry run found 225 "new" events to insert, but they'd be a parallel,
+lower-fidelity set (regex over truncated message content) sitting alongside
+the already-correct log_v2 events, double-counting meals/steps/deficit in
+every rollup. Verified by manual audit instead (2026-08-23): no duplicate
+(day,type,subtype) rows, gym session numbers monotonic except one confirmed
+false positive (session #499 mis-attributed to 2026-08-14 from a backward
+reference in that day's log — deleted). If you suspect new extraction bugs,
+re-run `coach_extract_v2.py` (which deletes+rebuilds per-date) rather than this.
+
 Issues found by QA:
   1. `meal|day_total` sometimes captures the deficit "+188 cal" instead of the actual TOTAL row.
      Root cause: CAL_RE matches any "N cal" and `break` grabs the first match. In logs where the

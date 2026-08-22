@@ -1,11 +1,14 @@
 import json
+from pathlib import Path
 from collections import defaultdict
 from html import escape
 
-with open("/storage/emulated/0/Documents/claude/life-coach/reports/volumeeating_qualifying.json") as f:
+REPORTS_DIR = Path(__file__).resolve().parent
+
+with open(REPORTS_DIR / "volumeeating_qualifying.json") as f:
     posts = json.load(f)
 
-with open("/storage/emulated/0/Documents/claude/life-coach/reports/volumeeating_raw.json") as f:
+with open(REPORTS_DIR / "volumeeating_raw.json") as f:
     raw = json.load(f)
 
 TOTAL_RAW = len(raw)
@@ -688,7 +691,7 @@ html += """
 </html>
 """
 
-out = "/storage/emulated/0/Documents/claude/life-coach/reports/volumeeating-recommendations-2026-07-30.html"
+out = str(REPORTS_DIR / "volumeeating-recommendations-2026-07-30.html")
 with open(out, "w") as f:
     f.write(html)
 print(f"Report written to {out}")
