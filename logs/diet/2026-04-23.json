@@ -1,0 +1,42 @@
+{
+  "date": "2026-04-23",
+  "meals": [
+    {
+      "time": "morning",
+      "description": "2 bread + 2 egg Spanish omelette with cheese",
+      "calories": 420,
+      "protein_g": 22,
+      "carbs_g": 38,
+      "fat_g": 18,
+      "high_gi_items": ["white bread"],
+      "plate_rule_pass": false,
+      "plate_rule_notes": "No vegetables. High carb:protein ratio. No fiber-first."
+    },
+    {
+      "time": "mid-morning",
+      "description": "4 squares Dairy Milk Silk",
+      "calories": 110,
+      "protein_g": 1,
+      "carbs_g": 13,
+      "fat_g": 6,
+      "high_gi_items": ["milk chocolate — sugar spike"],
+      "plate_rule_pass": false,
+      "plate_rule_notes": "Pure sugar snack. No nutritional value for goals."
+    },
+    {
+      "time": "afternoon",
+      "description": "Buttermilk + whey, 1 cucumber, 3 idli + 1 katori sambhar + 1 packet healthy munching chips",
+      "calories": 480,
+      "protein_g": 28,
+      "carbs_g": 62,
+      "fat_g": 8,
+      "high_gi_items": ["idli (high GI white rice)", "packaged chips"],
+      "plate_rule_pass": false,
+      "plate_rule_notes": "Cucumber ✅ good. Whey ✅ good. But 3 idli is high-GI carb load. Chips unnecessary add-on."
+    }
+  ],
+  "total_calories": 1010,
+  "total_protein": 51,
+  "steps": null,
+  "logged_at": "17:20 IST"
+}

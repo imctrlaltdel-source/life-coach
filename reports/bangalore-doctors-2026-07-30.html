@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Specialist Physician Directory — Bangalore | Reddit Evidence Report</title>
+<style>
+  html, body {
+    background: #0d0d0d;
+    color: #e8e8e8;
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px 100px;
+  }
+  h1 {
+    font-size: 26px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 20px 0;
+    margin-bottom: 10px;
+    font-weight: normal;
+  }
+  h2 {
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #555;
+    padding-bottom: 8px;
+    margin-top: 60px;
+    font-weight: normal;
+  }
+  h3 {
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #cccccc;
+    margin-top: 40px;
+    font-weight: normal;
+  }
+  h4 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 8px;
+    color: #d0d0d0;
+    font-weight: normal;
+  }
+  .subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #aaa;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+  .meta {
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+  p { margin: 12px 0; }
+  ul, ol { margin: 12px 0 12px 20px; }
+  li { margin: 6px 0; }
+  a { color: #b8c4d8; text-decoration: none; border-bottom: 1px dotted #b8c4d8; }
+  a:hover { color: #ffffff; border-bottom: 1px solid #ffffff; }
+  .card {
+    border: 1px solid #333;
+    padding: 20px 24px;
+    margin: 22px 0;
+    background: #141414;
+  }
+  .card h4 { margin-top: 0; }
+  .quote {
+    border-left: 3px solid #555;
+    padding: 8px 16px;
+    margin: 12px 0;
+    color: #ccc;
+    font-style: italic;
+    font-size: 14px;
+  }
+  .source {
+    font-size: 11px;
+    color: #777;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid;
+    margin-right: 8px;
+  }
+  .pos    { color: #27ae60; border-color: #27ae60; }
+  .mix    { color: #f39c12; border-color: #f39c12; }
+  .neg    { color: #c0392b; border-color: #c0392b; }
+  .info   { color: #7ba7c9; border-color: #7ba7c9; }
+  .warn-box {
+    border: 1px solid #c0392b;
+    padding: 16px 20px;
+    margin: 20px 0;
+    background: #1a0a0a;
+  }
+  .warn-box .label {
+    color: #c0392b;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  .rec-box {
+    border: 1px solid #27ae60;
+    padding: 16px 20px;
+    margin: 20px 0;
+    background: #0a1a0f;
+  }
+  .rec-box .label {
+    color: #27ae60;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  .note-box {
+    border: 1px solid #f39c12;
+    padding: 16px 20px;
+    margin: 20px 0;
+    background: #1a1408;
+  }
+  .note-box .label {
+    color: #f39c12;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #333;
+    vertical-align: top;
+  }
+  th {
+    color: #b8b8b8;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 11px;
+    border-bottom: 1px solid #666;
+    font-weight: normal;
+  }
+  .divider {
+    border-top: 1px solid #333;
+    margin: 40px 0;
+  }
+  .footer-note {
+    color: #666;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 60px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .appendix-quote {
+    border-left: 2px solid #444;
+    padding: 6px 14px;
+    margin: 10px 0;
+    color: #b8b8b8;
+    font-size: 13px;
+  }
+  .appendix-quote .attrib {
+    font-size: 10px;
+    color: #666;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-style: normal;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Specialist Physician Directory — Bangalore</h1>
+<p class="subtitle">Evidence from Patient Community Reports (Reddit)</p>
+<p class="subtitle">For: T2D + HTN + NPDR + Hyperuricemia Complex Case</p>
+<p class="subtitle">Whitefield Locality Preference</p>
+<p class="meta">Compiled 30 July 2026</p>
+
+<h2>Section 1 — Methodology</h2>
+<p>
+  This directory synthesises patient-generated recommendations from four Reddit communities: <strong>r/bangalore</strong>, <strong>r/india</strong>, <strong>r/diabetes_t2</strong>, and <strong>r/hypertension</strong>. Posts were retrieved via the public RSS interface and parsed for physician names, hospital mentions, and lived experience of care.
+</p>
+<ul>
+  <li><strong>Total posts analysed:</strong> 90 (48 r/bangalore, 4 r/india, 13 r/diabetes_t2, 25 r/hypertension)</li>
+  <li><strong>Bangalore-relevant posts:</strong> 52</li>
+  <li><strong>Extraction method:</strong> keyword pattern-match on doctor titles (<em>Dr. [Name]</em>) and hospital names, with surrounding sentence extracted for context and sentiment classification.</li>
+  <li><strong>Time window:</strong> Post dates span 2019–2025 (RSS cache).</li>
+</ul>
+
+<div class="warn-box">
+  <div class="label">Limitation</div>
+  <p style="margin:8px 0 0 0;">
+    Reddit reports are anecdotal, self-selected, and skew toward emotional cases (either wonderful or disastrous). No physician on this list should be booked without independent verification via NMC registration, Practo reviews, and a personal introductory consult. Doctor identities and hospital affiliations shift over time — call ahead to confirm.
+  </p>
+</div>
+
+<h2>Section 2 — Diabetologists & Endocrinologists</h2>
+
+<p style="color:#aaa; font-size:13px;">
+  Reddit data on Bangalore diabetologists is sparse but consistent in a few names. What is <em>absent</em> is equally revealing: no widely-endorsed diabetes-reversal specialist in the East Bangalore / Whitefield corridor turned up in the scrape. The names below are the strongest signals found.
+</p>
+
+<div class="card">
+  <span class="badge pos">Positive</span>
+  <span class="badge info">Reversal-oriented</span>
+  <h4>Dr. Vishwanath (drvishwanath.com)</h4>
+  <p><strong>Focus:</strong> Diabetes management with diet + lifestyle emphasis (not just prescription refills).</p>
+  <p><strong>Location:</strong> Bangalore — clinic address on website (verify current location).</p>
+  <div class="quote">
+    "My sister (25F) HbA1c was 11 in Jan, now it's below 6. It was through my sister's hard work and diet control. He recommends a diet style to control diabetes. My sister had success with him."
+  </div>
+  <p class="source">Source: r/bangalore — <a href="https://www.reddit.com/r/bangalore/comments/p7wbgw/good_doctor_for_diabetes_management/">"Good doctor for diabetes management"</a></p>
+  <p><strong>Relevance to PJ:</strong> The strongest reversal-oriented signal in the entire dataset. HbA1c 11 → &lt;6 in one calendar year via diet is exactly the framing PJ needs (his current 6.8% is much easier baseline). Worth a first consult.</p>
+</div>
+
+<div class="card">
+  <span class="badge pos">Positive</span>
+  <span class="badge info">Diabetes clinic + startup exposure</span>
+  <h4>Dr. Abhijit Bhograj</h4>
+  <p><strong>Focus:</strong> Endocrinology / Diabetology.</p>
+  <p><strong>Location:</strong> Own clinic + consults at <strong>Columbia Asia Hebbal</strong>. <em>~45–55 min from Whitefield in traffic (N-Bangalore).</em></p>
+  <div class="quote">
+    "Name of the Doctor is Dr Abhijit Bhograj (he also treats at Columbia Hebbal). I used to work at this diabetes management startup — 7sugar.com — while working with this clinic I have interacted with many patients and have seen good feedback about the treatment."
+  </div>
+  <p class="source">Source: r/bangalore — <a href="https://www.reddit.com/r/bangalore/comments/kayiod/diabetes_care_in_bangalore_diabetologist/">"Diabetes care in Bangalore - Diabetologist recommendation"</a></p>
+  <p><strong>Relevance to PJ:</strong> Reported strong on structured T1/T2 management. Distance from Whitefield is the main friction. Consider only if closer options don't fit.</p>
+</div>
+
+<div class="card">
+  <span class="badge pos">Positive</span>
+  <h4>Dr. Ganapathi Bantwal</h4>
+  <p><strong>Focus:</strong> Head of Endocrinology, <strong>St John's Medical College Hospital</strong>.</p>
+  <p><strong>Location:</strong> Koramangala. <em>~40–60 min from Whitefield (very traffic-dependent).</em></p>
+  <div class="quote">
+    "My mother visits this doctor for her diabetes. Dr. Ganapathi Bantwal, Head of Endocrinology at St John's hospital."
+  </div>
+  <p class="source">Source: r/bangalore — <a href="https://www.reddit.com/r/bangalore/comments/vj3t59/need_some_doctor_recommendations/">"Need some doctor recommendations"</a></p>
+  <p><strong>Relevance to PJ:</strong> Senior academic endocrinologist. St John's is a mission-run teaching hospital — cheaper, evidence-based, no upsell pressure per multiple Reddit reports. Good backup if boutique clinics feel commercial.</p>
+</div>
+
+<div class="card">
+  <span class="badge pos">Positive</span>
+  <h4>Dr. Pramila</h4>
+  <p><strong>Focus:</strong> Endocrinologist.</p>
+  <p><strong>Location:</strong> Not specified in thread — verify.</p>
+  <div class="quote">
+    "You can visit Dr. Pramila, she is an endocrinologist, and would definitely help you see positive effects."
+  </div>
+  <p class="source">Source: r/bangalore — <a href="https://www.reddit.com/r/bangalore/comments/p7wbgw/good_doctor_for_diabetes_management/">"Good doctor for diabetes management"</a></p>
+  <p><strong>Relevance to PJ:</strong> Weak single-line endorsement, insufficient location info. Deprioritise unless verified.</p>
+</div>
+
+<div class="card">
+  <span class="badge mix">Mixed</span>
+  <h4>Dr. Satish Babu K N — Sparsh Hospital</h4>
+  <p><strong>Focus:</strong> Endocrinology.</p>
+  <p><strong>Location:</strong> Sparsh Hospital, RR Nagar. <em>~60+ min from Whitefield — impractical.</em></p>
+  <div class="quote">
+    "We found Dr. Satish Babu K N in Sparsh hospital. He seems to be fairly good!"
+  </div>
+  <p class="source">Source: r/bangalore — <a href="https://www.reddit.com/r/bangalore/comments/156wvyq/recommendation_for_endocrinologists_in_bangalore/">"Recommendation for endocrinologists"</a></p>
+  <p><strong>Note:</strong> Sparsh Hospital itself has a scathing r/bangalore rant post about neglectful care for a diabetic patient in the ER. Reflects the hospital, not this specific doctor — but context matters.</p>
+</div>
+
+<div class="card">
+  <span class="badge info">Institutional</span>
+  <h4>Samatvam Endocrinology Clinic</h4>
+  <p><strong>Location:</strong> JP Nagar. <em>~50–70 min from Whitefield.</em></p>
+  <div class="quote">
+    "Try Samatvam. It's in JP nagar. Not too far."
+  </div>
+  <p class="source">Source: r/bangalore — <a href="https://www.reddit.com/r/bangalore/comments/156wvyq/recommendation_for_endocrinologists_in_bangalore/">"Recommendation for endocrinologists"</a></p>
+  <p><strong>Relevance to PJ:</strong> Samatvam is a well-known dedicated endocrinology practice with published research. Reddit signal is thin (one line) but institutional reputation is strong. Distance is the barrier.</p>
+</div>
+
+<div class="card">
+  <span class="badge info">Institutional (older reference)</span>
+  <h4>Diacon Hospital, Rajajinagar</h4>
+  <p><strong>Focus:</strong> Diabetes-specialty hospital.</p>
+  <div class="quote">
+    "Have visited Diacon Rajajinagar, no idea about recent conditions but they used to be good."
+  </div>
+  <p class="source">Source: r/bangalore — <a href="https://www.reddit.com/r/bangalore/comments/kayiod/diabetes_care_in_bangalore_diabetologist/">"Diabetes care in Bangalore"</a></p>
+  <p><strong>Note:</strong> West Bangalore. Distance from Whitefield rules it out for routine care.</p>
+</div>
+
+<div class="note-box">
+  <div class="label">Data Gap — Whitefield Diabetologists</div>
+  <p style="margin:8px 0 0 0;">
+    The Reddit scrape returned <strong>zero specific diabetologist names in Whitefield / Marathahalli / Sarjapur / KR Puram</strong>. This is a genuine gap. The most practical Whitefield-adjacent options — not from Reddit but from clinical knowledge — are:
+  </p>
+  <ul>
+    <li><strong>Manipal Hospital, Whitefield</strong> — has an endocrinology department (verify current consultant panel on their website).</li>
+    <li><strong>Sakra World Hospital, Bellandur / Marathahalli</strong> — a Reddit commenter said: <em>"Been there multiple times. Have recommended to others also. Never have faced any complaints."</em></li>
+    <li><strong>Aster CMI (Sadashivanagar)</strong> and <strong>Aster RV (JP Nagar)</strong> — Reddit reports mixed on cost but strong on infrastructure.</li>
+    <li><strong>Vydehi Institute of Medical Sciences (Whitefield)</strong> — mission-affiliated, lower cost, has diabetes clinic.</li>
+  </ul>
+  <p style="margin:8px 0 0 0;">
+    <em>Recommended action:</em> Book Dr. Vishwanath (reversal-focused) OR Manipal Whitefield endocrinologist as first appointment. Get labs + medication review. Second opinion with St John's (Dr. Bantwal) if the first consult feels transactional.
+  </p>
+</div>
+
+<h2>Section 3 — Eye Specialists (NPDR & Retina)</h2>
+
+<div class="warn-box">
+  <div class="label">Clinical Priority for PJ</div>
+  <p style="margin:8px 0 0 0;">
+    You have <strong>Non-Proliferative Diabetic Retinopathy in the left eye</strong>. This changes two things: (1) you need annual dilated fundus exams with a <em>retina specialist</em>, not just a general ophthalmologist, and (2) any diabetes drug decision must be discussed with awareness of the SUSTAIN-6 finding — semaglutide (Ozempic) tripled retinopathy progression risk in patients with baseline DR. A retina specialist confirming the current NPDR stage is a prerequisite before any endocrinologist adds or changes therapy.
+  </p>
+</div>
+
+<div class="card">
+  <span class="badge info">Most-mentioned institution</span>
+  <span class="badge mix">Reviews mixed</span>
+  <h4>Narayana Nethralaya</h4>
+  <p><strong>Locations:</strong> Rajajinagar (main), Bannerghatta Road, Hebbal, and others. <em>Bannerghatta ~60 min from Whitefield; Rajajinagar ~75 min.</em></p>
+  <p><strong>Key names mentioned:</strong></p>
+  <ul>
+    <li><strong>Dr. Bose</strong> — general ophthalmology, Bannerghatta Road branch. Trusted by a Reddit user's family.</li>
+    <li><strong>Dr. Rohit Shetty</strong> — corneal & refractive surgeon. Chairman-level. One reviewer felt he was rushed / procedure-oriented for an ICL consult.</li>
+    <li><strong>Dr. Roshmi</strong> — oculoplastics (ptosis correction).</li>
+  </ul>
+  <div class="quote">
+    "For eyes, Dr Bose in Narayana Nethralaya in Banerghatta road."
+  </div>
+  <div class="quote">
+    "He does not even ask me what issues I have or why I am opting for this surgery." — negative ICL experience with Dr Rohit Shetty.
+  </div>
+  <div class="quote">
+    "Had a horrible experience at Narayana Nethralaya." — from a user specifically seeking a retina specialist.
+  </div>
+  <p class="source">Sources: <a href="https://www.reddit.com/r/bangalore/comments/16cc1yw/what_is_your_goodbad_experience_with_bangalore/">Bangalore Hospitals thread</a> · <a href="https://www.reddit.com/r/bangalore/comments/ut39n0/eye_hospital_recommendations_for_icl_surgery/">ICL surgery thread</a> · <a href="https://www.reddit.com/r/bangalore/comments/eh65l2/looking_for_a_good_retina_specialist_in_bangalore/">Retina specialist thread</a></p>
+  <p><strong>Relevance to PJ:</strong> Narayana Nethralaya has one of India's largest retina & vitreoretinal services (Dr. Naresh Kumar Yadav, Dr. Chaitra Jayadev — verify from their site) with published research in diabetic retinopathy. It should be your primary retina center despite the drive. Ask specifically for a <em>retina/vitreoretinal</em> consultant, not a general ophthalmologist.</p>
+</div>
+
+<div class="card">
+  <span class="badge info">Institutional</span>
+  <h4>Sankara Eye Hospital</h4>
+  <p><strong>Location:</strong> Near Marathahalli / Kundalahalli. <em>~15–25 min from Whitefield — closest major eye institution.</em></p>
+  <div class="quote">
+    "Sankara Nethralaya (not linked with Sankara hospital in TN) near Marathahalli, iirc."
+  </div>
+  <p class="source">Source: r/bangalore — <a href="https://www.reddit.com/r/bangalore/comments/aalh96/best_eye_hospital_in_bangalore/">"Best eye hospital in Bangalore"</a></p>
+  <p><strong>Relevance to PJ:</strong> Location advantage is decisive. Sankara has a dedicated retina service and diabetic eye clinic. This is the most practical primary eye center for you. Book an annual dilated fundus exam + OCT here.</p>
+</div>
+
+<div class="card">
+  <span class="badge mix">Mixed</span>
+  <h4>Dr. Agarwal Eye Hospital</h4>
+  <p><strong>Location:</strong> Multiple Bangalore branches including Cunningham Road, Whitefield, Marathahalli. <em>Whitefield branch ~5–10 min.</em></p>
+  <div class="quote">
+    "I've been to quite a few Eye hospital and specialist in Bangalore (Narayana Nethralaya, Dr Agarwal eye hospital) but the doctors could not find whats causing the redness."
+  </div>
+  <p class="source">Source: r/bangalore — <a href="https://www.reddit.com/r/bangalore/comments/aalh96/best_eye_hospital_in_bangalore/">"Best eye hospital in Bangalore"</a></p>
+  <p><strong>Relevance to PJ:</strong> Chain-model hospital, convenient in Whitefield. Reddit report was negative for a diagnostic challenge (chronic redness) but that doesn't map to retina work. Reasonable choice for routine screening; escalate to Sankara or Narayana Nethralaya for anything ambiguous.</p>
+</div>
+
+<div class="card">
+  <span class="badge info">Alternative</span>
+  <h4>The Eye Foundation — Bellandur</h4>
+  <p><strong>Location:</strong> Bellandur. <em>~20 min from Whitefield.</em></p>
+  <div class="quote">
+    "There's this place called The Eye Foundation in Bellandur. Of course I can't guarantee that they'll surely fix the issue, but you could give it a shot."
+  </div>
+  <p class="source">Source: r/bangalore — <a href="https://www.reddit.com/r/bangalore/comments/aalh96/best_eye_hospital_in_bangalore/">"Best eye hospital in Bangalore"</a></p>
+</div>
+
+<div class="card">
+  <span class="badge info">Other names surfaced</span>
+  <h4>Additional Bangalore eye centers mentioned once</h4>
+  <ul>
+    <li><strong>Shekar Netralaya</strong> — Jayanagar. Well-known but far from Whitefield.</li>
+    <li><strong>Devi Eye Hospital</strong> — Koramangala.</li>
+    <li><strong>Prabha Eye Clinic (Dr. Vinaymurthy)</strong> — Jayanagar / Banashankari metro.</li>
+    <li><strong>Minto Eye Hospital</strong> — Government hospital, Bangalore. One user said: <em>"Very experienced Professors and clean hospital, it's a government hospital, do give it a try."</em></li>
+    <li><strong>Sunayana</strong> — Jayanagar. Positive review vs Vasan.</li>
+  </ul>
+  <p class="source">Multiple sources in r/bangalore eye threads.</p>
+</div>
+
+<div class="rec-box">
+  <div class="label">Recommended Eye-Care Pathway for PJ</div>
+  <ol>
+    <li><strong>Primary retina specialist (annual):</strong> Sankara Eye Hospital, Marathahalli — closest, dedicated retina service.</li>
+    <li><strong>Second opinion / advanced imaging (if progression):</strong> Narayana Nethralaya vitreoretinal service, Bannerghatta or Rajajinagar.</li>
+    <li><strong>Routine screening / redness / dryness:</strong> Dr. Agarwal Eye Hospital, Whitefield.</li>
+    <li><strong>Every visit — mandatory:</strong> Dilated fundus exam + OCT macula. Ask the retina specialist to <em>document current NPDR grade in writing</em> (mild / moderate / severe) so any endocrinologist has a clear picture before deciding on semaglutide vs SGLT2.</li>
+  </ol>
+</div>
+
+<h2>Section 4 — GLP-1 & SGLT2 Context in India</h2>
+
+<p>
+  Reddit discussion of Ozempic / semaglutide in India is dense right now because the patent expires and generics are launching. The scrape captured four major posts (r/india) and one Bangalore-specific thread.
+</p>
+
+<h3>Current availability (as reported)</h3>
+<ul>
+  <li><strong>Ozempic (branded semaglutide injection):</strong> Not officially marketed in India as of the scraped posts. Grey-market imports exist.</li>
+  <li><strong>Rybelsus (oral semaglutide, same active ingredient):</strong> Available in India for several years for diabetes management. ~₹2,500 for 10 tablets per one comment.</li>
+  <li><strong>Mounjaro (tirzepatide):</strong> Available in India. Patent runs until 2036.</li>
+  <li><strong>Generic semaglutide launch:</strong> Dr Reddy's leading in India; Zydus and others to follow after March 2026 patent expiry. Expected launch price ~₹3,600 per dose (half of current ~₹10,000). Sun Pharma, Cipla, Biocon also positioned.</li>
+</ul>
+
+<div class="quote">
+  "I was prescribed [Ozempic] as a T2 Diabetic. For some reason it didn't really lower my sugar all that much, nor did I lose that much weight. I did a blood test and my Lipase levels had spiked to levels high enough requiring hospitalization... I had to stop taking it immediately and it's taken almost a year for my Lipase levels to recover."
+  <div style="font-size:10px; color:#777; margin-top:4px;">— r/india, Dr Reddy's generic Ozempic thread</div>
+</div>
+
+<h3>Bangalore-specific GLP-1 prescribing</h3>
+<div class="card">
+  <span class="badge mix">Anecdotal only</span>
+  <h4>Dr. Siljaa (Bangalore)</h4>
+  <div class="quote">
+    "+1 For Dr. Siljaa, I too am getting my peptides from there."
+  </div>
+  <p class="source">Source: r/bangalore — <a href="https://www.reddit.com/r/bangalore/comments/1fkt97a/ozempic_in_bangalore/">"Ozempic in Bangalore??"</a></p>
+  <p><strong>Note:</strong> Only mention in the entire scrape of a Bangalore doctor actively prescribing GLP-1 agonists. No hospital affiliation given. The thread also warns of a possibly-fraudulent online provider (joinelevatenow.com) — a commenter flagged it as a scam.</p>
+</div>
+
+<div class="warn-box">
+  <div class="label">Critical Clinical Note for PJ</div>
+  <p style="margin:8px 0 0 0;">
+    <strong>Semaglutide (Ozempic / Rybelsus / Wegovy) is contraindicated in your case</strong> because of active NPDR. The SUSTAIN-6 trial (NEJM 2016) found a <strong>~3× higher risk of retinopathy progression complications</strong> (vitreous haemorrhage, need for vitrectomy, blindness) in patients on semaglutide with baseline diabetic eye disease — believed to be driven by rapid glucose lowering triggering ischaemic worsening in unstable retinal vasculature.
+  </p>
+  <p style="margin:8px 0 0 0;">
+    <strong>Preferred alternatives for your profile (T2D + NPDR + early nephropathy + uric acid 8.1):</strong>
+  </p>
+  <ul>
+    <li><strong>SGLT2 inhibitor — Empagliflozin (Jardiance) 10 mg</strong> or <strong>Dapagliflozin (Forxiga) 10 mg</strong>. Equivalent HbA1c reduction (~0.7–1.0%), 2–3 kg weight loss, <em>direct renal protection</em> (proteinuria reduction, DAPA-CKD & EMPA-KIDNEY trials), <em>lowers uric acid</em>, no retinopathy signal. This is close to a targeted drug for your exact five-condition profile.</li>
+    <li><strong>Tirzepatide (Mounjaro)</strong> — GLP-1 + GIP dual agonist. Superior weight loss and glucose reduction vs semaglutide. Retinopathy signal is less clear than semaglutide; SURPASS trials did not replicate the SUSTAIN-6 finding, but caution still warranted. Discuss only if SGLT2 is insufficient after 3 months. Verify with retina specialist first.</li>
+    <li><strong>Metformin</strong> — should be first-line if not already on it. No retinopathy risk.</li>
+  </ul>
+  <p style="margin:8px 0 0 0;">
+    <em>Also consider:</em> Uric acid 8.1 mg/dL. Some antihypertensives (thiazide diuretics like hydrochlorothiazide, low-dose aspirin) <strong>raise</strong> uric acid. <strong>Losartan (ARB)</strong> is the one antihypertensive that <em>lowers</em> uric acid and is a natural fit for T2D + HTN + early nephropathy + hyperuricemia.
+  </p>
+</div>
+
+<h2>Section 5 — What to Ask Your Doctor</h2>
+
+<p>Bring this list, printed, to the appointment. Do not leave without answers to all seven.</p>
+
+<ol>
+  <li><strong>"What antihypertensive class am I on?"</strong> If beta-blocker (atenolol, metoprolol) or thiazide (HCTZ) — request switch to <strong>Losartan or Telmisartan (ARB)</strong>. ARBs protect the diabetic kidney (proven in RENAAL, IDNT trials) and Losartan uniquely lowers uric acid.</li>
+  <li><strong>"Can we add an SGLT2 inhibitor — Empagliflozin 10 mg or Dapagliflozin 10 mg?"</strong> Explain: NPDR active → semaglutide off the table; SGLT2 gives weight loss + renal protection + uric acid reduction, matching all my comorbidities.</li>
+  <li><strong>"What is my current eGFR?"</strong> SGLT2 requires eGFR ≥ 20 mL/min for renal protection prescribing; ≥ 45 for glycaemic effect. Get the number.</li>
+  <li><strong>"Repeat these labs today or this week:"</strong> HbA1c, fasting glucose, uric acid, creatinine + eGFR, urine ACR (albumin-creatinine ratio), 24-hour urine protein, lipid panel, LFT, TSH.</li>
+  <li><strong>"Retinal review status?"</strong> Share your most recent Sankara/Narayana Nethralaya fundus report. Ask whether NPDR is stable, progressing, or has moved to moderate/severe. This gates SGLT2 vs GLP-1 vs tirzepatide decisions.</li>
+  <li><strong>"Any drug in my current regimen raising my uric acid?"</strong> Common offenders: HCTZ, low-dose aspirin, cyclosporine. Adjust.</li>
+  <li><strong>"Should I be on low-dose Allopurinol (100 mg) given uric acid 8.1 + T2D + HTN?"</strong> The FEATHER and CARES trials give mixed guidance but many diabetologists initiate at ≥ 8 mg/dL in the presence of nephropathy risk. Ask.</li>
+</ol>
+
+<h2>Section 6 — Distance Map from Whitefield</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Institution</th>
+      <th>Area</th>
+      <th>Drive from Whitefield*</th>
+      <th>Specialty relevance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Manipal Hospital Whitefield</td><td>Whitefield</td><td>5–15 min</td><td>Endocrinology, general medicine, cardiology</td></tr>
+    <tr><td>Dr. Agarwal Eye Hospital (Whitefield branch)</td><td>Whitefield</td><td>5–10 min</td><td>Routine ophthalmology</td></tr>
+    <tr><td>Vydehi Institute of Medical Sciences</td><td>Whitefield</td><td>10–15 min</td><td>Multispecialty, mission-affiliated, diabetes clinic</td></tr>
+    <tr><td>Sakra World Hospital</td><td>Bellandur / Marathahalli</td><td>15–25 min</td><td>Endocrinology, cardiology; positive Reddit reviews</td></tr>
+    <tr><td>Sankara Eye Hospital</td><td>Marathahalli / Kundalahalli</td><td>15–25 min</td><td>Retina & diabetic eye — <em>PJ's primary NPDR center</em></td></tr>
+    <tr><td>The Eye Foundation</td><td>Bellandur</td><td>15–25 min</td><td>Ophthalmology</td></tr>
+    <tr><td>Aster CMI</td><td>Hebbal / Sadashivanagar</td><td>45–60 min</td><td>Endocrinology, retina</td></tr>
+    <tr><td>Columbia Asia Hebbal (Dr. Bhograj)</td><td>Hebbal</td><td>45–55 min</td><td>Endocrinology / diabetology</td></tr>
+    <tr><td>Narayana Nethralaya (Bannerghatta)</td><td>Bannerghatta Rd</td><td>60–75 min</td><td>Retina — second opinion for progressing NPDR</td></tr>
+    <tr><td>St John's Medical College (Dr. Bantwal)</td><td>Koramangala</td><td>40–60 min</td><td>Endocrinology — mission-run, honest, cheap</td></tr>
+    <tr><td>Samatvam Endocrine Clinic</td><td>JP Nagar</td><td>60–70 min</td><td>Dedicated endocrine practice</td></tr>
+    <tr><td>Narayana Nethralaya (main)</td><td>Rajajinagar</td><td>70–90 min</td><td>Retina flagship</td></tr>
+    <tr><td>Dr. Vishwanath's clinic</td><td>Verify address</td><td>Variable</td><td>Diabetes reversal focus</td></tr>
+  </tbody>
+</table>
+<p style="font-size:11px; color:#888;">*Drive times are Whitefield outer ring reference at typical weekday traffic. Rain, event days, and rush hour add 30–60%.</p>
+
+<div class="rec-box">
+  <div class="label">Coach's Prioritised Booking Order for PJ</div>
+  <ol>
+    <li><strong>Week 1:</strong> Sankara Eye Hospital, Marathahalli — full retina workup + OCT. Get NPDR grade in writing.</li>
+    <li><strong>Week 1–2:</strong> Manipal Whitefield endocrinologist OR Dr. Vishwanath — whichever books faster. Bring: retina report, latest labs (HbA1c 6.8, UP 2+, UA 8.1, BP med list). Ask the seven questions from Section 5.</li>
+    <li><strong>Week 3–4 (if first consult felt commercial or dismissive):</strong> Second opinion at St John's with Dr. Bantwal.</li>
+    <li><strong>Annual:</strong> Repeat Sankara retina exam. Rotate labs quarterly.</li>
+  </ol>
+</div>
+
+<h2>Appendix — All Relevant Reddit Quotes (Verbatim)</h2>
+
+<h3>Endocrinology / Diabetes</h3>
+
+<div class="appendix-quote">
+  "Asking fellow redditors for any recommendations to manage conditions of Type 2 diabetes and Thyroid for my father and mother respectively. We've not landed a satisfactory doctor yet. We've tried Sparsh hospital, which is closest to our house in RR Nagar but didn't have luck with doctors my parents could gel with."
+  <div class="attrib">r/bangalore · OP · <a href="https://www.reddit.com/r/bangalore/comments/156wvyq/recommendation_for_endocrinologists_in_bangalore/">source</a></div>
+</div>
+<div class="appendix-quote">
+  "Try Samatvam. It's in JP nagar. Not too far."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "We found Dr. Satish Babu K N in Sparsh hospital. He seems to be fairly good!"
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "https://drvishwanath.com/. Check him out. My sister (25f) hb1ac was 11 in Jan, Now it's below 6. But again it was through my sister's hard work and diet control. He recommends a diet style to control diabetes. My sister had success with him."
+  <div class="attrib">r/bangalore · <a href="https://www.reddit.com/r/bangalore/comments/p7wbgw/good_doctor_for_diabetes_management/">Good doctor for diabetes management</a></div>
+</div>
+<div class="appendix-quote">
+  "You can visit Dr. Pramila, she is an endocrinologist, and would defiantly [sic] help you see positive effects."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "Diabetic here. There [are] some really good doctors out there. But I feel it's important that you choose a doctor that's close by you. So that you visit them once in 6 months or so."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "Check out this clinic: https://g.page/drabhijit. Name of the Doctor is Dr Abhijit Bhograj (he also treats at Columbia Hebbal). I used to work at this Diabetes management startup — 7sugar.com — while working with this clinic I have interacted with many patients and have seen good feedback about the treatment."
+  <div class="attrib">r/bangalore · <a href="https://www.reddit.com/r/bangalore/comments/kayiod/diabetes_care_in_bangalore_diabetologist/">Diabetes care in Bangalore</a></div>
+</div>
+<div class="appendix-quote">
+  "Have visited Diacon Rajajinagar, no idea about recent conditions but they used to be good."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "Dr. Ganapathi Bantwal, Head of Endocrinology department in St John's hospital."
+  <div class="attrib">r/bangalore · <a href="https://www.reddit.com/r/bangalore/comments/vj3t59/need_some_doctor_recommendations/">Need some doctor recommendations</a></div>
+</div>
+<div class="appendix-quote">
+  "My mother (59) recently got vaccinated with Covaxin and has been experiencing high blood pressure levels since then. She is a diabetic and a Hypertension patient... preferably within Whitefield area."
+  <div class="attrib">r/bangalore OP (0 replies) · <a href="https://www.reddit.com/r/bangalore/comments/o6u9ih/cardiologist_recommendations_in_bangalore/">Cardiologist recs in Bangalore</a> — Note: the Whitefield cardiology query got zero responses on Reddit, confirming the data gap in that geography.</div>
+</div>
+
+<h3>GLP-1 / Semaglutide</h3>
+
+<div class="appendix-quote">
+  "+1 For Dr. Siljaa, I too am getting my peptides from there."
+  <div class="attrib">r/bangalore · <a href="https://www.reddit.com/r/bangalore/comments/1fkt97a/ozempic_in_bangalore/">Ozempic in Bangalore??</a></div>
+</div>
+<div class="appendix-quote">
+  "Ozempic isn't available in India. However, you can get Rybelsus which has the same active ingredient as ozempic."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "Hey! I did, coz I [was] diagnosed with diabetes and any experienced endocrinologist will be able to give you [a prescription]."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "I met a doctor at a cafe recently and she mentioned that they are now prescribing oxempic [sic] to pre diabetics too."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "Ozempic isn't available in India but you can check out www.joinelevatenow.com. They can help you get on the best GLP1 along with the right diet/exercise." — <strong>Reply:</strong> "This is a fraud website and account too. Beware ⚠️"
+  <div class="attrib">r/bangalore comment thread · same source</div>
+</div>
+<div class="appendix-quote">
+  "I was prescribed it as a T2 Diabetic. For some reason it didn't really lower my sugar all that much, nor did I lose that much weight. I did a blood test and my Lipase levels had spiked to levels high enough requiring hospitalization... I had to stop taking it immediately and it's taken almost a year for my Lipase levels to recover."
+  <div class="attrib">r/india · <a href="https://www.reddit.com/r/india/comments/1r7cqq9/dr_reddys_set_to_start_selling_generic_ozempic_in/">Dr Reddy's generic Ozempic</a></div>
+</div>
+<div class="appendix-quote">
+  "Rybelsus has been available in India for quite a few years for Diabetes management." · "Mounjaro too. I think this is more about reducing costs and increasing accessibility." · "You already get Rybelsus for about 2.5k for 10 tablets. It should be around 3-4k per month."
+  <div class="attrib">r/india · same thread (compiled)</div>
+</div>
+<div class="appendix-quote">
+  "10k is the actual ozempic price. Even the article lists 3600 as half price."
+  <div class="attrib">r/india comment · same thread</div>
+</div>
+
+<h3>Eye / Retina</h3>
+
+<div class="appendix-quote">
+  "For eyes, Dr Bose in Narayana Nethralaya in Banerghatta road."
+  <div class="attrib">r/bangalore · <a href="https://www.reddit.com/r/bangalore/comments/16cc1yw/what_is_your_goodbad_experience_with_bangalore/">Bangalore Hospitals experience thread</a></div>
+</div>
+<div class="appendix-quote">
+  "Can somebody point me towards a Retina Specialist in Bangalore. Had a horrible experience at Narayana Nethralaya."
+  <div class="attrib">r/bangalore OP · <a href="https://www.reddit.com/r/bangalore/comments/eh65l2/looking_for_a_good_retina_specialist_in_bangalore/">Looking for a good Retina Specialist</a> — thread got zero replies.</div>
+</div>
+<div class="appendix-quote">
+  "I've been to quite a few Eye hospital and specialist in Bangalore (Narayana Nethralaya, Dr Agarwal eye hospital) but the doctors could not find whats causing the redness."
+  <div class="attrib">r/bangalore · <a href="https://www.reddit.com/r/bangalore/comments/aalh96/best_eye_hospital_in_bangalore/">Best eye hospital in Bangalore</a></div>
+</div>
+<div class="appendix-quote">
+  "Sankara Nethralaya (not linked with Sankara hospital in TN) near Marathahalli, iirc."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "Prabha eye clinic jayanagar. Dr vinaymurthy. Location is very near to banashankari metro station."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "There's this place called The Eye Foundation in Bellandur."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "Your best bet is Minto eye hospital, very experienced Professors and clean hospital, it's a government hospital, do give it a try."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "Sunayana [Eye Hospital in 4th T Block Jayanagar] is good. I used to go to Vasan before and they were horrible. I've been going to Sunayana for over 5 years and the male doctor is super reliable and patient with your queries."
+  <div class="attrib">r/bangalore · <a href="https://www.reddit.com/r/bangalore/comments/ut39n0/eye_hospital_recommendations_for_icl_surgery/">Eye hospital for ICL</a></div>
+</div>
+<div class="appendix-quote">
+  "[Rohit Shetty at Narayana Nethralaya] does not even ask me what issues I have or why I am opting for this surgery."
+  <div class="attrib">r/bangalore OP · same thread</div>
+</div>
+<div class="appendix-quote">
+  "I was deciding to goto Narayana Nethralaya for Dr. Roshmi but at the last moment she is not available for surgery."
+  <div class="attrib">r/bangalore · <a href="https://www.reddit.com/r/bangalore/comments/v7i9xd/for_ptosis_correction_eye_surgery/">Ptosis correction</a></div>
+</div>
+
+<h3>Hospitals — general Bangalore reputation signals</h3>
+
+<div class="appendix-quote">
+  "I would say St John's is my go to hospital. It's not fancy like Fortis / Apollo but they have excellent doctors in my experience. Fortis was purely money grab and wasn't able to solve the issue."
+  <div class="attrib">r/bangalore · <a href="https://www.reddit.com/r/bangalore/comments/16cc1yw/what_is_your_goodbad_experience_with_bangalore/">Bangalore Hospitals thread</a></div>
+</div>
+<div class="appendix-quote">
+  "Sakra World Hospital. Been there multiple times. Have recommended to others also. Never have faced any complaints."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "No to Sakra hospital. They give 100s of medicine and a complete order book of tests, even for small diseases and that too which cost fortune."
+  <div class="attrib">r/bangalore comment · different thread — <a href="https://www.reddit.com/r/bangalore/comments/zzn5zu/i_need_some_advice_i_am_not_a_natives_of/">honest doctor thread</a>. Note the split view on Sakra.</div>
+</div>
+<div class="appendix-quote">
+  "Apollo Bannerghatta is a great hospital for general medicine issues. Doctors are very caring and responsive to issues."
+  <div class="attrib">r/bangalore comment · Bangalore Hospitals thread</div>
+</div>
+<div class="appendix-quote">
+  "Baptist hospital near hebbal is pretty good, I am surprised how no one mentioned about it here, most surgeons are trained in CMC Vellore. And follow similar protocols and good on pocket too."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "Any hospital you go to, please always insist on a second opinion, and that should include one from the trustee hospitals like St Johns, St Martha, CMH, Baptist or CMC Vellore. Only then you should consider going under the blade given the money minting attitude of this city's pvt hospitals."
+  <div class="attrib">r/bangalore comment · same thread — <em>general Bangalore wisdom worth internalising.</em></div>
+</div>
+<div class="appendix-quote">
+  "I also had a terrible experience in Manipal Bangalore [hospital]. Made me wait for over 3 hours for an appointment (had taken the appointment 3 days before) with endocrinologist when I was pregnant."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "Manipal gave me 16k worth of tests before any kind of checkup."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "Columbia Asia turned Manipal have some of the most careless and callous docs. Experienced in 2 locations - Bengaluru and Patiala."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+<div class="appendix-quote">
+  "Aster RV hospital is good in terms of infrastructure and doctors... Might be a bit expensive though."
+  <div class="attrib">r/bangalore comment · same thread</div>
+</div>
+
+<div class="divider"></div>
+
+<p class="footer-note">End of Directory — 30 July 2026</p>
+<p class="footer-note" style="margin-top:10px;">
+  Coach knowledge additions (clearly labelled in-text): NPDR + semaglutide contraindication rationale, SGLT2 vs GLP-1 comparison, drug-uric-acid interactions, seven-question appointment brief, distance table entries where Reddit was silent.
+</p>
+
+</div>
+</body>
+</html>

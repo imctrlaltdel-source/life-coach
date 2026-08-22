@@ -1,0 +1,12 @@
+# Backups and temp
+db/coach.db.backup*
+db/ctx_cache.txt
+__pycache__/
+*.pyc
+.env
+
+# Archives (large, not needed on laptop)
+_archive_pre_db/
+
+# Old large files (superseded)
+allmem.txt

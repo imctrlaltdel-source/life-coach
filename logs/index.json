@@ -1,0 +1,2076 @@
+{
+  "schema_version": "1.0",
+  "description": "GraphQL-style index over all Life Coach session logs. Each entry references a daily log file and carries structured metadata for querying patterns across time.",
+  "last_updated": "2026-07-25",
+  "person": "Prateek Jain (PJ)",
+  "types": {
+    "DayLog": {
+      "fields": {
+        "date": "String (YYYY-MM-DD)",
+        "file": "String (path to logs/YYYY-MM-DD.md)",
+        "session_count": "Int (number of messages logged that day)",
+        "summary": "String (1-line day summary)",
+        "mood_arc": "String (how mood shifted across the day)",
+        "goals_touched": "[String] \u2014 health | wealth | hobbies | social | spiritual | vision",
+        "habits": {
+          "gym": "Boolean | null",
+          "run": "Boolean | null",
+          "steps_15k": "Boolean | null",
+          "calories_under_1200": "Boolean | null",
+          "kriya": "Boolean | null",
+          "weed": "Boolean | null (true = used, false = clean)",
+          "parents_called": "Boolean | null"
+        },
+        "themes": "[String] \u2014 recurring emotional or behavioral themes",
+        "insights": "[String] \u2014 therapist observations about patterns, breakthroughs, regressions",
+        "flags": "[String] \u2014 anything urgent to revisit next session"
+      }
+    },
+    "MessageEntry": {
+      "description": "One entry per PJ message inside a daily log file",
+      "fields": {
+        "timestamp": "String (HH:MM IST)",
+        "message_summary": "String",
+        "emotional_state": "String",
+        "goals_referenced": "[String]",
+        "habits_reported": "Object",
+        "therapist_note": "String \u2014 what a good therapist would write down from this message",
+        "patterns_observed": "String",
+        "follow_up_needed": "String"
+      }
+    }
+  },
+  "queries": {
+    "getDay": "Look up logs/YYYY-MM-DD.md",
+    "getRange": "Read multiple daily files between two dates",
+    "searchTheme": "Grep logs/ for a theme keyword",
+    "getHabitTrend": "Read index.json entries[] and extract habits field across dates",
+    "getFlags": "Scan entries[] for non-empty flags fields",
+    "getMoodArc": "Read entries[].mood_arc across a date range"
+  },
+  "entries": [
+    {
+      "date": "2026-04-09",
+      "file": "logs/2026-04-09.md",
+      "session_count": 0,
+      "summary": "Chest+Shoulders. Diet collapse from work stress \u2192 nippattu snack. ~1590 cal.",
+      "mood_arc": "stressed",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": null,
+        "calories_under_1200": false,
+        "kriya": false,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "stress-eating",
+        "nippattu",
+        "comfort-food"
+      ],
+      "insights": [
+        "Work stress \u2192 nippattu/snack collapse. Pattern #1 established Day 2."
+      ],
+      "flags": [
+        "Stress-food link \u2014 need stress meal protocol"
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "file": "logs/2026-04-10.md",
+      "session_count": 0,
+      "summary": "Arms+Mobility. 17k steps. Diet over from snack block (fries+nuggets+tikkis).",
+      "mood_arc": "active",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": false,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "snack-block",
+        "multi-item-snacking"
+      ],
+      "insights": [
+        "Single unplanned snack block undoes an otherwise clean day. Meals fine, snack not."
+      ],
+      "flags": [
+        "Eliminate or pre-plan snack window"
+      ]
+    },
+    {
+      "date": "2026-04-11",
+      "file": "logs/2026-04-11.md",
+      "session_count": 0,
+      "summary": "Full rest day. No data. All habits missed.",
+      "mood_arc": "resting",
+      "goals_touched": [],
+      "habits": {
+        "gym": false,
+        "run": false,
+        "steps_15k": null,
+        "calories_under_1200": null,
+        "kriya": false,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "rest-day-total-reset"
+      ],
+      "insights": [
+        "Rest day = all habits off. Need rest day protocol."
+      ],
+      "flags": [
+        "Rest day shouldn't mean zero on steps/kriya/diet"
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "file": "logs/2026-04-12.md",
+      "session_count": 0,
+      "summary": "Run 5.2km PB. 15k steps. Parents \u2705. Diet over (heavy breakfast \u2014 exercise license).",
+      "mood_arc": "energetic/weekend",
+      "goals_touched": [
+        "health",
+        "social"
+      ],
+      "habits": {
+        "gym": false,
+        "run": true,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": false,
+        "weed": null,
+        "parents_called": true
+      },
+      "themes": [
+        "exercise-license",
+        "weekend-diet",
+        "saturday-pattern"
+      ],
+      "insights": [
+        "Run \u2192 permission to eat more. Exercise license trap on weekends."
+      ],
+      "flags": [
+        "Saturday diet frame needs resetting"
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "file": "logs/2026-04-13.md",
+      "session_count": 0,
+      "summary": "TURNING POINT. Kriya Day 1. Gym + 15k + weed clean + parents. Diet over (nippattu).",
+      "mood_arc": "committed/energized",
+      "goals_touched": [
+        "health",
+        "spiritual",
+        "social"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": true,
+        "weed": false,
+        "parents_called": true
+      },
+      "themes": [
+        "turning-point",
+        "kriya-start",
+        "nippattu"
+      ],
+      "insights": [
+        "First kriya day. Identity voting started. Nippattu again as diet saboteur \u2014 remove from environment."
+      ],
+      "flags": [
+        "Remove nippattu from home"
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "file": "logs/2026-04-14.md",
+      "session_count": 0,
+      "summary": "Run 5.21km. 17k steps. Kriya Day 2. Diet 280 over (chips snack).",
+      "mood_arc": "active/strong",
+      "goals_touched": [
+        "health",
+        "spiritual"
+      ],
+      "habits": {
+        "gym": false,
+        "run": true,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": true,
+        "weed": false,
+        "parents_called": null
+      },
+      "themes": [
+        "post-run-snack",
+        "chips",
+        "habit-swap-opportunity"
+      ],
+      "insights": [
+        "Post-run hunger \u2192 automatic chips reach. Roasted makhana/chana as planned swap."
+      ],
+      "flags": [
+        "Plan post-run snack in advance"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "file": "logs/2026-04-15.md",
+      "session_count": 0,
+      "summary": "Back gym. Kriya Day 3. Diet partial log (~975 cal, dinner missing).",
+      "mood_arc": "steady",
+      "goals_touched": [
+        "health",
+        "spiritual"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": null,
+        "kriya": true,
+        "weed": false,
+        "parents_called": null
+      },
+      "themes": [
+        "incomplete-logging",
+        "dinner-avoidance"
+      ],
+      "insights": [
+        "Log stops when dinner goes off-plan. Incomplete log = signal of off-plan eating."
+      ],
+      "flags": [
+        "Log dinner even when it's bad \u2014 data > shame"
+      ]
+    },
+    {
+      "date": "2026-04-16",
+      "file": "logs/2026-04-16.md",
+      "session_count": 0,
+      "summary": "Clean day. Legs 25kg. Diet under 1200. Kriya missed (late wake).",
+      "mood_arc": "steady",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": true,
+        "kriya": false,
+        "weed": false,
+        "parents_called": null
+      },
+      "themes": [
+        "consistency",
+        "late-wake"
+      ],
+      "insights": [
+        "Clean day even without kriya \u2014 circumstantial miss, not resistance"
+      ],
+      "flags": []
+    },
+    {
+      "date": "2026-04-17",
+      "file": "logs/2026-04-17.md",
+      "session_count": 0,
+      "summary": "Run 5.06km. Kriya 5 mins. Diet 230 over (evening carbs).",
+      "mood_arc": "active/positive",
+      "goals_touched": [
+        "health",
+        "spiritual"
+      ],
+      "habits": {
+        "gym": false,
+        "run": true,
+        "steps_15k": null,
+        "calories_under_1200": false,
+        "kriya": true,
+        "weed": false,
+        "parents_called": null
+      },
+      "themes": [
+        "evening-carb-overflow",
+        "kriya-consistency"
+      ],
+      "insights": [
+        "Evening paratha+chana is the calorie-over culprit \u2014 pattern forming"
+      ],
+      "flags": [
+        "Evening meal structure needs tightening"
+      ]
+    },
+    {
+      "date": "2026-04-18",
+      "file": "logs/2026-04-18.md",
+      "session_count": 0,
+      "summary": "Koramangala party. Weed used. Full diet collapse. Collapse chain activated.",
+      "mood_arc": "social-high \u2192 collapse",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": null,
+        "calories_under_1200": false,
+        "kriya": false,
+        "weed": true,
+        "parents_called": null
+      },
+      "themes": [
+        "collapse-chain",
+        "social-trigger",
+        "weed-cravings",
+        "party-risk"
+      ],
+      "insights": [
+        "Weed \u2192 full diet demolition confirmed again. Social party = highest-risk environment."
+      ],
+      "flags": [
+        "Need pre-party protocol for weed decision + food planning"
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "file": "logs/2026-04-19.md",
+      "session_count": 0,
+      "summary": "Marriage crisis \u2014 wife threatened to leave. Devastated. No gym, no kriya.",
+      "mood_arc": "devastated/shock",
+      "goals_touched": [
+        "social",
+        "vision"
+      ],
+      "habits": {
+        "gym": false,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": null,
+        "kriya": false,
+        "weed": false,
+        "parents_called": null
+      },
+      "themes": [
+        "marriage-crisis",
+        "emotional-shock",
+        "abandonment",
+        "resilience"
+      ],
+      "insights": [
+        "Still walked 13k in crisis \u2014 body kept moving. Exercise as emotional regulation.",
+        "Weed night before + crisis next day = brutal combo"
+      ],
+      "flags": [
+        "Marriage: apology given Apr 20 but underlying tension unaddressed \u2014 monitor closely"
+      ]
+    },
+    {
+      "date": "2026-04-20",
+      "file": "logs/2026-04-20.md",
+      "session_count": 0,
+      "summary": "Bounced back \u2014 gym + 15k steps day after marriage crisis. Wife apologized.",
+      "mood_arc": "raw \u2192 determined",
+      "goals_touched": [
+        "health",
+        "social"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": true,
+        "calories_under_1200": null,
+        "kriya": false,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "resilience",
+        "gym-as-emotional-regulation",
+        "marriage-resolution"
+      ],
+      "insights": [
+        "Gym the day after emotional devastation = identity holding under pressure. Key strength."
+      ],
+      "flags": [
+        "Marriage 'resolved' but one apology \u2260 underlying issue resolved \u2014 watch"
+      ]
+    },
+    {
+      "date": "2026-04-21",
+      "file": "logs/2026-04-21.md",
+      "session_count": 0,
+      "summary": "Kriya 8 mins \u2014 longest ever. No gym noted. Samosas recurring.",
+      "mood_arc": "stabilizing",
+      "goals_touched": [
+        "health",
+        "spiritual"
+      ],
+      "habits": {
+        "gym": null,
+        "run": null,
+        "steps_15k": false,
+        "calories_under_1200": null,
+        "kriya": true,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "kriya-breakthrough",
+        "crisis-to-depth",
+        "samosa-snack-pattern"
+      ],
+      "insights": [
+        "Deepest kriya after emotional crisis \u2014 contraction preceding expansion (Shaivism lens). Real pattern."
+      ],
+      "flags": [
+        "Samosas 3 days running \u2014 forming a habit, suggest swap"
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "file": "logs/2026-04-22.md",
+      "session_count": 0,
+      "summary": "FULL GREEN DAY \u2b50 Gym + kriya + parents. 4 days after collapse.",
+      "mood_arc": "grounded/restored",
+      "goals_touched": [
+        "health",
+        "spiritual",
+        "social"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": true,
+        "kriya": true,
+        "weed": null,
+        "parents_called": true
+      },
+      "themes": [
+        "full-green-day",
+        "bounce-back",
+        "recovery-window",
+        "parents-restored"
+      ],
+      "insights": [
+        "PJ's recovery window = 2-3 days after collapse. Consistent pattern. His superpower."
+      ],
+      "flags": [
+        "Steps stuck at 13k for multiple days",
+        "Marriage situation \u2014 how is it actually today?"
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "file": "logs/2026-04-23.md",
+      "session_count": 4,
+      "summary": "First session in new Claude Code setup. 7-day backfill received.",
+      "mood_arc": "casual/building",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": null,
+        "run": null,
+        "steps_15k": null,
+        "calories_under_1200": null,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "system-migration",
+        "backfill"
+      ],
+      "insights": [],
+      "flags": [
+        "Apr 23 scorecard still unknown \u2014 Thursday = run day"
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "file": "logs/2026-04-24.md",
+      "session_count": 3,
+      "summary": "Legs day + kriya 7min. Diet 1,330 cal, 81g protein. New habit stack day 1: veg-first \u2705 post-meal-move \u2705",
+      "mood_arc": "calm/grounded",
+      "goals_touched": [
+        "health",
+        "spiritual"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": false,
+        "kriya": true,
+        "weed": false,
+        "parents_called": null,
+        "veg_first": true,
+        "post_meal_move": true
+      },
+      "themes": [
+        "habit-stack-day-1",
+        "identity-voting"
+      ],
+      "insights": [
+        "First day of veg-first + post-meal-move habits \u2014 both hit without prompting by evening"
+      ],
+      "flags": [
+        "Parents still unconfirmed multiple days running"
+      ]
+    },
+    {
+      "date": "2026-04-25",
+      "file": "logs/2026-04-25.md",
+      "session_count": 6,
+      "summary": "7.33km PB run. No weed. 1,515 cal, 85g protein. Weekly deficit 6,531/7,000. Dashboard built.",
+      "mood_arc": "energetic/builder",
+      "goals_touched": [
+        "health",
+        "spiritual"
+      ],
+      "habits": {
+        "gym": false,
+        "run": true,
+        "steps_15k": false,
+        "calories_under_1200": false,
+        "kriya": true,
+        "weed": false,
+        "parents_called": null,
+        "veg_first": true,
+        "post_meal_move": null
+      },
+      "themes": [
+        "run-pb",
+        "weed-clean",
+        "dashboard-build",
+        "body-comp-baseline"
+      ],
+      "insights": [
+        "PB run despite shin pain \u2014 mental toughness. Weed-free Saturday = clean food all day (correlation holds). Ice cream swap shows sustainable treat behaviour emerging."
+      ],
+      "flags": [
+        "Parents unconfirmed again",
+        "Post-meal move after dinner unconfirmed",
+        "Scale screenshot needed May 2"
+      ]
+    },
+    {
+      "date": "2026-04-28",
+      "file": "logs/2026-04-28.md",
+      "session_count": 4,
+      "summary": "\u2b50 Strong day: 5.06km run (MAF perfect, HR 124), 25k steps, kriya \u2705, veg-first all meals. Work stress \u2192 shwarma overage (2,284 cal) but actual deficit -314 (steps covered it).",
+      "mood_arc": "energized morning \u2192 mid-day stress \u2192 recovery structure",
+      "goals_touched": [
+        "health",
+        "spiritual"
+      ],
+      "habits": {
+        "gym": false,
+        "run": true,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": true,
+        "weed": false,
+        "parents_called": false,
+        "veg_first": true,
+        "post_meal_move": true
+      },
+      "themes": [
+        "early-execution",
+        "double-distance",
+        "aerobic-mastery",
+        "stress-response",
+        "veg-first-autopilot",
+        "steps-strong",
+        "shwarma-comfort"
+      ],
+      "insights": [
+        "Run perfectly executed (5.06km, 59:08, HR 124/135 MAF). 25k steps (10k above target) covered shwarma overage \u2014 actual expenditure 2,598 vs intake 2,284 = -314 deficit. Veg-first + post-meal move held despite work stress. Collapse chain NOT activated (weed clean). Lunch protein too low (16g) = 4pm hunger + snack. Tomorrow: fix lunch satiety."
+      ],
+      "flags": [
+        "Work stress trigger not yet named",
+        "Lunch protein needs 35-40g (not 16g) to prevent 4pm hunger",
+        "Parents still unconfirmed"
+      ]
+    },
+    {
+      "date": "2026-04-30",
+      "file": "logs/2026-04-30.md",
+      "session_count": 1,
+      "summary": "Structured eating: egg+paneer BF (perfect), falafel+pita lunch (GI risky), protein bar snack, pav bhaji dinner (sodium bomb). Protein 58g (under target). No stress eating\u2014knowledge error instead.",
+      "mood_arc": "stable/structured",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": null,
+        "run": null,
+        "steps_15k": null,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null,
+        "veg_first": true,
+        "post_meal_move": null
+      },
+      "themes": [
+        "macro-distribution-error",
+        "high-gi-breads",
+        "protein-under-dosed",
+        "sodium-spike"
+      ],
+      "insights": [
+        "No stress eating observed (good), but carb-forward meal distribution violates diabetes protocol. Breakfast perfect (0g carb, 18g protein), but lunch/snack/dinner clustered 110g carbs with high GI foods (pita GI 71, pav GI 72). Protein 58g total (under 80g floor) \u2014 when protein drops, carb hunger rises (evidence: pav bhaji choice). Falafel+pita is a diabetes trap (GI 55+71, fried, sodium-heavy). Pav bhaji dinner only 8g protein \u2014 no buffer against carb spike."
+      ],
+      "flags": [
+        "Bread choices need systematic swap (pita\u2192whole wheat roti)",
+        "Protein distribution: no whey logged\u2014was this deliberate?",
+        "Sodium spiked 1,200\u20131,400mg in 3 meals (breads, hummus, fried foods)",
+        "Dinner macro inversion: 45g carb, 8g protein (should be reversed)"
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "file": "logs/2026-05-01.md",
+      "session_count": 7,
+      "summary": "Holiday wake-up late. BF veg-first locked, protein weak (1 egg white). Lunch: white rice fried (122g carb) + Chinese veg+paneer + whey in buttermilk. Legs Heavy gym (1:08, 10,888kg, 2 PRs, shins cleared). Dinner: dahi chicken + 1 roti + buttermilk. Snack: 5 Dairy Milk squares (chocolate GI 70). FINAL: 2,063 cal, 220g carb (100g over), 109.6g protein (19.6g over ceiling), 12k steps (3k short).",
+      "mood_arc": "casual-energetic-indulgent",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": null,
+        "steps_15k": false,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null,
+        "veg_first": true,
+        "post_meal_move": false
+      },
+      "themes": [
+        "holiday-relaxation",
+        "gym-success",
+        "macro-overage",
+        "carb-spike",
+        "chocolate-evening",
+        "protein-ceiling-exceeded"
+      ],
+      "insights": [
+        "Gym execution flawless (2 PRs, shins recovered from massage, 10,888kg volume). Veg-first locked morning/lunch. BUT: Whey in buttermilk strategy pushed protein to 109.6g (19.6g over kidney ceiling). White rice lunch (122g carb) + chocolate squares at night (GI 70, pure sugar) = carb spike 220g total (100g over). Steps 12k (3k short). Post-meal walks likely skipped dinner onwards. Holiday mindset ('I can relax') showed in EOD structure collapse."
+      ],
+      "flags": [
+        "CRITICAL: Protein 109.6g exceeds kidney ceiling 80-90g by 22%",
+        "Carbs 220g is 100g over target",
+        "Steps 12k not 15k"
+      ]
+    },
+    {
+      "date": "2026-05-04",
+      "file": "logs/2026-05-04.md",
+      "session_count": 5,
+      "summary": "Gym chest+tricep+mobility (52 min, 2 PRs). BF 314 cal. Lunch 489 cal (300g rice \u2014 carb spike). Snack 134 cal. Dinner 444 cal (beans sabzi + roti). Day total: 1,381 cal, 79g protein, 194g carbs.",
+      "mood_arc": "disciplined/executing",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": null,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null,
+        "veg_first": true,
+        "post_meal_move": null
+      },
+      "themes": [
+        "gym-execution",
+        "carb-overload-rice",
+        "dinner-discipline",
+        "meal-tracking"
+      ],
+      "insights": [
+        "Dinner showed self-regulation after heavy carb lunch. Protein 79g = perfect kidney ceiling. 300g rice lunch is the pattern to fix \u2014 single meal pushed carbs 74g over target. Oil in sabzi (tbsp vs tsp) needs clarification."
+      ],
+      "flags": [
+        "Carbs 194g (74g over 120g target) \u2014 rice lunch pattern",
+        "Steps count pending",
+        "Kriya status unknown",
+        "Parents call unknown"
+      ]
+    },
+    {
+      "date": "2026-05-05",
+      "file": "logs/2026-05-05.md",
+      "session_count": 5,
+      "summary": "Shoulder gym #463 (48min, 3PRs). 15k steps. Party dinner (2 gin + starters + malabar paratha + paneer). Weed clean at party. Weight 79.55kg.",
+      "mood_arc": "disciplined morning \u2192 social evening \u2192 honest EOD",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": false,
+        "weed": false,
+        "parents_called": false,
+        "veg_first": true,
+        "post_meal_move": false
+      },
+      "themes": [
+        "party-clean",
+        "gym-pr",
+        "weed-clean-social",
+        "kriya-miss",
+        "parents-miss"
+      ],
+      "insights": [
+        "Weed clean at party = highest-risk environment cleared. Identity shift solidifying.",
+        "Party dinner ~1,050 cal but still ~290 cal deficit for the day (gym + steps covered it)."
+      ],
+      "flags": [
+        "Parents missed again \u2014 flag tomorrow morning",
+        "Kriya missed \u2014 no excuse tomorrow (Wednesday)",
+        "Wednesday = Back day"
+      ]
+    },
+    {
+      "date": "2026-05-07",
+      "file": "logs/2026-05-07.md",
+      "session_count": 2,
+      "summary": "Work crisis day. Woke 9:30 (party hangover). No gym/run. 10k steps. Stress eating: 2 vada pav. Total ~1,626 cal, 63g protein. Deficit ~1,074 (good despite perception). Kriya/weed/parents unknown.",
+      "mood_arc": "stressed/deflated \u2014 work crisis dominant",
+      "goals_touched": [
+        "health",
+        "wealth"
+      ],
+      "habits": {
+        "gym": false,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": false,
+        "kriya": false,
+        "weed": false,
+        "parents_called": true,
+        "veg_first": false,
+        "post_meal_move": null
+      },
+      "themes": [
+        "work-stress",
+        "stress-eating",
+        "vada-pav",
+        "appraisal-fear",
+        "late-wake-party",
+        "perception-vs-reality"
+      ],
+      "insights": [
+        "Work crisis + party late wake = compounding stressors. Vada pav x2 = stress eating (not hunger). But actual deficit ~1,074 cal \u2014 perception worse than reality. 'I couldn't do anything' masks 10k steps + under-TDEE eating."
+      ],
+      "flags": [
+        "Weed status UNKNOWN \u2014 highest risk night (work stress)",
+        "Kriya status unknown",
+        "Parents unknown",
+        "May 8 target reframe needed tomorrow",
+        "meal.py API credits exhausted \u2014 needs recharge"
+      ]
+    },
+    {
+      "date": "2026-05-08",
+      "file": "logs/2026-05-08.md",
+      "session_count": 1,
+      "summary": "Strong rebound. Back gym #464 (52min, 5,182kg). 15.5k steps. Kriya \u2705. Parents \u2705. Wife dinner out (quiche+pizza). ~1,915 cal, 87g protein. Deficit ~420.",
+      "mood_arc": "recovered/executing after yesterday's crisis",
+      "goals_touched": [
+        "health",
+        "social",
+        "spiritual"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": true,
+        "weed": null,
+        "parents_called": true,
+        "veg_first": true,
+        "post_meal_move": null
+      },
+      "themes": [
+        "crisis-rebound",
+        "wife-connection",
+        "restaurant-dinner"
+      ],
+      "insights": [
+        "Day-after-crisis rebound pattern holds (2-3 day recovery window). Wife dinner = relational investment post-stress. Protein 87g at kidney ceiling edge. Veg-first at lunch \u2705 (corrected by PJ), missed BF/dinner."
+      ],
+      "flags": [
+        "Weed status unknown",
+        "Veg-first partial \u2014 lunch only, extend to all meals",
+        "Tomorrow Saturday = weigh-in + long run",
+        "May 8 target reframe still needed"
+      ]
+    },
+    {
+      "date": "2026-05-09",
+      "file": "logs/2026-05-09.md",
+      "session_count": 4,
+      "summary": "7.5km PB run (HR 124). 20.6k steps. Kriya \u2705. Weight 79.1kg. ~1,600 cal, 76g protein. Deficit ~865 \u2014 best day this week. Dinner 2 paratha + paneer = leak.",
+      "mood_arc": "alert/morning",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": null,
+        "run": null,
+        "steps_15k": null,
+        "calories_under_1200": null,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null,
+        "veg_first": null,
+        "post_meal_move": null
+      },
+      "themes": [
+        "weigh-in",
+        "long-run-day",
+        "saturday-scale"
+      ],
+      "insights": [
+        "Weight 79.1kg \u2014 14-day trend: 80.25 \u2192 79.55 \u2192 79.1 = -1.15kg in 14 days = ~0.58kg/week. Pace slightly improving."
+      ],
+      "flags": [
+        "Full HealthU+ screenshot still needed",
+        "Long run 7-7.5km pending",
+        "Deep review recommendations to discuss"
+      ]
+    },
+    {
+      "date": "2026-05-11",
+      "file": "logs/2026-05-11.md",
+      "session_count": 3,
+      "summary": "Day 1 of 4-day challenge. No gym (subscription over). 13k steps (1hr walk with Snowy). ~1,098 cal \u2014 near-perfect execution. 732 cal deficit.",
+      "mood_arc": "Matter-of-fact morning \u2192 practical midday \u2192 calm disciplined evening",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": false,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": true,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "calories": 1098,
+      "protein_g": 73,
+      "deficit_cal": 732,
+      "themes": [
+        "4-day challenge",
+        "gym subscription over",
+        "house move Friday",
+        "diet discipline"
+      ],
+      "insights": [
+        "Diet held perfectly despite gym miss and work pressure",
+        "Social weekends -> late Monday wake pattern confirmed",
+        "No gym = diet+running sprint this week"
+      ],
+      "flags": [
+        "Run tomorrow morning non-negotiable",
+        "Kriya unconfirmed",
+        "Parents unconfirmed"
+      ]
+    },
+    {
+      "date": "2026-05-12",
+      "file": "logs/2026-05-12.md",
+      "session_count": 1,
+      "summary": "Day 2 of 4-day challenge. Run 5.13km (HR 122, MAF perfect). ~8.7k steps from run alone. Diet tracking in progress \u2014 no EOD report.",
+      "mood_arc": "post-run morning energy",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": false,
+        "run": true,
+        "steps_15k": null,
+        "calories_under_1200": null,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "run-consistency",
+        "MAF-zone",
+        "4-day-challenge"
+      ],
+      "insights": [
+        "Committed to run Day 2 after missing Day 1 \u2014 recovery pattern holds. HR 122 = perfect MAF execution."
+      ],
+      "flags": [
+        "EOD report never came \u2014 diet status Day 2 unknown",
+        "Weed status unconfirmed",
+        "Kriya unconfirmed"
+      ]
+    },
+    {
+      "date": "2026-05-13",
+      "file": "logs/2026-05-13.md",
+      "session_count": 1,
+      "summary": "Day 3 of 4-day challenge. Boss publicly humiliated PJ across 3 projects. 11k steps. ~1,388 cal. Protein 123g OVER ceiling. Run skipped.",
+      "mood_arc": "stressed/humiliated by boss \u2014 diet held despite it",
+      "goals_touched": [
+        "health",
+        "wealth"
+      ],
+      "habits": {
+        "gym": false,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "work-stress",
+        "boss-humiliation",
+        "shame-trigger",
+        "protein-over-ceiling",
+        "resilience"
+      ],
+      "insights": [
+        "Public humiliation at work did NOT trigger weed/collapse chain \u2014 major identity holding. Protein 123g is 33-43g over kidney ceiling \u2014 critical flag. Steps down to 11k on high-stress day."
+      ],
+      "flags": [
+        "CRITICAL: Protein 123g/day (whey+paneer+eggs stacking) \u2014 kidney ceiling 80-90g violated",
+        "Weed status UNKNOWN on highest-risk stress day",
+        "Run missed Day 3 of challenge"
+      ]
+    },
+    {
+      "date": "2026-05-15",
+      "file": "logs/2026-05-15.md",
+      "session_count": 1,
+      "summary": "Moving day. 16k steps. BF: pohe+eggs. Lunch: lemon rice+sambhar. Dinner: pizza+Lays+Maggi. ~1,930 cal. Slight surplus. Week deficit ~2,029 cal.",
+      "mood_arc": "chaotic/exhausted (moving day)",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": false,
+        "run": false,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "house-move",
+        "survival-eating",
+        "processed-food",
+        "week-close"
+      ],
+      "insights": [
+        "Moving day survival eating (pizza+Lays+Maggi) expected. 16k steps from physical activity offset much of it. Week deficit ~2,029 cal (below 3,500 target but still meaningful). New home = natural reset point."
+      ],
+      "flags": [
+        "New gym registration urgent",
+        "Saturday weigh-in due today (May 16)",
+        "No May 14 log exists \u2014 gap day"
+      ]
+    },
+    {
+      "date": "2026-05-16",
+      "file": "logs/2026-05-16.md",
+      "session_count": 1,
+      "summary": "Deep Review session. Saturday post-move. Week analysis complete. New home, new chapter.",
+      "mood_arc": "fresh start",
+      "goals_touched": [
+        "health",
+        "wealth",
+        "hobbies",
+        "social",
+        "spiritual",
+        "vision"
+      ],
+      "habits": {
+        "gym": null,
+        "run": null,
+        "steps_15k": null,
+        "calories_under_1200": null,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "deep-review",
+        "weekly-analysis",
+        "new-home-reset",
+        "habit-architecture"
+      ],
+      "insights": [
+        "7-day review: gym 0/7 (subscription lapsed), run 2/7, steps below target 5/7, diet best metric (May 11 near-perfect). Work humiliation did NOT trigger collapse chain. House move complete."
+      ],
+      "flags": [
+        "New gym registration today",
+        "Saturday weigh-in",
+        "Gym subscription renewal urgent",
+        "Kriya pattern inconsistent \u2014 unconfirmed 5 of 7 days"
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "file": "logs/2026-05-18.md",
+      "session_count": 1,
+      "summary": "Gym return (Shoulders, lighter). 15k steps. Diet 1,864 cal (over). Protein 87g. Ice cream snack pattern emerging.",
+      "mood_arc": "back on track",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null,
+        "veg_first": true,
+        "post_meal_move": true
+      },
+      "themes": [
+        "gym-return",
+        "new-home-comfort-eating",
+        "ice-cream-snack"
+      ],
+      "insights": [
+        "First gym session after 10+ day gap. Post-meal walks confirmed. Ice cream appearing daily in new home = comfort pattern forming."
+      ],
+      "flags": [
+        "Ice cream new snack pattern",
+        "Kriya unconfirmed",
+        "Parents unconfirmed"
+      ]
+    },
+    {
+      "date": "2026-05-19",
+      "file": "logs/2026-05-19.md",
+      "session_count": 2,
+      "summary": "Run 5.17km HR 131 (slightly over MAF). 18k steps. Diet 2,078 cal \u2014 protein bar snack bomb (400 cal). Protein ~120g OVER kidney ceiling.",
+      "mood_arc": "responsive/executing",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": false,
+        "run": true,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null,
+        "veg_first": null,
+        "post_meal_move": null
+      },
+      "themes": [
+        "run-consistency",
+        "protein-bar-trap",
+        "protein-over-ceiling"
+      ],
+      "insights": [
+        "400 cal protein bar destroyed deficit. Protein 120g over kidney ceiling. VO2 max 37.4."
+      ],
+      "flags": [
+        "CRITICAL: Protein bar = 400 cal + kidney ceiling violation",
+        "Dad call after temper loss \u2014 still pending?"
+      ]
+    },
+    {
+      "date": "2026-05-20",
+      "file": "logs/2026-05-20.md",
+      "session_count": 1,
+      "summary": "Reported May 19 data: 18k steps + run. Diet ~2,078 cal surplus. Protein ~120g (3rd day over ceiling). Protein bar at snack flagged.",
+      "mood_arc": "neutral morning check-in",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": null,
+        "run": true,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "protein-ceiling-violation",
+        "protein-bar",
+        "roti-overrun",
+        "deload-week"
+      ],
+      "insights": [
+        "Protein bar at snack is a recurring pattern \u2014 400 cal, ~35g protein, incompatible with kidney constraint.",
+        "3 rotis at lunch + 3 at dinner = structural overrun. Lunch 350-cal target routinely broken."
+      ],
+      "flags": [
+        "Protein ceiling violated 3 days in a row (May 18-20)",
+        "Protein bar needs to be permanently removed from snack rotation"
+      ]
+    },
+    {
+      "date": "2026-05-21",
+      "file": "logs/2026-05-21.md",
+      "session_count": 2,
+      "summary": "Reported May 20 social dinner night: 2 beers + pizza + late-night 2 roti after coming home. 2,877 cal surplus 794. Ran 5.02km. Set 78.4kg target for Tuesday.",
+      "mood_arc": "neutral report \u2192 forward-focused after run",
+      "goals_touched": [
+        "health",
+        "social"
+      ],
+      "habits": {
+        "gym": null,
+        "run": true,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "social-dinner",
+        "beer",
+        "late-night-eating",
+        "MAF-protocol",
+        "run",
+        "78.4-target"
+      ],
+      "insights": [
+        "Post-social binge pattern: restaurant eating + late-night second meal at home. Beer + pizza then 2 roti + gobhi manchurian = double dinner.",
+        "Running used as 'undo' mechanism \u2014 coach redirected to diet as primary lever.",
+        "Protein ceiling violated 4th consecutive day."
+      ],
+      "flags": [
+        "Late-night home eating after social dinner = recurring pattern, needs protocol",
+        "Beer frequency check needed \u2014 is this weekly?",
+        "Protein ceiling 4 days running (May 18-21)"
+      ]
+    },
+    {
+      "date": "2026-05-22",
+      "file": "logs/2026-05-22.md",
+      "session_count": 3,
+      "summary": "Reported May 21 recovery day: 21k steps, ~1,401 cal, 549 cal deficit. New gym has no leg machines \u2014 built modified DB+barbell legs plan. PJ challenged first plan. Wife birthday weekend starting.",
+      "mood_arc": "positive morning \u2192 problem-solving \u2192 assertive pushback on plan",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": null,
+        "steps_15k": true,
+        "calories_under_1200": true,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "new-gym",
+        "legs-day",
+        "db-barbells-only",
+        "birthday-weekend-start",
+        "exercise-literacy"
+      ],
+      "insights": [
+        "PJ pushed back on an unbalanced gym plan \u2014 exercise literacy growing.",
+        "May 21 was a genuine recovery day (549 cal deficit, 21k steps) after May 20 damage.",
+        "Last session before 4-day birthday collapse (May 22-25)."
+      ],
+      "flags": [
+        "Birthday weekend starting \u2014 no protocol established",
+        "Protein still over ceiling (126g) despite clean eating day",
+        "May 22-25 = predicted collapse window"
+      ]
+    },
+    {
+      "date": "2026-05-23",
+      "file": "logs/2026-05-23.md",
+      "session_count": 0,
+      "summary": "NO SESSION \u2014 Wife birthday weekend Day 2. Steps ~21k. Diet collapsed. Cook unavailable. Reconstructed from May 26 retroactive report.",
+      "mood_arc": "stressed (birthday planning)",
+      "goals_touched": [],
+      "habits": {
+        "gym": null,
+        "run": null,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": false,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "birthday-collapse",
+        "no-cook",
+        "celebration-protocol-needed",
+        "reconstructed-log"
+      ],
+      "insights": [
+        "21k steps maintained despite birthday planning stress \u2014 physical resilience holds even during collapse.",
+        "No coaching session = no accountability = drift deepens."
+      ],
+      "flags": [
+        "Second documented multi-day collapse around social milestone (first: April 18 party)",
+        "Need celebration protocol before next major event"
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "file": "logs/2026-05-24.md",
+      "session_count": 0,
+      "summary": "NO SESSION \u2014 Wife birthday weekend Day 3. Steps ~13k (declining). Diet collapsed. Gym skipped. Reconstructed from May 26 retroactive report.",
+      "mood_arc": "post-party fatigue",
+      "goals_touched": [],
+      "habits": {
+        "gym": false,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": false,
+        "kriya": false,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "birthday-collapse",
+        "no-cook",
+        "no-session-accountability-gap",
+        "reconstructed-log"
+      ],
+      "insights": [
+        "Day 3 of collapse = hardest recovery point. 'Might as well keep going' momentum.",
+        "Steps declining from 30k \u2192 21k \u2192 13k shows fatigue/celebration progression."
+      ],
+      "flags": [
+        "3 consecutive days no session = max accountability gap",
+        "Chest+Triceps Sunday gym skipped"
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "file": "logs/2026-05-25.md",
+      "session_count": 0,
+      "summary": "NO SESSION \u2014 Wife's actual birthday (Monday). Steps ~11k (lowest). Diet collapsed Day 4. Cook absent. Internal reset decision formed by end of day. Reconstructed from May 26 retroactive report.",
+      "mood_arc": "birthday celebration \u2192 quiet internal reset forming",
+      "goals_touched": [],
+      "habits": {
+        "gym": false,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": false,
+        "kriya": false,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "wifes-birthday",
+        "birthday-collapse-day4",
+        "no-cook",
+        "internal-reset",
+        "reconstructed-log"
+      ],
+      "insights": [
+        "PJ formed internal reset decision independently \u2014 cook arranged for tomorrow, plan ready.",
+        "4-day collapse but internal motivation intact. System restored from Day 1 of cook's return."
+      ],
+      "flags": [
+        "4-day collapse pattern (May 22-25) = longest documented collapse. Needs celebration protocol.",
+        "Cook availability = system on/off switch \u2014 this dependency needs addressing"
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "file": "logs/2026-05-26.md",
+      "session_count": 1,
+      "summary": "Rebound after 4-day birthday collapse (May 22-25). Cook restored. Steps: 30k Fri, 21k Sat, 13k Sun, 11k Mon. Diet broke all 4 days.",
+      "mood_arc": "vulnerable \u2192 solution-oriented",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": null,
+        "run": null,
+        "steps_15k": null,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "celebration-collapse",
+        "wife-birthday",
+        "no-cook-vulnerability",
+        "shame-spiral-risk",
+        "rebound-planning"
+      ],
+      "insights": [
+        "4-day collapse from wife birthday + no cook. Steps held Fri-Sat. Immediate rebound planned Day 1 = recovery speed improving."
+      ],
+      "flags": [
+        "Saturday weigh-in due",
+        "Kriya zero ~2 weeks",
+        "Weed clean since ~May 22"
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "file": "logs/2026-05-27.md",
+      "session_count": 1,
+      "summary": "Gym chest 45min. Lunch veg-first. Dinner: wife's tangri+biryani+paratha = 2,578 cal surplus. Protein 156g CRITICAL over kidney ceiling.",
+      "mood_arc": "disciplined day \u2192 dinner collapse",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": null,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null,
+        "veg_first": true,
+        "post_meal_move": null
+      },
+      "themes": [
+        "wife-cooking-trigger",
+        "protein-ceiling-critical",
+        "dinner-collapse"
+      ],
+      "insights": [
+        "CRITICAL: Protein 156g \u2014 highest ever logged. Wife's home cooking = permission trigger for large dinners. Pattern unaddressed."
+      ],
+      "flags": [
+        "CRITICAL: Protein 156g severely over 80-90g kidney ceiling",
+        "Wife-cooking dinner protocol needed urgently",
+        "Kriya still zero"
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "file": "logs/2026-05-28.md",
+      "session_count": 6,
+      "summary": "Reported May 27 dinner collapse (2.5 paratha + 3 tangri + biryani = 156g protein, highest ever). Gym: Legs 52min + 20min swim. Ankle weights question. Post-birthday bounce-back in progress.",
+      "mood_arc": "matter-of-fact report \u2192 optimization-focused \u2192 confident (gym done) \u2192 bonus (swim)",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": null,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": false,
+        "parents_called": null
+      },
+      "themes": [
+        "no-other-option-pattern",
+        "wife-cooking-trigger",
+        "protein-156g-record",
+        "legs-day",
+        "swim",
+        "workout-469",
+        "ankle-weights",
+        "post-birthday-bounce-back"
+      ],
+      "insights": [
+        "156g protein on May 27 = highest ever logged. 3 chicken tangri alone = 84g. Genuinely dangerous for 2+ proteinuria.",
+        "'No other option' framing around wife's cooking is recurring unresolved pattern.",
+        "Swimming introduced as new cross-training \u2014 excellent fit for PJ's health conditions.",
+        "Workout #469 logged \u2014 physical identity anchor."
+      ],
+      "flags": [
+        "Saturday weigh-in overdue (33+ days since April 25)",
+        "Dinner portion protocol with wife's cooking needs concrete behavioral plan, not just reminder",
+        "Protein ceiling violations: May 19 120g, May 20 120g, May 21 135g, May 27 156g \u2014 escalating severity"
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "file": "logs/2026-05-29.md",
+      "session_count": 1,
+      "summary": "Deep Review session. Weekly analysis. Kriya zero 2 weeks. New terrace. Protein ceiling violations 3x this week.",
+      "mood_arc": "analysis/planning",
+      "goals_touched": [
+        "health",
+        "wealth",
+        "hobbies",
+        "social",
+        "spiritual",
+        "vision"
+      ],
+      "habits": {
+        "gym": null,
+        "run": null,
+        "steps_15k": null,
+        "calories_under_1200": null,
+        "kriya": false,
+        "weed": false,
+        "parents_called": null
+      },
+      "themes": [
+        "deep-review",
+        "kriya-zero",
+        "protein-ceiling-pattern",
+        "terrace-anchor",
+        "meditation-restart"
+      ],
+      "insights": [
+        "Kriya zero 2 weeks = highest identity-drift risk. Three protein ceiling violations in 7 days (123g, 120g, 156g) = medical urgency. Weed clean ~1 week. New terrace = untapped kriya anchor."
+      ],
+      "flags": [
+        "Saturday weigh-in tomorrow",
+        "Kriya restart tonight non-negotiable",
+        "Dinner protein cap: choose ONE protein at dinner, never stack"
+      ]
+    },
+    {
+      "date": "2026-05-30",
+      "file": "logs/2026-05-30.md",
+      "session_count": 4,
+      "summary": "May 29 EOD report (run + 15k steps, dessert pattern). May 30: Shoulders #470 5 PRs. May 31 morning: full life strategy request. May 31 noon: meditation modality deep analysis request \u2014 asking for architectural redesign of his practice given Dharana 1 keeps failing to restart.",
+      "mood_arc": "frustrated/self-aware \u2192 identity-restored via gym \u2192 vulnerable strategic inquiry \u2192 analytical practice redesign",
+      "goals_touched": [
+        "health",
+        "wealth",
+        "spiritual",
+        "vision",
+        "social"
+      ],
+      "habits": {
+        "gym": true,
+        "run": true,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": false,
+        "weed": true,
+        "parents_called": null,
+        "veg_first": true,
+        "post_meal_move": null
+      },
+      "themes": [
+        "daily-dessert-pattern",
+        "new-home-comfort-eating",
+        "dinner-carbs-high",
+        "blood-sugar-cycle",
+        "sovereignty-deficit",
+        "pre-collapse-strategic-inquiry",
+        "meditation-architecture-redesign",
+        "kriya-on-ramp-failure"
+      ],
+      "insights": [
+        "Despite 'bad feeling,' May 29 deficit was +402 cal. Dessert is blood sugar cycle from high-carb dinner.",
+        "Shoulders #470 5 PRs = identity held despite morning anger.",
+        "Strategic inquiry (Message #3) + meditation redesign inquiry (Message #4) in one weekend = he's redesigning the operating system, not asking for tactical fixes. This is what pre-collapse looks like in a builder personality \u2014 strategic clarity-seeking as coping mechanism.",
+        "Dharana 1 willpower-restart has failed 4+ times. Pattern: gap \u2192 guilt \u2192 can't restart at 15min \u2192 gap extends. Classic Atomic Habits failure: minimum viable habit too large."
+      ],
+      "flags": [
+        "Saturday weigh-in still pending \u2014 overdue",
+        "Two weed nights back-to-back (May 29, May 30) \u2014 diet collapse risk",
+        "Kriya zero 3+ weeks \u2014 needs redesigned on-ramp, not willpower restart",
+        "Sunday parents call (today)",
+        "Test of meditation analysis: does he sit tomorrow? Track 7-day adherence."
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "file": "logs/2026-05-31.md",
+      "session_count": 3,
+      "summary": "Sunday triple deep-dive: (1) Life strategy/sovereignty across all domains, (2) Meditation modality analysis with clinical evidence, (3) TM + Kashmir Shaivism mantra system with full progression protocol and reading map.",
+      "mood_arc": "vulnerable strategic inquiry \u2192 analytical absorption \u2192 spiritual depth-seeking",
+      "goals_touched": [
+        "health",
+        "wealth",
+        "spiritual",
+        "vision",
+        "social",
+        "hobbies"
+      ],
+      "habits": {
+        "gym": null,
+        "run": null,
+        "steps_15k": null,
+        "calories_under_1200": null,
+        "kriya": false,
+        "weed": null,
+        "parents_called": null,
+        "veg_first": null,
+        "post_meal_move": null
+      },
+      "themes": [
+        "spiritual-architecture-building",
+        "mantra-system-deep-dive",
+        "TM-vs-shaivite-mantra",
+        "mortality-fear-meets-Mahamrityunjaya",
+        "wealth-spirituality-integration-via-Klim",
+        "grihastha-householder-path",
+        "intellectual-mode-as-potential-avoidance"
+      ],
+      "insights": [
+        "Three deep dives in one Sunday = building the full operating system architecture, but TODAY'S habits not yet reported.",
+        "KL\u012aM bija mantra creates bridge between his wealth ambitions and spiritual practice \u2014 integration point.",
+        "Mahamrityunjaya directly addresses his 'die by 60' fear from Message #1 \u2014 Shaivite tradition's own answer to mortality anxiety.",
+        "TM is medically safe for BP+NPDR (effortless technique, no kumbhaka/kapalabhati) \u2014 no contraindications.",
+        "Householder framing (Abhinavagupta himself was grihastha) removes the 'must be a monk' barrier."
+      ],
+      "flags": [
+        "Saturday weigh-in still pending \u2014 now 8 days overdue",
+        "Today's food/steps/parents call all still unknown \u2014 pivot needed before evening",
+        "Tomorrow June 1 = test: does the spiritual architecture get acted on or filed?",
+        "Watch for weed risk tonight (Day 1 post-2-night streak)",
+        "Intellectual mode as substitute for action \u2014 pattern to monitor"
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "summary": "June 1 \u2014 MAF run 5.03km HR 118 avg, pace 12'16\"/km, 1:01:49. Kriya restart day.",
+      "habits": {
+        "gym": false,
+        "run": true,
+        "steps": "partial",
+        "kriya": "unknown",
+        "weed": "unknown",
+        "parents": "unknown"
+      },
+      "themes": [
+        "MAF_run",
+        "June1_kriya_restart"
+      ],
+      "flags": [
+        "kriya_restart_committed"
+      ]
+    },
+    {
+      "date": "2026-06-20",
+      "file": "logs/2026-06-20.md",
+      "session_count": 2,
+      "summary": "Sabja seeds/buttermilk preload protocol finalized (carryover from Jun 19). Strategic Saturday: 8-question evidence-based hypertrophy research session for T2D/HTN/NPDR constraints.",
+      "mood_arc": "research-mode/builder",
+      "goals_touched": [
+        "health",
+        "vision"
+      ],
+      "habits": {
+        "gym": null,
+        "run": null,
+        "steps_15k": null,
+        "calories_under_1200": null,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null,
+        "veg_first": null,
+        "post_meal_move": null
+      },
+      "themes": [
+        "strategic-planning",
+        "hypertrophy-research",
+        "hunger-management",
+        "preload-protocol",
+        "saturday-deep-dive"
+      ],
+      "insights": [
+        "Saturday used for operating system design \u2014 correct meta-level thinking.",
+        "Sabja seeds + psyllium husk preload = structural hunger management, not willpower."
+      ],
+      "flags": [
+        "Long run status unknown",
+        "Saturday weigh-in status unknown",
+        "Scorecard never completed"
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "file": "logs/2026-06-25.md",
+      "session_count": 1,
+      "summary": "Back pain 50% better. No gym. ~8k steps morning (walk pending). Vermicelli twice (high GI flag for T2D). Pre-dinner ~802 cal, 45g protein \u2014 very low. Calorie trending clean if dinner stays lean.",
+      "mood_arc": "calm/pragmatic",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": false,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": null,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null,
+        "veg_first": null,
+        "post_meal_move": null
+      },
+      "themes": [
+        "back-injury-management",
+        "rest-day-diet",
+        "high-gi-vermicelli",
+        "protein-gap",
+        "weekly-deficit-recovery"
+      ],
+      "insights": [
+        "Back improving but not gym-ready. Vermicelli twice on rest day = worst-case for blood sugar (high GI, sedentary day). Protein 45g pre-dinner = structural gap \u2014 needs protein-heavy dinner."
+      ],
+      "flags": [
+        "Doctor visit still unconfirmed",
+        "Friday plan: Back + Biceps \u2014 confirm if back ready",
+        "Saturday: weigh-in overdue + long run",
+        "No whey logged today"
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "file": "logs/2026-06-21.md",
+      "session_count": 2,
+      "summary": "Gym #476 Shoulders (51min, 2,400kg, 3PRs). Sourdough+4eggs BF. Roti+chawal+veg lunch (double carb flag). Research request: fasted 7AM gym protocol for T2D.",
+      "mood_arc": "satisfied/executing \u2192 analytical/planning",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": null,
+        "calories_under_1200": null,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null,
+        "veg_first": null,
+        "post_meal_move": null
+      },
+      "themes": [
+        "new-plan-execution",
+        "fasted-training-research",
+        "double-carb-lunch",
+        "7AM-gym-protocol",
+        "T2D-exercise-safety"
+      ],
+      "insights": [
+        "First session under new 360-degree programme executed Day 1 (Sunday). 3 PRs despite rest-heavy week.",
+        "Roti+chawal lunch = high GI double carb stacking \u2014 primary HbA1c risk.",
+        "Systematic pre-planning of 7AM fasted gym protocol shows maturity vs past dive-in pattern."
+      ],
+      "flags": [
+        "Dinner status unknown",
+        "Steps count unknown",
+        "Kriya status unknown",
+        "Parents unconfirmed",
+        "7AM gym schedule shift pending \u2014 fasted protocol to be established",
+        "Protein only 41g by lunch \u2014 need 39g more at dinner without exceeding 90g ceiling"
+      ]
+    },
+    {
+      "date": "2026-07-22",
+      "file": "logs/2026-07-22.md",
+      "session_count": 3,
+      "summary": "Legs (#490, 53min, 354cal). Food: ~1,583 cal. Deficit: 576. Steps 12k. Protein 63g (under target). Smith RDL correction.",
+      "mood_arc": "steady, accountable",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "consistency rebuilding",
+        "protein undershoot",
+        "max HR NPDR flag"
+      ],
+      "insights": [
+        "3.8% HR above 138 \u2014 improvement from prior sessions",
+        "Single whey on gym day insufficient for repair",
+        "Smith RDL = valid for L4-L5"
+      ],
+      "flags": [
+        "Pull A urgent Thu Jul 23 (back 5 days rest)",
+        "Side delts 4 sets only this week vs 18-20 target",
+        "Protein 63g vs 75-85 target \u2014 add afternoon whey"
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "file": "logs/2026-07-12.md",
+      "session_count": 2,
+      "summary": "Gym #485 Push Heavy A (88min, 578cal, 3 PRs). Post-Munnar reentry. TDEE calc correction.",
+      "mood_arc": "frustrated\u2192determined",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": null,
+        "calories_under_1200": null,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "post-collapse reentry",
+        "TDEE correction"
+      ],
+      "insights": [
+        "2.2% HR above 138 \u2014 excellent control",
+        "First gym back after 5-day Munnar collapse"
+      ],
+      "flags": [
+        "TDEE formula was wrong \u2014 fixed"
+      ]
+    },
+    {
+      "date": "2026-07-13",
+      "file": "logs/2026-07-13.md",
+      "session_count": 4,
+      "summary": "Weed crash post-gym. Run 3.13km. 22k steps. TDEE double-count fixed. Vipassana urge-surf technique.",
+      "mood_arc": "guilty\u2192recovering",
+      "goals_touched": [
+        "health",
+        "spiritual"
+      ],
+      "habits": {
+        "gym": false,
+        "run": true,
+        "steps_15k": true,
+        "calories_under_1200": true,
+        "kriya": null,
+        "weed": true,
+        "parents_called": null
+      },
+      "themes": [
+        "weed collapse chain",
+        "TDEE correction",
+        "hunger suppression meditation"
+      ],
+      "insights": [
+        "Weed\u2192collapse chain confirmed again",
+        "PJ immediately asked for meditation tool to manage hunger \u2014 healthy response"
+      ],
+      "flags": [
+        "Weed used \u2014 watch for multi-day collapse",
+        "TDEE formula corrected and saved to memory"
+      ]
+    },
+    {
+      "date": "2026-07-14",
+      "file": "logs/2026-07-14.md",
+      "session_count": 2,
+      "summary": "Gym #486 Pull B (47min, 364cal, 3 PRs). 12,800 steps. Deficit ~656.",
+      "mood_arc": "steady",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": true,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "streak rebuilding"
+      ],
+      "insights": [
+        "HR 18.7% above 138 \u2014 concerning",
+        "Protein ~62g \u2014 marginal"
+      ],
+      "flags": [
+        "Max HR above 138 pattern continues"
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "file": "logs/2026-07-15.md",
+      "session_count": 1,
+      "summary": "No gym (woke late). 15k steps. Light food day ~1,070 cal. Deficit ~780.",
+      "mood_arc": "mild deflation",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": false,
+        "run": false,
+        "steps_15k": true,
+        "calories_under_1200": true,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "protein neglect on no-gym day"
+      ],
+      "insights": [
+        "Protein only 45g \u2014 classic no-gym protein drop"
+      ],
+      "flags": [
+        "Add second whey on no-gym days"
+      ]
+    },
+    {
+      "date": "2026-07-16",
+      "file": "logs/2026-07-16.md",
+      "session_count": 2,
+      "summary": "Gym #487 Push B (62min, 428cal, 0 PRs). 12,800 steps. Deficit ~920.",
+      "mood_arc": "steady",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": true,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "streak 3 days gym"
+      ],
+      "insights": [
+        "3rd consecutive gym day post-Munnar"
+      ],
+      "flags": [
+        "Max HR 154, 10.6% above 138"
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "file": "logs/2026-07-17.md",
+      "session_count": 3,
+      "summary": "HealthU+ weigh-in: 78.85kg (\u22121kg), muscle \u22120.7kg \u26a0\ufe0f. Gym #488 (84min, 639cal). 20k steps. Deficit ~1,394.",
+      "mood_arc": "motivated but concerned about muscle loss",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": true,
+        "calories_under_1200": true,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "muscle loss crisis",
+        "body composition alarm",
+        "high deficit day"
+      ],
+      "insights": [
+        "Total muscle lost since Apr 25: \u22122.5 kg",
+        "Weight down 1kg but muscle loss continues",
+        "Max HR 166 \u2014 highest ever"
+      ],
+      "flags": [
+        "CRITICAL: muscle mass 52.6kg, down from 55.1kg at baseline",
+        "MAX HR 166 \u2014 NPDR danger",
+        "Book dilated eye exam urgently"
+      ]
+    },
+    {
+      "date": "2026-07-18",
+      "file": "logs/2026-07-18.md",
+      "session_count": 2,
+      "summary": "Gym Pull ++ (#488 or new, 94min, 745cal, 7 PRs). Mini date wife. 10k steps.",
+      "mood_arc": "positive \u2014 7 PRs, wife connection",
+      "goals_touched": [
+        "health",
+        "social"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": false,
+        "calories_under_1200": true,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "PR day",
+        "relationship investment",
+        "max HR crisis"
+      ],
+      "insights": [
+        "7 PRs \u2014 strongest session in weeks",
+        "Max HR 167 \u2014 critical NPDR flag",
+        "Mini date = healthy marriage investment"
+      ],
+      "flags": [
+        "MAX HR 167 \u2014 highest ever. NPDR risk is real. Structured exhale protocol needed urgently."
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "file": "logs/2026-07-19.md",
+      "session_count": 2,
+      "summary": "Party night (2 pegs whiskey, prawns, kabab). No gym. CLAUDE.md 7-step exercise protocol added.",
+      "mood_arc": "pragmatic \u2014 planning offset not collapsing",
+      "goals_touched": [
+        "health",
+        "social"
+      ],
+      "habits": {
+        "gym": false,
+        "run": false,
+        "steps_15k": null,
+        "calories_under_1200": null,
+        "kriya": null,
+        "weed": false,
+        "parents_called": null
+      },
+      "themes": [
+        "social event \u2014 managed",
+        "no collapse"
+      ],
+      "insights": [
+        "Party = moderate. Offset mindset instead of guilt-spiral. Progress vs previous collapses."
+      ],
+      "flags": [
+        "Prawns = uric acid risk (one-off manageable)"
+      ]
+    },
+    {
+      "date": "2026-07-20",
+      "file": "logs/2026-07-20.md",
+      "session_count": 2,
+      "summary": "Rest day (conscious choice). 5km walk, 21k steps. Deficit only ~285 cal. Parathas+samosas snack block.",
+      "mood_arc": "relaxed, not collapsed",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": false,
+        "run": false,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": false,
+        "parents_called": null
+      },
+      "themes": [
+        "conscious rest vs collapse",
+        "snack block pattern"
+      ],
+      "insights": [
+        "Deliberate rest is different from collapse \u2014 PJ chose this",
+        "Air-fried samosas = better choice than fried"
+      ],
+      "flags": [
+        "Low deficit day (285) \u2014 needs gym tomorrow"
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "file": "logs/2026-07-21.md",
+      "session_count": 3,
+      "summary": "Gym #489 Push Heavy A (63min, 409cal, 3 PRs). 15k steps. Deficit ~1,209. Moong dal chilla + rice paper chicken.",
+      "mood_arc": "steady, metabolic thinking developing",
+      "goals_touched": [
+        "health"
+      ],
+      "habits": {
+        "gym": true,
+        "run": false,
+        "steps_15k": true,
+        "calories_under_1200": true,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": [
+        "streak rebuilding",
+        "smart food choices",
+        "HR improvement"
+      ],
+      "insights": [
+        "HR 8.2% above 138 \u2014 down from 25.9% on Jul 18",
+        "Moong dal chilla = excellent choice",
+        "5/7 days active this week"
+      ],
+      "flags": [
+        "Overhead cable tricep extension missed \u2014 needs makeup"
+      ]
+    }
+  ,
+    {
+      "date": "2026-08-01",
+      "file": "logs/2026-08-01.md",
+      "session_count": 1,
+      "summary": "Saturday. BF: hung curd sandwich+4 egg whites. Lunch: homemade air-fried burger+fries. Dinner: 3 pyaz paratha. 20k steps. Total 1,737cal, 219g carbs 🔴, deficit ~188cal.",
+      "mood_arc": "Social Saturday, relaxed reporting",
+      "goals_touched": ["health"],
+      "habits": {
+        "gym": false,
+        "run": false,
+        "steps_15k": true,
+        "calories_under_1200": false,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": ["weekend collapse pattern", "carb stacking", "high NEAT"],
+      "insights": ["20k steps saved deficit from being negative", "paratha+burger = 155g carbs in 2 meals", "3rd consecutive Saturday erasure pattern"],
+      "flags": ["HealthU+ weigh-in overdue", "Weed/kriya status unknown", "Jul 30+31 logs missing"]
+    },
+    {
+      "date": "2026-08-02",
+      "file": "logs/2026-08-02.md",
+      "session_count": 1,
+      "summary": "Sunday. Full low-carb diet plan designed: 7 core dishes, 100-120g carbs, zero dinner carbs, travel sections, hobby schedule. Research: 22 RCT sources. NPDR early worsening paradox flagged. Pre-meal whey protocol established.",
+      "mood_arc": "Highly motivated, systematic, proactive — NPDR diagnosis catalyst",
+      "goals_touched": ["health", "vision"],
+      "habits": {
+        "gym": null,
+        "run": null,
+        "steps_15k": null,
+        "calories_under_1200": null,
+        "kriya": null,
+        "weed": null,
+        "parents_called": null
+      },
+      "themes": ["system redesign", "diabetes reversal intent", "NPDR seriousness", "evidence-based planning"],
+      "insights": ["First time PJ asked for complete system redesign vs incremental adjustments", "Eye doctor confirmation of NPDR raised stakes from abstract to visceral", "Requested hobby schedule alongside diet = holistic thinking breakthrough"],
+      "flags": ["HealthU+ weigh-in CRITICAL — overdue since Jul 17", "Doctor appointment needed: Dr. Vishwanath + Sankara Eye Hospital", "Blood panel due: LDL/HDL/TG + urine ACR + uric acid + Vitamin D", "Antihypertensive class unknown — ask doctor"]
+    }
+  ]
+}

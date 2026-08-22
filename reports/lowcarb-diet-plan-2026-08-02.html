@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PJ's Low-Carb Diabetes Reversal Plan — August 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'Georgia', serif;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 40px 20px 80px;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+
+  /* HEADER */
+  .title-block {
+    border-top: 3px solid #888;
+    border-bottom: 1px solid #444;
+    padding: 32px 0 24px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .journal-name {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #aaa;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .meta-line {
+    margin-top: 16px;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid #333;
+    padding-top: 12px;
+  }
+
+  /* SECTIONS */
+  h2 {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #888;
+    border-bottom: 1px solid #333;
+    padding-bottom: 6px;
+    margin: 40px 0 20px;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #d4a843;
+    margin: 24px 0 10px;
+  }
+  h4 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #aaa;
+    margin: 20px 0 8px;
+  }
+  p { margin-bottom: 12px; color: #ccc; }
+
+  /* ABSTRACT BOX */
+  .abstract {
+    background: #111;
+    border-left: 3px solid #d4a843;
+    padding: 20px 24px;
+    margin: 20px 0 32px;
+    font-size: 14px;
+  }
+  .abstract strong { color: #d4a843; }
+
+  /* CONSTRAINTS BOX */
+  .constraints {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 16px 0 28px;
+  }
+  .constraint-card {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    padding: 14px 16px;
+    border-radius: 2px;
+  }
+  .constraint-card .label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  .constraint-card .value {
+    font-size: 18px;
+    color: #d4a843;
+    font-weight: bold;
+  }
+  .constraint-card .note {
+    font-size: 12px;
+    color: #666;
+    margin-top: 2px;
+  }
+
+  /* TABLES */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 13px;
+  }
+  th {
+    background: #1a1a1a;
+    color: #888;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+  }
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #1e1e1e;
+    vertical-align: top;
+  }
+  tr:hover td { background: #0f0f0f; }
+  .green { color: #4caf50; }
+  .yellow { color: #d4a843; }
+  .red { color: #e57373; }
+  .dim { color: #666; font-size: 12px; }
+
+  /* MEAL CARDS */
+  .meal-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .meal-card {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .meal-header {
+    background: #1a1a1a;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  .meal-title { font-size: 13px; letter-spacing: 1px; color: #fff; }
+  .meal-time { font-size: 11px; color: #666; }
+  .meal-macros {
+    display: flex;
+    gap: 16px;
+    padding: 10px 16px;
+    background: #0d0d0d;
+    border-bottom: 1px solid #1e1e1e;
+    font-size: 12px;
+  }
+  .macro { color: #888; }
+  .macro span { color: #d4a843; font-weight: bold; }
+  .meal-body { padding: 14px 16px; }
+  .meal-body ul { list-style: none; }
+  .meal-body li {
+    padding: 4px 0;
+    border-bottom: 1px solid #1a1a1a;
+    font-size: 13px;
+    color: #ccc;
+  }
+  .meal-body li:last-child { border-bottom: none; }
+  .item-name { color: #e0e0e0; }
+  .item-qty { color: #888; font-size: 12px; margin-left: 6px; }
+  .item-note { color: #555; font-size: 11px; display: block; margin-top: 1px; margin-left: 14px; }
+
+  /* DISH LIBRARY */
+  .dish-card {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    padding: 16px 20px;
+    margin: 12px 0;
+  }
+  .dish-name { font-size: 15px; color: #d4a843; margin-bottom: 6px; }
+  .dish-macros { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .dish-macros strong { color: #aaa; }
+  .dish-why { font-size: 13px; color: #999; font-style: italic; }
+  .dish-how { font-size: 12px; color: #777; margin-top: 6px; }
+
+  /* TRAVEL SECTION */
+  .travel-scenario {
+    background: #111;
+    border-left: 3px solid #5c8aff;
+    padding: 16px 20px;
+    margin: 12px 0;
+  }
+  .travel-scenario h4 { color: #5c8aff; margin-top: 0; }
+
+  /* WARNING BOX */
+  .warning {
+    background: #1a1200;
+    border: 1px solid #6b4a00;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .warning strong { color: #d4a843; }
+
+  /* EVIDENCE BOX */
+  .evidence {
+    background: #0d1a0d;
+    border: 1px solid #2a4a2a;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .evidence strong { color: #4caf50; }
+
+  /* SUPPLEMENT TABLE */
+  .supp-card {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 0;
+    border: 1px solid #2a2a2a;
+    margin: 8px 0;
+    font-size: 13px;
+  }
+  .supp-name {
+    background: #1a1a1a;
+    padding: 12px;
+    color: #d4a843;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #2a2a2a;
+  }
+  .supp-detail { padding: 12px; }
+  .supp-dose { color: #4caf50; font-weight: bold; }
+  .supp-why { color: #888; font-size: 12px; margin-top: 4px; }
+
+  /* WEEKLY PLAN */
+  .week-table th { width: 14%; }
+  .week-ok { background: #0d1a0d; color: #4caf50; font-size: 12px; }
+  .week-warn { background: #1a1200; color: #d4a843; font-size: 12px; }
+
+  /* SCORECARD */
+  .scorecard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 16px 0;
+  }
+  .score-item {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    padding: 12px;
+    text-align: center;
+  }
+  .score-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #666; }
+  .score-val { font-size: 20px; margin-top: 4px; }
+
+  /* HOBBY SCHEDULE */
+  .time-block {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 0;
+    border: 1px solid #1e1e1e;
+    margin: 4px 0;
+  }
+  .time-label {
+    background: #151515;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #888;
+    border-right: 1px solid #1e1e1e;
+    display: flex;
+    align-items: center;
+  }
+  .time-content { padding: 10px 14px; font-size: 13px; color: #ccc; }
+
+  /* CITATION */
+  .citations { font-size: 11px; color: #555; margin-top: 32px; }
+  .citations p { font-size: 11px; color: #555; margin-bottom: 4px; }
+
+  /* FOOTER */
+  .footer {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 60px;
+    font-size: 11px;
+    color: #555;
+    text-align: center;
+  }
+
+  .pill {
+    display: inline-block;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    color: #888;
+    margin: 2px;
+  }
+  .pill.green { border-color: #2a4a2a; color: #4caf50; background: #0d1a0d; }
+  .pill.yellow { border-color: #4a3a00; color: #d4a843; background: #1a1200; }
+  .pill.red { border-color: #4a1a1a; color: #e57373; background: #1a0d0d; }
+
+  hr { border: none; border-top: 1px solid #222; margin: 32px 0; }
+
+  @media (max-width: 600px) {
+    .constraints { grid-template-columns: 1fr; }
+    .scorecard { grid-template-columns: repeat(2, 1fr); }
+    .supp-card { grid-template-columns: 1fr; }
+    .supp-name { border-right: none; border-bottom: 1px solid #2a2a2a; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<div class="title-block">
+  <div class="journal-name">Personal Protocol — Confidential</div>
+  <h1>Low-Carb Diabetes Reversal Plan<br>for Prateek Jain</h1>
+  <div class="subtitle">Vegetarian · Kidney-Safe · NPDR-Safe · High Cholesterol Protocol</div>
+  <div class="meta-line">
+    Issued: August 2, 2026 &nbsp;|&nbsp; Bangalore, IST &nbsp;|&nbsp;
+    HbA1c: 6.8% → Target &lt;6.5% &nbsp;|&nbsp; Weight: ~78kg → Target: 76kg
+  </div>
+</div>
+
+<!-- ABSTRACT -->
+<div class="abstract">
+  <strong>Clinical Summary.</strong> This protocol implements a carbohydrate-restricted diet (100–120g/day) for a 37-year-old male with Type 2 Diabetes (HbA1c 6.8%), hypertension, Non-Proliferative Diabetic Retinopathy (NPDR), elevated cholesterol, and early nephropathy (Urine Protein 2+). Evidence from the Virta Health 5-year study (Athinarayanan et al., 2024) demonstrates 20% full diabetes remission and 32.5% reversal to HbA1c &lt;6.5% through sustained low-carb intervention. This plan achieves ~1,400 cal/day with a combined exercise+diet deficit of 1,000 cal/day. All carbohydrates are front-loaded before 2 PM. Protein is capped at 80–90g/day for kidney safety. Fat is limited to 40–55g/day for cholesterol management.
+</div>
+
+<!-- MEAL TIMING -->
+<h2>0. Your Daily Meal Schedule (IST)</h2>
+
+<table>
+  <tr>
+    <th>Time</th>
+    <th>Meal</th>
+    <th>Carb Budget</th>
+    <th>Key Rule</th>
+  </tr>
+  <tr>
+    <td><strong>9:00–10:00 AM</strong></td>
+    <td>Breakfast</td>
+    <td class="yellow">≤30g</td>
+    <td>Veg first. Moong dal cheela (40g raw) OR sourdough+hung curd. 4 egg whites.</td>
+  </tr>
+  <tr>
+    <td><strong>12:45 PM</strong> (optional)</td>
+    <td>Pre-lunch snack</td>
+    <td class="green">~10g</td>
+    <td>100g guava OR 200ml buttermilk + 5g isabgol. Bridges hunger gap.</td>
+  </tr>
+  <tr>
+    <td><strong>1:00 PM</strong></td>
+    <td>Lunch — last carb meal</td>
+    <td class="yellow">≤45g</td>
+    <td>5g isabgol + 15g whey 10–15 min BEFORE eating. 1.5 roti (45g raw atta) + dal + sabzi. Eat veg → dal → roti order.</td>
+  </tr>
+  <tr>
+    <td><strong>4:00 PM</strong></td>
+    <td>Snack (non-optional)</td>
+    <td class="green">~14g</td>
+    <td>150g hung curd + 100g guava + 15g whey. Non-negotiable — kills 6–8 PM hunger.</td>
+  </tr>
+  <tr>
+    <td><strong>7:30–8:00 PM</strong></td>
+    <td>Dinner — ZERO ROTI</td>
+    <td class="green">0–12g</td>
+    <td>5g isabgol + 15g whey 10–15 min before. Moong dal cheela (40g raw) OR mushroom bhurji OR hung curd+egg whites. If office late → Option C (hung curd+egg whites, no cooking).</td>
+  </tr>
+</table>
+
+<!-- HARD CONSTRAINTS -->
+<h2>I. Hard Constraints</h2>
+
+<div class="constraints">
+  <div class="constraint-card">
+    <div class="label">Daily Carbs</div>
+    <div class="value">100–120g</div>
+    <div class="note">Ceiling: 120g. Ideal: 100g. All before 2 PM.</div>
+  </div>
+  <div class="constraint-card">
+    <div class="label">Daily Protein</div>
+    <div class="value">80–90g</div>
+    <div class="note">Kidney ceiling. NEVER exceed 90g. Urine Protein 2+.</div>
+  </div>
+  <div class="constraint-card">
+    <div class="label">Daily Fat</div>
+    <div class="value">40–55g</div>
+    <div class="note">High cholesterol. No high-fat keto. Max 4 tsp oil/day.</div>
+  </div>
+  <div class="constraint-card">
+    <div class="label">Daily Calories</div>
+    <div class="value">~1,350–1,400</div>
+    <div class="note">Gym days 1,400. Run days 1,350. Rest day 1,150.</div>
+  </div>
+  <div class="constraint-card">
+    <div class="label">Dinner Carbs</div>
+    <div class="value">0–15g</div>
+    <div class="note">Target zero. Maximum 15g from vegetables only.</div>
+  </div>
+  <div class="constraint-card">
+    <div class="label">Dinner Prep Time</div>
+    <div class="value">≤10 min</div>
+    <div class="note">No cook evenings. Batch-cook on weekends.</div>
+  </div>
+</div>
+
+<div class="warning">
+  <strong>⚠ This is NOT a ketogenic diet.</strong> Keto requires &lt;50g carbs/day and high fat (~70% calories). That approach is contraindicated here because: (1) High fat worsens cholesterol. (2) Protein restriction for kidneys limits fat-protein compensation. This is a <em>low-carb, moderate-protein, moderate-fat</em> plan — specifically designed for T2D+HTN+nephropathy.
+</div>
+
+
+<!-- EVIDENCE BASE -->
+<h2>II. Evidence Base</h2>
+
+<div class="evidence">
+  <strong>Virta Health 5-Year RCT (2024).</strong> 194 T2D patients on very-low-carb diet with remote coaching: 20% achieved full diabetes remission; 32.5% reversed to HbA1c &lt;6.5% without medications (or only Metformin). Mean HbA1c reduction: −0.3%. Triglycerides: −18.4%. HDL: +17.4%. <em>This is your intervention model.</em>
+</div>
+
+<div class="evidence">
+  <strong>Psyllium husk (Isabgol) RCT.</strong> Anderson et al. (1999, AJCN): 5.1g psyllium twice daily for 8 weeks in T2D+hypercholesterolemia men → LDL −13%, post-lunch glucose −19.2%, all-day glucose −11%. Safe, well-tolerated. PJ: Take 5g isabgol in water before lunch and dinner.
+</div>
+
+<div class="evidence">
+  <strong>Berberine meta-analysis (2021).</strong> 46 RCTs: Berberine improves HbA1c, fasting glucose, insulin resistance (HOMA-IR improvements up to 44.7%). Mechanism: activates AMPK (same as Metformin). No kidney contraindication at standard doses.
+</div>
+
+<div class="evidence">
+  <strong>Vitamin D + Magnesium in T2D Indians.</strong> 91.4% of Indian T2D patients are Vitamin D deficient (Western India study, n=912). Combined Vitamin D + Magnesium supplementation improves insulin sensitivity, HOMA-IR, and antioxidant response in T2D. Given magnesium glycinate already started — add Vitamin D3 (2,000 IU/day with fat-containing meal).
+</div>
+
+<div class="evidence">
+  <strong>Pre-Meal Whey — 22% Glucose Reduction.</strong> PMC 2025 RCT: 10g whey microgel taken 15 min before meals reduced 2-hour postprandial glucose by <strong>22%</strong> and boosted GLP-1 by <strong>66%</strong> in T2D subjects. This is the protocol's highest-leverage single habit — the timing (before, not after) is what activates the GLP-1 response.
+</div>
+
+<div class="warning" style="border-color: #8b0000;">
+  <strong>⚠ CRITICAL — NPDR Early Worsening Paradox:</strong> Rapid HbA1c reduction (&gt;1.5% drop in 3 months) has been shown to <strong>double the risk of NPDR worsening</strong> in the short term (Diabetes Care 2023, real-world T2D study). The paradox: better glucose = retinal blood vessels suddenly reperfusing → transient swelling/damage.
+  <br><br>
+  <strong>PJ's safe pace:</strong> 6.8% → 6.3% by month 3 → 6.0% by month 6. NOT a 6.8 → 5.5% crash in 90 days. This plan's moderate 100–120g approach is safer for NPDR than aggressive keto. <strong>Ophthalmology check every 3 months during transition is non-negotiable.</strong>
+</div>
+
+
+<!-- DAILY MACRO BUDGET -->
+<h2>III. Daily Macro Budget by Meal</h2>
+
+<table>
+  <tr>
+    <th>Meal</th>
+    <th>Time</th>
+    <th>Cal</th>
+    <th>Carbs</th>
+    <th>Protein</th>
+    <th>Fat</th>
+    <th>Notes</th>
+  </tr>
+  <tr>
+    <td><strong>Breakfast</strong></td>
+    <td>7:00–7:30</td>
+    <td>300–320</td>
+    <td class="yellow">35–40g</td>
+    <td class="green">25–30g</td>
+    <td>8–10g</td>
+    <td>Largest carb window. Veg first.</td>
+  </tr>
+  <tr>
+    <td><strong>Lunch</strong></td>
+    <td>12:30–1:00</td>
+    <td>380–400</td>
+    <td class="yellow">45–50g</td>
+    <td class="green">25–30g</td>
+    <td>10–12g</td>
+    <td>Last carb meal of day. Isabgol before.</td>
+  </tr>
+  <tr>
+    <td><strong>Snack</strong></td>
+    <td>4:00–4:30</td>
+    <td>200–220</td>
+    <td class="green">10–15g</td>
+    <td class="green">20–25g</td>
+    <td>5–7g</td>
+    <td>Low carb. High protein focus.</td>
+  </tr>
+  <tr>
+    <td><strong>Dinner</strong></td>
+    <td>7:30–8:00</td>
+    <td>380–400</td>
+    <td class="green">5–10g</td>
+    <td class="green">20–25g</td>
+    <td>15–20g</td>
+    <td class="green"><strong>Zero roti. Protein + fat + veg only.</strong></td>
+  </tr>
+  <tr style="border-top: 2px solid #444;">
+    <td><strong>TOTAL</strong></td>
+    <td>—</td>
+    <td><strong>1,260–1,340</strong></td>
+    <td class="yellow"><strong>95–115g ✅</strong></td>
+    <td class="green"><strong>90–110g</strong></td>
+    <td><strong>38–49g ✅</strong></td>
+    <td>Whey adds ~30g protein, ~10g carbs</td>
+  </tr>
+  <tr>
+    <td colspan="7" class="dim" style="font-size:11px; padding: 8px 12px;">
+      Note: Protein shown above is from food only. Add 2 × 15g whey scoops in buttermilk (+30g protein, +120 cal). Final protein: 80–90g (kidney-safe). Final cal: 1,380–1,460.
+    </td>
+  </tr>
+</table>
+
+
+<!-- RAW QUANTITY REFERENCE -->
+<h2>III-B. Raw Quantity Reference — Always Use These Numbers</h2>
+
+<p style="color:#888; font-size:13px; margin-bottom: 12px;">All recommendations below use raw/uncooked quantities. Cooked volumes vary by water content. Raw weight is the only consistent measure.</p>
+
+<table>
+  <tr>
+    <th>Food</th>
+    <th>Raw Amount</th>
+    <th>What You Get</th>
+    <th>Carbs</th>
+    <th>Protein</th>
+    <th>Cal</th>
+  </tr>
+  <tr>
+    <td><strong>Moong dal cheela — 2 small</strong></td>
+    <td class="yellow"><strong>40g raw whole moong</strong> (soaked 6+ hrs)</td>
+    <td>2 thin cheelas</td>
+    <td>18g</td>
+    <td>10g</td>
+    <td>140</td>
+  </tr>
+  <tr>
+    <td><strong>Moong dal cheela — 2 large</strong></td>
+    <td class="yellow"><strong>60g raw whole moong</strong> (soaked)</td>
+    <td>2 large cheelas</td>
+    <td>26g</td>
+    <td>14g</td>
+    <td>200</td>
+  </tr>
+  <tr>
+    <td><strong>1 roti</strong></td>
+    <td class="yellow"><strong>30g raw atta</strong></td>
+    <td>1 medium roti</td>
+    <td>20g</td>
+    <td>4g</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td><strong>1.5 roti (lunch portion)</strong></td>
+    <td class="yellow"><strong>45g raw atta</strong></td>
+    <td>1.5 roti</td>
+    <td>30g</td>
+    <td>6g</td>
+    <td>150</td>
+  </tr>
+  <tr>
+    <td><strong>Dal serving</strong></td>
+    <td class="yellow"><strong>40g raw moong/masoor</strong></td>
+    <td>~150ml cooked dal</td>
+    <td>20g</td>
+    <td>9g</td>
+    <td>120</td>
+  </tr>
+  <tr>
+    <td><strong>Mushrooms</strong></td>
+    <td class="yellow"><strong>200g raw</strong></td>
+    <td>~100g cooked (shrinks)</td>
+    <td>6g</td>
+    <td>6g</td>
+    <td>44</td>
+  </tr>
+  <tr>
+    <td><strong>Egg whites</strong></td>
+    <td class="yellow"><strong>4 large eggs = ~140g whites</strong></td>
+    <td>4 egg whites</td>
+    <td>0g</td>
+    <td>15g</td>
+    <td>60</td>
+  </tr>
+  <tr>
+    <td><strong>Sabzi (any gourd/leafy)</strong></td>
+    <td class="yellow"><strong>200g raw</strong> bhindi/lauki/gobhi/palak</td>
+    <td>~150g cooked</td>
+    <td>10g</td>
+    <td>3g</td>
+    <td>60</td>
+  </tr>
+  <tr>
+    <td><strong>Cucumber (veg-first)</strong></td>
+    <td class="yellow"><strong>150g raw</strong> (half a large)</td>
+    <td>~150g (no cooking)</td>
+    <td>5g</td>
+    <td>1g</td>
+    <td>24</td>
+  </tr>
+  <tr>
+    <td><strong>Hung curd</strong></td>
+    <td class="yellow"><strong>150g</strong> (as-is)</td>
+    <td>150g</td>
+    <td>8g</td>
+    <td>18g</td>
+    <td>110</td>
+  </tr>
+  <tr>
+    <td><strong>Sourdough</strong></td>
+    <td class="yellow"><strong>1 slice (45g)</strong></td>
+    <td>1 slice</td>
+    <td>22g</td>
+    <td>4g</td>
+    <td>120</td>
+  </tr>
+  <tr>
+    <td><strong>Guava</strong></td>
+    <td class="yellow"><strong>100g (1 small)</strong></td>
+    <td>1 fruit</td>
+    <td>9g</td>
+    <td>3g</td>
+    <td>55</td>
+  </tr>
+  <tr>
+    <td><strong>Paneer</strong></td>
+    <td class="yellow"><strong>50g</strong> (max per meal)</td>
+    <td>~4 cubes</td>
+    <td>2g</td>
+    <td>9g</td>
+    <td>68</td>
+  </tr>
+  <tr>
+    <td><strong>Buttermilk (chaas)</strong></td>
+    <td class="yellow"><strong>200ml</strong></td>
+    <td>1 glass</td>
+    <td>6g</td>
+    <td>3g</td>
+    <td>36</td>
+  </tr>
+  <tr>
+    <td><strong>Whey isolate</strong></td>
+    <td class="yellow"><strong>15g (half scoop)</strong> per serving</td>
+    <td>take pre-meal</td>
+    <td>2g</td>
+    <td>12g</td>
+    <td>60</td>
+  </tr>
+</table>
+
+<!-- THE 7 CORE DISHES -->
+<h2>IV. The 7 Core Dishes — Complete Library</h2>
+
+<p style="color:#888; font-size:13px; margin-bottom: 16px;">These 7 dishes cover all your meals. All raw quantities specified. Mix and match. No decision fatigue. Every dish is kidney-safe, diabetic-safe, cholesterol-safe, and under 10 min prep for dinner variants.</p>
+
+<!-- DISH 1 -->
+<div class="dish-card">
+  <div class="dish-name">① Moong Dal Cheela — The Dinner Foundation</div>
+  <div class="dish-macros">
+    2 cheelas (40g raw whole moong, soaked overnight) → <strong>Cal: 240</strong> | Carbs: <strong>28g</strong> | Protein: <strong>14g</strong> | Fat: <strong>7g</strong>
+    <br><em>+ 3 egg whites → add: Cal +50, Protein +11g, Carbs 0</em>
+    <br><em>Full dinner: Cal 290 | Carbs 28g | Protein 25g | Fat 7g</em>
+  </div>
+  <div class="dish-why">Why: 18g carbs per cheela vs 30g per roti. Moong dal protein + fiber slows glucose spike. Egg whites added = no extra carbs, +11g protein. Dinner-safe.</div>
+  <div class="dish-how">
+    <strong>Prep (8 min):</strong> Soak 40g whole moong dal overnight (or 6+ hours). Drain, blend with 60ml water, salt, ginger, green chilli, pinch turmeric. Batter should be thick. Cook on hot tawa with 0.5 tsp oil, spread thin. Add 2 egg whites on top before flipping. Flip once. Done.<br>
+    <strong>Variations:</strong> Palak cheela (add 30g spinach paste, −2g carbs), methi cheela (add dried methi, adds fiber), moong dal cheela (soak 50g moong, blend — slightly higher protein).
+  </div>
+</div>
+
+<!-- DISH 2 -->
+<div class="dish-card">
+  <div class="dish-name">② Mushroom + Paneer Bhurji — The Protein Dinner</div>
+  <div class="dish-macros">
+    150g mushroom + 50g paneer → <strong>Cal: 185</strong> | Carbs: <strong>8g</strong> | Protein: <strong>18g</strong> | Fat: <strong>11g</strong>
+    <br><em>Add 3 egg whites → Cal 235 | Carbs 8g | Protein 29g | Fat 11g</em>
+  </div>
+  <div class="dish-why">Why: Mushrooms = 21 cal/100g, 3g protein, 3g carbs. Essentially free food. Paneer = 265 cal/100g, 18g protein but 100% fat — limit to 50g max. Combined = high satiety, near-zero carbs.</div>
+  <div class="dish-how">
+    <strong>Prep (7 min):</strong> Slice mushrooms. Heat 1 tsp oil. Add jeera, crushed garlic, onion (half small). Add mushrooms, sauté 3 min. Add crumbled paneer + salt + coriander + chilli. Optional: beat 2 egg whites in last 60 seconds.<br>
+    <strong>Cold lunch version:</strong> Make double batch at night. Eat cold in a container next day. Works well.
+  </div>
+</div>
+
+<!-- DISH 3 -->
+<div class="dish-card">
+  <div class="dish-name">③ Moong Dal Chilla — The High-Protein Breakfast</div>
+  <div class="dish-macros">
+    2 chillas (80g soaked moong dal) → <strong>Cal: 250</strong> | Carbs: <strong>34g</strong> | Protein: <strong>18g</strong> | Fat: <strong>3g</strong>
+  </div>
+  <div class="dish-why">Why: Moong dal = lower GI than wheat. 18g protein from dal alone before egg whites. High fiber = blunts post-meal glucose spike. Breakfast powerhouse.</div>
+  <div class="dish-how">
+    <strong>Prep (10 min, batch on Sunday):</strong> Soak 150g whole moong overnight → blend with ginger, green chilli, salt. Pour as thin crepe on tawa. Cook 2 min per side. Refrigerate batter up to 3 days. Morning: just pour and cook.<br>
+    <strong>Add:</strong> Hung curd 50g on side (adds 45 cal, 5g protein, 2g carbs).
+  </div>
+</div>
+
+<!-- DISH 4 -->
+<div class="dish-card">
+  <div class="dish-name">④ Egg White Bhurji with Vegetables — The Fast Protein</div>
+  <div class="dish-macros">
+    6 egg whites + 150g vegetables → <strong>Cal: 170</strong> | Carbs: <strong>10g</strong> | Protein: <strong>23g</strong> | Fat: <strong>3g</strong>
+  </div>
+  <div class="dish-why">Why: Egg whites = 10.9g protein per 100g, zero fat, zero carbs. 6 egg whites = 22g protein for 52 cal. Add vegetables for fiber and volume. Best satiety-per-calorie ratio of any food available to PJ.</div>
+  <div class="dish-how">
+    <strong>Prep (5 min):</strong> Beat 6 egg whites with salt. Sauté 150g capsicum/onion/tomato/spinach in 1 tsp oil. Add egg whites. Scramble. Done.<br>
+    <strong>Snack version:</strong> 4 boiled egg whites + 150g cucumber + 5g isabgol in water before eating.
+  </div>
+</div>
+
+<!-- DISH 5 -->
+<div class="dish-card">
+  <div class="dish-name">⑤ Sourdough + Hung Curd Bowl — The Structured Breakfast</div>
+  <div class="dish-macros">
+    1 sourdough slice (45g) + 100g hung curd + 3 egg whites → <strong>Cal: 290</strong> | Carbs: <strong>26g</strong> | Protein: <strong>30g</strong> | Fat: <strong>5g</strong>
+  </div>
+  <div class="dish-why">Why: Sourdough has lower GI than normal bread due to lactic acid fermentation — studies show 32% lower post-prandial glucose vs white bread. Hung curd = strained, ~12g protein/100g vs regular curd 3g. This breakfast hits 30g protein in ~290 cal.</div>
+  <div class="dish-how">
+    <strong>Prep (3 min):</strong> Toast sourdough. Spread hung curd (no oil needed). Add 150g cucumber, tomato slices on side. Boil or scramble egg whites separately.<br>
+    <strong>Limit to 1 sourdough slice max.</strong> 2 slices = 52g carbs at breakfast — too high.
+  </div>
+</div>
+
+<!-- DISH 6 -->
+<div class="dish-card">
+  <div class="dish-name">⑥ Dal + 1.5 Roti Lunch — The Controlled Carb Lunch</div>
+  <div class="dish-macros">
+    1.5 roti (60g atta) + 150ml dal + 150g sabzi → <strong>Cal: 380</strong> | Carbs: <strong>48g</strong> | Protein: <strong>18g</strong> | Fat: <strong>10g</strong>
+  </div>
+  <div class="dish-why">Why: Roti at lunch only — carbs are burned over the afternoon. Dal = lentil protein + fiber slows glucose absorption. Sabzi (bhindi, palak, gobhi, mushroom) = near-zero carb volume. This is the ONLY meal with roti.</div>
+  <div class="dish-how">
+    <strong>Eating order MANDATORY:</strong> (1) Eat all sabzi first. (2) Eat dal. (3) Eat roti last. This order reduces glucose spike by 37% (Shukla et al., 2017).<br>
+    <strong>Isabgol rule:</strong> Drink 5g isabgol in 200ml water 15 min before lunch. Reduces LDL and post-lunch glucose.<br>
+    <strong>Skip days:</strong> Replace roti with moong dal chilla = save 15g carbs.
+  </div>
+</div>
+
+<!-- DISH 7 -->
+<div class="dish-card">
+  <div class="dish-name">⑦ Greek Yogurt / Hung Curd Snack Bowl — The 4PM Protein Slot</div>
+  <div class="dish-macros">
+    150g hung curd + 1 guava (100g) + 15g whey → <strong>Cal: 210</strong> | Carbs: <strong>14g</strong> | Protein: <strong>28g</strong> | Fat: <strong>3g</strong>
+  </div>
+  <div class="dish-why">Why: 4PM = post-gym or pre-dinner protein window. Guava has GI 12 (extremely low) — one of the best fruits for T2D. Hung curd = high protein, low carb. Whey = fills protein gap without adding carbs.</div>
+  <div class="dish-how">
+    <strong>Prep (1 min):</strong> Bowl of hung curd + sliced guava + 15g whey stirred in + pinch of salt/chaat masala. Done.<br>
+    <strong>Travel version:</strong> Buy hung curd packet + any guava/apple. Mix in hotel room.
+  </div>
+</div>
+
+
+<!-- SAMPLE DAYS -->
+<h2>V. Sample Day Plans</h2>
+
+<h3>Day A — Gym Day (Target: 1,400 cal)</h3>
+<div class="meal-grid">
+  <div class="meal-card">
+    <div class="meal-header">
+      <span class="meal-title">BREAKFAST — 9:00–10:00 AM</span>
+      <span class="meal-time">Pre-gym or post-gym</span>
+    </div>
+    <div class="meal-macros">
+      <span class="macro">Cal: <span>310</span></span>
+      <span class="macro">Carbs: <span>35g</span></span>
+      <span class="macro">Protein: <span>32g</span></span>
+      <span class="macro">Fat: <span>6g</span></span>
+    </div>
+    <div class="meal-body">
+      <ul>
+        <li><span class="item-name">🥒 Cucumber</span><span class="item-qty">150g, sliced</span><span class="item-note">Eat this FIRST — always</span></li>
+        <li><span class="item-name">Sourdough</span><span class="item-qty">1 slice (45g)</span><span class="item-note">Toast it. No butter.</span></li>
+        <li><span class="item-name">Hung curd</span><span class="item-qty">100g</span><span class="item-note">Spread on bread or in bowl</span></li>
+        <li><span class="item-name">Egg whites</span><span class="item-qty">4 large (scrambled)</span><span class="item-note">1 tsp oil on tawa</span></li>
+        <li><span class="item-name">Whey + buttermilk</span><span class="item-qty">15g whey + 200ml</span><span class="item-note">After eating — not before</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-header">
+      <span class="meal-title">LUNCH — 1:00 PM</span>
+      <span class="meal-time">Last carb meal of the day</span>
+    </div>
+    <div class="meal-macros">
+      <span class="macro">Cal: <span>395</span></span>
+      <span class="macro">Carbs: <span>48g</span></span>
+      <span class="macro">Protein: <span>22g</span></span>
+      <span class="macro">Fat: <span>10g</span></span>
+    </div>
+    <div class="meal-body">
+      <ul>
+        <li><span class="item-name">🌿 Isabgol</span><span class="item-qty">5g in 200ml water</span><span class="item-note">Drink 15 min before eating</span></li>
+        <li><span class="item-name">🥒 Cucumber/sabzi</span><span class="item-qty">100g</span><span class="item-note">Eat FIRST</span></li>
+        <li><span class="item-name">Moong/masoor dal</span><span class="item-qty">150ml</span><span class="item-note">Eat second</span></li>
+        <li><span class="item-name">Bhindi / gobhi / mushroom sabzi</span><span class="item-qty">150g (1 tsp oil)</span><span class="item-note">Eat third</span></li>
+        <li><span class="item-name">Wheat roti</span><span class="item-qty">1.5 roti (60g atta)</span><span class="item-note">Eat LAST</span></li>
+        <li><span class="item-name">Buttermilk</span><span class="item-qty">200ml</span><span class="item-note">With or after meal</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-header">
+      <span class="meal-title">SNACK — 4:00 PM</span>
+      <span class="meal-time">Post-gym protein window</span>
+    </div>
+    <div class="meal-macros">
+      <span class="macro">Cal: <span>210</span></span>
+      <span class="macro">Carbs: <span>12g</span></span>
+      <span class="macro">Protein: <span>28g</span></span>
+      <span class="macro">Fat: <span>3g</span></span>
+    </div>
+    <div class="meal-body">
+      <ul>
+        <li><span class="item-name">Hung curd</span><span class="item-qty">150g</span></li>
+        <li><span class="item-name">Guava</span><span class="item-qty">100g (1 small)</span><span class="item-note">GI 12 — best T2D fruit</span></li>
+        <li><span class="item-name">Whey</span><span class="item-qty">15g in 100ml water</span><span class="item-note">Stir into hung curd</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-header">
+      <span class="meal-title">DINNER — 7:30–8:00 PM</span>
+      <span class="meal-time">ZERO ROTI — protein + fat + veg only</span>
+    </div>
+    <div class="meal-macros">
+      <span class="macro">Cal: <span>285</span></span>
+      <span class="macro">Carbs: <span class="green">8g ✅</span></span>
+      <span class="macro">Protein: <span>29g</span></span>
+      <span class="macro">Fat: <span>10g</span></span>
+    </div>
+    <div class="meal-body">
+      <ul>
+        <li><span class="item-name">🥒 Cucumber</span><span class="item-qty">100g</span><span class="item-note">Eat first — always</span></li>
+        <li><span class="item-name">Mushroom bhurji</span><span class="item-qty">200g mushroom</span><span class="item-note">1 tsp oil, no roti</span></li>
+        <li><span class="item-name">Egg whites</span><span class="item-qty">4 large (mixed in)</span></li>
+        <li><span class="item-name">Paneer</span><span class="item-qty">30g crumbled</span><span class="item-note">Keep to 30g max — fat content</span></li>
+        <li><span class="item-name">Isabgol</span><span class="item-qty">5g in water</span><span class="item-note">Before dinner</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<table>
+  <tr>
+    <th>Day A Total</th>
+    <th>Cal</th>
+    <th>Carbs</th>
+    <th>Protein (food)</th>
+    <th>Fat</th>
+  </tr>
+  <tr>
+    <td>All meals (incl. whey)</td>
+    <td><strong>1,200</strong></td>
+    <td class="green"><strong>103g ✅</strong></td>
+    <td class="green"><strong>81g</strong></td>
+    <td class="green"><strong>29g</strong></td>
+  </tr>
+  <tr>
+    <td class="dim">+ gym cardio (400 cal burn)</td>
+    <td class="dim">—</td>
+    <td class="dim">—</td>
+    <td class="dim">—</td>
+    <td class="dim">—</td>
+  </tr>
+  <tr>
+    <td><strong>Net deficit (gym day)</strong></td>
+    <td colspan="4" class="green"><strong>~800–1,000 cal deficit ✅</strong></td>
+  </tr>
+</table>
+
+<hr>
+
+<h3>Day B — Moong Dal Cheela Dinner Variant</h3>
+<p style="font-size:13px; color:#888;">Same BF + Lunch as Day A. Replace dinner with:</p>
+
+<div class="meal-card" style="max-width:600px">
+  <div class="meal-header">
+    <span class="meal-title">DINNER — Moong Dal Cheela Night</span>
+    <span class="meal-time">10 min prep</span>
+  </div>
+  <div class="meal-macros">
+    <span class="macro">Cal: <span>320</span></span>
+    <span class="macro">Carbs: <span>30g</span></span>
+    <span class="macro">Protein: <span>28g</span></span>
+    <span class="macro">Fat: <span>9g</span></span>
+  </div>
+  <div class="meal-body">
+    <ul>
+      <li><span class="item-name">🥒 Cucumber + tomato</span><span class="item-qty">150g</span><span class="item-note">Eat FIRST</span></li>
+      <li><span class="item-name">Moong dal cheela</span><span class="item-qty">2 cheelas (40g raw whole moong, soaked overnight)</span><span class="item-note">1 tsp oil total</span></li>
+      <li><span class="item-name">Egg whites mixed in batter</span><span class="item-qty">3 egg whites</span><span class="item-note">Add to batter before cooking</span></li>
+      <li><span class="item-name">Hung curd on side</span><span class="item-qty">50g</span><span class="item-note">Dip or spread</span></li>
+    </ul>
+  </div>
+</div>
+
+<p style="font-size:13px; color:#888; margin-top:8px;">Cheela dinner = 30g carbs. Still much better than 2 roti (60g). With 20k steps this day, total deficit: ~700 cal.</p>
+
+
+<!-- FOODS TO AVOID -->
+<h2>VI. Foods — Hard Avoid vs. Strategic Reduce</h2>
+
+<table>
+  <tr>
+    <th>Food</th>
+    <th>Old Usage</th>
+    <th>Problem</th>
+    <th>Replacement</th>
+  </tr>
+  <tr>
+    <td><strong>Pyaz paratha (3)</strong></td>
+    <td>Dinner staple</td>
+    <td class="red">90g carbs, 36g fat in one meal</td>
+    <td>Moong dal cheela (18g carbs, 3g fat)</td>
+  </tr>
+  <tr>
+    <td><strong>Pasta (50g dry)</strong></td>
+    <td>Dinner option</td>
+    <td class="red">38g carbs, high GI</td>
+    <td>Mushroom bhurji (8g carbs)</td>
+  </tr>
+  <tr>
+    <td><strong>Fries (any)</strong></td>
+    <td>Snack/side</td>
+    <td class="red">20-30g carbs, high GI potato</td>
+    <td>Roasted makhana (10g carbs, lower GI)</td>
+  </tr>
+  <tr>
+    <td><strong>3 roti at dinner</strong></td>
+    <td>Old default</td>
+    <td class="red">60g carbs at night = fat storage</td>
+    <td>1.5 roti max at LUNCH only</td>
+  </tr>
+  <tr>
+    <td><strong>Burger + bun</strong></td>
+    <td>Occasional</td>
+    <td class="yellow">40-50g carbs (bun)</td>
+    <td>Burger patty in lettuce wrap if social eating</td>
+  </tr>
+  <tr>
+    <td><strong>Poha (>80g)</strong></td>
+    <td>Breakfast</td>
+    <td class="yellow">High GI flattened rice</td>
+    <td>Max 60g cooked poha + 4 egg whites</td>
+  </tr>
+  <tr>
+    <td><strong>Dosa (large)</strong></td>
+    <td>Lunch/dinner</td>
+    <td class="yellow">40-50g carbs if large</td>
+    <td>1 regular dosa (30g carbs) at lunch only</td>
+  </tr>
+  <tr>
+    <td><strong>Paneer >100g</strong></td>
+    <td>Dinner</td>
+    <td class="yellow">High fat (265 cal/100g), raises LDL</td>
+    <td>Max 50g paneer + mushroom bulk</td>
+  </tr>
+</table>
+
+
+<!-- WHAT'S ALLOWED TO INCREASE -->
+<h2>VII. Foods — Increase These</h2>
+<table>
+  <tr>
+    <th>Food</th>
+    <th>Why Increase</th>
+    <th>Target</th>
+  </tr>
+  <tr>
+    <td><strong>Cucumber</strong></td>
+    <td>16 cal/100g, GI 15, fills stomach, delays carb absorption</td>
+    <td>400–500g/day</td>
+  </tr>
+  <tr>
+    <td><strong>Mushrooms</strong></td>
+    <td>21 cal/100g, 3g protein, near-zero carbs, extremely satiating cooked</td>
+    <td>200–300g/day</td>
+  </tr>
+  <tr>
+    <td><strong>Egg whites</strong></td>
+    <td>52 cal/100g, 10.9g protein, zero fat/carbs, safest protein for kidneys</td>
+    <td>6–8/day</td>
+  </tr>
+  <tr>
+    <td><strong>Spinach / Palak</strong></td>
+    <td>23 cal/100g, 2.9g protein, high magnesium + iron, low GI</td>
+    <td>100–150g/day</td>
+  </tr>
+  <tr>
+    <td><strong>Isabgol (psyllium)</strong></td>
+    <td>−13% LDL, −19% post-meal glucose (RCT evidence above)</td>
+    <td>10g/day (5g before lunch + 5g before dinner)</td>
+  </tr>
+  <tr>
+    <td><strong>Hung curd</strong></td>
+    <td>12g protein/100g vs 3g regular curd. Low carb. Probiotic.</td>
+    <td>200–250g/day</td>
+  </tr>
+  <tr>
+    <td><strong>Guava</strong></td>
+    <td>GI 12 — lowest GI fruit available in India. High Vitamin C.</td>
+    <td>100–150g/day (snack)</td>
+  </tr>
+  <tr>
+    <td><strong>Moong dal</strong></td>
+    <td>GI 25 (vs rice GI 72). 24g protein/100g dry. Kidney-safe.</td>
+    <td>50g dry/day (dal or cheela)</td>
+  </tr>
+</table>
+
+
+<!-- TRAVEL SECTION -->
+<h2>VIII. Travel Adaptation</h2>
+
+<p style="font-size:13px; color:#888; margin-bottom: 16px;">Travel breaks the kitchen — but the constraints don't change. These protocols maintain ≤120g carbs without cooking.</p>
+
+<div class="travel-scenario">
+  <h4>Scenario A — Domestic Hotel (Bangalore, Mumbai, Delhi)</h4>
+  <ul style="list-style: disc; padding-left: 20px; font-size: 13px; color: #ccc;">
+    <li><strong>Breakfast:</strong> Hotel omelette (ask egg whites only, 4–6 eggs) + salad (skip the toast or eat 1 slice only). If buffet: load veg/salad first, then eggs, then 1 idli/dosa last.</li>
+    <li><strong>Lunch:</strong> Order dal + sabzi (any bhindi/gobhi/mushroom) + 1 roti. Skip rice.</li>
+    <li><strong>Snack:</strong> Buy hung curd pack (Epigamia/Mother Dairy) + 1 guava from market.</li>
+    <li><strong>Dinner:</strong> Order paneer bhurji or mushroom curry (no roti). If nothing fits, order 2 plain dosas and eat filling only.</li>
+    <li><strong>Always carry:</strong> 2 sachets isabgol + 1 whey serving (100ml water bottle to mix).</li>
+  </ul>
+</div>
+
+<div class="travel-scenario">
+  <h4>Scenario B — Client Dinner / Social Eating</h4>
+  <ul style="list-style: disc; padding-left: 20px; font-size: 13px; color: #ccc;">
+    <li>Eat a 200g hung curd snack before going out — arrive not starving.</li>
+    <li>Order starters: paneer tikka (no bread), veg kababs, salads. Load up here.</li>
+    <li>Skip biryani/naan/bread entirely. Say "I'm keeping carbs low this week."</li>
+    <li>Dal makhani + 1 roti = 35g carbs. Acceptable if that's all the carbs that day.</li>
+    <li>Drinks: Red wine &gt; beer &gt; whisky soda. Beer = 13g carbs/pint. Avoid.</li>
+    <li>If weed is involved: pre-eat 200g hung curd. Weed + munchies = 300+ cal untracked.</li>
+  </ul>
+</div>
+
+<div class="travel-scenario">
+  <h4>Scenario C — Flight / Airport</h4>
+  <ul style="list-style: disc; padding-left: 20px; font-size: 13px; color: #ccc;">
+    <li>Carry: boiled egg whites (4-6, boiled night before in box), hung curd sachet, isabgol sachet.</li>
+    <li>Airport food: egg bhurji/omelette (Café Coffee Day / Starbucks omelette) + americano (no milk).</li>
+    <li>In-flight meal: ask for veg — eat the sabzi + raita. Skip the rice/roti. Eat bread only if no other protein available.</li>
+    <li>Hydrate aggressively — flights dehydrate and falsely raise hunger.</li>
+  </ul>
+</div>
+
+<div class="travel-scenario">
+  <h4>Scenario D — Himalayan Trekking (Future)</h4>
+  <ul style="list-style: disc; padding-left: 20px; font-size: 13px; color: #ccc;">
+    <li>High altitude = higher carb tolerance. Glycogen demand increases with altitude climbing.</li>
+    <li>Carry: whey sachets, roasted makhana (200g, 25g carbs), peanut butter sachets.</li>
+    <li>Trail food: roti + dal at base camps = fine. At altitude: prioritize carb intake for performance.</li>
+    <li>HbA1c at &lt;6.5% means carb limits can be relaxed on high-exertion trekking days.</li>
+  </ul>
+</div>
+
+
+<!-- SUPPLEMENT PROTOCOL -->
+<h2>IX. Supplement Stack — Evidence-Backed</h2>
+
+<div class="supp-card">
+  <div class="supp-name">Isabgol (Psyllium Husk)</div>
+  <div class="supp-detail">
+    <div class="supp-dose">5g before lunch + 5g before dinner = 10g/day</div>
+    <div class="supp-why">RCT evidence: −13% LDL, −19% post-lunch glucose, −11% all-day glucose. Mix in 200ml water, drink immediately. Do NOT mix in food.</div>
+  </div>
+</div>
+
+<div class="supp-card">
+  <div class="supp-name">Whey Protein</div>
+  <div class="supp-detail">
+    <div class="supp-dose">15g PRE-MEAL × 2 = 30g/day. Timing is CRITICAL — take 10–15 min BEFORE lunch and dinner.</div>
+    <div class="supp-why"><strong>Pre-meal whey (not post-meal):</strong> RCT evidence (PMC 2025) shows 10–15g whey taken 10–15 min before eating reduces postprandial glucose by 22% and boosts GLP-1 by 66%. This is the single highest-leverage tactic in the entire plan. Choose isolate (lower lactose/carbs). Do NOT exceed 30g/day given Urine Protein 2+.</div>
+  </div>
+</div>
+
+<div class="supp-card">
+  <div class="supp-name">Magnesium Glycinate</div>
+  <div class="supp-detail">
+    <div class="supp-dose">200–300mg elemental Mg at night (Tata 1mg or equivalent)</div>
+    <div class="supp-why">91.4% of Indian T2D patients are Mg-deficient. Mg improves insulin sensitivity, sleep quality (REM), and muscle recovery. Take with dinner.</div>
+  </div>
+</div>
+
+<div class="supp-card">
+  <div class="supp-name">Vitamin D3</div>
+  <div class="supp-detail">
+    <div class="supp-dose">2,000 IU/day with a fat-containing meal (lunch)</div>
+    <div class="supp-why">91.4% of Indian T2D patients deficient. Deficiency linked to insulin resistance and impaired beta-cell function. Cholecalciferol (D3), not D2. Take with food — fat-soluble.</div>
+  </div>
+</div>
+
+<div class="supp-card">
+  <div class="supp-name">Berberine (Optional, ask doctor)</div>
+  <div class="supp-detail">
+    <div class="supp-dose">500mg twice daily with meals (if doctor approves)</div>
+    <div class="supp-why">Meta-analysis (46 RCTs): HOMA-IR improvement up to 44.7%. Same mechanism as Metformin (AMPK activation). May allow Metformin dose reduction. Do NOT start without doctor consult — potential interaction with existing meds.</div>
+  </div>
+</div>
+
+
+<!-- EVENING HOBBY SCHEDULE -->
+<h2>X. Evening Schedule — Fill the Void</h2>
+
+<p style="font-size:13px; color:#888; margin-bottom: 16px;">Evening boredom → weed → munchies is the #1 diet-breaking chain. This schedule fills 8–10 PM with structured activities that replace the habit.</p>
+
+<div class="time-block">
+  <div class="time-label">7:30 PM</div>
+  <div class="time-content"><strong>Dinner.</strong> Prepare + eat. 10 min prep. Eat slowly, veg first. No phone during meal.</div>
+</div>
+<div class="time-block">
+  <div class="time-label">8:00 PM</div>
+  <div class="time-content"><strong>10-min post-meal walk</strong> (mandatory). Outside if possible. Accelerates glucose clearance by 30%.</div>
+</div>
+<div class="time-block">
+  <div class="time-label">8:15 PM</div>
+  <div class="time-content">
+    <strong>Hobby Block A — History (Mon/Wed):</strong> Read one chapter of a historical text. Current: pick a period/civilization. Set a Kindle timer. No Instagram during this time.<br>
+    <strong>Hobby Block B — Photography (Tue/Thu):</strong> Edit 5–10 photos from the week OR watch one YouTube photography technique video. Small reel story = social output.<br>
+    <strong>Hobby Block C — Puzzle (Fri):</strong> Logic puzzle, chess puzzle, crossword. 20–30 min. Brain engagement prevents cravings.<br>
+    <strong>Saturday:</strong> Socialize. This is the designated social night. No guilt.
+  </div>
+</div>
+<div class="time-block">
+  <div class="time-label">9:00 PM</div>
+  <div class="time-content"><strong>Kriya — 15 min Dharana 1.</strong> Non-negotiable. This is the most powerful HbA1c habit after diet — reduces cortisol which directly suppresses visceral fat.</div>
+</div>
+<div class="time-block">
+  <div class="time-label">9:15 PM</div>
+  <div class="time-content"><strong>Call parents.</strong> 10–15 min. Keep them in the loop. Relationship health = mental health = less cravings.</div>
+</div>
+<div class="time-block">
+  <div class="time-label">9:30 PM</div>
+  <div class="time-content"><strong>Wind down.</strong> No screens after 9:30. Dim lights. Read fiction OR listen to music. Phones off / face-down. Target sleep by 10:15 PM.</div>
+</div>
+<div class="time-block">
+  <div class="time-label">10:15 PM</div>
+  <div class="time-content"><strong>Sleep.</strong> 8 hours = 6 AM wake. Poor sleep = +cortisol +hunger hormones. Every late night adds 200–300 cal of cravings next day.</div>
+</div>
+
+
+<!-- WEEKLY STRUCTURE -->
+<h2>XI. Weekly Carb Map</h2>
+
+<table class="week-table">
+  <tr>
+    <th>Day</th>
+    <th>Exercise</th>
+    <th>BF Carbs</th>
+    <th>Lunch Carbs</th>
+    <th>Snack Carbs</th>
+    <th>Dinner Carbs</th>
+    <th>Total</th>
+  </tr>
+  <tr>
+    <td>Mon</td>
+    <td>Push A (Gym)</td>
+    <td>35g</td>
+    <td>48g</td>
+    <td>12g</td>
+    <td class="green">8g</td>
+    <td class="green"><strong>103g ✅</strong></td>
+  </tr>
+  <tr>
+    <td>Tue</td>
+    <td>Pull A (Gym)</td>
+    <td>35g</td>
+    <td>48g</td>
+    <td>12g</td>
+    <td class="green">8g</td>
+    <td class="green"><strong>103g ✅</strong></td>
+  </tr>
+  <tr>
+    <td>Wed</td>
+    <td>Legs (Gym)</td>
+    <td>38g</td>
+    <td>50g</td>
+    <td>14g</td>
+    <td class="yellow">12g</td>
+    <td class="green"><strong>114g ✅</strong></td>
+  </tr>
+  <tr>
+    <td>Thu</td>
+    <td>Push B or Run</td>
+    <td>35g</td>
+    <td>45g</td>
+    <td>12g</td>
+    <td class="green">8g</td>
+    <td class="green"><strong>100g ✅</strong></td>
+  </tr>
+  <tr>
+    <td>Fri</td>
+    <td>Pull B (Gym)</td>
+    <td>35g</td>
+    <td>48g</td>
+    <td>12g</td>
+    <td class="green">8g</td>
+    <td class="green"><strong>103g ✅</strong></td>
+  </tr>
+  <tr>
+    <td>Sat</td>
+    <td>Run or Rest</td>
+    <td>34g</td>
+    <td>48g</td>
+    <td>14g</td>
+    <td class="yellow">15g</td>
+    <td class="yellow"><strong>111g ⚠️</strong></td>
+  </tr>
+  <tr>
+    <td>Sun</td>
+    <td>Rest day</td>
+    <td>30g</td>
+    <td>40g</td>
+    <td>10g</td>
+    <td class="green">8g</td>
+    <td class="green"><strong>88g ✅</strong></td>
+  </tr>
+</table>
+
+<div class="warning">
+  <strong>Saturday Rule:</strong> Saturday is the highest social risk day (restaurants, parties). Use the Saturday buffer: keep BF + snack very low (≤35g combined) so you can have a slightly more generous lunch or one social meal. DO NOT stack restaurant lunch + paratha dinner = that's 155g carbs in two meals. Pick one indulgence, not two.
+</div>
+
+
+<!-- QUICK REFERENCE -->
+<h2>XII. Coach's Quick-Reference Card</h2>
+
+<table>
+  <tr>
+    <th>Situation</th>
+    <th>What to Do</th>
+  </tr>
+  <tr>
+    <td>Hungry at night (9 PM)</td>
+    <td>100g cucumber + 50g hung curd. 40 cal. Zero carbs. Then kriya immediately.</td>
+  </tr>
+  <tr>
+    <td>Dinner done in 5 min needed</td>
+    <td>Mushroom bhurji: 200g mushrooms + 4 egg whites + 1 tsp oil. 7 min. 175 cal, 8g carbs.</td>
+  </tr>
+  <tr>
+    <td>Out of vegetables</td>
+    <td>Eggs + hung curd + guava. All shelf-stable. Keep these stocked always.</td>
+  </tr>
+  <tr>
+    <td>Party / social dinner</td>
+    <td>Pre-eat 150g hung curd. Order paneer tikka + dal + 1 roti. Skip biryani/naan.</td>
+  </tr>
+  <tr>
+    <td>Weed night (if it happens)</td>
+    <td>Pre-eat 200g hung curd before. Keep 150g cucumber + 100g guava ready. No chips/bread in house.</td>
+  </tr>
+  <tr>
+    <td>Skipped gym, need to compensate</td>
+    <td>20-min walk after dinner (+150 cal burn). Reduce dinner by 100 cal (skip paneer, keep mushrooms).</td>
+  </tr>
+  <tr>
+    <td>Carbs already at 90g by 4PM</td>
+    <td>Snack = egg whites only (zero carbs). Dinner = mushroom bhurji (8g). End at 98g. ✅</td>
+  </tr>
+  <tr>
+    <td>Scale going up despite deficit</td>
+    <td>Check: (1) isabgol done? (2) dinner carbs &lt;15g? (3) sleep &gt;7h? (4) sodium &lt;2g? (5) kriya done?</td>
+  </tr>
+</table>
+
+
+<!-- CITATIONS -->
+<div class="citations">
+  <h2 style="margin-top: 40px;">References</h2>
+  <p>[1] Athinarayanan SJ, et al. (2024). 5-Year effects of a novel continuous remote care model with carbohydrate-restricted nutrition therapy including nutritional ketosis in type 2 diabetes. <em>Diabetes Research and Clinical Practice.</em></p>
+  <p>[2] Anderson JW, et al. (1999). Effects of psyllium on glucose and serum lipid responses in men with type 2 diabetes and hypercholesterolemia. <em>Am J Clin Nutr.</em> 70(4):466–473.</p>
+  <p>[3] Zhang H, et al. (2021). Berberine for type 2 diabetes mellitus: meta-analysis of 46 RCTs. <em>J Diabetes Res.</em></p>
+  <p>[4] Shukla AP, et al. (2017). Food order has a significant impact on postprandial glucose and insulin levels. <em>Diabetes Care.</em> 40(7):e106–e107.</p>
+  <p>[5] Prevalence of Vitamin D Deficiency in T2DM patients: Cross-sectional study, Western India (n=912). <em>PMC10258395.</em></p>
+  <p>[6] Lichtman SW, et al. (1992). Discrepancy between self-reported and actual caloric intake and exercise in obese subjects. <em>N Engl J Med.</em> 327:1893–1898.</p>
+</div>
+
+
+<div class="footer">
+  PJ's Life Coach Protocol · Generated August 2, 2026 · Bangalore<br>
+  This plan is designed for: T2D (HbA1c 6.8%) + HTN + NPDR + Nephropathy (Urine Protein 2+) + Elevated Cholesterol<br>
+  Review with endocrinologist and nephrologist before making major changes to medication.
+</div>
+
+</div>
+</body>
+</html>

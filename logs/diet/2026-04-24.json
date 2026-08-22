@@ -1,0 +1,47 @@
+{
+  "date": "2026-04-24",
+  "meals": [
+    {
+      "time": "morning",
+      "description": "1 bread + 3 egg white omelette + whey + buttermilk",
+      "calories": 330,
+      "protein_g": 39,
+      "carbs_g": 28,
+      "fat_g": 6,
+      "high_gi_items": ["white bread"],
+      "plate_rule_pass": false,
+      "plate_rule_notes": "No veg before breakfast — needs cucumber/salad first"
+    },
+    {
+      "time": "lunch",
+      "description": "2 roti + lauki kofta + cucumber",
+      "calories": 420,
+      "protein_g": 12,
+      "carbs_g": 58,
+      "fat_g": 10,
+      "high_gi_items": [],
+      "plate_rule_pass": true,
+      "plate_rule_notes": "Cucumber ✅ lauki is diabetic-friendly vegetable ✅"
+    },
+    {
+      "time": "dinner",
+      "description": "2 paratha + shahi paneer + cucumber + whey",
+      "calories": 580,
+      "protein_g": 30,
+      "carbs_g": 55,
+      "fat_g": 22,
+      "high_gi_items": ["paratha (refined flour possible)"],
+      "plate_rule_pass": true,
+      "plate_rule_notes": "Cucumber first ✅ paneer protein ✅ but 2 paratha is heavy carb load"
+    }
+  ],
+  "total_calories": 1330,
+  "total_protein": 81,
+  "steps": 13000,
+  "net_calories": 930,
+  "new_habits": {
+    "veg_first": true,
+    "post_meal_movement": true
+  },
+  "logged_at": "19:30 IST"
+}

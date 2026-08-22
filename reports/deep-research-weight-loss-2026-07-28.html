@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Research: Why PJ Is Not Losing Fat — 2026-07-28</title>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --card: #1a1a2e;
+    --card-2: #16162a;
+    --red: #e94560;
+    --green: #0f9b58;
+    --amber: #f5a623;
+    --text: #e8e8ee;
+    --muted: #8b8b9a;
+    --border: #2a2a44;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    padding: 24px;
+    max-width: 1100px;
+  }
+  h1 {
+    font-size: 26px;
+    letter-spacing: 0.5px;
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+  h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 8px;
+    margin-top: 40px;
+  }
+  h3 {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text);
+    margin-top: 24px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin: 14px 0;
+  }
+  .diagnosis { border-left: 4px solid var(--red); }
+  .solution  { border-left: 4px solid var(--green); }
+  .warn      { border-left: 4px solid var(--amber); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    margin: 10px 0;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    background: var(--card-2);
+    color: var(--muted);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.6px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .tag-high { background: var(--red); color: #fff; }
+  .tag-med  { background: var(--amber); color: #000; }
+  .tag-low  { background: #444; color: var(--text); }
+  .tag-do   { background: var(--green); color: #fff; }
+  ul, ol { padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    background: #000;
+    padding: 1px 6px;
+    border-radius: 3px;
+    color: var(--red);
+    font-size: 12.5px;
+  }
+  .stat {
+    display: inline-block;
+    background: #000;
+    color: var(--red);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-weight: 700;
+  }
+  .green-stat {
+    display: inline-block;
+    background: #000;
+    color: var(--green);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-weight: 700;
+  }
+  .paper {
+    color: var(--muted);
+    font-size: 12px;
+    font-style: italic;
+  }
+  .vector-header {
+    background: var(--card-2);
+    padding: 10px 14px;
+    border-radius: 4px 4px 0 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+    color: var(--green);
+    border-bottom: 1px solid var(--border);
+  }
+  .vector-body {
+    background: var(--card);
+    padding: 14px 20px;
+    border-radius: 0 0 4px 4px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border);
+    border-top: 0;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 720px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+  .kill { color: var(--red);   font-weight: 700; }
+  .fix  { color: var(--green); font-weight: 700; }
+  .note { color: var(--muted); font-size: 12.5px; }
+  hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 28px 0;
+  }
+  .banner {
+    background: linear-gradient(90deg, #2a0a15, #1a1a2e);
+    border: 1px solid var(--red);
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin: 14px 0 28px 0;
+  }
+  .banner strong { color: var(--red); }
+</style>
+</head>
+<body>
+
+<h1>Deep Research — Why PJ Is Not Losing Fat</h1>
+<div class="sub">Subject: Prateek Jain (37M, 163cm, ~79 kg) &nbsp;|&nbsp; Report date: 2026-07-28 &nbsp;|&nbsp; Analyst: Medical Research Synthesis</div>
+
+<div class="banner">
+<strong>Bottom line:</strong> PJ is not failing at weight loss. He is on a <strong>sarcopenic obesity trajectory</strong> — losing muscle (−2.5 kg) while retaining fat (+2%) despite genuine caloric deficit (753 cal/day). Visceral fat unchanged at 13 over 83 days. The failure is mechanistic, not behavioural: kidney-limited protein ceiling + metformin-blunted mTOR + defended visceral fat + possible beta-blocker + cannabis-driven ghrelin surges. Effort is not the problem. Biology and pharmacology are.
+</div>
+
+<!-- ============================================= -->
+<h2>1. The Actual Problem</h2>
+
+<div class="card diagnosis">
+<h3 style="margin-top:0; color: var(--red);">Diagnosis: Sarcopenic obesity in progress</h3>
+
+<table>
+<thead><tr><th>Metric</th><th>Apr 25</th><th>Jul 1</th><th>Jul 17</th><th>&Delta; (83 d)</th><th>Reading</th></tr></thead>
+<tbody>
+<tr><td>Weight</td><td>80.25 kg</td><td>79.85</td><td>78.85</td><td class="kill">&minus;1.40 kg</td><td>Modest</td></tr>
+<tr><td>Body Fat %</td><td>23.7%</td><td>25.7</td><td>25.7</td><td class="kill">+2.0 pp</td><td>Fat share rising</td></tr>
+<tr><td>Muscle Mass</td><td>55.1 kg</td><td>53.3</td><td>52.6</td><td class="kill">&minus;2.50 kg</td><td>Catabolic</td></tr>
+<tr><td>Visceral Fat</td><td>13</td><td>13</td><td>13</td><td class="kill">0</td><td>Defended</td></tr>
+<tr><td>BMR</td><td>1,631</td><td>1,625</td><td>1,610</td><td class="kill">&minus;21 kcal</td><td>Metabolic downshift</td></tr>
+</tbody>
+</table>
+
+<p>The scale is misleading. Of the 1.4 kg "lost," <strong>most is muscle mass; net fat mass is essentially unchanged</strong> (~19 kg &rarr; ~20 kg). This is not weight loss failure — it is <span class="kill">structural muscle catabolism disguised as weight loss</span>.</p>
+
+<p>The three drivers:</p>
+<ol>
+  <li><strong>Protein ceiling:</strong> Kidney limits intake to ~90 g/day (&asymp;1.1 g/kg). Muscle preservation in deficit requires 1.6–2.4 g/kg (Morton 2018 meta-analysis). PJ is <em>structurally below</em> the minimum effective dose. Muscle loss is thermodynamically expected.</li>
+  <li><strong>Metformin + low protein:</strong> Metformin inhibits mTORC1; MASTERS trial (Walton 2019) showed ~50% blunting of resistance-training hypertrophy. Compounds the protein deficit.</li>
+  <li><strong>Defended visceral fat:</strong> Chronic stress &rarr; 11&beta;-HSD1 upregulation in omental fat &rarr; visceral depot resists deficit. Needs 8–12 weeks of clean deficit without weekend spikes (Sci Reports 2024). PJ has not had this window — cannabis nights and midnight eating events reset the clock.</li>
+</ol>
+
+<p>The BMR drop (&minus;21 kcal in 83 days) is the metabolic tell: <span class="kill">the body has responded to sustained deficit by reducing energy expenditure</span> — classic adaptive thermogenesis, worsened by muscle loss (each kg lost muscle &asymp; 13 kcal/day BMR).</p>
+</div>
+
+<!-- ============================================= -->
+<h2>2. Ranked Hypotheses</h2>
+
+<table>
+<thead>
+<tr>
+  <th style="width:32px;">#</th>
+  <th>Hypothesis</th>
+  <th>Conf.</th>
+  <th>Key Paper</th>
+  <th>Effect on PJ</th>
+  <th>Actionable</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+  <td>1</td>
+  <td><strong>Kidney-limited protein &rarr; muscle catabolism</strong></td>
+  <td><span class="tag tag-high">High</span></td>
+  <td>Morton 2018 meta-analysis (Br J Sports Med)</td>
+  <td>&minus;2.5 kg muscle in 83 d. Rest-day protein 47.8 g = 0.60 g/kg (starvation-level for training athlete).</td>
+  <td><span class="tag tag-do">Yes</span></td>
+</tr>
+
+<tr>
+  <td>2</td>
+  <td><strong>Antihypertensive class — possible beta-blocker</strong></td>
+  <td><span class="tag tag-high">High</span></td>
+  <td>IJO 2010 meta-analysis</td>
+  <td>If &beta;-blocker: +1.2–3.4 kg weight, &minus;13% exercise fat oxidation. Explains fat retention despite deficit.</td>
+  <td><span class="tag tag-do">Yes — ask today</span></td>
+</tr>
+
+<tr>
+  <td>3</td>
+  <td><strong>Metformin blunts hypertrophy at low protein</strong></td>
+  <td><span class="tag tag-high">High</span></td>
+  <td>MASTERS RCT (Walton 2019, Aging Cell)</td>
+  <td>~50% reduction in muscle gain response at PJ's protein intake. Compounds H1.</td>
+  <td><span class="tag tag-med">Partial — raise protein</span></td>
+</tr>
+
+<tr>
+  <td>4</td>
+  <td><strong>Chronic cortisol &rarr; defended visceral fat</strong></td>
+  <td><span class="tag tag-high">High</span></td>
+  <td>Daubenmier 2011 (J Obesity, RCT)</td>
+  <td>Visceral fat 13 unchanged 83 d = 11&beta;-HSD1-mediated fat defense. Director role = sustained load.</td>
+  <td><span class="tag tag-do">Yes</span></td>
+</tr>
+
+<tr>
+  <td>5</td>
+  <td><strong>Cannabis &rarr; next-day ghrelin + sleep disruption</strong></td>
+  <td><span class="tag tag-high">High</span></td>
+  <td>Cannabis &amp; Sleep meta 2025; Transl Psychiatry RCT</td>
+  <td>+400–800 cal on use days. 2 events/wk = ~2 weeks of deficit erased per month.</td>
+  <td><span class="tag tag-do">Yes — 30d off</span></td>
+</tr>
+
+<tr>
+  <td>6</td>
+  <td><strong>Above-threshold training &rarr; compensatory eating</strong></td>
+  <td><span class="tag tag-high">High</span></td>
+  <td>PMC6213307 RCT</td>
+  <td>Max HR 150–167 in 64% of sessions (above lactate threshold) &rarr; 12–24h appetite spike + NPDR risk.</td>
+  <td><span class="tag tag-do">Yes — MAF 138</span></td>
+</tr>
+
+<tr>
+  <td>7</td>
+  <td><strong>Uric acid 8.1 &rarr; AMPK inhibition</strong></td>
+  <td><span class="tag tag-med">Med-High</span></td>
+  <td>Ali 2026 (Endocrinol Diabetes Metab)</td>
+  <td>Reduces fat oxidation, compounds insulin resistance. Needs retest + likely allopurinol.</td>
+  <td><span class="tag tag-do">Yes — retest</span></td>
+</tr>
+
+<tr>
+  <td>8</td>
+  <td><strong>Circadian misalignment (midnight eating)</strong></td>
+  <td><span class="tag tag-med">Medium</span></td>
+  <td>PNAS 2018 (circadian &amp; fatty acid genes)</td>
+  <td>3+ documented events. Post-10PM calories switch muscle gene expression toward fat storage.</td>
+  <td><span class="tag tag-do">Yes — 9PM cutoff</span></td>
+</tr>
+
+<tr>
+  <td>9</td>
+  <td><strong>Insulin resistance reduces DIT</strong></td>
+  <td><span class="tag tag-med">Medium</span></td>
+  <td>Standard T2D thermogenesis literature</td>
+  <td>DIT 4–6% (vs 8–10% healthy) &rarr; TDEE overestimated ~50–100 kcal/day &rarr; 5–10% of target deficit lost silently.</td>
+  <td><span class="tag tag-med">Partial — SGLT2</span></td>
+</tr>
+
+<tr>
+  <td>10</td>
+  <td><strong>Weekend high-GI events</strong></td>
+  <td><span class="tag tag-med">Medium</span></td>
+  <td>Insulin-suppressed fat oxidation literature</td>
+  <td>Biryani/pizza/kulcha events &rarr; 24–48h fat-oxidation suppression per event. Erases 1,500–2,000 cal/wk.</td>
+  <td><span class="tag tag-do">Yes — cap events</span></td>
+</tr>
+
+<tr>
+  <td>11</td>
+  <td><strong>Visceral fat requires 8–12 wk clean deficit</strong></td>
+  <td><span class="tag tag-med">Medium</span></td>
+  <td>Sci Reports 2024 (RCT N=143)</td>
+  <td>PJ has never had 8 consecutive weeks without a spike event. The clock keeps resetting.</td>
+  <td><span class="tag tag-do">Yes — protocol</span></td>
+</tr>
+
+<tr>
+  <td>12</td>
+  <td><strong>Sleep restriction &rarr; satiety hormone drop</strong></td>
+  <td><span class="tag tag-low">Low-Med</span></td>
+  <td>PMC7071396 RCT</td>
+  <td>Weekend late nights &rarr; GLP-1/PYY drop &rarr; +300–500 cal Monday. Compounds H5/H10.</td>
+  <td><span class="tag tag-do">Yes — sleep hygiene</span></td>
+</tr>
+
+</tbody>
+</table>
+
+<!-- ============================================= -->
+<h2>3. Recommendations by Vector</h2>
+
+<div class="vector-header" style="color: var(--red);">Vector A &mdash; Medication (most impactful &mdash; do this first)</div>
+<div class="vector-body">
+
+<h3 style="margin-top:0;">A1. Identify antihypertensive class TODAY</h3>
+<p>If PJ is on a <strong>beta-blocker</strong> (metoprolol, atenolol, bisoprolol, propranolol, carvedilol): this alone could explain 30–40% of the fat retention. &beta;-blockers reduce lipolysis via &beta;-adrenergic blockade, cut exercise fat oxidation ~13%, and cause 1.2–3.4 kg weight gain over 12 months.</p>
+<p class="paper">IJO 2010, meta-analysis: &beta;-blockers &amp; weight gain / exercise capacity.</p>
+<p><span class="fix">Fix:</span> For T2D + hypertension + nephropathy, guideline standard is an <strong>ARB</strong> (Telmisartan / Losartan) — renoprotective (RENAAL, IDNT trials) and metabolically neutral or favourable. Ask cardiologist/nephrologist to switch if currently on &beta;-blocker.</p>
+
+<h3>A2. Add SGLT2 inhibitor (empagliflozin or dapagliflozin)</h3>
+<p>Triple benefit for PJ's exact profile:</p>
+<ul>
+  <li>Renal protection (EMPA-REG OUTCOME; DAPA-CKD) — directly addresses proteinuria 2+.</li>
+  <li>Fat loss: &minus;2.1 kg fat / +0.8 kg muscle at 52 weeks in T2D patients.</li>
+  <li>HbA1c reduction 0.5–0.8% without hypoglycaemia.</li>
+</ul>
+<p class="paper">PMC11597755, 52-week prospective study; EMPA-REG OUTCOME (NEJM 2015).</p>
+<p><span class="note">Caveats to discuss with doctor: euglycaemic DKA risk (rare); genitourinary infections; hold on sick days.</span></p>
+
+<h3>A3. Semaglutide / GLP-1 agonist &mdash; <span class="kill">AVOID</span></h3>
+<p><strong>Contraindicated given active NPDR.</strong> SUSTAIN-6 showed semaglutide associated with ~3&times; risk of diabetic retinopathy progression (HR 1.76, 95% CI 1.11–2.78) vs placebo. Rapid glucose lowering in NPDR eyes = risk of PDR progression = vision loss. The weight-loss benefit does not outweigh the retinal risk.</p>
+<p class="paper">SUSTAIN-6 (NEJM 2016); AAO position statement on GLP-1 &amp; retinopathy.</p>
+
+<h3>A4. Metformin &mdash; continue, but raise protein to full ceiling every day</h3>
+<p>Metformin's mTORC1 inhibition is amplified when protein intake is below 1.2 g/kg. PJ is at 0.60 g/kg on rest days. The interaction is the problem, not the drug.</p>
+<p class="paper">Walton 2019, MASTERS trial, Aging Cell.</p>
+
+<h3>A5. Uric acid &mdash; recheck; consider allopurinol</h3>
+<p>UA 8.1 mg/dL is above symptomatic gout threshold AND inhibits AMPK &rarr; suppresses fat oxidation. Retest; if still &ge;7, discuss allopurinol 100–300 mg with nephrologist (also renoprotective in CKD per Bardin 2017).</p>
+</div>
+
+
+<div class="vector-header">Vector B &mdash; Protein (structural fix &mdash; daily, no exceptions)</div>
+<div class="vector-body">
+<p><span class="stat">Current: 47.8 g rest / 61.6 g gym</span> &nbsp;&rarr;&nbsp; <span class="green-stat">Target: 80–90 g EVERY day</span></p>
+
+<p>PJ cannot reach the muscle-preservation optimum (1.6 g/kg = 126 g) because of kidney disease. He <strong>will</strong> continue losing muscle in deficit. The only lever is to <em>minimise the loss</em> by hitting the kidney ceiling every single day, not just gym days.</p>
+
+<h3>Distribution rule</h3>
+<ul>
+  <li><strong>&le;20 g protein per meal</strong> (kidney tubular reabsorption limit; also matches muscle protein synthesis saturation ~0.4 g/kg/meal).</li>
+  <li><strong>5 servings/day</strong> = BF + Lunch + 4pm snack + Dinner + pre-bed.</li>
+  <li>Whey isolate preferred (low nitrogen load per gram protein vs casein / red meat).</li>
+</ul>
+
+<h3>Practical stack (~85 g total, kidney-safe)</h3>
+<table>
+<thead><tr><th>Meal</th><th>Source</th><th>Protein</th></tr></thead>
+<tbody>
+<tr><td>Breakfast</td><td>4 egg whites + 15 g whey</td><td>~28 g</td></tr>
+<tr><td>Lunch</td><td>150 g dal or paneer 40 g</td><td>~14 g</td></tr>
+<tr><td>4pm snack</td><td>2 boiled eggs + 15 g whey</td><td>~24 g</td></tr>
+<tr><td>Dinner</td><td>150 g sabzi + 100 ml buttermilk</td><td>~10 g</td></tr>
+<tr><td>Pre-bed</td><td>15 g whey in 200 ml water</td><td>~13 g</td></tr>
+<tr><td><strong>Total</strong></td><td></td><td><strong>~89 g</strong></td></tr>
+</tbody>
+</table>
+
+<p><span class="fix">Non-negotiable:</span> Rest days must match gym days. Missing 30 g protein on Sunday = 30 g of muscle protein synthesis not replaced. Over 12 weekends = trend line above.</p>
+<p class="paper">Morton 2018 (Br J Sports Med) meta-analysis; Schoenfeld 2018 protein distribution.</p>
+</div>
+
+
+<div class="vector-header">Vector C &mdash; Circadian &amp; Cannabis</div>
+<div class="vector-body">
+
+<h3 style="margin-top:0;">C1. Cannabis &mdash; 30 day full pause</h3>
+<p>Even episodic use (1–3&times;/week) is doing more damage than PJ realises:</p>
+<ul>
+  <li>THC &rarr; acute ghrelin surge &rarr; +400–800 cal same night (typically the midnight-eating events).</li>
+  <li>REM + slow-wave sleep suppression on use nights &rarr; next-day GLP-1/PYY drop &rarr; +300 cal next day.</li>
+  <li>2 events/week &times; 600 cal + 2 next-days &times; 300 cal = <span class="stat">~1,800 cal/wk = 7,200 cal/month</span>. That is <strong>the entire monthly deficit target</strong>, erased.</li>
+</ul>
+<p class="paper">Transl Psychiatry (THC &rarr; ghrelin RCT); Cannabis &amp; Sleep meta-analysis 2025, ScienceDirect.</p>
+
+<h3>C2. Kitchen closes at 9PM &mdash; hard rule</h3>
+<p>Post-10PM calories shift skeletal muscle gene expression toward fat storage independent of caloric total (PNAS 2018). This is not "calories in vs out" — it is a direct molecular fat-storage signal.</p>
+<ul>
+  <li>If genuine hunger after 10PM &rarr; 300 ml salted buttermilk only.</li>
+  <li>All party/dinner-out food must finish by 9:30PM.</li>
+</ul>
+<p class="paper">PNAS 2018 (Wefers et al., circadian misalignment &rarr; muscle fatty acid genes); PubMed 2019 late-night adipogenesis.</p>
+
+<h3>C3. Weekend sleep protection</h3>
+<p>One night of 4–5h sleep = +300–500 cal Monday intake, driven by GLP-1/PYY drop and elevated ghrelin. PJ's weekend social events + late nights predict Monday hyperphagia — which the logs confirm.</p>
+<ul>
+  <li>Saturday: lights out by 11:30 PM regardless of social plans.</li>
+  <li>Sunday: 7+ hrs sleep, no exceptions.</li>
+</ul>
+<p class="paper">PMC7071396 sleep restriction &amp; satiety hormones RCT.</p>
+</div>
+
+
+<div class="vector-header">Vector D &mdash; Exercise Modification (counter-intuitive)</div>
+<div class="vector-body">
+
+<h3 style="margin-top:0;">D1. Drop Max HR to &le;138 bpm &mdash; MAF protocol</h3>
+<p>Current: 64% of gym sessions Max HR &gt;150. Range 150–167. This is <em>above lactate threshold</em>.</p>
+<p><strong>Two problems, one fix:</strong></p>
+<ul>
+  <li><strong>Compensatory eating:</strong> High-intensity work drives post-exercise appetite +12 to 24h (PMC6213307). PJ's Monday-Wednesday over-eating patterns correlate with heavy sessions.</li>
+  <li><strong>NPDR active risk:</strong> Max HR &gt;150 with proliferative-adjacent retinopathy is a documented risk factor for retinal hemorrhage. This is not a performance question — it is a vision-preservation question.</li>
+</ul>
+<p><span class="fix">Fix:</span> 180 &minus; age = 143 max; conservative ceiling 138 bpm given NPDR. Use HR strap, not wrist. If HR climbs above 138, slow tempo, lengthen rest to 90 sec between sets, drop load 10%. <strong>80% of training in this zone.</strong></p>
+<p class="paper">Maffetone MAF protocol; PMC6213307 (high-intensity &rarr; compensatory intake RCT).</p>
+
+<h3>D2. Preserve strength stimulus without high HR</h3>
+<ul>
+  <li>Sets of 8–12 reps at RPE 7 (2–3 reps in reserve), not to failure.</li>
+  <li>Long rest (90–120 sec) between sets keeps HR down.</li>
+  <li>Exhale sharply on exertion — never Valsalva. NPDR reminder every session.</li>
+  <li>Prioritise compound lifts (weekly volume) over high-rep pump work (drives HR + eye pressure).</li>
+</ul>
+
+<h3>D3. Cardio switch</h3>
+<p>Replace tempo runs with Zone 2 walks/incline treadmill at HR 125–138. Distance target 5–7 km at slow pace. This preserves fat oxidation adaptation without triggering appetite compensation or eye risk.</p>
+</div>
+
+
+<div class="vector-header" style="color: var(--amber);">Vector E &mdash; Labs to Get (priority order)</div>
+<div class="vector-body">
+<table>
+<thead><tr><th>#</th><th>Test</th><th>Why</th><th>Timing</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Antihypertensive class</strong></td><td>Ask pharmacist / check prescription bottle. Determines if switch to ARB needed. Single highest-leverage question.</td><td><span class="tag tag-do">Today</span></td></tr>
+<tr><td>2</td><td>HbA1c</td><td>Last was 6.8%, &ge;3 months ago. Confirms diabetes trajectory + informs SGLT2 discussion.</td><td>This week</td></tr>
+<tr><td>3</td><td>Uric acid</td><td>Was 8.1. If still &ge;7 &rarr; allopurinol candidate. AMPK-mediated fat oxidation lever.</td><td>This week</td></tr>
+<tr><td>4</td><td>24-hr urine protein + eGFR</td><td>Confirms nephropathy stage. This <em>sets</em> the kidney-safe protein ceiling. If stage 1, may tolerate 100 g/day.</td><td>Next 2 weeks</td></tr>
+<tr><td>5</td><td>Fasting insulin + HOMA-IR</td><td>Quantifies insulin resistance. Explains DIT deficit + informs SGLT2 decision.</td><td>Next 2 weeks</td></tr>
+<tr><td>6</td><td>8 AM fasting cortisol</td><td>Objective measure of chronic stress load. If elevated &rarr; mindfulness intervention becomes non-optional (H4).</td><td>Next 2 weeks</td></tr>
+<tr><td>7</td><td>DEXA scan</td><td>Bioimpedance is unreliable for tracking muscle vs fat split. DEXA settles the sarcopenic-obesity diagnosis definitively.</td><td>Once, this month</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============================================= -->
+<h2>4. The 30-Day Experiment</h2>
+
+<div class="card solution">
+<p>One protocol. Four hypothesis attacks (H1, H2, H5, H10) in parallel. Realistic for 10–12h workdays and Indian food context.</p>
+
+<table>
+<thead><tr><th>Week</th><th>Focus</th><th>Rule</th><th>Measurement</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>Week 1</strong></td>
+  <td>Protein audit</td>
+  <td>Every day 80–90 g protein. Distributed &le;20 g/meal &times; 5 meals. Track in log. Rest-day protein = gym-day protein.</td>
+  <td>Daily protein tally in evening scorecard.</td>
+</tr>
+<tr>
+  <td><strong>Week 2</strong></td>
+  <td>Cannabis pause</td>
+  <td>Zero cannabis for 30 days from this point. Note hunger pattern each night. Note sleep quality (subjective 1–10).</td>
+  <td>Sleep score + midnight cravings log.</td>
+</tr>
+<tr>
+  <td><strong>Week 3</strong></td>
+  <td>Circadian rule</td>
+  <td>Kitchen closes 9 PM. Post-10PM hunger &rarr; 300 ml buttermilk only. All social dinners finish eating by 9:30 PM.</td>
+  <td>Zero post-10PM calorie events.</td>
+</tr>
+<tr>
+  <td><strong>Week 4</strong></td>
+  <td>Doctor appointment</td>
+  <td>Present: (1) request antihypertensive class review; (2) discuss SGLT2 inhibitor; (3) show 30-day protein log; (4) request lab panel above.</td>
+  <td>Written treatment plan from doctor.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Concurrent (every day of the 30):</h3>
+<ul>
+  <li><strong>MAF training only:</strong> Max HR &le; 138 bpm. Every session. HR strap on.</li>
+  <li><strong>Weekend cap:</strong> Max 1 restaurant event / week. If eaten, finish by 9 PM, no alcohol on same night as high-GI food.</li>
+  <li><strong>Steps:</strong> Maintain 14k+ daily average. Post-meal 10-min walk after each meal (glucose disposal).</li>
+  <li><strong>Weekly weigh-in:</strong> Saturday morning, same conditions. Log all 6 metrics (weight, BF%, muscle, visceral, BMR, lean mass).</li>
+</ul>
+
+<h3>Expected outcomes if all 4 executed:</h3>
+<ul>
+  <li>Fat loss: &minus;1.0 to &minus;1.5 kg in 30 days (real fat, not muscle).</li>
+  <li>Muscle mass: stabilises or +0.2 kg (reversal of catabolic trend).</li>
+  <li>Visceral fat: probable &minus;1 point (13 &rarr; 12) — first movement in 3 months.</li>
+  <li>Sleep quality: measurable improvement week 2 onwards (cannabis-off).</li>
+  <li>HbA1c: unmeasured in 30 days, but next test (90-day retest) should show 0.2–0.3% drop.</li>
+</ul>
+
+<p><span class="fix">If nothing changes:</span> the diagnosis defaults to endocrine (thyroid panel, sex hormones, cortisol curve). Escalate to endocrinologist.</p>
+</div>
+
+<!-- ============================================= -->
+<h2>5. What Is Probably Not the Problem</h2>
+
+<div class="grid-2">
+  <div class="card">
+    <h3 style="margin-top:0;">Not the problem: Calorie intake</h3>
+    <p>Weekly deficits average 5,270 cal (target 6,100). This is a <em>real</em> deficit. The issue is what happens with those calories once inside a metformin-suppressed, protein-starved, cortisol-elevated body.</p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;">Not the problem: Discipline / willpower</h3>
+    <p>4–5 gym sessions/week. 14,144 steps/day average. Detailed logging. Consistent kriya. PJ is executing at a level most people cannot sustain. Framing this as an effort problem is inaccurate <em>and</em> unhelpful.</p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;">Not the problem: Exercise volume</h3>
+    <p>14k steps + 5 sessions/week is above the 75th percentile for adults. More volume will worsen the muscle catabolism, not fix it. The exercise fix is <em>lower intensity</em>, not more.</p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;">Not the problem: Thyroid / GI</h3>
+    <p>No symptoms in logs (constipation, cold intolerance, hair loss, energy crashes decoupled from meals). Reasonable to check TSH once during Week 4 labs, but not the primary hypothesis.</p>
+  </div>
+</div>
+
+<div class="card diagnosis" style="margin-top: 18px;">
+<p><strong>The real problem, restated:</strong> Structural protein deficiency imposed by kidney disease + metformin's mTOR blunting + possible beta-blocker + cannabis-driven ghrelin surges + midnight circadian violations + defended visceral fat with no sustained clean-deficit window. Six mechanistic forces, not one behavioural one.</p>
+<p><strong>The path forward:</strong> Fix medication (Vector A), floor protein every day (Vector B), remove the two erasure events — cannabis + midnight food (Vector C), drop training intensity to preserve eyes and reduce compensatory eating (Vector D). Measure with the right instruments (Vector E).</p>
+</div>
+
+<hr>
+<div class="sub">Generated 2026-07-28 &nbsp;|&nbsp; Sources: MASTERS (Walton 2019), Morton 2018 meta-analysis, IJO 2010 &beta;-blocker meta, EMPA-REG OUTCOME 2015, SUSTAIN-6 2016, Daubenmier 2011, PMC11597755, PMC6213307, PMC7071396, PNAS 2018 (Wefers), Ali 2026 (Endocrinol Diabetes Metab), Sci Reports 2024 (N=143 visceral fat RCT), Cannabis &amp; Sleep meta 2025.</div>
+
+</body>
+</html>
