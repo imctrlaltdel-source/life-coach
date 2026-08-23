@@ -1,5 +1,7 @@
 # Listen to Latest Recording
 
+**Phone-only (Termux/Android).** This skill reads from the phone's local voice-recorder folder — there's no equivalent on other machines, so it only applies when this project is run from the Android device it was built on.
+
 **Path:** `/storage/emulated/0/Recordings/Voice Recorder/`
 
 **Method:**

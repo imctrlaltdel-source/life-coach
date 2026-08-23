@@ -24,7 +24,7 @@ from datetime import date
 sys.path.insert(0, str(Path(__file__).parent))
 from coach_db import connect
 
-LOGS = Path("/storage/emulated/0/Documents/claude/life-coach/logs")
+LOGS = Path(__file__).resolve().parent.parent / "logs"
 
 # --- Regex set (day-level, one match per file preferred) ---
 

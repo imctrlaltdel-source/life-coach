@@ -1,14 +1,27 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/usr/bin/env bash
 # Fast context loader — pure sqlite3 CLI, no Python startup.
 # Usage: ./ctx.sh                → full context (~30ms)
 #        ./ctx.sh search "term"  → FTS5 search
 #        ./ctx.sh cache          → read pre-rendered cache (~5ms)
 #        ./ctx.sh refresh        → rebuild cache
+#
+# Falls back to `python3 coach_ctx.py` when the sqlite3 CLI binary isn't
+# installed (e.g. a laptop/server without it) — same DB, slower (~150-200ms
+# vs ~20-30ms) but no system dependency required.
 
-DB="/storage/emulated/0/Documents/claude/life-coach/db/coach.db"
-CACHE="/storage/emulated/0/Documents/claude/life-coach/db/ctx_cache.txt"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT="$(dirname "$SCRIPT_DIR")"
+DB="$ROOT/db/coach.db"
+CACHE="$ROOT/db/ctx_cache.txt"
 BMR=1635
 STEP_CAL=15
+
+if ! command -v sqlite3 >/dev/null 2>&1; then
+  case "${1:-cache}" in
+    search) exec python3 "$SCRIPT_DIR/coach_ctx.py" --search "$2" ;;
+    *)      exec python3 "$SCRIPT_DIR/coach_ctx.py" ;;
+  esac
+fi
 
 # Fast path: cache read, no date/stat calls at top
 if [ "${1:-cache}" = "cache" ]; then

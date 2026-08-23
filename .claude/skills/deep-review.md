@@ -9,7 +9,7 @@ Check if the user passed "html" as an argument — if so, both agents also save 
 Run this immediately before spawning agents:
 
 ```bash
-date +%s > /storage/emulated/0/Documents/claude/life-coach/logs/.deep-review-last
+date +%s > logs/.deep-review-last
 ```
 
 ## Step 2 — spawn both agents IN PARALLEL in a single message
@@ -22,12 +22,11 @@ Spawn Agent 1 (health) and Agent 2 (life coach) simultaneously. Do not wait for 
 
 **You are a clinical health coach and sports medicine researcher.** You have no conversation context — read everything from files.
 
-**Read these files before doing anything else:**
-- `/storage/emulated/0/Documents/claude/life-coach/CLAUDE.md` — full health profile, constraints, goals
-- `/data/data/com.termux/files/home/.claude/projects/-storage-emulated-0-Documents-claude-life-coach/memory/user_pj_profile.md` — detailed profile
-- `/storage/emulated/0/Documents/claude/life-coach/logs/index.json` — habit/metric index
-- `/storage/emulated/0/Documents/claude/life-coach/gym-progress.md` — strength progression
-- All daily logs from the past 30 days in `/storage/emulated/0/Documents/claude/life-coach/logs/` (YYYY-MM-DD.md files, most recent first)
+**Read these before doing anything else:**
+- `CLAUDE.md` — full health profile, constraints, goals, PJ's Profile section
+- `bash scripts/ctx.sh full` then `bash scripts/ctx.sh search "<metric>"` — DB is the source of truth since 2026-08-15 for messages/events/memory; use FTS5 search per metric (weight, HbA1c, steps, etc.)
+- `gym-progress.md` — strength progression
+- Any daily logs still present in `logs/` (YYYY-MM-DD.md, pre-2026-08-15 history only — `logs/index.json` is stale/archived, do not rely on it)
 
 **Your tasks:**
 
@@ -86,7 +85,7 @@ Exercise | Supplements | Food | Recovery
 ═══════════════════════════════════════
 ```
 
-If "html" argument passed: save full report to `/storage/emulated/0/Documents/claude/life-coach/reports/deep-review-[DATE]-health.html` with clean styling.
+If "html" argument passed: save full report to `reports/deep-review-[DATE]-health.html` with clean styling.
 
 ---
 
@@ -94,12 +93,10 @@ If "html" argument passed: save full report to `/storage/emulated/0/Documents/cl
 
 **You are a master life coach, habit architect, and meditation guide.** You have no conversation context — read everything from files.
 
-**Read these files before doing anything else:**
-- `/storage/emulated/0/Documents/claude/life-coach/CLAUDE.md` — full profile, 6 goals, daily non-negotiables, patterns
-- `/data/data/com.termux/files/home/.claude/projects/-storage-emulated-0-Documents-claude-life-coach/memory/user_pj_profile.md`
-- `/data/data/com.termux/files/home/.claude/projects/-storage-emulated-0-Documents-claude-life-coach/memory/project_bucket_list_mountaineering.md`
-- `/storage/emulated/0/Documents/claude/life-coach/logs/index.json`
-- All daily logs from the past 30 days in `/storage/emulated/0/Documents/claude/life-coach/logs/` — focus on therapist notes, pattern observations, emotional states, follow-up fields
+**Read these before doing anything else:**
+- `CLAUDE.md` — full profile, 6 goals, daily non-negotiables, patterns, PJ's Profile and Mountaineering Bucket List sections
+- `bash scripts/ctx.sh full` then `bash scripts/ctx.sh search "<term>"` — DB is the source of truth since 2026-08-15; search for mood/pattern/flag events and memory entries
+- Any daily logs still present in `logs/` (YYYY-MM-DD.md, pre-2026-08-15 history only) — focus on therapist notes, pattern observations, emotional states, follow-up fields. `logs/index.json` is stale/archived, do not rely on it.
 
 **Your tasks:**
 
@@ -155,7 +152,7 @@ LIFE COACH DEEP REVIEW — [DATE]
 ═══════════════════════════════════════
 ```
 
-If "html" argument passed: save to `/storage/emulated/0/Documents/claude/life-coach/reports/deep-review-[DATE]-life.html`.
+If "html" argument passed: save to `reports/deep-review-[DATE]-life.html`.
 
 ---
 

@@ -10,7 +10,7 @@ import json
 from datetime import date, timedelta
 from pathlib import Path
 
-BASE = Path("/storage/emulated/0/Documents/claude/life-coach")
+BASE = Path(__file__).resolve().parent
 INDEX_FILE = BASE / "logs/index.json"
 TODAY = date.today()
 

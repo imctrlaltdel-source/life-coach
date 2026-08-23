@@ -10,9 +10,10 @@ Usage from Python:
   from coach_log import log_msg, log_event, upsert_memory
 """
 import sqlite3, json, sys, argparse, subprocess, os
+from pathlib import Path
 from coach_db import connect, now_iso, today
 
-CTX_SH = "/storage/emulated/0/Documents/claude/life-coach/scripts/ctx.sh"
+CTX_SH = str(Path(__file__).resolve().parent / "ctx.sh")
 
 def _refresh_cache():
     """Fire-and-forget cache refresh so ctx.sh cache stays fresh."""

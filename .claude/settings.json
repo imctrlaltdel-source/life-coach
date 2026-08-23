@@ -1,10 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python3 /storage/emulated/0/Documents/claude/life-coach/meal.py*)",
-      "Bash(python3 /storage/emulated/0/Documents/claude/life-coach/dashboard.py*)",
+      "Bash(python3 meal.py*)",
+      "Bash(python3 dashboard.py*)",
       "Bash(date*)",
-      "Bash(cat /storage/emulated/0/Documents/claude/life-coach/logs/*)",
+      "Bash(cat logs/*)",
+      "Bash(bash scripts/ctx.sh*)",
+      "Bash(python3 scripts/coach_log.py*)",
+      "Bash(python3 scripts/coach_ctx.py*)",
       "Bash(ls /storage/emulated/0/DCIM/*)"
     ]
   },
@@ -14,17 +17,17 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo '{\"systemMessage\": \"COACH PROTOCOL — before responding: (1) Run date command to get current time (2) Read today log in logs/YYYY-MM-DD.md (3) Decide: is this message worth logging? If yes, log BEFORE replying (4) Evaluate against PJ goals, atomic habits identity votes, and Goggins standard (5) One sharp response, no fluff, no generic coaching, one question max (6) IF PJ described food/meal → immediately run meal.py log via Bash to get accurate calorie estimate with correction factor\"}'"
+            "command": "echo '{\"systemMessage\": \"COACH PROTOCOL — before responding: (1) Run date to get current IST time (2) Run bash scripts/ctx.sh for DB context — last messages, today events, week deficit, memory, flags (3) Log PJ'\"'\"'s message with python3 scripts/coach_log.py msg user \\\"...\\\", and any habit/meal/gym/steps as an event, BEFORE replying (4) Evaluate against PJ goals, atomic habits identity votes, and Goggins standard (5) One sharp response, no fluff, no generic coaching, one question max, end with the Book Lens block (6) IF PJ described food/meal → run meal.py to get an accurate calorie estimate with correction factor, then log it (7) After replying, log the response with python3 scripts/coach_log.py msg coach \\\"...\\\"\"}'"
           },
           {
             "type": "command",
-            "command": "LAST=$(cat /storage/emulated/0/Documents/claude/life-coach/logs/.deep-review-last 2>/dev/null || echo 0); NOW=$(date +%s); DIFF=$((NOW-LAST)); if [ $DIFF -gt 604800 ]; then DAYS=$((DIFF/86400)); echo '{\"systemMessage\": \"⏰ DEEP REVIEW OVERDUE — last done '\"$DAYS\"' days ago. Ask PJ at a natural moment: want to run /deep-review now or snooze?\"}'; fi"
+            "command": "LAST=$(cat logs/.deep-review-last 2>/dev/null || echo 0); NOW=$(date +%s); DIFF=$((NOW-LAST)); if [ $DIFF -gt 604800 ]; then DAYS=$((DIFF/86400)); echo '{\"systemMessage\": \"⏰ DEEP REVIEW OVERDUE — last done '\"$DAYS\"' days ago. Ask PJ at a natural moment: want to run /deep-review now or snooze?\"}'; fi"
           }
         ]
       }
     ]
   },
   "enabledPlugins": {
-    "remember@claude-plugins-official": true
+    "remember@claude-plugins-official": false
   }
 }

@@ -1,7 +1,10 @@
 import json, re
+from pathlib import Path
 from collections import defaultdict
 
-with open("/storage/emulated/0/Documents/claude/life-coach/reports/volumeeating_raw.json") as f:
+REPORTS_DIR = Path(__file__).resolve().parent
+
+with open(REPORTS_DIR / "volumeeating_raw.json") as f:
     posts = json.load(f)
 
 print(f"Total posts loaded: {len(posts)}")
@@ -190,7 +193,7 @@ for c, n in sorted(cat_counts.items(), key=lambda x: -x[1]):
     print(f"  {c}: {n}")
 
 # Save filtered
-with open("/storage/emulated/0/Documents/claude/life-coach/reports/volumeeating_qualifying.json", "w") as f:
+with open(REPORTS_DIR / "volumeeating_qualifying.json", "w") as f:
     json.dump(qualifying, f, indent=2)
 
 # Print top 30 titles for inspection

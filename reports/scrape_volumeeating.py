@@ -1,4 +1,5 @@
 import urllib.request, json, time, sys
+from pathlib import Path
 
 def scrape_reddit(subreddit, limit=1000, sort="score"):
     results, last_created = [], None
@@ -36,7 +37,7 @@ def scrape_reddit(subreddit, limit=1000, sort="score"):
 if __name__ == "__main__":
     print("Starting scrape of r/Volumeeating (top 1000 by score)...", flush=True)
     data = scrape_reddit("Volumeeating", limit=1000, sort="score")
-    out = "/storage/emulated/0/Documents/claude/life-coach/reports/volumeeating_raw.json"
+    out = str(Path(__file__).resolve().parent / "volumeeating_raw.json")
     with open(out, "w") as f:
         json.dump(data, f)
     print(f"Saved {len(data)} posts to {out}", flush=True)
