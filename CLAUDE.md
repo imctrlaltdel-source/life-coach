@@ -158,14 +158,16 @@ These two habits directly reduce HbA1c. Never let them slide without flagging.
 ### MANDATORY SESSION OPEN PROTOCOL (every single response, no exceptions)
 
 **Before writing ANY coaching response:**
-1. Run `date` — get exact IST time and day
-2. Run `bash scripts/ctx.sh                 # cache read, ~20ms — use this by default` — dumps last 20 msgs, today's events, week deficit, memory, flags (~150ms)
-3. Read `coaching-plan.md` if plan-relevant question — otherwise skip
-4. Triangulate: plan vs. logged reality (from ctx dump) → decide what PJ should do NOW given time of day
-5. Run `python3 scripts/coach_log.py msg user "..."` — log PJ's message
-6. Run `python3 scripts/coach_log.py event ...` for every extractable habit/meal/gym/steps in the message
-7. THEN write the coaching response
-8. After sending, run `python3 scripts/coach_log.py msg coach "..."` — log the response
+1. Run `bash scripts/sync.sh pull` — pull any data another device (phone/laptop) logged since last sync. See "Cross-Device Sync" section below — skipping this is what caused the Aug 23 dinner-advice-with-stale-data incident.
+2. Run `date` — get exact IST time and day
+3. Run `bash scripts/ctx.sh                 # cache read, ~20ms — use this by default` — dumps last 20 msgs, today's events, week deficit, memory, flags (~150ms)
+4. Read `coaching-plan.md` if plan-relevant question — otherwise skip
+5. Triangulate: plan vs. logged reality (from ctx dump) → decide what PJ should do NOW given time of day
+6. Run `python3 scripts/coach_log.py msg user "..."` — log PJ's message
+7. Run `python3 scripts/coach_log.py event ...` for every extractable habit/meal/gym/steps in the message
+8. THEN write the coaching response
+9. After sending, run `python3 scripts/coach_log.py msg coach "..."` — log the response
+10. Run `bash scripts/sync.sh push` — get this exchange onto GitHub before moving on, especially if anything high-value (CGM, meals, a real emotional moment) was just logged
 
 **The coaching response must always answer:**
 - What has been done today vs. plan (green/red)
@@ -588,9 +590,12 @@ Never let this fade into generic motivational talk — it's the single most load
 Every response, before typing anything to PJ:
 
 ```bash
+bash scripts/sync.sh pull                   # pull anything the other device logged since last sync
 date                                         # get IST time
 bash scripts/ctx.sh                 # cache read, ~20ms — use this by default                 # dump: last 20 msgs, today events, week deficit, memory, flags
 ```
+
+And after logging anything real: `bash scripts/sync.sh push`.
 
 That single command replaces reading `logs/YYYY-MM-DD.md`, `.remember/`, `memory/*.md`, and `logs/index.json`. If you need more:
 
@@ -697,6 +702,26 @@ def scrape_reddit(subreddit, limit=100, query=None, sort="score"):
 - **Direct Reddit API → 403 Blocked always.**
 - Redlib/Teddit frontends → Anubis bot challenge, blocked.
 - Pagination (Pullpush): use `before=last_created_utc` to get next batch
+
+## Cross-Device Sync — Laptop ⟷ GitHub ⟷ Termux (MANDATORY, since 2026-08-23)
+**Repo:** `git@github.com:imctrlaltdel-source/life-coach.git` (private). Each device authenticates with its own deploy key scoped to just this repo — never an account-wide key.
+
+**Why this exists:** on 2026-08-23, this laptop and PJ's phone had both been logging to the same project without syncing — the laptop gave dinner advice with zero visibility into meals/CGM data the phone had already logged that same day. Don't repeat that.
+
+**The rule, on every device, every session:**
+1. **Pull before reading context** — `bash scripts/sync.sh pull` before `scripts/ctx.sh`, every session, no exceptions. A different device may have written newer data since you last synced.
+2. **Push after logging real data** — `bash scripts/sync.sh push` at minimum at the end of a session, and immediately after anything high-value (CGM data, a meal, a significant conversation) rather than letting it sit local-only.
+3. This is one instruction living in CLAUDE.md, which is itself part of the synced repo — so it applies identically on the phone (Termux) side once that device pulls this file. No separate phone-specific setup needed beyond: the phone must also run `scripts/sync.sh pull` before reading context and `push` after logging, same as here.
+4. **Never auto-resolve a real conflict.** If `sync.sh pull` reports a conflict or blocked merge, stop and work it through by hand — don't guess which version is right. If untracked local files collide with incoming ones, `git stash push -u` first and verify with `git diff stash@{0}^3 HEAD -- <file>` before dropping the stash (this is exactly how the 2026-08-23 phone/laptop merge was done safely — see git log `2449f5a`).
+
+## CGM Monitoring — Deep, Zero Data Loss (since 2026-08-23)
+PJ wants every CGM screenshot fully preserved and extracted, building toward a carb-load-vs-glucose-response picture of his own body over time.
+
+- **Save the original image, unedited**, to `cgm/images/YYYY-MM-DD/HHMM-<short-context>.<ext>` — create the date folder as needed. Never discard the source image after extracting numbers from it.
+- **Extract every visible reading from the graph**, not a sparse sample — every point the screenshot actually shows, each as its own `cgm` event (`type=cgm`, `subtype=reading` or `peak`/`nadir`, `value_num`=mg/dL, `data_json` with `{time, context, sensor}`).
+- Tag readings to the meal/context they relate to where known, so a reading can be traced back to what caused it.
+- Push (`scripts/sync.sh push`) right after logging CGM data — this is exactly the high-value data the sync rule above exists for.
+- **Periodically synthesize, don't just log:** on request, or as part of the 7-day Deep Review, pull the week's `cgm` + `meal` events together and produce an actual carb-load-vs-response summary — which foods/eating orders produced the biggest excursions, which choices blunted them (2026-08-23 is the working example: sourdough breakfast alone → +73pt spike; paneer-first at lunch on a similar carb load → ~10pt wobble). The goal is PJ understanding his own glycemic patterns, not just a data pile.
 
 ## Deep Review — Every 7 Days
 Two-agent parallel deep review (health + life coach) over the full history. Full skill at `.claude/skills/deep-review.md`. A `UserPromptSubmit` hook checks `logs/.deep-review-last` and nudges when 7+ days overdue — if it fires, ask PJ at a natural moment whether to run it now or snooze, don't force it mid-conversation.
