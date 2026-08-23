@@ -34,6 +34,10 @@ _push() {
   git add db/coach.db logs/ CLAUDE.md cgm/ 2>/dev/null || true
   if ! git diff --cached --quiet; then
     git commit -m "sync: $(date '+%Y-%m-%d %H:%M IST')" -q
+  fi
+  # Push whenever local is ahead, whether or not this call added a new commit —
+  # a manual commit made outside this script must still go out.
+  if [ -n "$(git log --oneline origin/master..HEAD 2>/dev/null)" ]; then
     git push origin master
   fi
 }
