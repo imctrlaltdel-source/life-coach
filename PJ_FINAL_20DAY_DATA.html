@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJ 20-Day Nutrition Data</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0d1117;
+            color: #c9d1d9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background: #161b22;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+        }
+        h1 {
+            text-align: center;
+            color: #58a6ff;
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+        .info {
+            text-align: center;
+            color: #8b949e;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        th {
+            background: #0d1117;
+            color: #58a6ff;
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #30363d;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        td {
+            padding: 8px;
+            border: 1px solid #30363d;
+            background: #161b22;
+        }
+        tr:nth-child(even) {
+            background: #0d1117;
+        }
+        tr:hover {
+            background: #1c2128;
+        }
+        .date { font-weight: bold; color: #58a6ff; width: 80px; }
+        .day { color: #79c0ff; width: 60px; }
+        .food { color: #a371f7; max-width: 300px; word-wrap: break-word; }
+        .cal { color: #79c0ff; font-weight: bold; }
+        .number { text-align: right; font-weight: bold; }
+        .protein { color: #3fb950; }
+        .carbs { color: #d29922; }
+        .cal-out { color: #f0883e; }
+        .deficit { color: #79c0ff; }
+        .deficit-pos { color: #3fb950; }
+        .weight { color: #58a6ff; font-weight: bold; }
+        .null-data { color: #6e7681; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PJ's 20-Day Complete Nutrition Data</h1>
+        <p class="info">April 13 – May 2, 2026 | Food items + calories | Macros | Activity-based calorie out | Weight tracking</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="date">Date</th>
+                    <th class="day">Day</th>
+                    <th style="width: 220px;">BREAKFAST (food | cal)</th>
+                    <th style="width: 220px;">LUNCH (food | cal)</th>
+                    <th style="width: 220px;">DINNER (food | cal)</th>
+                    <th style="width: 200px;">OTHER/SNACKS (food | cal)</th>
+                    <th style="width: 70px;">Total Cal</th>
+                    <th style="width: 50px;">Protein (g)</th>
+                    <th style="width: 50px;">Carbs (g)</th>
+                    <th style="width: 80px;">Cal Out (TDEE+Ex)</th>
+                    <th style="width: 60px;">Deficit</th>
+                    <th style="width: 50px;">Weight (kg)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="date">Apr 13</td>
+                    <td class="day">Mon</td>
+                    <td class="food">1 bread + 2 egg bhurji + whey <span class="cal">| 330</span></td>
+                    <td class="food">2 rotis + paneer curry + bhindi + cucumber + whey <span class="cal">| 450</span></td>
+                    <td class="food">Afgani chicken 5pc + 1 dosa + cucumber + whey <span class="cal">| 520</span></td>
+                    <td class="food">5 nippattu + noodles 1 katori + whey <span class="cal">| 350</span></td>
+                    <td class="number">1,590</td>
+                    <td class="number protein"><span class="null-data">—</span></td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out">1,881</td>
+                    <td class="number deficit-pos">291</td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 14</td>
+                    <td class="day">Tue</td>
+                    <td class="food">2 poached eggs + 1 bread + whey in buttermilk <span class="cal">| 350</span></td>
+                    <td class="food">159g snake gourd + 100g rice + 100g paneer sabzi <span class="cal">| 370</span></td>
+                    <td class="food">3/4 paneer paratha (no oil) + 4 moong dal tikkis + whey <span class="cal">| 460</span></td>
+                    <td class="food">10 potato chips + 1 uttapam <span class="cal">| 300</span></td>
+                    <td class="number">1,480</td>
+                    <td class="number protein"><span class="null-data">—</span></td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out">2,075</td>
+                    <td class="number deficit-pos">595</td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 15</td>
+                    <td class="day">Wed</td>
+                    <td class="food">1 paneer paratha + 3 egg white bhurji + whey <span class="cal">| 440</span></td>
+                    <td class="food">chicken biryani 10 tbsp + moong dal + methi palak aloo sabzi + onion <span class="cal">| 535</span></td>
+                    <td class="food"><span class="null-data">not recorded</span> <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="number">975</td>
+                    <td class="number protein"><span class="null-data">—</span></td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out">1,881</td>
+                    <td class="number deficit-pos">906</td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 16</td>
+                    <td class="day">Thu</td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="number">1,215</td>
+                    <td class="number protein"><span class="null-data">—</span></td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out">1,881</td>
+                    <td class="number deficit-pos">666</td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 17</td>
+                    <td class="day">Fri</td>
+                    <td class="food"><span class="null-data">Eggs + bread (est.)</span> <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">Chole + millet dosa + salad (est.)</span> <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">1.5 paratha + chana (est.)</span> <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">Roasted chana (est.)</span> <span class="cal">| —</span></td>
+                    <td class="number">1,430</td>
+                    <td class="number protein"><span class="null-data">—</span></td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out">2,057</td>
+                    <td class="number deficit-pos">627</td>
+                    <td class="weight">80.25</td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 18</td>
+                    <td class="day">Sat</td>
+                    <td class="food">Home dhokla <span class="cal">| —</span></td>
+                    <td class="food">Pav bhaji + momos at party <span class="cal">| —</span></td>
+                    <td class="food">More pav bhaji + khameeri roti + ice cream + chocolate + Lays <span class="cal">| —</span></td>
+                    <td class="food"><span style="color: #f85149;">Full collapse - untracked</span> <span class="cal">| —</span></td>
+                    <td class="number"><span class="null-data">—</span></td>
+                    <td class="number protein"><span class="null-data">—</span></td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out">1,881</td>
+                    <td class="number"><span class="null-data">—</span></td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 19</td>
+                    <td class="day">Sun</td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="number"><span class="null-data">—</span></td>
+                    <td class="number protein"><span class="null-data">—</span></td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out">1,631</td>
+                    <td class="number"><span class="null-data">—</span></td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 20</td>
+                    <td class="day">Mon</td>
+                    <td class="food">Eggs + bread <span class="cal">| —</span></td>
+                    <td class="food">Burrito wrap no rice + chicken starters at work dinner <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="number"><span class="null-data">~1,250</span></td>
+                    <td class="number protein"><span class="null-data">—</span></td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out">1,881</td>
+                    <td class="number"><span class="null-data">—</span></td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 21</td>
+                    <td class="day">Tue</td>
+                    <td class="food">Moong dal tikki + eggs + cucumber + whey <span class="cal">| —</span></td>
+                    <td class="food">Chicken salad <span class="cal">| —</span></td>
+                    <td class="food">Pasta + poha evening <span class="cal">| —</span></td>
+                    <td class="food">2 samosas <span class="cal">| —</span></td>
+                    <td class="number"><span class="null-data">~1,350</span></td>
+                    <td class="number protein"><span class="null-data">—</span></td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out">1,631</td>
+                    <td class="number"><span class="null-data">—</span></td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 22</td>
+                    <td class="day">Wed</td>
+                    <td class="food">Moong dal tikki + eggs + buttermilk + whey <span class="cal">| —</span></td>
+                    <td class="food">Chicken salad <span class="cal">| —</span></td>
+                    <td class="food">Buttermilk + whey + half pasta + half poha <span class="cal">| —</span></td>
+                    <td class="food">2 samosas <span class="cal">| —</span></td>
+                    <td class="number"><span class="null-data">~1,200</span></td>
+                    <td class="number protein"><span class="null-data">—</span></td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out">1,881</td>
+                    <td class="number"><span class="null-data">—</span></td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 23</td>
+                    <td class="day">Thu</td>
+                    <td class="food">2 bread + Spanish omelette with cheese <span class="cal">| —</span></td>
+                    <td class="food">Buttermilk + whey + cucumber + 3 idli + sambhar + healthy munching chips <span class="cal">| —</span></td>
+                    <td class="food">Chicken popcorn + Thai satay at restaurant with wife <span class="cal">| 630</span></td>
+                    <td class="food">4 squares Dairy Milk Silk <span class="cal">| —</span></td>
+                    <td class="number">1,110</td>
+                    <td class="number protein">97</td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out">1,631</td>
+                    <td class="number deficit-pos">521</td>
+                    <td class="weight">80.25</td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 24</td>
+                    <td class="day">Fri</td>
+                    <td class="food">1 bread + 3 egg white omelette + whey + buttermilk <span class="cal">| 330</span></td>
+                    <td class="food">2 roti + lauki kofta + cucumber <span class="cal">| 420</span></td>
+                    <td class="food">2 paratha + shahi paneer + cucumber + whey <span class="cal">| 580</span></td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="number">1,330</td>
+                    <td class="number protein">81</td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out">1,881</td>
+                    <td class="number deficit-pos">551</td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 25</td>
+                    <td class="day">Sat</td>
+                    <td class="food">2 bread + 4 egg whites + cucumber + tomato <span class="cal">| 280</span></td>
+                    <td class="food">2 roti + soya matar curry + dal/sabzi + roasted broccoli + brussels sprouts + whey <span class="cal">| 580</span></td>
+                    <td class="food">2 methi paratha + lots of baigan sabzi + 75 cal 0-sugar ice cream <span class="cal">| 515</span></td>
+                    <td class="food">2 veggie + mushroom tacos + 2 Coke Zeros <span class="cal">| 240</span></td>
+                    <td class="number">1,615</td>
+                    <td class="number protein">85</td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out">2,246</td>
+                    <td class="number deficit-pos">631</td>
+                    <td class="weight">80.25</td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 26</td>
+                    <td class="day">Sun</td>
+                    <td class="food">4 egg whites scrambled with veggies + 1 methi/besan paratha + roasted tomato + capsicum+tomato sabzi + whey <span class="cal">| 420</span></td>
+                    <td class="food">1 pav + bhaji (no potato) <span class="cal">| 300</span></td>
+                    <td class="food">Chole + moong dal + paneer + buttermilk + whey <span class="cal">| 460</span></td>
+                    <td class="food">Roasted chana + apple <span class="cal">| 250</span></td>
+                    <td class="number">1,430</td>
+                    <td class="number protein"><span class="null-data">~95</span></td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out">2,300</td>
+                    <td class="number deficit-pos">870</td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 27</td>
+                    <td class="day">Mon</td>
+                    <td class="food">Eggs + bread <span class="cal">| 400</span></td>
+                    <td class="food">Chana zor garam + paneer sabzi + roti <span class="cal">| 576</span></td>
+                    <td class="food">Chicken curry + roti <span class="cal">| 506</span></td>
+                    <td class="food">Maggi snack <span class="cal">| ~524</span></td>
+                    <td class="number">2,006</td>
+                    <td class="number protein">105</td>
+                    <td class="number carbs">~220</td>
+                    <td class="number cal-out">2,500</td>
+                    <td class="number deficit-pos">494</td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 28</td>
+                    <td class="day">Tue</td>
+                    <td class="food">Eggs + bread + whey <span class="cal">| 280</span></td>
+                    <td class="food">Shwarma + paneer curry + roti <span class="cal">| 678</span></td>
+                    <td class="food">Dal makhani + paneer + roti + whey <span class="cal">| 1,110</span></td>
+                    <td class="food">Apple + water <span class="cal">| 216</span></td>
+                    <td class="number">2,284</td>
+                    <td class="number protein">119</td>
+                    <td class="number carbs">~260</td>
+                    <td class="number cal-out">2,598</td>
+                    <td class="number deficit-pos">314</td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 29</td>
+                    <td class="day">Wed</td>
+                    <td class="food">Eggs + bread <span class="cal">| ~380</span></td>
+                    <td class="food">McDonald's + paneer <span class="cal">| ~625</span></td>
+                    <td class="food"><span class="null-data">Skipped</span> <span class="cal">| —</span></td>
+                    <td class="food">McDonald's fries + snacking <span class="cal">| 750</span></td>
+                    <td class="number">1,755</td>
+                    <td class="number protein">~70</td>
+                    <td class="number carbs">~180</td>
+                    <td class="number cal-out">2,350</td>
+                    <td class="number deficit-pos">595</td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 30</td>
+                    <td class="day">Thu</td>
+                    <td class="food">Egg bhurji + paneer bhurji <span class="cal">| 250</span></td>
+                    <td class="food">Farmer salad with falafel <span class="cal">| 400</span></td>
+                    <td class="food">Pav bhaji + pita (3 breads) <span class="cal">| 350</span></td>
+                    <td class="food">Protein bar + hummus + pita <span class="cal">| ~320</span></td>
+                    <td class="number">1,320</td>
+                    <td class="number protein">58</td>
+                    <td class="number carbs">110</td>
+                    <td class="number cal-out">2,100</td>
+                    <td class="number deficit-pos">780</td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">May 1</td>
+                    <td class="day">Fri</td>
+                    <td class="food">Cucumber + egg white + beetroot bhurji + brown bread <span class="cal">| 410</span></td>
+                    <td class="food">Cucumber + carrot + white rice 1.5 cup + fried rice oil + Chinese mix veg with paneer + whey in 1L buttermilk <span class="cal">| 1,083</span></td>
+                    <td class="food">Dahi chicken ~150g + 1 whole wheat roti + 200ml buttermilk <span class="cal">| 440</span></td>
+                    <td class="food">5 Dairy Milk chocolate squares <span class="cal">| 130</span></td>
+                    <td class="number">2,063</td>
+                    <td class="number protein">109.6</td>
+                    <td class="number carbs">220</td>
+                    <td class="number cal-out">2,350</td>
+                    <td class="number deficit-pos">287</td>
+                    <td class="weight"><span class="null-data">—</span></td>
+                </tr>
+                <tr>
+                    <td class="date">May 2</td>
+                    <td class="day">Sat</td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="food"><span class="null-data">—</span> <span class="cal">| —</span></td>
+                    <td class="number"><span class="null-data">—</span></td>
+                    <td class="number protein"><span class="null-data">—</span></td>
+                    <td class="number carbs"><span class="null-data">—</span></td>
+                    <td class="number cal-out"><span class="null-data">—</span></td>
+                    <td class="number"><span class="null-data">—</span></td>
+                    <td class="weight">80.50</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top: 20px; color: #8b949e; font-size: 11px;">
+            <strong>Data Source:</strong> Daily logs extracted from /logs/2026-04-DD.md and /logs/2026-05-DD.md<br>
+            <strong>Calorie Out Formula:</strong> BMR 1,631 kcal + activity burn (run ~400 cal, gym ~250 cal)<br>
+            <strong>Weight Readings:</strong> HealthU+ scale (Apr 17: 80.25kg baseline, Apr 25: 80.25kg, May 2: 80.50kg)<br>
+            <strong>Missing Data:</strong> — = not recorded in log. Carbs not systematically logged for all days. Macros extracted where logged.
+        </p>
+
+    </div>
+</body>
+</html>

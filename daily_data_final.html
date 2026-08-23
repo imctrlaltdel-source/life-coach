@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJ Daily Data - Last 20 Days</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f0;
+            padding: 15px;
+            font-size: 12px;
+        }
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        h1 { text-align: center; margin-bottom: 10px; font-size: 18px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+        }
+        th {
+            background: #333;
+            color: white;
+            padding: 6px;
+            text-align: left;
+            border: 1px solid #999;
+            font-weight: bold;
+        }
+        td {
+            padding: 5px;
+            border: 1px solid #ccc;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .date { font-weight: bold; width: 80px; }
+        .breakfast { background: #e3f2fd; }
+        .lunch { background: #fff3e0; }
+        .dinner { background: #fce4ec; }
+        .snack { background: #f3e5f5; }
+        .calorie { text-align: right; }
+        .number { font-weight: bold; }
+        .deficit-pos { color: green; font-weight: bold; }
+        .deficit-neg { color: red; font-weight: bold; }
+        .weight { color: blue; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PJ's Daily Nutrition Data - April 13 to May 2, 2026</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 80px;">Date</th>
+                    <th style="width: 200px;">BREAKFAST (cal)</th>
+                    <th style="width: 200px;">LUNCH (cal)</th>
+                    <th style="width: 200px;">DINNER (cal)</th>
+                    <th style="width: 150px;">SNACKS/OTHER (cal)</th>
+                    <th class="calorie" style="width: 60px;">Total Cal</th>
+                    <th class="calorie" style="width: 50px;">Protein (g)</th>
+                    <th class="calorie" style="width: 50px;">Carbs (g)</th>
+                    <th class="calorie" style="width: 70px;">Cal Out (TDEE+Ex)</th>
+                    <th class="calorie" style="width: 60px;">Deficit</th>
+                    <th class="calorie" style="width: 50px;">Weight (kg)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="date">Apr 13</td>
+                    <td class="breakfast">1 bread + 2 egg bhurji + whey (330)</td>
+                    <td class="lunch">2 rotis + paneer curry + bhindi + cucumber + whey (450)</td>
+                    <td class="dinner">Afgani chicken 5pc + 1 dosa + cucumber + whey (520)</td>
+                    <td class="snack">5 nippattu + noodles 1 bowl + whey (350)</td>
+                    <td class="calorie number">1,590</td>
+                    <td class="calorie">~70</td>
+                    <td class="calorie">~170</td>
+                    <td class="calorie">~2,400</td>
+                    <td class="calorie deficit-pos">~810</td>
+                    <td class="calorie weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 17</td>
+                    <td class="breakfast">Eggs + bread</td>
+                    <td class="lunch">Chole + millet dosa + salad</td>
+                    <td class="dinner">1.5 paratha + chana</td>
+                    <td class="snack">Roasted chana</td>
+                    <td class="calorie number">1,430</td>
+                    <td class="calorie">~65</td>
+                    <td class="calorie">~180</td>
+                    <td class="calorie">~2,100</td>
+                    <td class="calorie deficit-pos">~670</td>
+                    <td class="calorie weight">80.25</td>
+                </tr>
+                <tr>
+                    <td class="date">Apr 25</td>
+                    <td class="breakfast">2 bread + 4 egg whites + cucumber + tomato (280)</td>
+                    <td class="lunch">2 roti + soya matar curry + dal + broccoli + brussels sprouts + whey (580)</td>
+                    <td class="dinner">2 methi paratha + baigan sabzi + 75 cal 0-sugar ice cream (515)</td>
+                    <td class="snack">2 veggie+mushroom tacos + 2 Coke Zero (240)</td>
+                    <td class="calorie number">1,615</td>
+                    <td class="calorie">85</td>
+                    <td class="calorie">~190</td>
+                    <td class="calorie">~2,646</td>
+                    <td class="calorie deficit-pos">~1,031</td>
+                    <td class="calorie weight">80.25</td>
+                </tr>
+                <tr>
+                    <td class="date">May 1</td>
+                    <td class="breakfast">Cucumber slices + boiled egg white + beetroot bhurji + brown bread (410)</td>
+                    <td class="lunch">Cucumber + carrot raw + white rice 1.5 cup + fried rice oil + Chinese mix veg with paneer + whey in 1L buttermilk (1,083)</td>
+                    <td class="dinner">Dahi chicken ~150g + 1 whole wheat roti + 200ml buttermilk (440)</td>
+                    <td class="snack">5 Dairy Milk chocolate squares (130)</td>
+                    <td class="calorie number">2,063</td>
+                    <td class="calorie">109.6</td>
+                    <td class="calorie">220</td>
+                    <td class="calorie">~2,350</td>
+                    <td class="calorie deficit-pos">~287</td>
+                    <td class="calorie weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date">May 2</td>
+                    <td class="breakfast">—</td>
+                    <td class="lunch">—</td>
+                    <td class="dinner">—</td>
+                    <td class="snack">—</td>
+                    <td class="calorie">—</td>
+                    <td class="calorie">—</td>
+                    <td class="calorie">—</td>
+                    <td class="calorie">—</td>
+                    <td class="calorie">—</td>
+                    <td class="calorie weight">80.50</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top: 20px; font-size: 10px; color: #666;">
+            Note: Complete detailed logs only available for Apr 13, 17, 25, May 1-2. Other days have summary estimates from backfilled data.
+            TDEE baseline: 1,631 kcal/day (BMR from HealthU+). Exercise burns: Run ~400 cal, Gym ~250 cal (conservative estimate, app overestimates by 2x).
+            Weights recorded: Apr 17: 80.25kg, Apr 25: 80.25kg, May 2: 80.50kg
+        </p>
+
+    </div>
+</body>
+</html>

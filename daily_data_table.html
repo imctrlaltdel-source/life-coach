@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJ's Daily Nutrition & Weight Data</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0e27;
+            color: #ecf0f1;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #3498db;
+            font-size: 24px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #95a5a6;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1a1a2e;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        th {
+            background: #16213e;
+            color: #3498db;
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #0f3460;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        td {
+            padding: 6px 8px;
+            border: 1px solid #2d4059;
+            background: #1a1a2e;
+        }
+        tr:nth-child(even) {
+            background: #16213e;
+        }
+        tr:hover {
+            background: #0f3460;
+        }
+        .date-col {
+            font-weight: bold;
+            color: #3498db;
+        }
+        .breakfast {
+            color: #2ecc71;
+        }
+        .lunch {
+            color: #f39c12;
+        }
+        .dinner {
+            color: #e74c3c;
+        }
+        .other {
+            color: #9b59b6;
+        }
+        .total-cal {
+            font-weight: bold;
+            background: #0f3460;
+            color: #f1c40f;
+        }
+        .protein {
+            color: #1abc9c;
+        }
+        .carbs {
+            color: #e67e22;
+        }
+        .calories-out {
+            color: #ecf0f1;
+        }
+        .deficit-pos {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        .deficit-neg {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .weight {
+            color: #3498db;
+            font-weight: bold;
+        }
+        .note {
+            font-size: 10px;
+            color: #95a5a6;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PJ's Daily Nutrition & Weight Data</h1>
+        <p class="subtitle">April 13 – May 2, 2026 | Last 20 days</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Day</th>
+                    <th class="breakfast">Breakfast (cal)</th>
+                    <th class="lunch">Lunch (cal)</th>
+                    <th class="dinner">Dinner (cal)</th>
+                    <th class="other">Other/Snacks (cal)</th>
+                    <th class="total-cal">Total Cal In</th>
+                    <th class="protein">Protein (g)</th>
+                    <th class="carbs">Carbs (g)</th>
+                    <th class="calories-out">Cal Out</th>
+                    <th>Deficit</th>
+                    <th class="weight">Weight (kg)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="date-col">2026-04-13</td>
+                    <td>Mon</td>
+                    <td class="breakfast">330</td>
+                    <td class="lunch">450</td>
+                    <td class="dinner">520</td>
+                    <td class="other">350</td>
+                    <td class="total-cal">1,590</td>
+                    <td class="protein">~70</td>
+                    <td class="carbs">~170</td>
+                    <td class="calories-out">~2,400</td>
+                    <td class="deficit-pos">~810</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-14</td>
+                    <td>Tue</td>
+                    <td class="breakfast">350</td>
+                    <td class="lunch">300</td>
+                    <td class="dinner">460</td>
+                    <td class="other">—</td>
+                    <td class="total-cal">1,480</td>
+                    <td class="protein">~65</td>
+                    <td class="carbs">~160</td>
+                    <td class="calories-out">~2,200</td>
+                    <td class="deficit-pos">~720</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-15</td>
+                    <td>Wed</td>
+                    <td class="breakfast">440</td>
+                    <td class="lunch">535</td>
+                    <td class="dinner">—</td>
+                    <td class="other">—</td>
+                    <td class="total-cal">975</td>
+                    <td class="protein">~60</td>
+                    <td class="carbs">~120</td>
+                    <td class="calories-out">~2,100</td>
+                    <td class="deficit-pos">~1,125</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-16</td>
+                    <td>Thu</td>
+                    <td class="breakfast">—</td>
+                    <td class="lunch">—</td>
+                    <td class="dinner">—</td>
+                    <td class="other">—</td>
+                    <td class="total-cal">1,215</td>
+                    <td class="protein">~70</td>
+                    <td class="carbs">~150</td>
+                    <td class="calories-out">~2,200</td>
+                    <td class="deficit-pos">~985</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-17</td>
+                    <td>Fri</td>
+                    <td class="breakfast">—</td>
+                    <td class="lunch">—</td>
+                    <td class="dinner">—</td>
+                    <td class="other">—</td>
+                    <td class="total-cal">1,430</td>
+                    <td class="protein">~65</td>
+                    <td class="carbs">~180</td>
+                    <td class="calories-out">~2,100</td>
+                    <td class="deficit-pos">~670</td>
+                    <td class="weight">80.25</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-18</td>
+                    <td>Sat</td>
+                    <td class="breakfast">—</td>
+                    <td class="lunch">—</td>
+                    <td class="dinner">—</td>
+                    <td class="other">—</td>
+                    <td class="total-cal">1,500+</td>
+                    <td class="protein">~60</td>
+                    <td class="carbs">~200+</td>
+                    <td class="calories-out">~2,200</td>
+                    <td class="deficit-pos">~700</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-19</td>
+                    <td>Sun</td>
+                    <td class="breakfast">—</td>
+                    <td class="lunch">—</td>
+                    <td class="dinner">—</td>
+                    <td class="other">—</td>
+                    <td class="total-cal">~1,200</td>
+                    <td class="protein">~55</td>
+                    <td class="carbs">~140</td>
+                    <td class="calories-out">~1,900</td>
+                    <td class="deficit-pos">~700</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-20</td>
+                    <td>Mon</td>
+                    <td class="breakfast">—</td>
+                    <td class="lunch">—</td>
+                    <td class="dinner">—</td>
+                    <td class="other">—</td>
+                    <td class="total-cal">1,250</td>
+                    <td class="protein">~65</td>
+                    <td class="carbs">~150</td>
+                    <td class="calories-out">~2,300</td>
+                    <td class="deficit-pos">~1,050</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-21</td>
+                    <td>Tue</td>
+                    <td class="breakfast">—</td>
+                    <td class="lunch">—</td>
+                    <td class="dinner">—</td>
+                    <td class="other">—</td>
+                    <td class="total-cal">1,350</td>
+                    <td class="protein">~65</td>
+                    <td class="carbs">~165</td>
+                    <td class="calories-out">~2,200</td>
+                    <td class="deficit-pos">~850</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-22</td>
+                    <td>Wed</td>
+                    <td class="breakfast">—</td>
+                    <td class="lunch">—</td>
+                    <td class="dinner">—</td>
+                    <td class="other">—</td>
+                    <td class="total-cal">1,200</td>
+                    <td class="protein">~65</td>
+                    <td class="carbs">~145</td>
+                    <td class="calories-out">~2,250</td>
+                    <td class="deficit-pos">~1,050</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-23</td>
+                    <td>Thu</td>
+                    <td class="breakfast">~900</td>
+                    <td class="lunch">~110</td>
+                    <td class="dinner">~110</td>
+                    <td class="other">~400</td>
+                    <td class="total-cal">1,110</td>
+                    <td class="protein">97</td>
+                    <td class="carbs">~130</td>
+                    <td class="calories-out">~2,050</td>
+                    <td class="deficit-pos">~940</td>
+                    <td class="weight">80.25</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-24</td>
+                    <td>Fri</td>
+                    <td class="breakfast">330</td>
+                    <td class="lunch">420</td>
+                    <td class="dinner">580</td>
+                    <td class="other">—</td>
+                    <td class="total-cal">1,330</td>
+                    <td class="protein">81</td>
+                    <td class="carbs">~160</td>
+                    <td class="calories-out">~2,150</td>
+                    <td class="deficit-pos">~820</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-25</td>
+                    <td>Sat</td>
+                    <td class="breakfast">280</td>
+                    <td class="lunch">580</td>
+                    <td class="dinner">515</td>
+                    <td class="other">240</td>
+                    <td class="total-cal">1,615</td>
+                    <td class="protein">85</td>
+                    <td class="carbs">~190</td>
+                    <td class="calories-out">~2,646</td>
+                    <td class="deficit-pos">~1,031</td>
+                    <td class="weight">80.25</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-26</td>
+                    <td>Sun</td>
+                    <td class="breakfast">420</td>
+                    <td class="lunch">300</td>
+                    <td class="dinner">460</td>
+                    <td class="other">250</td>
+                    <td class="total-cal">1,430</td>
+                    <td class="protein">~95</td>
+                    <td class="carbs">~160</td>
+                    <td class="calories-out">~2,300</td>
+                    <td class="deficit-pos">~870</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-27</td>
+                    <td>Mon</td>
+                    <td class="breakfast">400</td>
+                    <td class="lunch">576</td>
+                    <td class="dinner">506</td>
+                    <td class="other">~524</td>
+                    <td class="total-cal">2,006</td>
+                    <td class="protein">105</td>
+                    <td class="carbs">~220</td>
+                    <td class="calories-out">~2,500</td>
+                    <td class="deficit-pos">~494</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-28</td>
+                    <td>Tue</td>
+                    <td class="breakfast">280</td>
+                    <td class="lunch">678</td>
+                    <td class="dinner">1,110</td>
+                    <td class="other">216</td>
+                    <td class="total-cal">2,284</td>
+                    <td class="protein">119</td>
+                    <td class="carbs">~260</td>
+                    <td class="calories-out">~2,598</td>
+                    <td class="deficit-pos">~314</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-29</td>
+                    <td>Wed</td>
+                    <td class="breakfast">~380</td>
+                    <td class="lunch">~625</td>
+                    <td class="dinner">—</td>
+                    <td class="other">750</td>
+                    <td class="total-cal">1,755</td>
+                    <td class="protein">~70</td>
+                    <td class="carbs">~180</td>
+                    <td class="calories-out">~2,350</td>
+                    <td class="deficit-pos">~595</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-04-30</td>
+                    <td>Thu</td>
+                    <td class="breakfast">250</td>
+                    <td class="lunch">400</td>
+                    <td class="dinner">350</td>
+                    <td class="other">~320</td>
+                    <td class="total-cal">1,320</td>
+                    <td class="protein">58</td>
+                    <td class="carbs">110</td>
+                    <td class="calories-out">~2,100</td>
+                    <td class="deficit-pos">~780</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-05-01</td>
+                    <td>Fri</td>
+                    <td class="breakfast">410</td>
+                    <td class="lunch">1,083</td>
+                    <td class="dinner">440</td>
+                    <td class="other">130</td>
+                    <td class="total-cal">2,063</td>
+                    <td class="protein">109.6</td>
+                    <td class="carbs">220</td>
+                    <td class="calories-out">~2,350</td>
+                    <td class="deficit-pos">~287</td>
+                    <td class="weight">—</td>
+                </tr>
+                <tr>
+                    <td class="date-col">2026-05-02</td>
+                    <td>Sat</td>
+                    <td class="breakfast">—</td>
+                    <td class="lunch">—</td>
+                    <td class="dinner">—</td>
+                    <td class="other">—</td>
+                    <td class="total-cal">—</td>
+                    <td class="protein">—</td>
+                    <td class="carbs">—</td>
+                    <td class="calories-out">—</td>
+                    <td class="deficit-pos">—</td>
+                    <td class="weight">80.50</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="note" style="margin-top: 20px;">
+            Data source: Daily logs from /storage/emulated/0/Documents/claude/life-coach/logs/<br>
+            Tilde (~) indicates estimated value<br>
+            Weight readings from HealthU+ screenshots (Apr 17, 23, 25, May 2)
+        </p>
+
+    </div>
+</body>
+</html>

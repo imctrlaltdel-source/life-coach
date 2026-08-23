@@ -1,0 +1,762 @@
+[
+  {
+    "date": "2026-04-13",
+    "day": "Monday",
+    "meals": {
+      "breakfast": {
+        "food_description": "1 bread + 2 egg bhurji + whey",
+        "calories": 330,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "2 rotis + paneer curry + bhindi + cucumber + whey",
+        "calories": 450,
+        "source": "direct_log"
+      },
+      "dinner": {
+        "food_description": "Afgani chicken 5 pieces + 1 dosa + cucumber + whey",
+        "calories": 520,
+        "source": "direct_log"
+      },
+      "snacks": {
+        "food_description": "5 nippattu + noodles 1 katori + whey",
+        "calories": 350,
+        "source": "direct_log"
+      }
+    },
+    "totals": {
+      "total_calories_in": 1590,
+      "protein_g": null,
+      "carbs_g": null,
+      "source": "direct_log"
+    },
+    "activity": {
+      "type": "gym",
+      "duration_min": null,
+      "estimated_burn": 250,
+      "note": "Chest+Shoulders"
+    },
+    "calories_out": 1881,
+    "calorie_deficit": 291,
+    "weight_kg": null,
+    "data_quality": "partial"
+  },
+  {
+    "date": "2026-04-14",
+    "day": "Tuesday",
+    "meals": {
+      "breakfast": {
+        "food_description": "2 poached eggs + 1 bread + whey in buttermilk",
+        "calories": 350,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "159g snake gourd + 100g rice + 100g paneer sabzi",
+        "calories": 370,
+        "source": "direct_log"
+      },
+      "dinner": {
+        "food_description": "3/4 paneer paratha (no oil) + 4 moong dal tikkis + whey",
+        "calories": 460,
+        "source": "direct_log"
+      },
+      "snacks": {
+        "food_description": "10 potato chips + 1 uttapam",
+        "calories": 300,
+        "source": "direct_log"
+      }
+    },
+    "totals": {
+      "total_calories_in": 1480,
+      "protein_g": null,
+      "carbs_g": null,
+      "source": "direct_log"
+    },
+    "activity": {
+      "type": "run",
+      "duration_min": 53,
+      "estimated_burn": 444,
+      "note": "5.21km, 10:15/km pace, HR 145"
+    },
+    "calories_out": 2075,
+    "calorie_deficit": 595,
+    "weight_kg": null,
+    "data_quality": "complete"
+  },
+  {
+    "date": "2026-04-15",
+    "day": "Wednesday",
+    "meals": {
+      "breakfast": {
+        "food_description": "1 paneer paratha + 3 egg white bhurji + whey",
+        "calories": 440,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "chicken biryani 10 tbsp + moong dal 1 katori + methi palak aloo sabzi + onion",
+        "calories": 535,
+        "source": "direct_log"
+      },
+      "dinner": {
+        "food_description": "not recorded",
+        "calories": null,
+        "source": "missing"
+      },
+      "snacks": {
+        "food_description": null,
+        "calories": null,
+        "source": "missing"
+      }
+    },
+    "totals": {
+      "total_calories_in": 975,
+      "protein_g": null,
+      "carbs_g": null,
+      "source": "partial_log"
+    },
+    "activity": {
+      "type": "gym",
+      "duration_min": null,
+      "estimated_burn": 250,
+      "note": "Back"
+    },
+    "calories_out": 1881,
+    "calorie_deficit": 906,
+    "weight_kg": null,
+    "data_quality": "partial"
+  },
+  {
+    "date": "2026-04-16",
+    "day": "Thursday",
+    "meals": {
+      "breakfast": null,
+      "lunch": null,
+      "dinner": null,
+      "snacks": null
+    },
+    "totals": {
+      "total_calories_in": 1215,
+      "protein_g": null,
+      "carbs_g": null,
+      "source": "direct_log"
+    },
+    "activity": {
+      "type": "gym",
+      "duration_min": null,
+      "estimated_burn": 250,
+      "note": "Legs, 25kg squats"
+    },
+    "calories_out": 1881,
+    "calorie_deficit": 666,
+    "weight_kg": null,
+    "data_quality": "partial"
+  },
+  {
+    "date": "2026-04-17",
+    "day": "Friday",
+    "meals": {
+      "breakfast": null,
+      "lunch": null,
+      "dinner": null,
+      "snacks": null
+    },
+    "totals": {
+      "total_calories_in": 1430,
+      "protein_g": null,
+      "carbs_g": null,
+      "source": "direct_log"
+    },
+    "activity": {
+      "type": "run",
+      "duration_min": 57,
+      "estimated_burn": 426,
+      "note": "5.06km, 11:18/km pace, HR 136"
+    },
+    "calories_out": 2057,
+    "calorie_deficit": 627,
+    "weight_kg": null,
+    "data_quality": "partial"
+  },
+  {
+    "date": "2026-04-18",
+    "day": "Saturday",
+    "meals": {
+      "breakfast": {
+        "food_description": "Home dhokla",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "pav bhaji + momos at party",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "dinner": {
+        "food_description": "more pav bhaji + khameeri roti + ice cream + chocolate + Lays",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "snacks": {
+        "food_description": "full collapse",
+        "calories": null,
+        "source": "direct_log"
+      }
+    },
+    "totals": {
+      "total_calories_in": null,
+      "protein_g": null,
+      "carbs_g": null,
+      "source": "untracked_cheat"
+    },
+    "activity": {
+      "type": "gym",
+      "duration_min": null,
+      "estimated_burn": 250,
+      "note": "Arms"
+    },
+    "calories_out": 1881,
+    "calorie_deficit": null,
+    "weight_kg": null,
+    "data_quality": "missing"
+  },
+  {
+    "date": "2026-04-19",
+    "day": "Sunday",
+    "meals": {
+      "breakfast": null,
+      "lunch": null,
+      "dinner": null,
+      "snacks": null
+    },
+    "totals": {
+      "total_calories_in": null,
+      "protein_g": null,
+      "carbs_g": null,
+      "source": "missing"
+    },
+    "activity": {
+      "type": null,
+      "duration_min": null,
+      "estimated_burn": 0,
+      "note": "Marriage crisis, no gym"
+    },
+    "calories_out": 1631,
+    "calorie_deficit": null,
+    "weight_kg": null,
+    "data_quality": "missing"
+  },
+  {
+    "date": "2026-04-20",
+    "day": "Monday",
+    "meals": {
+      "breakfast": {
+        "food_description": "eggs + bread",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "burrito wrap no rice + chicken starters at work dinner",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "dinner": null,
+      "snacks": null
+    },
+    "totals": {
+      "total_calories_in": null,
+      "protein_g": null,
+      "carbs_g": null,
+      "source": "partial_log"
+    },
+    "activity": {
+      "type": "gym",
+      "duration_min": null,
+      "estimated_burn": 250,
+      "note": "Chest+Shoulders"
+    },
+    "calories_out": 1881,
+    "calorie_deficit": null,
+    "weight_kg": null,
+    "data_quality": "partial"
+  },
+  {
+    "date": "2026-04-21",
+    "day": "Tuesday",
+    "meals": {
+      "breakfast": {
+        "food_description": "moong dal tikki + eggs + cucumber + whey",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "chicken salad",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "dinner": {
+        "food_description": "pasta + poha evening",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "snacks": {
+        "food_description": "2 samosas",
+        "calories": null,
+        "source": "direct_log"
+      }
+    },
+    "totals": {
+      "total_calories_in": null,
+      "protein_g": null,
+      "carbs_g": null,
+      "source": "partial_log"
+    },
+    "activity": {
+      "type": null,
+      "duration_min": null,
+      "estimated_burn": 0,
+      "note": "Gym/run not mentioned"
+    },
+    "calories_out": 1631,
+    "calorie_deficit": null,
+    "weight_kg": null,
+    "data_quality": "partial"
+  },
+  {
+    "date": "2026-04-22",
+    "day": "Wednesday",
+    "meals": {
+      "breakfast": {
+        "food_description": "moong dal tikki + eggs + buttermilk + whey",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "chicken salad",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "dinner": {
+        "food_description": "buttermilk + whey + half pasta + half poha",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "snacks": {
+        "food_description": "2 samosas",
+        "calories": null,
+        "source": "direct_log"
+      }
+    },
+    "totals": {
+      "total_calories_in": null,
+      "protein_g": null,
+      "carbs_g": null,
+      "source": "partial_log"
+    },
+    "activity": {
+      "type": "gym",
+      "duration_min": null,
+      "estimated_burn": 250,
+      "note": "Back"
+    },
+    "calories_out": 1881,
+    "calorie_deficit": null,
+    "weight_kg": null,
+    "data_quality": "partial"
+  },
+  {
+    "date": "2026-04-23",
+    "day": "Thursday",
+    "meals": {
+      "breakfast": {
+        "food_description": "2 bread + Spanish omelette with cheese",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "buttermilk + whey + cucumber + 3 idli + sambhar + healthy munching chips",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "dinner": {
+        "food_description": "chicken popcorn + Thai satay at restaurant with wife",
+        "calories": 630,
+        "source": "direct_log"
+      },
+      "snacks": {
+        "food_description": "4 squares Dairy Milk Silk",
+        "calories": null,
+        "source": "direct_log"
+      }
+    },
+    "totals": {
+      "total_calories_in": 1110,
+      "protein_g": 97,
+      "carbs_g": null,
+      "source": "direct_log"
+    },
+    "activity": {
+      "type": null,
+      "duration_min": null,
+      "estimated_burn": 0,
+      "note": "No gym/run noted"
+    },
+    "calories_out": 1631,
+    "calorie_deficit": 521,
+    "weight_kg": null,
+    "data_quality": "partial"
+  },
+  {
+    "date": "2026-04-24",
+    "day": "Friday",
+    "meals": {
+      "breakfast": {
+        "food_description": "1 bread + 3 egg white omelette + whey + buttermilk",
+        "calories": 330,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "2 roti + lauki kofta + cucumber",
+        "calories": 420,
+        "source": "direct_log"
+      },
+      "dinner": {
+        "food_description": "2 paratha + shahi paneer + cucumber + whey",
+        "calories": 580,
+        "source": "direct_log"
+      },
+      "snacks": null
+    },
+    "totals": {
+      "total_calories_in": 1330,
+      "protein_g": 81,
+      "carbs_g": null,
+      "source": "direct_log"
+    },
+    "activity": {
+      "type": "gym",
+      "duration_min": null,
+      "estimated_burn": 250,
+      "note": "Legs"
+    },
+    "calories_out": 1881,
+    "calorie_deficit": 551,
+    "weight_kg": null,
+    "data_quality": "complete"
+  },
+  {
+    "date": "2026-04-25",
+    "day": "Saturday",
+    "meals": {
+      "breakfast": {
+        "food_description": "2 bread + 4 egg whites + cucumber + tomato",
+        "calories": 280,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "2 roti + soya matar curry + dal/sabzi + roasted broccoli + brussels sprouts + whey",
+        "calories": 580,
+        "source": "direct_log"
+      },
+      "dinner": {
+        "food_description": "2 methi paratha + lots of baigan sabzi + 75 cal 0-sugar ice cream",
+        "calories": 515,
+        "source": "direct_log"
+      },
+      "snacks": {
+        "food_description": "2 veggie + mushroom tacos + 2 Coke Zeros",
+        "calories": 240,
+        "source": "direct_log"
+      }
+    },
+    "totals": {
+      "total_calories_in": 1515,
+      "protein_g": 85,
+      "carbs_g": null,
+      "source": "direct_log"
+    },
+    "activity": {
+      "type": "run",
+      "duration_min": 76,
+      "estimated_burn": 615,
+      "note": "7.33km PB, 10:25/km pace, HR 142"
+    },
+    "calories_out": 2246,
+    "calorie_deficit": 731,
+    "weight_kg": 80.25,
+    "data_quality": "complete"
+  },
+  {
+    "date": "2026-04-26",
+    "day": "Sunday",
+    "meals": {
+      "breakfast": {
+        "food_description": "4 egg whites scrambled with veggies + 1 methi/besan paratha + roasted tomato + capsicum+tomato sabzi + whey",
+        "calories": 420,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "1 pav + bhaji (no potato, ~1.5 cups)",
+        "calories": 300,
+        "source": "direct_log"
+      },
+      "dinner": {
+        "food_description": "buddha bowl (avocado + broccoli + rice + lots of veggies) + whey shake",
+        "calories": 460,
+        "source": "direct_log"
+      },
+      "snacks": {
+        "food_description": "0.5 small fries + chicken sandwich at movie",
+        "calories": 500,
+        "source": "direct_log"
+      }
+    },
+    "totals": {
+      "total_calories_in": 1680,
+      "protein_g": 105,
+      "carbs_g": null,
+      "source": "direct_log"
+    },
+    "activity": {
+      "type": "gym",
+      "duration_min": 67,
+      "estimated_burn": 250,
+      "note": "Chest Triceps Mobility, Workout #458, 1 PR"
+    },
+    "calories_out": 1881,
+    "calorie_deficit": 201,
+    "weight_kg": null,
+    "data_quality": "complete"
+  },
+  {
+    "date": "2026-04-27",
+    "day": "Monday",
+    "meals": {
+      "breakfast": {
+        "food_description": "half cucumber + 4 egg white omelette + 1 bread slice + whey shake",
+        "calories": 400,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "lunch photo: cucumber + carrot salad, 1 whole wheat pav, vegetable bhaji (~250ml, no potato), chole (~100ml small serving), beetroot side",
+        "calories": 576,
+        "source": "direct_log"
+      },
+      "dinner": {
+        "food_description": "salad + whole wheat pav + bhaji + whey",
+        "calories": 506,
+        "source": "direct_log"
+      },
+      "snacks": {
+        "food_description": "chana zor garam chaat + 3 squares Dairy Milk chocolate + half Maggi",
+        "calories": 524,
+        "source": "direct_log"
+      }
+    },
+    "totals": {
+      "total_calories_in": 2006,
+      "protein_g": 105,
+      "carbs_g": null,
+      "source": "direct_log"
+    },
+    "activity": {
+      "type": "gym",
+      "duration_min": 44,
+      "estimated_burn": 250,
+      "note": "Shoulder Workout, Workout #459, 3 PRs"
+    },
+    "calories_out": 1881,
+    "calorie_deficit": -125,
+    "weight_kg": null,
+    "data_quality": "complete"
+  },
+  {
+    "date": "2026-04-28",
+    "day": "Tuesday",
+    "meals": {
+      "breakfast": {
+        "food_description": "4 egg whites + 1 cucumber + 1 wheat pav",
+        "calories": 280,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "3 roti + vegetable sabzi + lots of cucumber + carrot",
+        "calories": 678,
+        "source": "direct_log"
+      },
+      "dinner": {
+        "food_description": "cucumber + carrot first (veg-first), chicken shwarma roll + shell pasta with lots of veggies",
+        "calories": 1110,
+        "source": "direct_log"
+      },
+      "snacks": {
+        "food_description": "chana zor garam",
+        "calories": 216,
+        "source": "direct_log"
+      }
+    },
+    "totals": {
+      "total_calories_in": 2284,
+      "protein_g": 119,
+      "carbs_g": null,
+      "source": "direct_log"
+    },
+    "activity": {
+      "type": "run",
+      "duration_min": 59,
+      "estimated_burn": 467,
+      "note": "5.06km, 11:40/km avg pace, HR 124, 25k steps total"
+    },
+    "calories_out": 2598,
+    "calorie_deficit": 314,
+    "weight_kg": null,
+    "data_quality": "complete"
+  },
+  {
+    "date": "2026-04-29",
+    "day": "Wednesday",
+    "meals": {
+      "breakfast": {
+        "food_description": "3 egg whites + cucumber + carrot",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "homemade low-oil dosage + 3 egg bhurji + carrot + buttermilk with whey protein",
+        "calories": null,
+        "source": "direct_log"
+      },
+      "dinner": null,
+      "snacks": {
+        "food_description": "McDonald's (burger + fries) - desperation eating at metro",
+        "calories": 750,
+        "source": "estimate"
+      }
+    },
+    "totals": {
+      "total_calories_in": 1481,
+      "protein_g": 84,
+      "carbs_g": null,
+      "source": "partial_log"
+    },
+    "activity": {
+      "type": "gym",
+      "duration_min": 51,
+      "estimated_burn": 250,
+      "note": "Back + Biceps, 7,782 kg volume"
+    },
+    "calories_out": 1881,
+    "calorie_deficit": 400,
+    "weight_kg": null,
+    "data_quality": "partial"
+  },
+  {
+    "date": "2026-04-30",
+    "day": "Thursday",
+    "meals": {
+      "breakfast": {
+        "food_description": "Egg bhurji + paneer bhurji",
+        "calories": 250,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "Farmer salad with falafel",
+        "calories": 400,
+        "source": "direct_log"
+      },
+      "dinner": {
+        "food_description": "Pav bhaji + pita (3 breads)",
+        "calories": 350,
+        "source": "direct_log"
+      },
+      "snacks": {
+        "food_description": "Protein bar + hummus + pita",
+        "calories": 320,
+        "source": "direct_log"
+      }
+    },
+    "totals": {
+      "total_calories_in": 1320,
+      "protein_g": 58,
+      "carbs_g": 110,
+      "source": "direct_log"
+    },
+    "activity": {
+      "type": null,
+      "duration_min": null,
+      "estimated_burn": 0,
+      "note": "No gym/run (off-day)"
+    },
+    "calories_out": 1631,
+    "calorie_deficit": 311,
+    "weight_kg": null,
+    "data_quality": "partial"
+  },
+  {
+    "date": "2026-05-01",
+    "day": "Friday",
+    "meals": {
+      "breakfast": {
+        "food_description": "1 boiled egg white + beetroot bhurji + brown bread + cucumber",
+        "calories": 410,
+        "source": "direct_log"
+      },
+      "lunch": {
+        "food_description": "Cucumber + carrot slices (raw) + white rice fried (1.5 cups) + Chinese mix veg with paneer + whey in 1L buttermilk",
+        "calories": 1083,
+        "source": "direct_log"
+      },
+      "dinner": {
+        "food_description": "Dahi chicken + 1 roti + buttermilk",
+        "calories": 440,
+        "source": "direct_log"
+      },
+      "snacks": {
+        "food_description": "5 squares Dairy Milk chocolate",
+        "calories": 130,
+        "source": "direct_log"
+      }
+    },
+    "totals": {
+      "total_calories_in": 2063,
+      "protein_g": 109.6,
+      "carbs_g": 220,
+      "source": "direct_log"
+    },
+    "activity": {
+      "type": "gym",
+      "duration_min": 68,
+      "estimated_burn": 300,
+      "note": "Legs heavy, Workout #471, 2 PRs, 10,888 kg volume"
+    },
+    "calories_out": 1931,
+    "calorie_deficit": -132,
+    "weight_kg": null,
+    "data_quality": "complete"
+  },
+  {
+    "date": "2026-05-02",
+    "day": "Saturday",
+    "meals": {
+      "breakfast": null,
+      "lunch": null,
+      "dinner": null,
+      "snacks": null
+    },
+    "totals": {
+      "total_calories_in": null,
+      "protein_g": null,
+      "carbs_g": null,
+      "source": "not_logged_yet"
+    },
+    "activity": {
+      "type": null,
+      "duration_min": null,
+      "estimated_burn": null,
+      "note": "Significant muscle soreness (DOMS) in thighs from Friday leg workout"
+    },
+    "calories_out": null,
+    "calorie_deficit": null,
+    "weight_kg": 80.50,
+    "data_quality": "missing"
+  }
+]

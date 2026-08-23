@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PJ's Weekly Training Plan — April 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0F172A;
+      --blue:   #3B82F6;
+      --blue-light: #EFF6FF;
+      --blue-mid: #BFDBFE;
+      --grey-bg: #F8FAFC;
+      --grey-border: #E2E8F0;
+      --grey-text: #64748B;
+      --white: #FFFFFF;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --red-border: #FECACA;
+      --orange: #F97316;
+      --orange-light: #FFF7ED;
+      --orange-border: #FED7AA;
+      --green: #10B981;
+      --text-primary: #1E293B;
+      --text-secondary: #475569;
+    }
+
+    html { font-size: 14px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--grey-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ─── Page wrapper ─── */
+    .page {
+      max-width: 794px;
+      margin: 0 auto;
+      background: var(--grey-bg);
+      padding: 0 0 40px;
+    }
+
+    /* ─── Cover ─── */
+    .cover {
+      background: linear-gradient(135deg, var(--navy) 0%, #1E3A5F 100%);
+      color: var(--white);
+      padding: 52px 48px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: rgba(59,130,246,0.15);
+    }
+
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 60px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(59,130,246,0.08);
+    }
+
+    .cover-badge {
+      display: inline-block;
+      background: rgba(59,130,246,0.25);
+      border: 1px solid rgba(59,130,246,0.5);
+      color: #93C5FD;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    .cover h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .cover h1 span { color: var(--blue); }
+
+    .cover .subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #94A3B8;
+      margin-bottom: 32px;
+    }
+
+    .cover-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .cover-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .cover-meta-item .label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #64748B;
+    }
+
+    .cover-meta-item .value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    /* ─── Section wrapper ─── */
+    .content {
+      padding: 32px 40px;
+    }
+
+    /* ─── Callout boxes ─── */
+    .callouts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .callout {
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .callout-icon { font-size: 18px; flex-shrink: 0; line-height: 1.4; }
+
+    .callout-body { flex: 1; }
+
+    .callout-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 2px;
+    }
+
+    .callout-text {
+      font-size: 11.5px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    .callout-red {
+      background: var(--red-light);
+      border: 1px solid var(--red-border);
+    }
+    .callout-red .callout-title { color: #B91C1C; }
+    .callout-red .callout-text { color: #7F1D1D; }
+
+    .callout-orange {
+      background: var(--orange-light);
+      border: 1px solid var(--orange-border);
+    }
+    .callout-orange .callout-title { color: #C2410C; }
+    .callout-orange .callout-text { color: #7C2D12; }
+
+    .callout-blue {
+      background: var(--blue-light);
+      border: 1px solid var(--blue-mid);
+      grid-column: 1 / -1;
+    }
+    .callout-blue .callout-title { color: #1D4ED8; }
+    .callout-blue .callout-text { color: #1E3A8A; }
+
+    /* ─── Day cards ─── */
+    .day-card {
+      background: var(--white);
+      border-radius: 14px;
+      border: 1px solid var(--grey-border);
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.04);
+    }
+
+    .card-header {
+      background: var(--navy);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .card-icon {
+      flex-shrink: 0;
+      width: 56px; height: 56px;
+      background: rgba(59,130,246,0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-header-text { flex: 1; }
+
+    .card-day {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 2px;
+    }
+
+    .card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .card-tag {
+      display: inline-block;
+      background: rgba(59,130,246,0.2);
+      border: 1px solid rgba(59,130,246,0.4);
+      color: #93C5FD;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-top: 6px;
+    }
+
+    .card-body { padding: 20px 24px; }
+
+    /* ─── Exercise table ─── */
+    .ex-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+
+    .ex-table thead tr {
+      background: var(--grey-bg);
+    }
+
+    .ex-table th {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 2px solid var(--grey-border);
+    }
+
+    .ex-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--grey-border);
+      vertical-align: middle;
+      color: var(--text-primary);
+    }
+
+    .ex-table tr:last-child td { border-bottom: none; }
+
+    .ex-table tbody tr:hover { background: #FAFBFF; }
+
+    .ex-name { font-weight: 500; }
+
+    .ex-sets {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .ex-weight {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--blue);
+    }
+
+    .ex-next {
+      font-size: 11.5px;
+      color: var(--green);
+      font-weight: 500;
+    }
+
+    .section-divider {
+      background: var(--grey-bg);
+      padding: 6px 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      border-bottom: 1px solid var(--grey-border);
+    }
+
+    /* ─── Run day card ─── */
+    .run-body {
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .run-stat {
+      background: var(--grey-bg);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border: 1px solid var(--grey-border);
+    }
+
+    .run-stat-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      margin-bottom: 4px;
+    }
+
+    .run-stat-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .run-note {
+      grid-column: 1 / -1;
+      background: var(--blue-light);
+      border: 1px solid var(--blue-mid);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: #1E3A8A;
+      font-weight: 500;
+    }
+
+    .mandatory-badge {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 100px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* ─── Card note ─── */
+    .card-note {
+      margin-top: 14px;
+      background: var(--grey-bg);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 6px 6px 0;
+      padding: 9px 12px;
+      font-size: 11.5px;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    /* ─── Weekly Volume table ─── */
+    .section-heading {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-heading::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: var(--grey-border);
+      border-radius: 1px;
+    }
+
+    .vol-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      margin-bottom: 28px;
+    }
+
+    .vol-table th {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      padding: 10px 14px;
+      text-align: left;
+      background: var(--grey-bg);
+      border-bottom: 2px solid var(--grey-border);
+    }
+
+    .vol-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--grey-border);
+      vertical-align: middle;
+    }
+
+    .vol-table tr:last-child td { border-bottom: none; }
+
+    .priority-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* ─── Progression rules ─── */
+    .progression-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .prog-card {
+      background: var(--white);
+      border: 1px solid var(--grey-border);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .prog-card .prog-icon {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .prog-card .prog-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--grey-text);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+    }
+
+    .prog-card .prog-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--blue);
+    }
+
+    .prog-rule {
+      background: var(--navy);
+      border-radius: 10px;
+      padding: 16px 20px;
+      color: #94A3B8;
+      font-size: 12.5px;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .prog-rule strong {
+      color: #E2E8F0;
+      font-weight: 600;
+    }
+
+    /* ─── Footer ─── */
+    .footer {
+      text-align: center;
+      padding: 20px 40px 0;
+      font-size: 11px;
+      color: #94A3B8;
+      border-top: 1px solid var(--grey-border);
+    }
+
+    .footer strong {
+      color: var(--grey-text);
+    }
+
+    /* ─── Running Progression table ─── */
+    .run-prog-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    .run-prog-table th {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      padding: 10px 12px;
+      text-align: left;
+      background: var(--grey-bg);
+      border-bottom: 2px solid var(--grey-border);
+    }
+
+    .run-prog-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--grey-border);
+      vertical-align: middle;
+      color: var(--text-primary);
+    }
+
+    .run-prog-table tr:last-child td { border-bottom: none; }
+
+    .run-prog-table tbody tr:hover { background: #FAFBFF; }
+
+    .run-prog-table .week-num {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .run-prog-table .total-col {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--blue);
+      white-space: nowrap;
+    }
+
+    .run-callout-hr {
+      background: var(--red-light);
+      border: 1px solid var(--red-border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .run-callout-hr .callout-icon { font-size: 18px; flex-shrink: 0; line-height: 1.4; }
+
+    .run-callout-hr .callout-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #B91C1C;
+      margin-bottom: 3px;
+    }
+
+    .run-callout-hr .callout-text {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #7F1D1D;
+      font-weight: 500;
+    }
+
+    .run-callout-shin {
+      background: var(--orange-light);
+      border: 1px solid var(--orange-border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 28px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .run-callout-shin .callout-icon { font-size: 18px; flex-shrink: 0; line-height: 1.4; }
+
+    .run-callout-shin .callout-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #C2410C;
+      margin-bottom: 3px;
+    }
+
+    .run-callout-shin .callout-text {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #7C2D12;
+      font-weight: 400;
+    }
+
+    /* ─── Print styles ─── */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 14mm 14mm 14mm 14mm;
+      }
+
+      html { font-size: 12px; }
+
+      body {
+        background: white !important;
+      }
+
+      .page {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .cover {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        break-after: page;
+        page-break-after: always;
+      }
+
+      .content {
+        padding: 0;
+      }
+
+      .callouts {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .day-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin-bottom: 14px;
+        box-shadow: none !important;
+        border: 1px solid #CBD5E1 !important;
+      }
+
+      .card-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .ex-table tbody tr:hover { background: white !important; }
+
+      .vol-table,
+      .progression-grid,
+      .prog-rule {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      a { text-decoration: none; }
+
+      .footer { margin-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══ COVER ═══ -->
+  <div class="cover">
+    <div class="cover-badge">Weekly Training Plan · V1</div>
+    <h1>PJ's <span>Weekly</span><br>Training Plan</h1>
+    <div class="subtitle">V-Shape + Metabolic Health Program</div>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="label">Period</span>
+        <span class="value">April 2026</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Goal</span>
+        <span class="value">V-Shape + HbA1c &lt;6.5%</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Target Weight</span>
+        <span class="value">76kg by May 8</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Sessions/Week</span>
+        <span class="value">7 (4 gym + 3 runs)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- ═══ CALLOUTS ═══ -->
+    <div class="callouts" style="margin-top: 28px;">
+      <div class="callout callout-red">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <div class="callout-title">Left Shoulder Rules</div>
+          <div class="callout-text">No behind-the-neck movements. Lateral raises: slight forward tilt, never above shoulder height. Landmine press only for overhead. Sharp pain = stop immediately.</div>
+        </div>
+      </div>
+      <div class="callout callout-orange">
+        <div class="callout-icon">🫁</div>
+        <div class="callout-body">
+          <div class="callout-title">Always exhale on every rep</div>
+          <div class="callout-text">NPDR / intraocular pressure protection. Never hold breath during heavy lifts. This is non-negotiable on every single repetition.</div>
+        </div>
+      </div>
+      <div class="callout callout-blue">
+        <div class="callout-icon">💧</div>
+        <div class="callout-body">
+          <div class="callout-title">500ml water before every session · 1L replacement post-run · 3L total daily</div>
+          <div class="callout-text">Kidney protection (Urine Protein 2+). Do not train to failure — moderate intensity is correct. Post-meal 10 min walk on non-gym days cuts blood sugar spikes by 30%.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ MONDAY ═══ -->
+    <div class="day-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- lateral raise figure -->
+            <circle cx="20" cy="8" r="3.5" stroke="#3B82F6" stroke-width="1.8" fill="none"/>
+            <line x1="20" y1="11.5" x2="20" y2="24" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="20" y1="24" x2="15" y2="33" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="20" y1="24" x2="25" y2="33" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <!-- arms raised sideways -->
+            <line x1="20" y1="15" x2="5" y2="18" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="20" y1="15" x2="35" y2="18" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <!-- weights -->
+            <rect x="2" y="16" width="5" height="4" rx="1" fill="#3B82F6" opacity="0.7"/>
+            <rect x="33" y="16" width="5" height="4" rx="1" fill="#3B82F6" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="card-header-text">
+          <div class="card-day">Monday</div>
+          <div class="card-title">Shoulders <span style="color:#93C5FD;">HEAVY</span></div>
+          <div class="card-tag">V-Shape Maker</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="ex-table">
+          <thead>
+            <tr>
+              <th>Exercise</th>
+              <th>Sets × Reps</th>
+              <th>Weight</th>
+              <th>Next Target</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ex-name">Lateral Raise <span style="color:var(--grey-text);font-size:11px;">(Cable)</span></td>
+              <td class="ex-sets">4 × 12–15</td>
+              <td class="ex-weight">9 kg</td>
+              <td class="ex-next">→ 10 kg when 15 reps easy</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Lateral Raise <span style="color:var(--grey-text);font-size:11px;">(Dumbbell)</span></td>
+              <td class="ex-sets">3 × 15</td>
+              <td class="ex-weight">5 kg</td>
+              <td class="ex-next">→ 6 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Landmine Press</td>
+              <td class="ex-sets">4 × 10</td>
+              <td class="ex-weight">7.5 kg</td>
+              <td class="ex-next">→ 10 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Shoulder Scapulation <span style="color:var(--grey-text);font-size:11px;">(DB)</span></td>
+              <td class="ex-sets">3 × 12</td>
+              <td class="ex-weight">7.5 kg</td>
+              <td class="ex-next">→ 9 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Reverse Fly <span style="color:var(--grey-text);font-size:11px;">(Machine)</span></td>
+              <td class="ex-sets">4 × 15</td>
+              <td class="ex-weight">41 kg</td>
+              <td class="ex-next">→ 45 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Deadhangs with Crunch</td>
+              <td class="ex-sets">3 × 30 sec</td>
+              <td class="ex-weight">Bodyweight</td>
+              <td class="ex-next">→ Hold longer</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="card-note">Lateral raises first when fresh — maximum width stimulus. Always exhale on exertion (NPDR protection).</div>
+      </div>
+    </div>
+
+    <!-- ═══ TUESDAY ═══ -->
+    <div class="day-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- running figure -->
+            <circle cx="26" cy="7" r="3.5" stroke="#3B82F6" stroke-width="1.8" fill="none"/>
+            <path d="M26 10.5 L22 18 L16 22" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M22 18 L24 27 L20 34" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M24 27 L30 32" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <path d="M26 10.5 L32 14 L36 12" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M16 22 L11 20" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <!-- ground line -->
+            <line x1="8" y1="35" x2="38" y2="35" stroke="#3B82F6" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="card-header-text">
+          <div class="card-day">Tuesday</div>
+          <div class="card-title">Run <span style="color:#93C5FD;">Easy</span></div>
+          <div class="card-tag">Aerobic Base</div>
+        </div>
+      </div>
+      <div class="run-body">
+        <div class="run-stat">
+          <div class="run-stat-label">Duration</div>
+          <div class="run-stat-value">25 min</div>
+        </div>
+        <div class="run-stat">
+          <div class="run-stat-label">Heart Rate</div>
+          <div class="run-stat-value">&lt; 135 bpm</div>
+        </div>
+        <div class="run-stat">
+          <div class="run-stat-label">Distance</div>
+          <div class="run-stat-value">~2.5 km</div>
+        </div>
+        <div class="run-note">25 min | HR under 135 bpm | MAF base building | ~2.5km · 500ml water before · 1L after · 10 min walk after = bonus blood sugar control</div>
+      </div>
+    </div>
+
+    <!-- ═══ WEDNESDAY ═══ -->
+    <div class="day-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- pull-down / row figure -->
+            <circle cx="20" cy="8" r="3.5" stroke="#3B82F6" stroke-width="1.8" fill="none"/>
+            <line x1="20" y1="11.5" x2="20" y2="25" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="20" y1="25" x2="14" y2="34" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="20" y1="25" x2="26" y2="34" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <!-- arms pulling down/in -->
+            <path d="M20 15 L8 10 L8 18" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M20 15 L32 10 L32 18" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <!-- bar at top -->
+            <line x1="5" y1="4" x2="35" y2="4" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="card-header-text">
+          <div class="card-day">Wednesday</div>
+          <div class="card-title">Back + Biceps <span style="color:#93C5FD;">HEAVY</span></div>
+          <div class="card-tag">Frame + Arms</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="ex-table">
+          <thead>
+            <tr>
+              <th>Exercise</th>
+              <th>Sets × Reps</th>
+              <th>Weight</th>
+              <th>Next Target</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="4" class="section-divider">Back</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Lat Pulldown Wide Grip <span style="color:var(--grey-text);font-size:11px;">(Cable)</span></td>
+              <td class="ex-sets">4 × 12</td>
+              <td class="ex-weight">45 kg</td>
+              <td class="ex-next">→ 48 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Pull Up <span style="color:var(--grey-text);font-size:11px;">(Assisted)</span></td>
+              <td class="ex-sets">3 × 12–14</td>
+              <td class="ex-weight">−41 kg assist</td>
+              <td class="ex-next">→ −38 kg assist</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Seated Row <span style="color:var(--grey-text);font-size:11px;">(Cable)</span></td>
+              <td class="ex-sets">4 × 12</td>
+              <td class="ex-weight">45 kg</td>
+              <td class="ex-next">→ 48 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Incline Row <span style="color:var(--grey-text);font-size:11px;">(Dumbbell)</span></td>
+              <td class="ex-sets">3 × 12</td>
+              <td class="ex-weight">12.5 kg</td>
+              <td class="ex-next">→ 14 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Romanian Deadlift <span style="color:var(--grey-text);font-size:11px;">(Dumbbell)</span></td>
+              <td class="ex-sets">4 × 12</td>
+              <td class="ex-weight">20 kg</td>
+              <td class="ex-next">→ 22.5 kg</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="section-divider">Biceps</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Single Arm Bicep Curl <span style="color:var(--grey-text);font-size:11px;">(Cable)</span></td>
+              <td class="ex-sets">3 × 12</td>
+              <td class="ex-weight">18 kg</td>
+              <td class="ex-next">→ 20 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Hammer Curl <span style="color:var(--grey-text);font-size:11px;">(Dumbbell)</span></td>
+              <td class="ex-sets">4 × 12</td>
+              <td class="ex-weight">12.5 kg</td>
+              <td class="ex-next">→ 14 kg</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="card-note">RDL jumped to 20kg — you're ready. Builds back thickness + hamstrings simultaneously.</div>
+      </div>
+    </div>
+
+    <!-- ═══ THURSDAY ═══ -->
+    <div class="day-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="7" r="3.5" stroke="#3B82F6" stroke-width="1.8" fill="none"/>
+            <path d="M26 10.5 L22 18 L16 22" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M22 18 L24 27 L20 34" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M24 27 L30 32" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <path d="M26 10.5 L32 14 L36 12" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M16 22 L11 20" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <line x1="8" y1="35" x2="38" y2="35" stroke="#3B82F6" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="card-header-text">
+          <div class="card-day">Thursday</div>
+          <div class="card-title">Run <span style="color:#93C5FD;">Moderate</span> <span class="mandatory-badge">Non-Negotiable</span></div>
+          <div class="card-tag">BP + VO2 Max Driver</div>
+        </div>
+      </div>
+      <div class="run-body">
+        <div class="run-stat">
+          <div class="run-stat-label">Duration</div>
+          <div class="run-stat-value">30 min</div>
+        </div>
+        <div class="run-stat">
+          <div class="run-stat-label">Heart Rate</div>
+          <div class="run-stat-value">&lt; 135 bpm</div>
+        </div>
+        <div class="run-stat">
+          <div class="run-stat-label">Distance</div>
+          <div class="run-stat-value">~3 km</div>
+        </div>
+        <div class="run-note">30 min | HR under 135 bpm | NON-NEGOTIABLE | ~3km — This run moves BP and VO2 max. Protect it every single week.</div>
+      </div>
+    </div>
+
+    <!-- ═══ FRIDAY ═══ -->
+    <div class="day-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- squat figure -->
+            <circle cx="20" cy="7" r="3.5" stroke="#3B82F6" stroke-width="1.8" fill="none"/>
+            <!-- bar on shoulders -->
+            <line x1="8" y1="14" x2="32" y2="14" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+            <rect x="5" y="12" width="4" height="4" rx="1" fill="#3B82F6" opacity="0.5"/>
+            <rect x="31" y="12" width="4" height="4" rx="1" fill="#3B82F6" opacity="0.5"/>
+            <!-- torso leaning forward -->
+            <line x1="20" y1="11" x2="18" y2="14" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <!-- thighs parallel -->
+            <line x1="18" y1="14" x2="10" y2="26" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="18" y1="14" x2="26" y2="26" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <!-- shins -->
+            <line x1="10" y1="26" x2="12" y2="35" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="26" y1="26" x2="24" y2="35" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <!-- feet -->
+            <line x1="9" y1="35" x2="15" y2="35" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="21" y1="35" x2="27" y2="35" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="card-header-text">
+          <div class="card-day">Friday</div>
+          <div class="card-title">Legs <span style="color:#93C5FD;">HEAVY</span></div>
+          <div class="card-tag">Metabolic Anchor</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="ex-table">
+          <thead>
+            <tr>
+              <th>Exercise</th>
+              <th>Sets × Reps</th>
+              <th>Weight</th>
+              <th>Next Target</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ex-name">Hip Adductor <span style="color:var(--grey-text);font-size:11px;">(Machine)</span></td>
+              <td class="ex-sets">3 × 15</td>
+              <td class="ex-weight">50 kg</td>
+              <td class="ex-next">→ 55 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Hip Abductor <span style="color:var(--grey-text);font-size:11px;">(Machine)</span></td>
+              <td class="ex-sets">3 × 15</td>
+              <td class="ex-weight">60 kg</td>
+              <td class="ex-next">→ 65 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Squat <span style="color:var(--grey-text);font-size:11px;">(Smith Machine)</span></td>
+              <td class="ex-sets">5 × 12</td>
+              <td class="ex-weight">22.5 kg</td>
+              <td class="ex-next">→ 25 kg next week</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Leg Extension <span style="color:var(--grey-text);font-size:11px;">(Machine)</span></td>
+              <td class="ex-sets">3 × 13</td>
+              <td class="ex-weight">50 kg</td>
+              <td class="ex-next">→ 55 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Seated Leg Curl <span style="color:var(--grey-text);font-size:11px;">(Machine)</span></td>
+              <td class="ex-sets">3 × 13</td>
+              <td class="ex-weight">45 kg</td>
+              <td class="ex-next">→ 48 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Standing Calf Raise <span style="color:var(--grey-text);font-size:11px;">(Smith)</span></td>
+              <td class="ex-sets">3 × 15</td>
+              <td class="ex-weight">20 kg</td>
+              <td class="ex-next">→ 22.5 kg</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="card-note">No arms today — legs need full energy. Largest muscle group = biggest HbA1c and metabolic impact.</div>
+      </div>
+    </div>
+
+    <!-- ═══ SATURDAY ═══ -->
+    <div class="day-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="7" r="3.5" stroke="#3B82F6" stroke-width="1.8" fill="none"/>
+            <path d="M26 10.5 L22 18 L16 22" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M22 18 L24 27 L20 34" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M24 27 L30 32" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <path d="M26 10.5 L32 14 L36 12" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M16 22 L11 20" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <line x1="8" y1="35" x2="38" y2="35" stroke="#3B82F6" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+            <!-- distance marker -->
+            <text x="4" y="15" font-family="monospace" font-size="7" fill="#3B82F6" font-weight="bold">5km</text>
+          </svg>
+        </div>
+        <div class="card-header-text">
+          <div class="card-day">Saturday</div>
+          <div class="card-title">Long Run <span style="color:#93C5FD;">5 km+</span></div>
+          <div class="card-tag">VO2 Max Builder</div>
+        </div>
+      </div>
+      <div class="run-body">
+        <div class="run-stat">
+          <div class="run-stat-label">Distance</div>
+          <div class="run-stat-value">5 km</div>
+        </div>
+        <div class="run-stat">
+          <div class="run-stat-label">Heart Rate</div>
+          <div class="run-stat-value">&lt; 135 bpm</div>
+        </div>
+        <div class="run-stat">
+          <div class="run-stat-label">After</div>
+          <div class="run-stat-value">Walk 10 min</div>
+        </div>
+        <div class="run-note">5km | HR under 135 bpm | Long run | walk 10 min after — VO2 max builder, don't skip.</div>
+      </div>
+    </div>
+
+    <!-- ═══ SUNDAY ═══ -->
+    <div class="day-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- push-up figure -->
+            <circle cx="32" cy="10" r="3.5" stroke="#3B82F6" stroke-width="1.8" fill="none"/>
+            <!-- body plank -->
+            <line x1="29" y1="12.5" x2="10" y2="22" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <!-- arms pushing -->
+            <line x1="24" y1="16" x2="20" y2="22" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="20" y1="22" x2="16" y2="22" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <!-- hands on ground -->
+            <line x1="14" y1="22" x2="8" y2="22" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+            <!-- feet/legs -->
+            <line x1="10" y1="22" x2="8" y2="30" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="8" y1="30" x2="5" y2="30" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+            <!-- ground -->
+            <line x1="3" y1="32" x2="37" y2="32" stroke="#3B82F6" stroke-width="1.2" stroke-linecap="round" opacity="0.35"/>
+          </svg>
+        </div>
+        <div class="card-header-text">
+          <div class="card-day">Sunday</div>
+          <div class="card-title">Chest + Triceps + <span style="color:#93C5FD;">Mobility</span></div>
+          <div class="card-tag">Full Upper + Recovery</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="ex-table">
+          <thead>
+            <tr>
+              <th>Exercise</th>
+              <th>Sets × Reps</th>
+              <th>Weight</th>
+              <th>Next Target</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="4" class="section-divider">Chest</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Bench Press <span style="color:var(--grey-text);font-size:11px;">(Dumbbell)</span></td>
+              <td class="ex-sets">4 × 12</td>
+              <td class="ex-weight">15 kg</td>
+              <td class="ex-next">→ 17.5 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Incline Bench Press <span style="color:var(--grey-text);font-size:11px;">(Dumbbell)</span></td>
+              <td class="ex-sets">3 × 12</td>
+              <td class="ex-weight">12.5 kg</td>
+              <td class="ex-next">→ 14 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Decline Chest Press <span style="color:var(--grey-text);font-size:11px;">(Cable)</span></td>
+              <td class="ex-sets">3 × 12</td>
+              <td class="ex-weight">14 kg</td>
+              <td class="ex-next">→ 16 kg</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="section-divider">Triceps</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Tricep Pushdown <span style="color:var(--grey-text);font-size:11px;">(Cable)</span></td>
+              <td class="ex-sets">4 × 12</td>
+              <td class="ex-weight">30 kg</td>
+              <td class="ex-next">→ 32 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Tricep Extension <span style="color:var(--grey-text);font-size:11px;">(Cable)</span></td>
+              <td class="ex-sets">3 × 12</td>
+              <td class="ex-weight">14 kg</td>
+              <td class="ex-next">→ 16 kg</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Cross Body Tricep <span style="color:var(--grey-text);font-size:11px;">(Cable)</span></td>
+              <td class="ex-sets">3 × 10</td>
+              <td class="ex-weight">18 kg</td>
+              <td class="ex-next">→ 20 kg</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="section-divider">Arms Finisher</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Concentration Curl <span style="color:var(--grey-text);font-size:11px;">(Dumbbell)</span></td>
+              <td class="ex-sets">3 × 12</td>
+              <td class="ex-weight">12.5 kg</td>
+              <td class="ex-next">→ 14 kg</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="section-divider">Legs Light</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Hip Abductor <span style="color:var(--grey-text);font-size:11px;">(Machine)</span></td>
+              <td class="ex-sets">2 × 20</td>
+              <td class="ex-weight">45 kg</td>
+              <td class="ex-next" style="color:var(--grey-text);">Recovery only</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="section-divider">Mobility — 10 min</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Hip Flexor Stretch</td>
+              <td class="ex-sets">2 × 45 sec</td>
+              <td class="ex-weight">—</td>
+              <td class="ex-next" style="color:var(--grey-text);">Each side</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Shoulder Cross-body Stretch</td>
+              <td class="ex-sets">2 × 30 sec</td>
+              <td class="ex-weight">—</td>
+              <td class="ex-next" style="color:var(--grey-text);">Each side</td>
+            </tr>
+            <tr>
+              <td class="ex-name">Cat-cow + Thoracic Rotation</td>
+              <td class="ex-sets">10 reps each</td>
+              <td class="ex-weight">—</td>
+              <td class="ex-next" style="color:var(--grey-text);">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ═══ WEEKLY VOLUME ═══ -->
+    <div class="section-heading" style="margin-top: 32px;">Weekly Volume Summary</div>
+    <table class="vol-table">
+      <thead>
+        <tr>
+          <th>Muscle Group</th>
+          <th>Frequency</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Shoulders</strong></td>
+          <td>2× &nbsp;<span style="color:var(--grey-text);font-size:11.5px;">Mon heavy + Sun indirect</span></td>
+          <td><span class="priority-badge" style="color:#F59E0B;">⭐ V-Shape #1</span></td>
+        </tr>
+        <tr>
+          <td><strong>Biceps</strong></td>
+          <td>2× &nbsp;<span style="color:var(--grey-text);font-size:11.5px;">Wed heavy + Sun finisher</span></td>
+          <td><span class="priority-badge" style="color:#F59E0B;">⭐ Arms</span></td>
+        </tr>
+        <tr>
+          <td><strong>Triceps</strong></td>
+          <td>2× &nbsp;<span style="color:var(--grey-text);font-size:11.5px;">Sun dedicated + Mon indirect</span></td>
+          <td><span class="priority-badge" style="color:#F59E0B;">⭐ Arms (2/3 of arm size)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Back</strong></td>
+          <td>1× heavy</td>
+          <td><span style="color:var(--text-secondary);font-size:12px;">Width + frame</span></td>
+        </tr>
+        <tr>
+          <td><strong>Legs</strong></td>
+          <td>2× &nbsp;<span style="color:var(--grey-text);font-size:11.5px;">Fri heavy + Sun light</span></td>
+          <td><span style="color:var(--green);font-size:12px;font-weight:600;">HbA1c + metabolism</span></td>
+        </tr>
+        <tr>
+          <td><strong>Chest</strong></td>
+          <td>1× </td>
+          <td><span style="color:var(--text-secondary);font-size:12px;">Lower priority</span></td>
+        </tr>
+        <tr>
+          <td><strong>Cardio</strong></td>
+          <td>3 runs &nbsp;<span style="color:var(--grey-text);font-size:11.5px;">Tue easy + Thu moderate + Sat long</span></td>
+          <td><span style="color:var(--blue);font-size:12px;font-weight:600;">BP + VO2 max</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ═══ 8-WEEK RUNNING PROGRESSION ═══ -->
+    <div class="section-heading" style="margin-top: 32px;">8-Week Running Progression (MAF Protocol)</div>
+
+    <table class="run-prog-table">
+      <thead>
+        <tr>
+          <th>Week</th>
+          <th>Dates</th>
+          <th>Tue</th>
+          <th>Thu</th>
+          <th>Sat (Long)</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="week-num">1</td>
+          <td>Apr 28–May 4</td>
+          <td>25 min / ~2.5km</td>
+          <td>30 min / ~3km</td>
+          <td>5km</td>
+          <td class="total-col">~10.5km</td>
+        </tr>
+        <tr>
+          <td class="week-num">2</td>
+          <td>May 5–11</td>
+          <td>25 min / ~2.5km</td>
+          <td>30 min / ~3km</td>
+          <td>5.5km</td>
+          <td class="total-col">~11km</td>
+        </tr>
+        <tr>
+          <td class="week-num">3</td>
+          <td>May 12–18</td>
+          <td>30 min / ~3km</td>
+          <td>35 min / ~3.5km</td>
+          <td>6km</td>
+          <td class="total-col">~12.5km</td>
+        </tr>
+        <tr>
+          <td class="week-num">4</td>
+          <td>May 19–25</td>
+          <td>30 min / ~3km</td>
+          <td>35 min / ~3.5km</td>
+          <td>6km</td>
+          <td class="total-col">~12.5km</td>
+        </tr>
+        <tr>
+          <td class="week-num">5</td>
+          <td>May 26–Jun 1</td>
+          <td>35 min / ~3.5km</td>
+          <td>40 min / ~4km</td>
+          <td>6.5km</td>
+          <td class="total-col">~14km</td>
+        </tr>
+        <tr>
+          <td class="week-num">6</td>
+          <td>Jun 2–8</td>
+          <td>35 min / ~3.5km</td>
+          <td>40 min / ~4km</td>
+          <td>7km</td>
+          <td class="total-col">~14.5km</td>
+        </tr>
+        <tr>
+          <td class="week-num">7</td>
+          <td>Jun 9–15</td>
+          <td>40 min / ~4km</td>
+          <td>45 min / ~4.5km</td>
+          <td>7.5km</td>
+          <td class="total-col">~16km</td>
+        </tr>
+        <tr>
+          <td class="week-num">8</td>
+          <td>Jun 16–22</td>
+          <td>40 min / ~4km</td>
+          <td>45 min / ~4.5km</td>
+          <td>8km</td>
+          <td class="total-col">~16.5km</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="run-callout-hr">
+      <div class="callout-icon">❤️</div>
+      <div>
+        <div class="callout-title">HR Rule — Non-Negotiable</div>
+        <div class="callout-text">Stay under 135 bpm on every run. Slow to walk if it rises above. No exceptions for 8 weeks.</div>
+      </div>
+    </div>
+
+    <div class="run-callout-shin">
+      <div class="callout-icon">🦵</div>
+      <div>
+        <div class="callout-title">Shin Pain Protocol</div>
+        <div class="callout-text">Before every run: 2 min calf + shin stretch. After: ice 10 min if pain. Reduce Friday calf raises to 2 sets.</div>
+      </div>
+    </div>
+
+    <!-- ═══ PROGRESSION RULES ═══ -->
+    <div class="section-heading">Progression Rules</div>
+
+    <div class="prog-rule">
+      <strong>The Rule:</strong> When you hit the top of the rep range across all sets → add weight next session. Do not rush — quality reps over heavier weights.
+    </div>
+
+    <div class="progression-grid">
+      <div class="prog-card">
+        <div class="prog-icon">🏋️</div>
+        <div class="prog-label">Dumbbells</div>
+        <div class="prog-value">+2.5 kg</div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-icon">⚙️</div>
+        <div class="prog-label">Cables / Machines</div>
+        <div class="prog-value">+2–5 kg</div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-icon">🦵</div>
+        <div class="prog-label">Smith Machine Squat</div>
+        <div class="prog-value">+2.5 kg / 2 wks</div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- ═══ FOOTER ═══ -->
+  <div class="footer">
+    <strong>Generated by Life Coach AI</strong> &nbsp;·&nbsp; April 25, 2026
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>

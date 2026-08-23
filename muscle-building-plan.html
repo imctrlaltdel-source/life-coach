@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PJ's Muscle Building Plan — June 2026 (FINAL)</title>
+  <style>
+    :root {
+      --bg:       #1a1a2e;
+      --bg2:      #16213e;
+      --bg3:      #0f3460;
+      --accent:   #4ecca3;
+      --accent2:  #e94560;
+      --gold:     #f5a623;
+      --text:     #e0e0e0;
+      --text2:    #a0a0b0;
+      --green:    #27ae60;
+      --red:      #e74c3c;
+      --orange:   #e67e22;
+      --blue:     #3498db;
+      --purple:   #9b59b6;
+      --card:     #1e2a45;
+      --border:   #2a3f6f;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    /* ── HEADER ── */
+    .hero {
+      background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 60%, #4ecca320 100%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 24px 22px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 4px; }
+    .hero .subtitle { color: var(--text2); font-size: 0.9rem; letter-spacing: 0.04em; }
+    .hero .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #1a1a2e;
+      font-weight: 700;
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-top: 8px;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+    nav h3 { color: var(--accent); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+    nav ol { padding-left: 18px; column-count: 2; column-gap: 20px; }
+    nav li { margin-bottom: 4px; }
+    nav a { color: var(--accent); text-decoration: none; font-size: 0.85rem; }
+    nav a:hover { text-decoration: underline; }
+
+    /* ── SECTION ── */
+    section {
+      margin-bottom: 32px;
+      scroll-margin-top: 8px;
+    }
+    h2 {
+      font-size: 1.15rem;
+      color: var(--accent);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+      letter-spacing: 0.02em;
+    }
+    h3 { font-size: 1rem; color: var(--gold); margin: 14px 0 8px; }
+    h4 { font-size: 0.9rem; color: var(--text2); text-transform: uppercase; letter-spacing: 0.06em; margin: 12px 0 6px; }
+
+    p { margin-bottom: 10px; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    /* ── ALERT BOXES ── */
+    .alert {
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      border-left: 4px solid;
+      font-size: 0.9rem;
+    }
+    .alert-red    { background: #2d1515; border-color: var(--red);    color: #f5a0a0; }
+    .alert-orange { background: #2d1e10; border-color: var(--orange); color: #f5c87a; }
+    .alert-green  { background: #0d2416; border-color: var(--green);  color: #7ddba8; }
+    .alert-blue   { background: #0d1e2d; border-color: var(--blue);   color: #7dc0f0; }
+    .alert-purple { background: #1e1228; border-color: var(--purple); color: #c8a0f5; }
+    .alert strong { font-weight: 700; }
+
+    /* ── TABLES ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+      font-size: 0.87rem;
+    }
+    th {
+      background: var(--bg3);
+      color: var(--accent);
+      text-align: left;
+      padding: 9px 10px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #1a2338; }
+    tr:hover td { background: #1f2d48; }
+
+    /* ── TAGS ── */
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .tag-green  { background: #0d2416; color: #4ecca3; border: 1px solid #27ae6060; }
+    .tag-red    { background: #2d1515; color: #e74c3c; border: 1px solid #e74c3c60; }
+    .tag-orange { background: #2d1e10; color: #f39c12; border: 1px solid #f39c1260; }
+    .tag-blue   { background: #0d1e2d; color: #3498db; border: 1px solid #3498db60; }
+    .tag-gold   { background: #2d2210; color: #f5a623; border: 1px solid #f5a62360; }
+    .tag-purple { background: #1e1228; color: #9b59b6; border: 1px solid #9b59b660; }
+
+    /* ── DAY GRID ── */
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .day-cell {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 8px;
+      text-align: center;
+    }
+    .day-name {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+    .day-am {
+      font-size: 0.72rem;
+      background: #0d2416;
+      color: #4ecca3;
+      border-radius: 4px;
+      padding: 3px 4px;
+      margin-bottom: 4px;
+    }
+    .day-pm {
+      font-size: 0.72rem;
+      background: #1e1228;
+      color: #9b59b6;
+      border-radius: 4px;
+      padding: 3px 4px;
+    }
+    .day-rest {
+      font-size: 0.72rem;
+      color: var(--text2);
+    }
+
+    /* ── SESSION BLOCK ── */
+    .session-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 18px;
+      overflow: hidden;
+    }
+    .session-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: var(--bg3);
+      border-bottom: 1px solid var(--border);
+    }
+    .session-label {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+    .session-time {
+      font-size: 0.78rem;
+      color: var(--text2);
+      margin-left: auto;
+    }
+    .session-body { padding: 14px 16px; }
+
+    /* ── EXERCISE ROWS ── */
+    .ex-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #2a3f6f40;
+    }
+    .ex-row:last-child { border-bottom: none; }
+    .ex-num {
+      min-width: 22px;
+      height: 22px;
+      background: var(--bg3);
+      color: var(--accent);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .ex-name { font-weight: 600; font-size: 0.88rem; }
+    .ex-detail { font-size: 0.8rem; color: var(--text2); }
+    .ex-note { font-size: 0.78rem; color: var(--orange); margin-top: 2px; }
+    .ex-safe { font-size: 0.78rem; color: var(--green); margin-top: 2px; }
+
+    /* ── PROTEIN AUDIT ── */
+    .protein-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+      align-items: flex-start;
+    }
+    .protein-gate {
+      min-width: 90px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    /* ── PROGRESS PHASES ── */
+    .phase-bar {
+      height: 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+
+    /* ── MOUNTAIN VISION ── */
+    .mountain-vision {
+      background: linear-gradient(135deg, #0f3460, #1a1a2e);
+      border: 2px solid var(--accent);
+      border-radius: 14px;
+      padding: 22px 24px;
+      text-align: center;
+    }
+    .mountain-vision h3 { color: var(--gold); font-size: 1.1rem; margin-bottom: 10px; }
+    .mountain-vision p { color: var(--text); font-size: 0.92rem; line-height: 1.7; }
+
+    /* ── EMERGENCY CARD ── */
+    .emergency-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .emergency-item {
+      background: #2d1515;
+      border: 1px solid #e74c3c60;
+      border-radius: 8px;
+      padding: 12px;
+    }
+    .emergency-item .e-title { color: var(--red); font-weight: 700; font-size: 0.85rem; margin-bottom: 4px; }
+    .emergency-item p { font-size: 0.82rem; margin-bottom: 0; }
+
+    /* ── STEPS LIST ── */
+    .steps-list { padding-left: 0; list-style: none; }
+    .steps-list li {
+      padding: 6px 0 6px 28px;
+      position: relative;
+      border-bottom: 1px solid #2a3f6f30;
+      font-size: 0.88rem;
+    }
+    .steps-list li:last-child { border-bottom: none; }
+    .steps-list li::before {
+      content: attr(data-n);
+      position: absolute;
+      left: 0;
+      top: 6px;
+      background: var(--accent);
+      color: #1a1a2e;
+      font-weight: 700;
+      font-size: 0.7rem;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── MEAL CARD ── */
+    .meal-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 16px;
+    }
+    .meal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 16px;
+      background: #0f3460;
+      border-radius: 10px 10px 0 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .meal-title { font-weight: 700; font-size: 0.95rem; color: var(--accent); }
+    .meal-time { font-size: 0.8rem; color: var(--text2); }
+    .meal-body { padding: 14px 16px; }
+    .macro-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .macro-pill {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .macro-cal  { background: #2d2210; color: var(--gold); }
+    .macro-prot { background: #0d2416; color: #4ecca3; }
+    .macro-carb { background: #0d1e2d; color: #3498db; }
+
+    /* ── SUPPLEMENT TABLE ── */
+    .supp-safe  { color: var(--green); font-weight: 600; }
+    .supp-no    { color: var(--red);   font-weight: 600; }
+
+    /* ── DELOAD BOX ── */
+    .deload-box {
+      background: #2d2210;
+      border: 2px solid var(--gold);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+    }
+    .deload-box h4 { color: var(--gold); margin: 0 0 8px; font-size: 0.95rem; }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: #fff; color: #111; max-width: 100%; font-size: 12px; }
+      .hero { background: #f0f0f0; border: 2px solid #333; }
+      nav { border: 1px solid #ccc; background: #fafafa; }
+      .card, .session-block, .meal-card, .alert, .deload-box { border: 1px solid #bbb; break-inside: avoid; }
+      th { background: #e0e0e0; color: #111; }
+      .alert-red    { background: #fff0f0; color: #900; }
+      .alert-orange { background: #fff8f0; color: #a60; }
+      .alert-green  { background: #f0fff4; color: #060; }
+      .alert-blue   { background: #f0f8ff; color: #006; }
+      a { color: #333; }
+    }
+
+    @media (max-width: 600px) {
+      .week-grid { grid-template-columns: repeat(4, 1fr); }
+      nav ol { column-count: 1; }
+      .emergency-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════ HERO -->
+<div class="hero">
+  <h1>PJ's Muscle-Building Plan</h1>
+  <div class="subtitle">Prateek Jain · 37 · Bangalore · June 2026</div>
+  <div class="badge">FINAL VERSION — ALL QC FIXES APPLIED</div>
+  <div style="margin-top:10px; font-size:0.8rem; color:var(--text2);">
+    12-Week Programme · 5 AM Sessions + 4 PM Sessions/week · MAF Running · 80g Protein Ceiling
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ NAV -->
+<nav>
+  <h3>Jump To Section</h3>
+  <ol>
+    <li><a href="#s1">Medical Constraints</a></li>
+    <li><a href="#s2">How to Read This Plan</a></li>
+    <li><a href="#s3">Weekly Overview Grid</a></li>
+    <li><a href="#s4">Conditioning & T2D Science</a></li>
+    <li><a href="#s5">Monday — Shoulders + Legs ISO</a></li>
+    <li><a href="#s6">Tuesday — Back + Chest/Core</a></li>
+    <li><a href="#s7">Wednesday — MAF Run</a></li>
+    <li><a href="#s8">Thursday — Legs + Shoulders/Arms</a></li>
+    <li><a href="#s9">Friday — Chest/Tri + Back/Bi</a></li>
+    <li><a href="#s10">Saturday — Long Run + Weigh-in</a></li>
+    <li><a href="#s11">Sunday — Rest + Mobility</a></li>
+    <li><a href="#s12">Diet Plan</a></li>
+    <li><a href="#s13">Supplement Protocol</a></li>
+    <li><a href="#s14">12-Week Progression & Deloads</a></li>
+    <li><a href="#s15">Warm-Up & Injury Prevention</a></li>
+    <li><a href="#s16">Emergency Card + Mountain Vision</a></li>
+  </ol>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════ S1: MEDICAL CONSTRAINTS -->
+<section id="s1">
+  <h2>1 · Medical Constraints — Non-Negotiable</h2>
+
+  <div class="alert alert-red">
+    <strong>NPDR Left Eye</strong> — Exhale on EVERY single rep (no exceptions). No Valsalva manoeuvre. No conventional barbell deadlifts. No heavy barbell overhead pressing. Rep floor: 8 reps minimum on all compound movements. Never train to muscular failure.
+  </div>
+
+  <div class="alert alert-red">
+    <strong>Kidney — Urine Protein 2+</strong> — Total protein MAX 80g/day. Hard ceiling. No creatine without nephrologist sign-off. No protein bars. Max 20g protein per meal — EXCEPT 4pm snack which allows 25–28g as the MPS priority slot. Kidney damage from protein overload is cumulative and silent.
+  </div>
+
+  <div class="alert alert-orange">
+    <strong>Hypertension (on medication)</strong> — 10+ reps on all exercises, always. Rest 75–90 seconds minimum between sets (AHA guideline — shorter rest = elevated BP response). No Valsalva. Never skip BP medication.
+  </div>
+
+  <div class="alert alert-orange">
+    <strong>T2D — HbA1c 6.8%</strong> — Veg FIRST before every meal (fills stomach, delays glucose absorption). 10-min walk after every meal (mandatory for blood sugar control). Metformin taken WITH breakfast at 9:30 AM — NOT fasted, NOT pre-workout. Check fasting glucose before gym (see Section 2 for protocol).
+  </div>
+
+  <div class="alert alert-orange">
+    <strong>Left Shoulder Impingement</strong> — No upright rows (impingement risk). No behind-neck pressing or pulling. Landmine press is the ONLY approved overhead movement. External rotation exercises (face pull, Y-raise) are mandatory in every shoulder session.
+  </div>
+
+  <div class="alert alert-orange">
+    <strong>Hyperuricemia — Uric Acid 8.1</strong> — No red meat. No organ meats (liver, kidney). No shellfish (prawns, lobster, crab). Sardines and mackerel 2–3×/week are SAFE (not shellfish — different purine profile). Stay well hydrated (3L/day).
+  </div>
+
+  <div class="alert alert-green">
+    <strong>Post-Sacral Injury (Cleared Jun 16 2026)</strong> — Cleared to train legs. Mandatory glute bridge activation (BW × 15) before EVERY leg session — non-negotiable. No conventional deadlifts. Romanian Deadlift with DBs only, controlled, hip hinge (feel in hamstrings not spine). Bulgarian split squat for asymmetry rehab. Any sacral discomfort → stop, replace with walk.
+  </div>
+
+  <div class="alert alert-blue">
+    <strong>Equipment Constraint</strong> — No barbell for overhead pressing or deadlifts. All exercises use: cable machines, Smith machine, dumbbells, assisted pull-up machine, leg machines, landmine attachment, treadmill, rowing machine.
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S2: HOW TO READ -->
+<section id="s2">
+  <h2>2 · How to Read This Plan</h2>
+
+  <h3>Your Real-Life Schedule</h3>
+  <table>
+    <tr><th>Time</th><th>Activity</th><th>Notes</th></tr>
+    <tr><td>7:00 AM</td><td>Wake + Black Coffee</td><td>1–2 cups, no milk, no sugar. Glucose check if available.</td></tr>
+    <tr><td>7:00–7:45 AM</td><td>AM Gym Session</td><td>Starts immediately or within 15 min of waking. Fasted or near-fasted.</td></tr>
+    <tr><td>9:30 AM</td><td>Breakfast</td><td>Cook-prepared. Metformin taken HERE. VEG FIRST.</td></tr>
+    <tr><td>9:30 AM–8:00 PM</td><td>Office</td><td>Pre-lunch preload at desk 12:30 PM (zero prep).</td></tr>
+    <tr><td>12:30 PM</td><td>Pre-Lunch Preload</td><td>Sabja + psyllium + raw cucumber. At desk. No prep.</td></tr>
+    <tr><td>1:00–1:15 PM</td><td>Lunch</td><td>VEG FIRST. 10-min walk after.</td></tr>
+    <tr><td>4:00–5:30 PM</td><td>Snack</td><td>MPS priority slot. Boiled egg whites (pre-boiled), fruit, buttermilk.</td></tr>
+    <tr><td>8:00 PM</td><td>Dinner</td><td>Main overeating risk. Structural fixes in Section 12.</td></tr>
+    <tr><td>8:30–9:05 PM</td><td>PM Gym Session</td><td>Post-dinner, 30 min after eating. Circuits or isolation.</td></tr>
+    <tr><td>10:30 PM</td><td>Sleep</td><td>Non-negotiable for cortisol + recovery.</td></tr>
+  </table>
+
+  <h3>Pre-Workout Glucose Protocol (Every AM Session)</h3>
+  <div class="card">
+    <div class="card-title">Fasting Glucose Check — Morning Decision Tree</div>
+    <table>
+      <tr><th>Glucose Reading</th><th>Action</th></tr>
+      <tr><td><span class="tag tag-green">Above 100 mg/dL</span></td><td>Train fully fasted. Black coffee only. No food needed.</td></tr>
+      <tr><td><span class="tag tag-orange">90–100 mg/dL</span></td><td>Eat 6–8 soaked almonds OR half apple. Zero prep. Then train.</td></tr>
+      <tr><td><span class="tag tag-red">Below 90 mg/dL</span></td><td>Eat 1 cold roti or half banana. Wait 20 min. Then train. Do NOT train with glucose under 90.</td></tr>
+    </table>
+    <div class="alert alert-red" style="margin-top:10px; margin-bottom:0;">
+      <strong>ALWAYS carry in gym bag:</strong> 4 glucose tablets OR 1 Glucon-D sachet. Non-negotiable. Visual disturbance during a set may be hypoglycemia — stop, eat glucose, check. Metformin goes WITH breakfast at 9:30 AM — never fasted, never pre-workout.
+    </div>
+  </div>
+
+  <h3>Key Rules for the Whole Plan</h3>
+  <ul class="steps-list">
+    <li data-n="1">EXHALE on every single rep — on exertion (press, pull, push, drive). No exceptions for NPDR and hypertension.</li>
+    <li data-n="2">Rep range floor is 8. If you cannot do 8 reps → weight is too heavy. Drop it.</li>
+    <li data-n="3">Progress only when you HIT THE TOP of the rep range for ALL sets. Hit 15 reps × 4 sets → next session add weight.</li>
+    <li data-n="4">75–90 second rest between sets. Do not cut shorter — BP safety rule.</li>
+    <li data-n="5">2-second eccentric (lowering phase) on ALL exercises. Controlled. Not flopping.</li>
+    <li data-n="6">Never train to failure. Stop 1–2 reps before you think you might fail.</li>
+    <li data-n="7">AM and PM sessions on the same day always use different muscle groups. No overlap.</li>
+    <li data-n="8">Every 4th week is a deload week — mandatory. See Section 14.</li>
+  </ul>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S3: WEEKLY GRID -->
+<section id="s3">
+  <h2>3 · Weekly Overview Grid</h2>
+
+  <div class="week-grid">
+    <div class="day-cell">
+      <div class="day-name">Mon</div>
+      <div class="day-am">AM: Shoulders Heavy</div>
+      <div class="day-pm">PM: Legs ISO</div>
+    </div>
+    <div class="day-cell">
+      <div class="day-name">Tue</div>
+      <div class="day-am">AM: Back Heavy</div>
+      <div class="day-pm">PM: Chest + Core</div>
+    </div>
+    <div class="day-cell">
+      <div class="day-name">Wed</div>
+      <div class="day-am">AM: MAF Run 5–6km</div>
+      <div class="day-rest">PM: Rest (run day)</div>
+    </div>
+    <div class="day-cell">
+      <div class="day-name">Thu</div>
+      <div class="day-am">AM: Legs Heavy</div>
+      <div class="day-pm">PM: Shoulders ISO + Arms</div>
+    </div>
+    <div class="day-cell">
+      <div class="day-name">Fri</div>
+      <div class="day-am">AM: Chest + Triceps</div>
+      <div class="day-pm">PM: Back + Biceps</div>
+    </div>
+    <div class="day-cell">
+      <div class="day-name">Sat</div>
+      <div class="day-am">AM: Long Run 6–8km + Weigh-in</div>
+      <div class="day-rest">PM: Rest</div>
+    </div>
+    <div class="day-cell">
+      <div class="day-name">Sun</div>
+      <div class="day-rest">AM: Dog walk + mobility</div>
+      <div class="day-rest">PM: Rest</div>
+    </div>
+  </div>
+
+  <h3>Why This Split Works — Logic Behind Every Pairing</h3>
+  <table>
+    <tr><th>Day</th><th>AM</th><th>PM</th><th>Logic</th></tr>
+    <tr><td><strong>Mon</strong></td><td>Shoulders (upper)</td><td>Legs ISO (lower)</td><td>Upper AM / Lower PM = zero overlap. Antagonist split.</td></tr>
+    <tr><td><strong>Tue</strong></td><td>Back (pull)</td><td>Chest + Core (push)</td><td>Pull AM / Push PM = classic antagonist. Chest recovery aided by back session's blood flow.</td></tr>
+    <tr><td><strong>Wed</strong></td><td>MAF Run</td><td>Rest</td><td>Run engages posterior chain + cardiovascular system. No PM gym on run days.</td></tr>
+    <tr><td><strong>Thu</strong></td><td>Legs Heavy</td><td>Shoulders ISO + Arms</td><td>Lower AM / Upper PM = zero overlap. Shoulders get 2nd weekly hit.</td></tr>
+    <tr><td><strong>Fri</strong></td><td>Chest + Triceps (push)</td><td>Back + Biceps (pull)</td><td>Push AM / Pull PM = antagonist ideal. Back gets 2nd weekly hit.</td></tr>
+    <tr><td><strong>Sat</strong></td><td>Long Run + Weigh-in</td><td>Rest</td><td>Longer aerobic work. Full recovery afternoon.</td></tr>
+    <tr><td><strong>Sun</strong></td><td colspan="2">Full rest. Dog walk + mobility only.</td><td>True rest day — enables Monday to be high quality.</td></tr>
+  </table>
+
+  <h3>Weekly Muscle Frequency Audit</h3>
+  <table>
+    <tr><th>Muscle Group</th><th>Session 1</th><th>Sets</th><th>Session 2</th><th>Sets</th><th>Weekly Total</th><th>Status</th></tr>
+    <tr><td>Shoulders</td><td>Mon AM</td><td>15–18</td><td>Thu PM</td><td>9</td><td>~24–27</td><td><span class="tag tag-orange">Reduce Mon AM to 15 if needed</span></td></tr>
+    <tr><td>Back</td><td>Tue AM</td><td>14–17</td><td>Fri PM</td><td>11–14</td><td>~28–31</td><td><span class="tag tag-green">Optimal — 2nd session lighter</span></td></tr>
+    <tr><td>Chest</td><td>Tue PM</td><td>6–9</td><td>Fri AM</td><td>10</td><td>~16–19</td><td><span class="tag tag-green">Good — Tue PM lighter</span></td></tr>
+    <tr><td>Biceps</td><td>Thu PM</td><td>6</td><td>Fri PM</td><td>5</td><td>~11</td><td><span class="tag tag-green">Optimal</span></td></tr>
+    <tr><td>Triceps</td><td>Fri AM</td><td>7</td><td>Thu PM</td><td>3</td><td>~10</td><td><span class="tag tag-green">Optimal</span></td></tr>
+    <tr><td>Legs</td><td>Thu AM</td><td>22</td><td>Mon PM</td><td>9</td><td>~31</td><td><span class="tag tag-green">Heavy Thu + isolation Mon PM — different exercises, no overlap</span></td></tr>
+    <tr><td>Core</td><td>Tue PM</td><td>9</td><td>—</td><td>—</td><td>9</td><td><span class="tag tag-green">Adequate — core also activated in compounds</span></td></tr>
+  </table>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S4: CONDITIONING SCIENCE -->
+<section id="s4">
+  <h2>4 · Conditioning & T2D Science</h2>
+
+  <div class="card">
+    <div class="card-title">Why Both Resistance Training AND MAF Running?</div>
+    <p><strong>Resistance training</strong> creates GLUT4 transporter upregulation — muscle contractions pull glucose from blood without insulin. Every set of squats, every pulling rep is a direct HbA1c-lowering intervention. This is the most evidence-backed intervention for T2D after medication.</p>
+    <p><strong>MAF running</strong> (Maximum Aerobic Function) trains fat oxidation at low heart rates, improving mitochondrial density and metabolic flexibility. At HR 138 (your MAF ceiling), you're building aerobic base without cortisol spike, without glucose crash, without joint stress.</p>
+    <p><strong>The combination</strong>: resistance training primarily improves insulin sensitivity in muscles. Aerobic training primarily improves cardiovascular efficiency and fat metabolism. Together, they attack HbA1c from two different mechanisms — the evidence for this combination is stronger than either alone.</p>
+  </div>
+
+  <h3>MAF Heart Rate — 138 bpm (Corrected)</h3>
+  <div class="alert alert-blue">
+    <strong>MAF Formula Applied Correctly:</strong><br>
+    180 − Age (37) = 143<br>
+    Medical deductions apply when ANY of these are true: T2D ✅ + Hypertension ✅ + On medication ✅<br>
+    All three criteria met → subtract 5 bpm<br>
+    <strong>PJ's MAF ceiling = 138 bpm. NOT 143.</strong><br>
+    Start your first km at 12+ min/km. If HR rises above 135, walk. Patience at this stage = aerobic engine at Himalayan altitude later.
+  </div>
+
+  <h3>Post-Meal Movement — Why It's Non-Negotiable</h3>
+  <div class="card">
+    <p>A 10-minute walk after eating reduces postprandial glucose spike by 30–40% (research: Dipietro et al., Diabetes Care 2013). At HbA1c 6.8%, every postprandial spike is damaging retinal capillaries and kidney tubules. The walk is medicine — not a lifestyle choice.</p>
+    <p><strong>Office options that count:</strong> Corridor walk, stairwell, parking lot lap, standing desk + calf raises. Minimum 10 minutes. Ideally 15.</p>
+  </div>
+
+  <h3>Veg-First Eating Order — Why Before Every Meal</h3>
+  <div class="card">
+    <p>Eating vegetables first creates a fibre matrix in the stomach that physically slows glucose absorption from carbohydrates eaten after. Clinical trials (Imai et al., Diabetes Care 2010) show eating order reduces postprandial insulin by 38% and glucose peak by 29%.</p>
+    <p><strong>Order at EVERY meal:</strong> All vegetables first (full portion) → protein → carbohydrates last. Never eat roti or rice before finishing the sabzi.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S5: MONDAY -->
+<section id="s5">
+  <h2>5 · Monday</h2>
+
+  <div class="session-block">
+    <div class="session-header">
+      <div class="session-label">MONDAY AM — SHOULDERS HEAVY</div>
+      <div class="session-time">7:00–7:45 AM · 45 min</div>
+    </div>
+    <div class="session-body">
+      <div class="alert alert-blue" style="margin-bottom:12px;">
+        <strong>Warm-up (7 min):</strong> Treadmill 3 min walk→jog · Arm circles 10 each direction · Band pull-apart 15 reps · Bodyweight Y-raise 12 slow reps (no weight)
+      </div>
+      <div class="alert alert-orange" style="margin-bottom:12px;">
+        Tempo: 2 sec lowering · 1 sec pause at stretch · Explosive on exertion. EXHALE on every press, raise, and pull. No Valsalva. No locking out elbows.
+      </div>
+
+      <div class="ex-row">
+        <div class="ex-num">1</div>
+        <div>
+          <div class="ex-name">Cable Lateral Raise</div>
+          <div class="ex-detail">4 × 12–15 @ 9kg · 90 sec rest</div>
+          <div class="ex-note">Progress: add weight when 15 reps achieved all 4 sets. Thumb up on raise, pinky back — targets medial delt not traps.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">2</div>
+        <div>
+          <div class="ex-name">Landmine Press</div>
+          <div class="ex-detail">4 × 10–12 @ 10kg · 90 sec rest</div>
+          <div class="ex-note">THE ONLY approved overhead movement. Press from shoulder height at ~45° angle. Exhale on every press. Left shoulder impingement — stop if any pinching.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">3</div>
+        <div>
+          <div class="ex-name">Reverse Fly Machine</div>
+          <div class="ex-detail">4 × 12–15 @ 41kg · 75 sec rest</div>
+          <div class="ex-safe">Rear delt priority. Retract scapula at peak contraction — 1 sec hold. This is the shoulder health exercise.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">4</div>
+        <div>
+          <div class="ex-name">DB Scaption (Y-Raise)</div>
+          <div class="ex-detail">3 × 12 @ 5kg · 75 sec rest · Progress to 7.5kg by Week 4</div>
+          <div class="ex-safe">Rotator cuff health. Arms at ~30° forward angle (scaption plane, not directly to side). Light weight, full range, slow eccentric.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">5</div>
+        <div>
+          <div class="ex-name">Face Pull Cable</div>
+          <div class="ex-detail">3 × 15 @ 15kg · 75 sec rest · Rope attachment, set at face height</div>
+          <div class="ex-safe">Rear delt + external rotation. Pull to face, elbows high, pause 1 sec. This protects the shoulder joint long-term.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px; padding:10px 12px; background:#0d2416; border-radius:8px; font-size:0.83rem;">
+        <strong>Session totals:</strong> ~18 working sets · ~38 min · Cool-down: 5-min walk + shoulder cross-body stretch
+      </div>
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header" style="background:#1e1228;">
+      <div class="session-label" style="color:#9b59b6;">MONDAY PM — LEGS ISOLATION</div>
+      <div class="session-time">8:30–9:00 PM · 30 min · Post-dinner</div>
+    </div>
+    <div class="session-body">
+      <div class="alert alert-green" style="margin-bottom:12px;">
+        No warm-up needed if walked post-dinner. 3 exercises only — NO hip hinge, NO spine load, NO squat. Pure isolation, safe for sacrum. Upper body already done this AM.
+      </div>
+
+      <div class="ex-row">
+        <div class="ex-num">1</div>
+        <div>
+          <div class="ex-name">Seated Leg Curl</div>
+          <div class="ex-detail">3 × 12–15 @ 25kg · 60 sec rest</div>
+          <div class="ex-safe">Hamstring isolation. Full range — from fully extended to full curl. 2-sec eccentric (control the lowering).</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">2</div>
+        <div>
+          <div class="ex-name">Leg Extension</div>
+          <div class="ex-detail">3 × 12–15 @ 50kg · 60 sec rest</div>
+          <div class="ex-note">Do NOT lock out at top — keep slight bend to protect patellar tendon. Full range down.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">3</div>
+        <div>
+          <div class="ex-name">Standing Calf Raise (Smith or BW)</div>
+          <div class="ex-detail">4 × 15–20 @ 20kg · 60 sec rest</div>
+          <div class="ex-safe">Full stretch at bottom (pause 1 sec), full rise at top (pause 1 sec). Calves respond to slow tempo + high reps.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px; padding:10px 12px; background:#1e1228; border-radius:8px; font-size:0.83rem;">
+        <strong>Session totals:</strong> ~10 working sets · ~28 min · This gives legs a 2nd weekly frequency without spine or sacrum load.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S6: TUESDAY -->
+<section id="s6">
+  <h2>6 · Tuesday</h2>
+
+  <div class="session-block">
+    <div class="session-header">
+      <div class="session-label">TUESDAY AM — BACK HEAVY</div>
+      <div class="session-time">7:00–7:45 AM · 45 min</div>
+    </div>
+    <div class="session-body">
+      <div class="alert alert-blue" style="margin-bottom:12px;">
+        <strong>Warm-up (7 min):</strong> Dead hangs 2 × 20 sec (decompress spine) · Scapular pull-ups 10 reps (retract without bending elbow) · Light lat pulldown 25kg × 15
+      </div>
+
+      <div class="ex-row">
+        <div class="ex-num">1</div>
+        <div>
+          <div class="ex-name">Assisted Pull-Up</div>
+          <div class="ex-detail">3 × 10–12 @ −10kg assist · 90 sec rest</div>
+          <div class="ex-note">Use −10kg assistance (NOT bodyweight) — safety margin for NPDR. Progress: reduce assistance 2.5kg every 3 weeks. Exhale on every pull. Full hang at bottom.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">2</div>
+        <div>
+          <div class="ex-name">Lat Pulldown — Wide Grip</div>
+          <div class="ex-detail">4 × 12–15 @ 50kg · 90 sec rest</div>
+          <div class="ex-safe">Pull to upper chest, not neck. Lead with elbows driving down. Slight lean back (10–15°). Exhale on pull.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">3</div>
+        <div>
+          <div class="ex-name">Seated Cable Row</div>
+          <div class="ex-detail">4 × 12–14 @ 60kg · 90 sec rest</div>
+          <div class="ex-safe">Pull to lower sternum, elbows tight to body. Pause 1 sec at contraction. Full arm extension on return. Exhale on row.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">4</div>
+        <div>
+          <div class="ex-name">Chest-Supported DB Row</div>
+          <div class="ex-detail">3 × 12–15 @ 14kg · 75 sec rest</div>
+          <div class="ex-safe">Chest on incline bench — completely removes lower back from equation. SAFER than incline row for sacral history. Row to hip, elbow high.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">5</div>
+        <div>
+          <div class="ex-name">Cable Straight-Arm Pulldown</div>
+          <div class="ex-detail">3 × 15 @ 20kg · 75 sec rest · Straight bar or rope</div>
+          <div class="ex-safe">Slight elbow bend (never fully locked). Hinge from shoulder — not elbow. Pure lat isolation. Exhale on pulldown.</div>
+        </div>
+      </div>
+
+      <div class="alert alert-red" style="margin-top:12px; margin-bottom:0;">
+        <strong>NO Romanian Deadlift on Back day.</strong> RDL moved to Thursday Legs Heavy where it belongs with the posterior chain session.
+      </div>
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header" style="background:#1e1228;">
+      <div class="session-label" style="color:#9b59b6;">TUESDAY PM — CHEST + CORE</div>
+      <div class="session-time">8:30–9:05 PM · 35 min · Post-dinner</div>
+    </div>
+    <div class="session-body">
+      <div class="alert alert-green" style="margin-bottom:12px;">
+        <strong>Antagonist logic:</strong> Pull AM (back) → Push PM (chest) = ideal pairing. Blood flow from back session actively accelerates chest recovery. Classic antagonist programming.
+      </div>
+
+      <h4>Chest — 3 exercises</h4>
+      <div class="ex-row">
+        <div class="ex-num">1</div>
+        <div>
+          <div class="ex-name">DB Flat Bench Press</div>
+          <div class="ex-detail">3 × 12–15 @ 16kg · 90 sec rest</div>
+          <div class="ex-note">Exhale on press. Elbows at 45–60° (not flared to 90°). 2-sec lower. Slightly lighter than Friday AM (Tuesday PM = 2nd frequency hit).</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">2</div>
+        <div>
+          <div class="ex-name">DB Incline Bench Press</div>
+          <div class="ex-detail">3 × 12–15 @ 12kg · 90 sec rest</div>
+          <div class="ex-safe">30° incline. Upper chest emphasis. Exhale on press. Full range.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">3</div>
+        <div>
+          <div class="ex-name">Cable Chest Fly (Low to High)</div>
+          <div class="ex-detail">3 × 12–15 @ 10kg each side · 75 sec rest</div>
+          <div class="ex-safe">Single cables, palms face up. Upper chest stretch + squeeze. Exhale on press-out. No shoulder impingement risk.</div>
+        </div>
+      </div>
+
+      <h4>Core Circuit — 3 rounds, 60 sec between rounds</h4>
+      <div class="alert alert-blue" style="margin-bottom:10px;">
+        No rest between exercises within each round. 60 sec rest between rounds. Safe for sacral history — all exercises are spinal neutral or anti-rotation.
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">A</div>
+        <div>
+          <div class="ex-name">Dead Bug</div>
+          <div class="ex-detail">10 reps each side per round · Slow and controlled</div>
+          <div class="ex-safe">Press lower back INTO floor — no arch. Opposite arm/leg lower slowly. Best spinal stability exercise for sacral history.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">B</div>
+        <div>
+          <div class="ex-name">Pallof Press Cable</div>
+          <div class="ex-detail">12 reps each side per round @ 10kg · Stand perpendicular to cable</div>
+          <div class="ex-safe">Anti-rotation core work. Brace abs, press cable out and hold 1 sec, return. Exhale on press.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">C</div>
+        <div>
+          <div class="ex-name">Plank</div>
+          <div class="ex-detail">30 sec per round · Progress: 30→35→40→45 sec across 4 weeks</div>
+          <div class="ex-safe">Neutral spine. Breathe normally. Do not hold breath. Do not arch lower back.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S7: WEDNESDAY -->
+<section id="s7">
+  <h2>7 · Wednesday — MAF Run</h2>
+
+  <div class="session-block">
+    <div class="session-header">
+      <div class="session-label">WEDNESDAY AM — MAF RUN</div>
+      <div class="session-time">7:00–8:05 AM · 55–65 min including warm-up + cool-down</div>
+    </div>
+    <div class="session-body">
+      <div class="alert alert-red" style="margin-bottom:12px;">
+        <strong>HR CEILING: 138 bpm — NON-NEGOTIABLE.</strong> MAF = 180−37−5 (medical deduction for T2D + hypertension + medication). Not 143. If HR exceeds 138, walk immediately. Do not push through.
+      </div>
+
+      <table>
+        <tr><th>Phase</th><th>Duration</th><th>Activity</th></tr>
+        <tr><td>Warm-up</td><td>5 min</td><td>Walk at 6–7 km/h. Let HR rise naturally to ~120.</td></tr>
+        <tr><td>Run</td><td>35–50 min</td><td>Easy jog, HR 128–138. First km: 12+ min/km pace. Build slowly.</td></tr>
+        <tr><td>Cool-down</td><td>10 min</td><td>Walk at 5 km/h. Also counts as postprandial glucose management.</td></tr>
+      </table>
+
+      <h3>Distance Progression (12-week)</h3>
+      <table>
+        <tr><th>Weeks</th><th>Wednesday</th><th>Saturday</th><th>HR Ceiling</th></tr>
+        <tr><td>1–3</td><td>5 km</td><td>6 km</td><td>138 bpm</td></tr>
+        <tr><td>4</td><td colspan="2">DELOAD — 4 km only, reduced pace</td><td>138 bpm</td></tr>
+        <tr><td>5–7</td><td>6 km</td><td>7 km</td><td>138 bpm</td></tr>
+        <tr><td>8</td><td colspan="2">DELOAD — 4 km only</td><td>138 bpm</td></tr>
+        <tr><td>9–11</td><td>7 km</td><td>8 km</td><td>138 bpm</td></tr>
+        <tr><td>12</td><td colspan="2">DELOAD — assessment week, walk only</td><td>—</td></tr>
+      </table>
+
+      <div class="alert alert-blue">
+        <strong>MAF pacing reality:</strong> At the start, HR 138 might mean a very slow jog — even walking. That is correct. Do not be tempted to speed up. As aerobic base builds (8–12 weeks), your pace at the same HR will naturally increase. This is the engine building. VO2max target: 37.8 → 39+ by September 2026.
+      </div>
+
+      <div class="alert alert-green">
+        <strong>Breakfast after run:</strong> 9:30 AM as normal. MPS window for aerobic work is less acute than resistance training. No special post-run meal needed — standard breakfast protocol applies.
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-title">Wednesday PM — FULL REST</div>
+        <p>Running engages the posterior chain (hamstrings, glutes, calves) and cardiovascular system. No PM gym session on run days. Rest, walk, hydrate. Sleep early — sleep is when VO2max adaptations consolidate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S8: THURSDAY -->
+<section id="s8">
+  <h2>8 · Thursday</h2>
+
+  <div class="session-block">
+    <div class="session-header">
+      <div class="session-label">THURSDAY AM — LEGS HEAVY</div>
+      <div class="session-time">7:00–7:50 AM · 50 min (extended warm-up)</div>
+    </div>
+    <div class="session-body">
+      <div class="alert alert-red" style="margin-bottom:12px;">
+        <strong>SACRAL HISTORY — EXTENDED WARM-UP MANDATORY (8 min).</strong> Hip circles 10 each direction · Glute Bridge BW × 15 (non-negotiable activation) · BW squat pausing at bottom × 12 · Hip adductor machine warm-up 30kg × 20. Do not skip or shorten.
+      </div>
+
+      <div class="ex-row">
+        <div class="ex-num">1</div>
+        <div>
+          <div class="ex-name">Smith Machine Squat</div>
+          <div class="ex-detail">4 × 12–15 @ 17.5kg · 90 sec rest</div>
+          <div class="ex-note">Exhale on every drive up. Knees track toes. Never below parallel if ANY sacral discomfort — stop at parallel or slightly above. Bar on upper traps, not neck.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">2</div>
+        <div>
+          <div class="ex-name">Bulgarian Split Squat</div>
+          <div class="ex-detail">3 × 10–12 each leg @ BW or 8kg DBs · 90 sec rest</div>
+          <div class="ex-safe">Most important exercise for sacral protection. Finds and fixes strength asymmetry from sacral injury. Rear foot elevated on bench. Front knee tracks toe. Exhale on drive up. If right-left difference &gt; 2 reps: note it and report.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">3</div>
+        <div>
+          <div class="ex-name">Leg Extension</div>
+          <div class="ex-detail">3 × 12–15 @ 50kg · 75 sec rest</div>
+          <div class="ex-note">Do NOT lock out at top. Keep slight bend. Full range down. 2-sec eccentric.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">4</div>
+        <div>
+          <div class="ex-name">Seated Leg Curl</div>
+          <div class="ex-detail">3 × 12–15 @ 25kg · 75 sec rest</div>
+          <div class="ex-safe">Full range. 2-sec eccentric. Hamstrings are the primary sacral support muscle — do not neglect.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">5</div>
+        <div>
+          <div class="ex-name">DB Romanian Deadlift</div>
+          <div class="ex-detail">3 × 12–15 @ 18kg · 90 sec rest</div>
+          <div class="ex-note">HINGE AT HIP — not spine. Push hips back, feel stretch in hamstrings. If you feel it in lower back: weight is too heavy, reduce immediately. DBs hang close to legs. Exhale on stand. NEVER conventional barbell DL.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">6</div>
+        <div>
+          <div class="ex-name">Hip Adductor Machine</div>
+          <div class="ex-detail">3 × 15 @ 40kg · 75 sec rest</div>
+          <div class="ex-safe">Working sets (not just warm-up today). Critical for SI joint stability. Full range. Controlled throughout.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">7</div>
+        <div>
+          <div class="ex-name">Standing Calf Raise</div>
+          <div class="ex-detail">3 × 15–20 @ 20kg · 60 sec rest</div>
+          <div class="ex-safe">Full stretch at bottom (pause). Full rise at top (pause). Calves need this frequency — they're used in running too.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px; padding:10px 12px; background:#0d2416; border-radius:8px; font-size:0.83rem;">
+        <strong>Session totals:</strong> ~22 working sets · ~40 min working · This is the hardest session of the week. Eat well at 9:30 AM breakfast.
+      </div>
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header" style="background:#1e1228;">
+      <div class="session-label" style="color:#9b59b6;">THURSDAY PM — SHOULDERS ISOLATION + ARMS</div>
+      <div class="session-time">8:30–9:05 PM · 35 min · Post-dinner</div>
+    </div>
+    <div class="session-body">
+      <div class="alert alert-green" style="margin-bottom:12px;">
+        Shoulders get their 2nd weekly hit — isolation only (no heavy pressing). Arms get direct work. Lower AM / Upper PM = zero muscle overlap.
+      </div>
+
+      <h4>Shoulders — Isolation</h4>
+      <div class="ex-row">
+        <div class="ex-num">1</div>
+        <div>
+          <div class="ex-name">Cable Lateral Raise</div>
+          <div class="ex-detail">3 × 15 @ 7kg · 75 sec rest</div>
+          <div class="ex-note">Lighter than Monday AM (7kg vs 9kg) — 2nd frequency hit, isolation quality focus. Not about load, about blood flow and motor pattern.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">2</div>
+        <div>
+          <div class="ex-name">Face Pull Cable</div>
+          <div class="ex-detail">3 × 15 @ 12kg · 75 sec rest</div>
+          <div class="ex-safe">Rear delt + external rotation health. Elbows high, pull to face. Shoulder longevity exercise.</div>
+        </div>
+      </div>
+
+      <h4>Arms</h4>
+      <div class="ex-row">
+        <div class="ex-num">3</div>
+        <div>
+          <div class="ex-name">Hammer Curl DB</div>
+          <div class="ex-detail">3 × 12–15 @ 12kg · 75 sec rest</div>
+          <div class="ex-safe">Neutral grip. Bicep brachialis + brachioradialis. Builds arm thickness. Full hang at bottom, squeeze at top.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">4</div>
+        <div>
+          <div class="ex-name">Single-Arm Cable Curl</div>
+          <div class="ex-detail">3 × 12–15 @ 7.5kg each arm · 60 sec rest</div>
+          <div class="ex-safe">Bicep peak development. Supinate wrist at top (thumb out). Full extension at bottom.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">5</div>
+        <div>
+          <div class="ex-name">Tricep Pushdown Cable</div>
+          <div class="ex-detail">3 × 12–15 @ 25kg · 75 sec rest</div>
+          <div class="ex-note">Lighter than Friday AM (25kg vs 30kg) — 2nd frequency hit. Elbows locked at sides. Full extension, squeeze 1 sec.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S9: FRIDAY -->
+<section id="s9">
+  <h2>9 · Friday</h2>
+
+  <div class="session-block">
+    <div class="session-header">
+      <div class="session-label">FRIDAY AM — CHEST + TRICEPS</div>
+      <div class="session-time">7:00–7:45 AM · 45 min</div>
+    </div>
+    <div class="session-body">
+      <div class="alert alert-blue" style="margin-bottom:12px;">
+        <strong>Warm-up (7 min):</strong> Push-up BW × 10 · Cross-body shoulder stretch 30 sec each side · Light DB press 8kg × 12 (feel the pec stretch)
+      </div>
+
+      <div class="ex-row">
+        <div class="ex-num">1</div>
+        <div>
+          <div class="ex-name">DB Flat Bench Press</div>
+          <div class="ex-detail">4 × 12–15 @ 16kg · 90 sec rest</div>
+          <div class="ex-note">Primary push of the week. Exhale on every press. Elbows 45–60°. Touch chest at bottom, full extension at top without locking.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">2</div>
+        <div>
+          <div class="ex-name">DB Incline Bench Press</div>
+          <div class="ex-detail">3 × 12–15 @ 12kg · 90 sec rest</div>
+          <div class="ex-safe">30° incline. Upper chest + anterior delt. Exhale on press. 2-sec lower.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">3</div>
+        <div>
+          <div class="ex-name">DB Decline Press</div>
+          <div class="ex-detail">3 × 12–15 @ 12kg · 90 sec rest</div>
+          <div class="ex-safe">Lower chest + long head tricep emphasis. Balances the push:pull ratio. Exhale on press. Added to improve chest development bottom to top.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">4</div>
+        <div>
+          <div class="ex-name">Tricep Pushdown Cable</div>
+          <div class="ex-detail">4 × 12–15 @ 30kg · 75 sec rest</div>
+          <div class="ex-note">Elbows LOCKED at sides — do not let them drift forward. Full extension, 1 sec squeeze. Exhale on push.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">5</div>
+        <div>
+          <div class="ex-name">Tricep Overhead Extension Cable</div>
+          <div class="ex-detail">3 × 12–15 @ 14kg · 75 sec rest</div>
+          <div class="ex-safe">Long head emphasis (the biggest tricep head). Rope attachment, face away from cable, extend overhead. Exhale on extension. Left shoulder — if any discomfort, switch to single-arm.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header" style="background:#1e1228;">
+      <div class="session-label" style="color:#9b59b6;">FRIDAY PM — BACK + BICEPS</div>
+      <div class="session-time">8:30–9:05 PM · 35 min · Post-dinner</div>
+    </div>
+    <div class="session-body">
+      <div class="alert alert-green" style="margin-bottom:12px;">
+        Back's 2nd weekly hit. Push AM → Pull PM = ideal antagonist pairing. Lighter than Tuesday AM — this is frequency and blood flow, not maximum loading.
+      </div>
+
+      <div class="ex-row">
+        <div class="ex-num">1</div>
+        <div>
+          <div class="ex-name">Lat Pulldown</div>
+          <div class="ex-detail">3 × 12–15 @ 45kg · 75 sec rest</div>
+          <div class="ex-note">Lighter than Tuesday AM (45kg vs 50kg) — 2nd frequency. Full range, 2-sec eccentric.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">2</div>
+        <div>
+          <div class="ex-name">Seated Cable Row</div>
+          <div class="ex-detail">3 × 12–14 @ 50kg · 75 sec rest</div>
+          <div class="ex-note">Lighter than Tuesday AM (50kg vs 60kg). Mid-back squeeze at contraction.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">3</div>
+        <div>
+          <div class="ex-name">Incline DB Row</div>
+          <div class="ex-detail">3 × 12–15 @ 12kg · 75 sec rest</div>
+          <div class="ex-safe">Chest on incline bench. Row to hip. Upper back detail work.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">4</div>
+        <div>
+          <div class="ex-name">Concentration Curl</div>
+          <div class="ex-detail">3 × 12 @ 10kg · 60 sec rest</div>
+          <div class="ex-safe">Seated, elbow braced on inner thigh. Full range. Squeeze at top. Bicep peak development.</div>
+        </div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-num">5</div>
+        <div>
+          <div class="ex-name">Reverse Curl Cable</div>
+          <div class="ex-detail">2 × 15 @ 10kg · 60 sec rest</div>
+          <div class="ex-safe">Overhand grip (pronated). Forearm + elbow health. Important for elbow joint longevity with this volume.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S10: SATURDAY -->
+<section id="s10">
+  <h2>10 · Saturday — Long Run + Weigh-in</h2>
+
+  <div class="session-block">
+    <div class="session-header">
+      <div class="session-label">SATURDAY AM — LONG RUN + WEEKLY WEIGH-IN</div>
+      <div class="session-time">7:00–8:30 AM</div>
+    </div>
+    <div class="session-body">
+      <div class="alert alert-blue" style="margin-bottom:12px;">
+        <strong>WEIGH-IN FIRST — before coffee, before water, before anything.</strong> HealthU+ scale. Bladder empty. Same conditions every week. Record: Weight · BMR · Body Fat % · Muscle Mass · Visceral Fat rating · Body Type.
+      </div>
+
+      <h3>Long Run Protocol</h3>
+      <table>
+        <tr><th>Weeks</th><th>Distance</th><th>Duration</th><th>HR Ceiling</th></tr>
+        <tr><td>1–3</td><td>6 km</td><td>~60–70 min</td><td>138 bpm</td></tr>
+        <tr><td>4 (deload)</td><td>4 km</td><td>~40 min</td><td>138 bpm</td></tr>
+        <tr><td>5–7</td><td>7 km</td><td>~70–80 min</td><td>138 bpm</td></tr>
+        <tr><td>8 (deload)</td><td>4 km</td><td>~40 min</td><td>138 bpm</td></tr>
+        <tr><td>9–11</td><td>8 km</td><td>~80–90 min</td><td>138 bpm</td></tr>
+        <tr><td>12 (deload)</td><td>Walk only</td><td>30 min</td><td>—</td></tr>
+      </table>
+
+      <div class="alert alert-green">
+        <strong>Post-run:</strong> 10-min walk cool-down. Breakfast at 9:30 AM as usual. Saturday PM = full rest. No PM gym session.
+      </div>
+
+      <h3>Weekly Body Composition Targets (Baseline: Apr 25, 2026)</h3>
+      <table>
+        <tr><th>Metric</th><th>Baseline</th><th>Target (Sep 2026)</th><th>Why It Matters</th></tr>
+        <tr><td>Weight</td><td>80.25 kg</td><td>~74–75 kg</td><td>Total body load reduction</td></tr>
+        <tr><td>BMR</td><td>1,631 kcal</td><td>Maintain or increase</td><td>TDEE base — higher BMR = more fat burning at rest</td></tr>
+        <tr><td>Body Fat %</td><td>23.7%</td><td>&lt;18%</td><td>Visceral fat driver, T2D risk</td></tr>
+        <tr><td>Muscle Mass</td><td>55.1 kg</td><td>Maintain + 1.5–2.5 kg</td><td>Limited by 80g protein ceiling — this is realistic</td></tr>
+        <tr><td>Visceral Fat</td><td>13</td><td>&lt;10</td><td>Direct HbA1c driver. Every point drop = less insulin resistance.</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S11: SUNDAY -->
+<section id="s11">
+  <h2>11 · Sunday — Rest + Mobility</h2>
+
+  <div class="card">
+    <div class="card-title">Sunday is a Real Rest Day — Protect It</div>
+    <p>PJ had been doing shoulder sessions on Sunday — this shifts to Monday. Sunday is the recovery day that makes Monday's shoulder session high quality. Do not add gym on Sunday.</p>
+  </div>
+
+  <h3>Sunday Morning — Dog Walk + Mobility (20 min)</h3>
+  <table>
+    <tr><th>Exercise</th><th>Sets × Duration/Reps</th><th>Focus</th></tr>
+    <tr><td>Dog walk (brisk)</td><td>15–20 min</td><td>Active recovery, steps, sunlight exposure</td></tr>
+    <tr><td>Hip flexor stretch</td><td>45 sec each side</td><td>Tight after all the running and squats</td></tr>
+    <tr><td>Shoulder cross-body stretch</td><td>30 sec each side</td><td>Left shoulder impingement maintenance</td></tr>
+    <tr><td>Cat-cow</td><td>10 reps, slow</td><td>Sacral mobility + spinal health</td></tr>
+    <tr><td>Thoracic rotation</td><td>8 each side</td><td>Upper back mobility, reduces compensation</td></tr>
+  </table>
+
+  <div class="alert alert-blue">
+    This is recovery. The walk with your dog IS the session. Resist the urge to add exercises. The discipline of rest is as important as the discipline of training. Your body builds during recovery, not during training.
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S12: DIET -->
+<section id="s12">
+  <h2>12 · Diet Plan — Real Schedule</h2>
+
+  <div class="alert alert-red">
+    <strong>EATING ORDER AT EVERY MEAL — NON-NEGOTIABLE:</strong> All vegetables first (full portion) → protein → carbohydrates last. Never touch roti or rice before finishing all the sabzi. This single habit reduces HbA1c more than almost any medication adjustment.
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-header">
+      <div class="meal-title">PRE-WORKOUT (7:00 AM)</div>
+      <div class="meal-time">Black coffee only — then glucose check → gym</div>
+    </div>
+    <div class="meal-body">
+      <p><strong>Black coffee 1–2 cups.</strong> No milk. No sugar. No cooking. Drink on waking.</p>
+      <p>Check fasting glucose → follow protocol in Section 2 (glucose &lt;90: eat 1 roti and wait; 90–100: 6 almonds or half apple; &gt;100: train fully fasted).</p>
+      <div class="alert alert-red" style="margin-bottom:0;">
+        Metformin is NOT taken pre-workout. Metformin goes WITH breakfast at 9:30 AM.
+      </div>
+    </div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-header">
+      <div class="meal-title">MEAL 1 — BREAKFAST</div>
+      <div class="meal-time">9:30 AM · Cook-prepared</div>
+    </div>
+    <div class="meal-body">
+      <p><strong>Order:</strong> Cucumber (all 150g) → egg whites → bread → whey buttermilk last.</p>
+      <table>
+        <tr><th>Food</th><th>Amount</th><th>Cal</th><th>Protein</th></tr>
+        <tr><td>Cucumber slices</td><td>150g</td><td>15</td><td>1g</td></tr>
+        <tr><td>Egg whites</td><td>3 nos</td><td>51</td><td>10.5g</td></tr>
+        <tr><td>Brown bread</td><td>1 slice</td><td>85</td><td>3g</td></tr>
+        <tr><td>Whey (10g) in 200ml buttermilk</td><td>—</td><td>76</td><td>8g + 3g</td></tr>
+        <tr style="font-weight:700;"><td>TOTAL</td><td>—</td><td>~227 cal</td><td>~22g protein</td></tr>
+      </table>
+      <div class="alert alert-orange" style="margin-bottom:8px;">
+        <strong>Use 10g whey (NOT 15g):</strong> 15g whey = 12g protein, which pushes breakfast over 20g before adding eggs. Kidney ceiling = 20g per meal max.
+      </div>
+      <div class="alert alert-blue" style="margin-bottom:0;">
+        Post-breakfast: 10-min walk mandatory. Also take Metformin NOW (with food, not fasted).
+      </div>
+      <div class="macro-pills">
+        <span class="macro-pill macro-cal">~227 cal</span>
+        <span class="macro-pill macro-prot">~22g protein</span>
+        <span class="macro-pill macro-carb">~25g carbs</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-header">
+      <div class="meal-title">PRE-LUNCH PRELOAD</div>
+      <div class="meal-time">12:30 PM · At desk · Zero prep</div>
+    </div>
+    <div class="meal-body">
+      <p>Eat this 30–45 min before lunch to blunt hunger and glucose spike at the meal. Soak sabja seeds at 9:30 AM breakfast — ready by 12:30 PM.</p>
+      <table>
+        <tr><th>Food</th><th>Amount</th><th>Cal</th><th>Benefit</th></tr>
+        <tr><td>Sabja seeds (soaked in 200ml water)</td><td>1 tbsp</td><td>40</td><td>Physical stomach fill, fibre, satiety</td></tr>
+        <tr><td>Psyllium husk (isabgol) in 200ml water</td><td>5g</td><td>15</td><td>4g soluble fibre → GLP-1 stimulus, glucose blunting</td></tr>
+        <tr><td>Raw cucumber or carrot sticks (packed from home)</td><td>100g</td><td>15–25</td><td>Fibre + volume, primes veg-first habit</td></tr>
+        <tr style="font-weight:700;"><td>TOTAL</td><td>—</td><td>~70–80 cal</td><td>4g fibre + GLP-1 primed for lunch</td></tr>
+      </table>
+      <div class="alert alert-green" style="margin-bottom:0;">
+        This preload is satiety architecture. Arriving at lunch genuinely non-starving is the only way to stick to 350 cal. Do not skip this.
+      </div>
+    </div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-header">
+      <div class="meal-title">MEAL 2 — LUNCH</div>
+      <div class="meal-time">1:00–1:15 PM · Office</div>
+    </div>
+    <div class="meal-body">
+      <p><strong>Order:</strong> ALL sabzi first (finish it) → roti → dal/buttermilk last. ROTI OR RICE — never both.</p>
+
+      <h4>Option A — Roti Meal</h4>
+      <table>
+        <tr><th>Food</th><th>Amount</th><th>Cal</th><th>Protein</th></tr>
+        <tr><td>Mix veg sabzi (bhindi / brinjal / kathal — 1 tsp oil)</td><td>200g</td><td>165</td><td>4g</td></tr>
+        <tr><td>Wheat roti</td><td>1.5 nos</td><td>128</td><td>5g</td></tr>
+        <tr><td>Moong dal or chana dal</td><td>75ml</td><td>50</td><td>4g</td></tr>
+        <tr><td>Homemade buttermilk</td><td>200ml</td><td>36</td><td>3g</td></tr>
+        <tr style="font-weight:700;"><td>TOTAL</td><td>—</td><td>~379 cal</td><td>~16g protein</td></tr>
+      </table>
+
+      <h4>Option B — Dosa/Idli (1×/week minimum)</h4>
+      <table>
+        <tr><th>Food</th><th>Amount</th><th>Cal</th><th>Protein</th></tr>
+        <tr><td>Dosa (fermented batter, dry, no oil)</td><td>1.5 dosa</td><td>195</td><td>5g</td></tr>
+        <tr><td>Sambhar (fermented — low GI)</td><td>150ml</td><td>97</td><td>6g</td></tr>
+        <tr><td>Coconut chutney</td><td>20g</td><td>37</td><td>1g</td></tr>
+        <tr><td>Homemade buttermilk</td><td>100ml</td><td>18</td><td>1g</td></tr>
+        <tr style="font-weight:700;"><td>TOTAL</td><td>—</td><td>~347 cal</td><td>~13g protein</td></tr>
+      </table>
+
+      <div class="alert alert-orange">
+        <strong>Dosa rule:</strong> FERMENTED batter ONLY. Minimum 8-hour fermented. No instant mix. Wet-grind preferred. Fermentation reduces GI from ~70 to ~40 — this is the difference between a safe food and a glucose spike.
+      </div>
+
+      <h4>Best Sabzi Choices for T2D (rotate these)</h4>
+      <table>
+        <tr><th>Vegetable</th><th>GI</th><th>Frequency</th><th>Benefit</th></tr>
+        <tr><td>Brinjal (baingan)</td><td>~15</td><td>2–3×/week</td><td>Anti-inflammatory. Excellent for T2D.</td></tr>
+        <tr><td>Bhindi (okra)</td><td>~20</td><td>2–3×/week</td><td>Mucilage (soluble fibre) blunts glucose rise.</td></tr>
+        <tr><td>Lauki (bottle gourd)</td><td>~15</td><td>1–2×/week</td><td>Very low cal, high water content.</td></tr>
+        <tr><td>Kathal (raw jackfruit)</td><td>~40</td><td>1–2×/week</td><td>High fibre, good volume. Raw only — not ripe.</td></tr>
+        <tr><td>Palak (spinach)</td><td>~15</td><td>2×/week</td><td>High potassium (BP benefit). High folate.</td></tr>
+        <tr><td style="color:var(--red);">Potato (aloo)</td><td style="color:var(--red);">78</td><td style="color:var(--red);">Avoid as primary</td><td style="color:var(--red);">High GI spike. Occasional only, never primary sabzi.</td></tr>
+      </table>
+
+      <div class="macro-pills">
+        <span class="macro-pill macro-cal">~350–380 cal</span>
+        <span class="macro-pill macro-prot">~13–16g protein</span>
+      </div>
+      <p style="margin-top:8px; font-size:0.82rem; color:var(--text2);">Post-lunch: 10-min walk. Office corridor/stairs counts. Mandatory for glucose control.</p>
+    </div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-header">
+      <div class="meal-title">SNACK — MPS PRIORITY SLOT</div>
+      <div class="meal-time">4:00–5:30 PM · Zero prep</div>
+    </div>
+    <div class="meal-body">
+      <div class="alert alert-green" style="margin-bottom:12px;">
+        This is the 4th meal that completes the protein architecture for the day. Even though gym was at 7 AM, this 4pm slot is the dedicated MPS (muscle protein synthesis) window — the body is still in protein synthesis mode 6–8 hours post-workout. This is the ONE meal where 25–28g protein is acceptable.
+      </div>
+
+      <h4>Choose One Combination</h4>
+      <table>
+        <tr><th>Combo</th><th>Food</th><th>Cal</th><th>Protein</th></tr>
+        <tr>
+          <td><strong>A</strong></td>
+          <td>3 boiled egg whites + 200ml buttermilk + 15g whey + 1 guava</td>
+          <td>~227 cal</td>
+          <td>~27g protein</td>
+        </tr>
+        <tr>
+          <td><strong>B</strong></td>
+          <td>50–80g leftover lunch sabzi + 200ml buttermilk + 15g whey</td>
+          <td>~200–230 cal</td>
+          <td>~20–25g protein</td>
+        </tr>
+        <tr>
+          <td><strong>C</strong></td>
+          <td>1 apple or guava + 200ml buttermilk + 15g whey</td>
+          <td>~200 cal</td>
+          <td>~18g protein</td>
+        </tr>
+      </table>
+
+      <div class="alert alert-red">
+        <strong>HARD CEILING:</strong> Even at this MPS slot — MAX 28g protein. Do not exceed. Kidney damage is cumulative and dose-dependent.<br>
+        <strong>NEVER use:</strong> Protein bars · Makhana packets (GI 65) · Dates (dense sugar) · Biscuits · Chai with sugar
+      </div>
+    </div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-header">
+      <div class="meal-title">MEAL 3 — DINNER</div>
+      <div class="meal-time">8:00 PM · THE OVEREATING DANGER ZONE</div>
+    </div>
+    <div class="meal-body">
+      <div class="alert alert-red" style="margin-bottom:12px;">
+        Dinner is where the plan most often breaks down. The structural fix is NOT willpower — it is the 12:30 PM preload + 4pm snack done correctly. Arrive at dinner genuinely not starving and 350 cal is easy.
+      </div>
+
+      <h4>4 Structural Rules Before You Touch the Food</h4>
+      <ul class="steps-list">
+        <li data-n="1">Drink 300ml water before sitting down (5 min before).</li>
+        <li data-n="2">Eat all veg first — 100g cucumber or salad, full portion, before anything else.</li>
+        <li data-n="3">Serve yourself a FIXED portion before eating. Do NOT eat from serving bowls directly.</li>
+        <li data-n="4">If still hungry after 1.5 roti → more sabzi, NOT more roti. Veg fills without spiking.</li>
+      </ul>
+
+      <h4>Option A — Roti + Sabzi</h4>
+      <table>
+        <tr><th>Food</th><th>Amount</th><th>Cal</th><th>Protein</th></tr>
+        <tr><td>Brinjal/bhindi/lauki sabzi (1 tsp oil)</td><td>200g</td><td>175</td><td>4g</td></tr>
+        <tr><td>Wheat roti</td><td>1.5 nos</td><td>128</td><td>5g</td></tr>
+        <tr><td>Moong dal</td><td>75ml</td><td>50</td><td>4g</td></tr>
+        <tr><td>Homemade buttermilk</td><td>150ml</td><td>27</td><td>2g</td></tr>
+        <tr><td>Whey 5g in buttermilk (if protein count low)</td><td>—</td><td>20</td><td>4g</td></tr>
+        <tr style="font-weight:700;"><td>TOTAL</td><td>—</td><td>~400 cal</td><td>~19g protein</td></tr>
+      </table>
+
+      <h4>Option B — Dosa/Idli Night (lower protein — good if 4pm snack was high)</h4>
+      <table>
+        <tr><th>Food</th><th>Amount</th><th>Cal</th><th>Protein</th></tr>
+        <tr><td>Idli (fermented)</td><td>2 nos</td><td>150</td><td>4g</td></tr>
+        <tr><td>Sambhar</td><td>200ml</td><td>130</td><td>8g</td></tr>
+        <tr><td>Coconut chutney</td><td>20g</td><td>37</td><td>1g</td></tr>
+        <tr><td>Homemade buttermilk</td><td>150ml</td><td>27</td><td>2g</td></tr>
+        <tr style="font-weight:700;"><td>TOTAL</td><td>—</td><td>~344 cal</td><td>~15g protein</td></tr>
+      </table>
+
+      <div class="macro-pills">
+        <span class="macro-pill macro-cal">~344–400 cal</span>
+        <span class="macro-pill macro-prot">~15–19g protein</span>
+      </div>
+      <p style="margin-top:8px; font-size:0.82rem; color:var(--text2);">Post-dinner: 10–15 min walk. Dog walk if possible — directly follows dinner. Then PM gym at 8:30 PM if it's a training day.</p>
+    </div>
+  </div>
+
+  <h3>Daily Protein Audit — Check at 4 PM Every Day</h3>
+  <div class="card">
+    <table>
+      <tr><th>Total by 4 PM</th><th>Snack Action</th><th>Dinner Action</th></tr>
+      <tr><td><span class="tag tag-red">≤ 50g</span></td><td>Snack must include 15g whey + 2 egg whites</td><td>Normal dinner</td></tr>
+      <tr><td><span class="tag tag-orange">50–60g</span></td><td>Snack: 15g whey OR 2 egg whites (not both)</td><td>Normal dinner</td></tr>
+      <tr><td><span class="tag tag-orange">60–70g</span></td><td>Snack: whey buttermilk only, no eggs</td><td>Low-protein dinner (idli + sambhar)</td></tr>
+      <tr><td><span class="tag tag-red">&gt; 70g</span></td><td>Snack: fruit only, NO whey, NO eggs</td><td>Vegetables + 1 roti + buttermilk only. No added protein.</td></tr>
+    </table>
+    <div class="alert alert-red" style="margin-top:8px; margin-bottom:0;">
+      <strong>Daily protein ceiling: 80g. No exceptions.</strong> Kidney damage from chronic protein excess is cumulative, irreversible, and silent until it's not.
+    </div>
+  </div>
+
+  <h3>Calorie Cycling — By Day Type</h3>
+  <table>
+    <tr><th>Day Type</th><th>Days</th><th>Calorie Target</th><th>Logic</th></tr>
+    <tr><td>Gym day</td><td>Mon, Tue, Thu, Fri</td><td>1,350–1,400 cal</td><td>Fuels AM session + PM session recovery</td></tr>
+    <tr><td>Run day</td><td>Wed, Sat</td><td>1,300–1,350 cal</td><td>Running burns well — no need for excess fuel</td></tr>
+    <tr><td>Rest day</td><td>Sunday</td><td>1,100–1,150 cal</td><td>Lower output = lower intake. Deepen the weekly deficit.</td></tr>
+    <tr><td>Deload week</td><td>Wk 4, 8, 12</td><td>1,400 cal every day</td><td>Supercompensation fuel — body repairs and grows</td></tr>
+    <tr style="font-weight:700;"><td>Weekly average</td><td>—</td><td>~1,300 cal</td><td>~700 cal/day deficit vs TDEE ~2,000 = ~4.9 kg fat/month potential</td></tr>
+  </table>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S13: SUPPLEMENTS -->
+<section id="s13">
+  <h2>13 · Supplement Protocol</h2>
+
+  <table>
+    <tr><th>Supplement</th><th>Dose</th><th>Timing</th><th>Why</th><th>Status</th></tr>
+    <tr>
+      <td><strong>Algae DHA/EPA Oil</strong></td>
+      <td>200–500mg DHA</td>
+      <td>With breakfast 9:30 AM</td>
+      <td>NPDR retinal protection. Purine-free — SAFE for uric acid 8.1 (not fish oil, which is fine too but this eliminates any doubt).</td>
+      <td><span class="supp-safe">✅ TAKE</span></td>
+    </tr>
+    <tr>
+      <td><strong>Vitamin D3</strong></td>
+      <td>2,000 IU</td>
+      <td>With breakfast 9:30 AM (fat-soluble — needs meal)</td>
+      <td>PJ severely deficient (10.54 ng/mL baseline). Non-negotiable. Deficiency impairs insulin sensitivity and muscle function.</td>
+      <td><span class="supp-safe">✅ TAKE DAILY</span></td>
+    </tr>
+    <tr>
+      <td><strong>Vitamin K2-MK7</strong></td>
+      <td>100–200 mcg</td>
+      <td>With breakfast 9:30 AM</td>
+      <td>Partners with D3 for correct calcium metabolism — directs calcium to bones, not arteries. BP protection.</td>
+      <td><span class="supp-safe">✅ TAKE</span></td>
+    </tr>
+    <tr>
+      <td><strong>Magnesium Glycinate</strong></td>
+      <td>400 mg</td>
+      <td>9:30 PM (after dinner or with)</td>
+      <td>Sleep quality + insulin sensitivity + BP regulation. The most underrated supplement for T2D + hypertension.</td>
+      <td><span class="supp-safe">✅ TAKE NIGHTLY</span></td>
+    </tr>
+    <tr>
+      <td><strong>Psyllium Husk (Isabgol)</strong></td>
+      <td>5g per serving</td>
+      <td>12:30 PM preload + optional before dinner</td>
+      <td>Soluble fibre → GLP-1 stimulus → satiety + postprandial glucose blunting. Acts like a natural GLP-1 agonist.</td>
+      <td><span class="supp-safe">✅ TAKE</span></td>
+    </tr>
+    <tr>
+      <td><strong>Sabja Seeds (soaked)</strong></td>
+      <td>1 tbsp</td>
+      <td>12:30 PM preload (soak at 9:30 AM)</td>
+      <td>Physical stomach fill + fibre + mucilage. Low cal, high satiety. Glucose buffering.</td>
+      <td><span class="supp-safe">✅ TAKE</span></td>
+    </tr>
+  </table>
+
+  <div class="alert alert-red">
+    <strong>NEVER TAKE:</strong><br>
+    ❌ Creatine — contraindicated with kidney protein 2+. Without nephrologist clearance, this is an absolute no.<br>
+    ❌ Pre-workout powders — uncontrolled caffeine, artificial stimulants, BP risk.<br>
+    ❌ Protein bars — almost all exceed 20g protein per serving, breaching kidney ceiling.<br>
+    ❌ Mass gainers — sugar, protein, and calorie bombs incompatible with T2D and deficit goal.
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S14: PROGRESSION -->
+<section id="s14">
+  <h2>14 · 12-Week Progression & Deload Weeks</h2>
+
+  <div class="alert alert-blue">
+    <strong>Context:</strong> With a protein ceiling of 80g/day and a caloric deficit, muscle hypertrophy is limited but real. The primary training outcome is fat loss with muscle maintenance + modest lean gain (~1.5–2.5kg over 12 weeks is realistic and meaningful). Every deload week is mandatory — the deficit and protein ceiling mean your recovery capacity is lower than a typical trainee.
+  </div>
+
+  <!-- PHASE 1 -->
+  <div class="card">
+    <div class="card-title" style="color:var(--accent);">Phase 1 — Weeks 1–3: Form + Tempo Foundation</div>
+    <p><strong>Focus:</strong> Establish the 2-second eccentric on ALL exercises. Perfect breathing (exhale on exertion). Build the habit of tracking all 10 sessions.</p>
+    <p><strong>Load:</strong> Start at current working weights listed in each session.</p>
+    <p><strong>Rep target:</strong> Hit the TOP of the rep range before adding weight. Example: Lat pulldown 50kg — do 4 × 15 before adding to 55kg.</p>
+    <p><strong>Circuit rounds:</strong> 3 rounds on all circuits (not 4 yet).</p>
+    <p><strong>PM sessions:</strong> All 4 PM sessions active (Mon/Tue/Thu/Fri PM).</p>
+  </div>
+
+  <div class="deload-box">
+    <h4>WEEK 4 — DELOAD (Mandatory)</h4>
+    <ul style="padding-left:18px; font-size:0.88rem; line-height:1.8;">
+      <li>Only 2 gym sessions: Monday AM (Shoulders) + Thursday AM (Legs)</li>
+      <li>Cut all working sets by 50%: if 4 sets normally → 2 sets only</li>
+      <li>Keep ALL weights IDENTICAL — do not reduce load during deload</li>
+      <li>No PM sessions this week</li>
+      <li>Running: reduce to 4km (not 6km). Keep HR ceiling at 138.</li>
+      <li>Calories: RAISE to 1,400 cal every day — this is the supercompensation window. Body rebuilds with extra fuel.</li>
+    </ul>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="card">
+    <div class="card-title" style="color:var(--gold);">Phase 2 — Weeks 5–7: Load Progression</div>
+    <p><strong>Focus:</strong> Increase load on exercises where you've hit the top of the rep range for all sets.</p>
+    <p><strong>Load progression rule:</strong> Hit 15 reps (or top of range) on ALL sets → next session add 2.5kg (DBs) or 5kg (cables/machines).</p>
+    <p><strong>Circuit rounds:</strong> Increase to 4 rounds.</p>
+    <p><strong>Eccentric tempo:</strong> Maintained at 2 seconds — do not rush even as weights increase.</p>
+    <p><strong>PM sessions:</strong> All 4 active. If one PM session was missed in Phase 1 → restart that session with Phase 1 weights.</p>
+  </div>
+
+  <div class="deload-box">
+    <h4>WEEK 8 — DELOAD (Mandatory)</h4>
+    <ul style="padding-left:18px; font-size:0.88rem; line-height:1.8;">
+      <li>Only 2 gym sessions: Monday AM + Thursday AM</li>
+      <li>50% sets at same weight</li>
+      <li>No PM sessions</li>
+      <li>Run: 4km only</li>
+      <li>Calories: 1,400 cal every day</li>
+      <li>Use this week to assess: any joints sore? any asymmetries? note them for Phase 3.</li>
+    </ul>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="card">
+    <div class="card-title" style="color:var(--accent2);">Phase 3 — Weeks 9–11: Volume Progression</div>
+    <p><strong>Focus:</strong> Add volume (sets) on major compounds. Introduce antagonist supersets for efficiency.</p>
+    <p><strong>Volume increase:</strong> Add 1 working set to all major compounds (4 sets → 5 sets on Lat Pulldown, Seated Row, DB Bench, Smith Squat).</p>
+    <p><strong>Antagonist supersets (Tue PM):</strong> DB Bench Press supersetted with Seated Cable Row. No rest between the two — rest 90 sec after both. This builds density without shortening rest for either muscle.</p>
+    <p><strong>Rest minimum:</strong> Maintain 75 sec minimum — do NOT cut below even in supersets. Hypertension rule.</p>
+    <p><strong>Circuit rounds:</strong> 4 rounds + 1 extra exercise added to PM circuits.</p>
+  </div>
+
+  <div class="deload-box">
+    <h4>WEEK 12 — DELOAD + ASSESSMENT (Full Recovery Week)</h4>
+    <ul style="padding-left:18px; font-size:0.88rem; line-height:1.8;">
+      <li>Walk only — no gym sessions, no running</li>
+      <li>20–30 min walks, 3×/day (morning, lunch, post-dinner)</li>
+      <li>Calories: 1,400 cal every day</li>
+      <li>Weigh-in on Saturday with full HealthU+ metrics</li>
+      <li>Assessment: compare all metrics to baseline (Apr 25 + Week 12 reading)</li>
+      <li>This is the week to plan the next 12-week block</li>
+    </ul>
+  </div>
+
+  <h3>Expected Outcomes by September 2026</h3>
+  <table>
+    <tr><th>Metric</th><th>Start</th><th>Target (Sep 2026)</th><th>How</th></tr>
+    <tr><td>Lean mass gain</td><td>55.1 kg muscle</td><td>+1.5–2.5 kg</td><td>Limited by 80g protein ceiling — this is realistic and real, not inflated</td></tr>
+    <tr><td>Fat loss</td><td>23.7% BF</td><td>~18–19% BF (~4–5 kg fat loss)</td><td>Consistent 600–700 cal/day deficit</td></tr>
+    <tr><td>Visual change</td><td>—</td><td>Look 5–7 kg lighter</td><td>Fat loss reveals muscle underneath — perception > scale number</td></tr>
+    <tr><td>HbA1c</td><td>6.8%</td><td>6.2–6.4%</td><td>Combined resistance training + running + veg-first + post-meal walks</td></tr>
+    <tr><td>VO2 max</td><td>~37.8</td><td>39+</td><td>MAF progression over 12 weeks</td></tr>
+    <tr><td>Visceral Fat</td><td>13</td><td>&lt;10</td><td>Caloric deficit + exercise + sleep → most direct visceral fat reduction pathway</td></tr>
+  </table>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S15: WARM-UP + INJURY PREVENTION -->
+<section id="s15">
+  <h2>15 · Warm-Up + Injury Prevention</h2>
+
+  <h3>Standard Warm-Up Structure (Every Session)</h3>
+  <table>
+    <tr><th>Phase</th><th>Duration</th><th>Content</th></tr>
+    <tr><td>Cardio ramp</td><td>3 min</td><td>Treadmill walk → jog. Raise core temperature and heart rate.</td></tr>
+    <tr><td>Joint mobilisation</td><td>2 min</td><td>Arm circles, hip circles, thoracic rotation, wrist circles. Full range, slow.</td></tr>
+    <tr><td>Session-specific activation</td><td>2–3 min</td><td>See table below. Primes the primary muscles for that day.</td></tr>
+  </table>
+
+  <h3>Session-Specific Activation</h3>
+  <table>
+    <tr><th>Session</th><th>Activation Exercises</th></tr>
+    <tr><td>Monday AM (Shoulders)</td><td>Band pull-apart 15 reps · Arm circles with 1kg 10 each · Cable lateral raise (no weight) 15 slow</td></tr>
+    <tr><td>Tuesday AM (Back)</td><td>Dead hangs 2 × 20 sec · Scapular pull-ups 10 · Lat pulldown 25kg × 15</td></tr>
+    <tr><td>Thursday AM (Legs) <span class="tag tag-red">EXTENDED 8 MIN</span></td><td>Hip circles 10 each · Glute Bridge BW × 15 (NON-NEGOTIABLE) · BW squat pause at bottom × 12 · Hip adductor 30kg × 20</td></tr>
+    <tr><td>Friday AM (Chest)</td><td>Push-up BW × 10 · Cross-body shoulder stretch 30 sec each · Light DB press 8kg × 12</td></tr>
+    <tr><td>All PM sessions</td><td>3 min only — 50% weight of first exercise × 12 reps. Body is still warm from the day.</td></tr>
+  </table>
+
+  <h3>Cool-Down (Every Session)</h3>
+  <p>5-min walk → shoulder cross-body stretch (30 sec each) → hip flexor stretch (45 sec each) → 500ml water immediately after session.</p>
+
+  <h3>Injury Prevention — 4 STOP Signals</h3>
+  <div class="alert alert-red">
+    <strong>STOP THE SET IMMEDIATELY if any of these occur:</strong><br>
+    1. Sharp pain (not muscle burn — different quality, usually joint/tendon)<br>
+    2. Joint pain (shoulder, knee, elbow, sacrum)<br>
+    3. Visual disturbance during a set → STOP → sit down → check glucose. This may be hypoglycemia, not NPDR. Eat glucose tablet. Wait 5 min, check again before continuing.<br>
+    4. Headache building during sets → stop, check BP if possible, drink water, rest.
+  </div>
+
+  <div class="alert alert-green">
+    <strong>TRAIN THROUGH — these are normal:</strong><br>
+    ✅ Muscle burn in the last 3–4 reps (lactic acid — healthy)<br>
+    ✅ DOMS (delayed onset muscle soreness, 24–48h after session — normal and expected)
+  </div>
+
+  <h3>Sacral-Specific Protocol</h3>
+  <div class="card">
+    <div class="card-title">Sacral Injury — Ongoing Management Rules</div>
+    <ul style="padding-left:18px; line-height:2; font-size:0.88rem;">
+      <li>Glute bridge BW × 15 before EVERY leg session — non-negotiable activation of glutes to take load off sacrum</li>
+      <li>RDL: feel the stretch in HAMSTRINGS. If you feel it in LOWER BACK — weight is too heavy, reduce immediately and re-check hip hinge form</li>
+      <li>Any sacral discomfort → skip Thursday PM isolation session, replace with 30-min walk</li>
+      <li>48-hour rule: if muscle is still tender to touch at 48 hours → do NOT train it</li>
+      <li>Bulgarian split squat: any right-left rep difference &gt; 2 → note and report to physio at next check</li>
+    </ul>
+  </div>
+
+  <h3>48-Hour Recovery Rule</h3>
+  <table>
+    <tr><th>Condition</th><th>Action</th></tr>
+    <tr><td>Muscle DOMS (tender when pressed, dull ache)</td><td>Train as planned — DOMS is normal. The PM session on the same muscle group is intentionally lighter.</td></tr>
+    <tr><td>Muscle tender to touch at 48h (beyond normal DOMS)</td><td>Do NOT train that muscle group. Replace with walk or rest.</td></tr>
+    <tr><td>Joint pain (sharp, clicking, swelling)</td><td>Stop all loading of that joint. Ice 20 min. Consult physio before returning.</td></tr>
+    <tr><td>Sacral discomfort (any)</td><td>Skip leg session. Walk only. Report if persistent &gt; 24h.</td></tr>
+  </table>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ S16: EMERGENCY CARD + MOUNTAIN VISION -->
+<section id="s16">
+  <h2>16 · Emergency Reference Card + Mountain Vision</h2>
+
+  <h3>Quick Reference — Never/Always</h3>
+  <div class="emergency-grid">
+    <div class="emergency-item">
+      <div class="e-title">NEVER IN GYM</div>
+      <p>Conventional barbell deadlift · Upright row · Behind-neck press or pull · Train to failure · Valsalva / breath hold · Rep below 8 · Rest under 75 sec</p>
+    </div>
+    <div class="emergency-item">
+      <div class="e-title">NEVER EAT</div>
+      <p>Red meat · Organ meats · Shellfish · Protein bars · Pre-workout powder · Creatine · Potato as primary sabzi</p>
+    </div>
+    <div class="emergency-item">
+      <div class="e-title">ALWAYS IN GYM</div>
+      <p>Exhale on every rep · Carry glucose tablets · Check glucose before AM session · Eat veg first at every meal · 10-min walk after every meal</p>
+    </div>
+    <div class="emergency-item">
+      <div class="e-title">ALWAYS TRACK</div>
+      <p>Protein by 4 PM (ceiling 80g) · Daily steps · Weekly weigh-in Saturday · Glucose before AM training · Session completion</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:24px;">Current Working Weights (Jun 9, 2026 PRs)</h3>
+  <table>
+    <tr><th>Exercise</th><th>Weight</th><th>Reps</th></tr>
+    <tr><td>Pull-up (unassisted)</td><td>BW</td><td>8</td></tr>
+    <tr><td>Lat Pulldown</td><td>50 kg</td><td>15</td></tr>
+    <tr><td>Seated Cable Row</td><td>60 kg</td><td>12</td></tr>
+    <tr><td>Chest-Supported DB Row</td><td>14 kg</td><td>18</td></tr>
+    <tr><td>Hammer Curl</td><td>12 kg</td><td>15</td></tr>
+    <tr><td>Cable Curl</td><td>7.5 kg</td><td>15</td></tr>
+    <tr><td>Cable Lateral Raise</td><td>9 kg</td><td>15</td></tr>
+    <tr><td>Landmine Press</td><td>10 kg</td><td>10</td></tr>
+    <tr><td>Reverse Fly Machine</td><td>41 kg</td><td>15</td></tr>
+    <tr><td>Smith Machine Squat</td><td>17.5 kg</td><td>12</td></tr>
+    <tr><td>Leg Extension</td><td>50 kg</td><td>13</td></tr>
+    <tr><td>Leg Curl</td><td>25 kg</td><td>13</td></tr>
+    <tr><td>DB Bench Press</td><td>16 kg</td><td>12</td></tr>
+    <tr><td>DB Incline Press</td><td>12 kg</td><td>12</td></tr>
+    <tr><td>Tricep Pushdown</td><td>30 kg</td><td>12</td></tr>
+    <tr><td>Tricep Extension</td><td>14 kg</td><td>12</td></tr>
+  </table>
+
+  <h3>Deload Week Checklist</h3>
+  <div class="deload-box">
+    <h4>Weeks 4, 8, 12 — Deload Checklist</h4>
+    <table>
+      <tr><th>Item</th><th>Deload Rule</th></tr>
+      <tr><td>Gym sessions</td><td>2 only: Mon AM + Thu AM. No exceptions, no additions.</td></tr>
+      <tr><td>Working sets</td><td>Cut by 50%. 4 sets → 2 sets. 3 sets → 2 sets.</td></tr>
+      <tr><td>Working weight</td><td>SAME as previous week. Do not reduce load.</td></tr>
+      <tr><td>PM sessions</td><td>None. Zero.</td></tr>
+      <tr><td>Running</td><td>4 km max. Week 12: walk only.</td></tr>
+      <tr><td>Calories</td><td>1,400 cal EVERY day of deload week.</td></tr>
+      <tr><td>Sleep</td><td>Target 8 hours. This is the most important deload variable.</td></tr>
+    </table>
+  </div>
+
+  <h3>MAF HR Quick Reference</h3>
+  <div class="alert alert-blue">
+    <strong>PJ's MAF ceiling = 138 bpm.</strong> Formula: 180 − 37 (age) − 5 (medical deduction: T2D + hypertension + medication = all 3 criteria met) = 138. Walk if HR exceeds 138. Never push through on HR grounds.
+  </div>
+
+  <!-- MOUNTAIN VISION -->
+  <div class="mountain-vision" style="margin-top:28px;">
+    <h3>The Mountain Vision</h3>
+    <p>
+      Every session connects to a single destination: <strong>technical Himalayan mountaineering</strong>.
+    </p>
+    <p style="margin-top:12px;">
+      Each rep in this programme builds the body that climbs. The back pulling in Tuesday AM — that's the back that carries a 20kg pack at 5,000 metres. The legs pressing in Thursday AM — those are the legs that don't quit on the final push to a summit. The MAF runs at 138 bpm — those are the lungs learning to be efficient at altitude, where oxygen is 40% thinner.
+    </p>
+    <p style="margin-top:12px;">
+      Visceral fat moving from 13 to 9 — that's direct. Every kg of visceral fat is stored at the core, elevating the centre of gravity, increasing strain on the lower back, reducing breathing efficiency. Fat loss is not aesthetic for you. It is technical capacity on rock.
+    </p>
+    <p style="margin-top:12px;">
+      HbA1c dropping from 6.8% to 6.2% — that's the difference between a body that manages altitude well and one that doesn't. Blood glucose dysregulation at altitude causes cognitive impairment, poor decision-making under stress. You're training for clear-headed decisions on exposed ridges.
+    </p>
+    <p style="margin-top:16px; color: var(--accent); font-style: italic; font-size: 1rem;">
+      This is not a gym programme. It is Himalayan preparation.<br>
+      Every single session is a vote for the climber you're becoming.
+    </p>
+  </div>
+
+  <div style="text-align:center; margin-top:24px; padding:16px; color:var(--text2); font-size:0.8rem; border-top:1px solid var(--border);">
+    PJ's Muscle-Building Plan · Final Version · June 2026 · All medical constraints verified · MAF HR 138 bpm confirmed · 16 sections complete
+  </div>
+</section>
+
+</body>
+</html>

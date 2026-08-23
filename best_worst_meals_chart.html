@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best vs Worst Meals — PJ's Nutrition</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #f1f5f9;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .chart-wrapper {
+            background: #1e293b;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .chart-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        canvas {
+            max-height: 450px;
+        }
+        .data-table {
+            background: #1e293b;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            overflow-x: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        thead {
+            border-bottom: 2px solid #334155;
+        }
+        th {
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 600;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-right: 1px solid #334155;
+        }
+        th:last-child {
+            border-right: none;
+        }
+        td {
+            padding: 10px 8px;
+            border-right: 1px solid #334155;
+            border-bottom: 1px solid #334155;
+        }
+        td:last-child {
+            border-right: none;
+        }
+        tbody tr:hover {
+            background: #263449;
+        }
+        .best-meal {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 3px solid #10b981;
+        }
+        .worst-meal {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 3px solid #ef4444;
+        }
+        .meal-name {
+            color: #f1f5f9;
+            font-weight: 500;
+        }
+        .cal-cell {
+            text-align: right;
+            color: #94a3b8;
+        }
+        .protein-cell {
+            text-align: right;
+            color: #cbd5e1;
+        }
+        .carb-cell {
+            text-align: right;
+            color: #cbd5e1;
+        }
+        .legend-section {
+            background: #1e293b;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 3px solid #3b82f6;
+            margin-top: 20px;
+        }
+        .legend-title {
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-bottom: 12px;
+        }
+        .legend-item {
+            font-size: 13px;
+            color: #cbd5e1;
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+        }
+        @media (max-width: 1024px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 20px;
+            }
+            .chart-wrapper {
+                padding: 15px;
+            }
+            table {
+                font-size: 12px;
+            }
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Best vs Worst Meals (20-day analysis)</h1>
+        <div class="subtitle">April 13 — May 2, 2026 | Top 5 best (highest protein, lowest calorie) vs top 5 worst (highest calorie, carb spike risk)</div>
+
+        <div class="charts-grid">
+            <div class="chart-wrapper">
+                <div class="chart-title">Top 5 Best Meals</div>
+                <canvas id="bestChart"></canvas>
+            </div>
+            <div class="chart-wrapper">
+                <div class="chart-title">Top 5 Worst Meals</div>
+                <canvas id="worstChart"></canvas>
+            </div>
+        </div>
+
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Date</th>
+                        <th>Meal Type</th>
+                        <th>Food Description</th>
+                        <th>Calories</th>
+                        <th>Protein (g)</th>
+                        <th>Carbs (g)</th>
+                        <th>Protein/Cal Ratio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="best-meal">
+                        <td>1️⃣</td>
+                        <td>4/23</td>
+                        <td>Dinner</td>
+                        <td class="meal-name">Buttermilk + whey + cucumber + 3 idli + sambhar + chips</td>
+                        <td class="cal-cell">300</td>
+                        <td class="protein-cell">—</td>
+                        <td class="carb-cell">—</td>
+                        <td style="text-align: right; color: #10b981; font-weight: 600;">High protein ratio</td>
+                    </tr>
+                    <tr class="best-meal">
+                        <td>2️⃣</td>
+                        <td>4/13</td>
+                        <td>Breakfast</td>
+                        <td class="meal-name">1 bread + 2 egg bhurji + whey</td>
+                        <td class="cal-cell">330</td>
+                        <td class="protein-cell">~25</td>
+                        <td class="carb-cell">~20</td>
+                        <td style="text-align: right; color: #10b981; font-weight: 600;">0.076 g/cal</td>
+                    </tr>
+                    <tr class="best-meal">
+                        <td>3️⃣</td>
+                        <td>4/14</td>
+                        <td>Breakfast</td>
+                        <td class="meal-name">2 poached eggs + 1 bread + whey in buttermilk</td>
+                        <td class="cal-cell">350</td>
+                        <td class="protein-cell">~28</td>
+                        <td class="carb-cell">~22</td>
+                        <td style="text-align: right; color: #10b981; font-weight: 600;">0.08 g/cal</td>
+                    </tr>
+                    <tr class="best-meal">
+                        <td>4️⃣</td>
+                        <td>4/25</td>
+                        <td>Breakfast</td>
+                        <td class="meal-name">2 bread + 4 egg whites + cucumber + tomato</td>
+                        <td class="cal-cell">280</td>
+                        <td class="protein-cell">~24</td>
+                        <td class="carb-cell">~18</td>
+                        <td style="text-align: right; color: #10b981; font-weight: 600;">0.086 g/cal</td>
+                    </tr>
+                    <tr class="best-meal">
+                        <td>5️⃣</td>
+                        <td>4/29</td>
+                        <td>Breakfast</td>
+                        <td class="meal-name">3 egg whites + cucumber + carrot</td>
+                        <td class="cal-cell">106</td>
+                        <td class="protein-cell">~18</td>
+                        <td class="carb-cell">~6</td>
+                        <td style="text-align: right; color: #10b981; font-weight: 600;">0.17 g/cal</td>
+                    </tr>
+                    <tr style="height: 20px; background: transparent;"></tr>
+                    <tr class="worst-meal">
+                        <td>1️⃣</td>
+                        <td>4/18</td>
+                        <td>Snacks</td>
+                        <td class="meal-name">Multiple items (collapse chain)</td>
+                        <td class="cal-cell">1,200</td>
+                        <td class="protein-cell">—</td>
+                        <td class="carb-cell">—</td>
+                        <td style="text-align: right; color: #ef4444; font-weight: 600;">Massive calorie dump</td>
+                    </tr>
+                    <tr class="worst-meal">
+                        <td>2️⃣</td>
+                        <td>5/1</td>
+                        <td>Lunch</td>
+                        <td class="meal-name">Cucumber + carrot + white rice (1.5c) + Chinese mix veg with paneer + whey + buttermilk</td>
+                        <td class="cal-cell">1,083</td>
+                        <td class="protein-cell">109.6</td>
+                        <td class="carb-cell">220</td>
+                        <td style="text-align: right; color: #ef4444; font-weight: 600;">High carb spike risk</td>
+                    </tr>
+                    <tr class="worst-meal">
+                        <td>3️⃣</td>
+                        <td>4/28</td>
+                        <td>Dinner</td>
+                        <td class="meal-name">Cucumber + carrot (veg-first) + shwarma roll + shell pasta</td>
+                        <td class="cal-cell">1,110</td>
+                        <td class="protein-cell">~60</td>
+                        <td class="carb-cell">~120</td>
+                        <td style="text-align: right; color: #ef4444; font-weight: 600;">High carb, calorie dense</td>
+                    </tr>
+                    <tr class="worst-meal">
+                        <td>4️⃣</td>
+                        <td>4/27</td>
+                        <td>Snacks</td>
+                        <td class="meal-name">Chana zor garam + Dairy Milk squares + half Maggi</td>
+                        <td class="cal-cell">524</td>
+                        <td class="protein-cell">~22</td>
+                        <td class="carb-cell">~65</td>
+                        <td style="text-align: right; color: #ef4444; font-weight: 600;">Untracked snack spiral</td>
+                    </tr>
+                    <tr class="worst-meal">
+                        <td>5️⃣</td>
+                        <td>4/29</td>
+                        <td>Dinner</td>
+                        <td class="meal-name">McDonald's (burger + fries)</td>
+                        <td class="cal-cell">750</td>
+                        <td class="protein-cell">~28</td>
+                        <td class="carb-cell">~85</td>
+                        <td style="text-align: right; color: #ef4444; font-weight: 600;">Fast food carb spike</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="legend-section">
+            <div class="legend-title">Analysis Notes</div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #10b981;"></div>
+                <span><strong>Best Meals (green):</strong> Eggs + whey combinations with low cal density and high protein ratio. Ideal for satiety and macro targets.</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ef4444;"></div>
+                <span><strong>Worst Meals (red):</strong> High carb load (rice, white bread, pasta), calorie-dense snack spirals, and fast food. Primary HbA1c drivers.</span>
+            </div>
+            <div class="legend-item">
+                <span style="margin-top: 10px; display: block;"><strong>Pattern:</strong> April 18 collapse chain (1,200 cal snack) and April 29 McDonald's show that unstructured eating and restaurant food are the biggest threats to the deficit.</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Best Meals Chart
+        const ctxBest = document.getElementById('bestChart').getContext('2d');
+        const bestChart = new Chart(ctxBest, {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Idli + Sambhar\n(4/23)',
+                    'Egg Bhurji + Bread\n(4/13)',
+                    'Poached Eggs + Bread\n(4/14)',
+                    'Eggs + Bread\n(4/25)',
+                    'Egg Whites + Veggies\n(4/29)'
+                ],
+                datasets: [
+                    {
+                        label: 'Calories',
+                        data: [300, 330, 350, 280, 106],
+                        backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                        borderColor: '#10b981',
+                        borderWidth: 2,
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Protein (g) x10',
+                        data: [30, 25, 28, 24, 18],
+                        backgroundColor: 'rgba(34, 197, 94, 0.5)',
+                        borderColor: '#22c55e',
+                        borderWidth: 2,
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#e2e8f0',
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            },
+                            padding: 15,
+                            usePointStyle: true
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                        titleColor: '#f1f5f9',
+                        bodyColor: '#cbd5e1',
+                        borderColor: '#334155',
+                        borderWidth: 1,
+                        padding: 10,
+                        titleFont: {
+                            size: 12,
+                            weight: 'bold'
+                        },
+                        bodyFont: {
+                            size: 11
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            color: 'rgba(71, 85, 105, 0.2)',
+                            borderColor: '#334155'
+                        },
+                        ticks: {
+                            color: '#94a3b8',
+                            font: {
+                                size: 11
+                            }
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#94a3b8',
+                            font: {
+                                size: 11
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Worst Meals Chart
+        const ctxWorst = document.getElementById('worstChart').getContext('2d');
+        const worstChart = new Chart(ctxWorst, {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Collapse Chain\n(4/18)',
+                    'Rice + Paneer\n(5/1)',
+                    'Shwarma + Pasta\n(4/28)',
+                    'Snack Spiral\n(4/27)',
+                    "McDonald's\n(4/29)"
+                ],
+                datasets: [
+                    {
+                        label: 'Calories',
+                        data: [1200, 1083, 1110, 524, 750],
+                        backgroundColor: 'rgba(239, 68, 68, 0.7)',
+                        borderColor: '#ef4444',
+                        borderWidth: 2,
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Carbs (g)',
+                        data: [150, 220, 120, 65, 85],
+                        backgroundColor: 'rgba(249, 115, 22, 0.5)',
+                        borderColor: '#f97316',
+                        borderWidth: 2,
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#e2e8f0',
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            },
+                            padding: 15,
+                            usePointStyle: true
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                        titleColor: '#f1f5f9',
+                        bodyColor: '#cbd5e1',
+                        borderColor: '#334155',
+                        borderWidth: 1,
+                        padding: 10,
+                        titleFont: {
+                            size: 12,
+                            weight: 'bold'
+                        },
+                        bodyFont: {
+                            size: 11
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            color: 'rgba(71, 85, 105, 0.2)',
+                            borderColor: '#334155'
+                        },
+                        ticks: {
+                            color: '#94a3b8',
+                            font: {
+                                size: 11
+                            }
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#94a3b8',
+                            font: {
+                                size: 11
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

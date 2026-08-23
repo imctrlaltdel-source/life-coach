@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /storage/emulated/0/Documents/claude/life-coach/.claude/skills)",
+      "Bash(mkdir -p /storage/emulated/0/Documents/claude/life-coach/reports)",
+      "Bash(echo \"0\")"
+    ]
+  }
+}

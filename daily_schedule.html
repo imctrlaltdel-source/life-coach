@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJ Daily Schedule</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 15px;
+            font-size: 14px;
+        }
+        h1 { text-align: center; color: #3b82f6; margin-bottom: 5px; font-size: 20px; }
+        .subtitle { text-align: center; color: #94a3b8; font-size: 11px; margin-bottom: 15px; }
+
+        .timeline {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 80px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 70px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #334155;
+        }
+        .block {
+            position: relative;
+            margin-bottom: 4px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+        .block::before {
+            content: '';
+            position: absolute;
+            left: -19px;
+            top: 15px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid;
+        }
+        .time-label {
+            position: absolute;
+            left: -75px;
+            top: 10px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #94a3b8;
+            width: 50px;
+            text-align: right;
+        }
+        .block-title { font-weight: bold; font-size: 13px; }
+        .block-detail { font-size: 12px; color: #94a3b8; margin-top: 2px; }
+        .block-cal { font-size: 11px; color: #fbbf24; font-weight: bold; }
+
+        /* Colors by type */
+        .exercise { background: #1e3a2e; border-color: #22c55e; }
+        .exercise::before { border-color: #22c55e; background: #166534; }
+        .meal { background: #2d1f0e; border-color: #f59e0b; }
+        .meal::before { border-color: #f59e0b; background: #92400e; }
+        .routine { background: #1e293b; border-color: #3b82f6; }
+        .routine::before { border-color: #3b82f6; background: #1e40af; }
+        .family { background: #2e1e3a; border-color: #a78bfa; }
+        .family::before { border-color: #a78bfa; background: #5b21b6; }
+        .spiritual { background: #1e2a3a; border-color: #06b6d4; }
+        .spiritual::before { border-color: #06b6d4; background: #0e7490; }
+        .sleep-block { background: #1a1a2e; border-color: #6366f1; }
+        .sleep-block::before { border-color: #6366f1; background: #4338ca; }
+        .office { background: #1e293b; border-color: #64748b; min-height: 60px; }
+        .office::before { border-color: #64748b; background: #475569; }
+
+        .habit-grid {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #16213e;
+            border-radius: 8px;
+            padding: 12px;
+        }
+        .habit-grid h3 { color: #3b82f6; margin-bottom: 8px; font-size: 14px; }
+        .habit-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #334155;
+            font-size: 12px;
+        }
+        .habit-row:last-child { border-bottom: none; }
+        .habit-name { color: #e2e8f0; }
+        .habit-when { color: #94a3b8; }
+
+        .legend {
+            max-width: 600px;
+            margin: 15px auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            font-size: 11px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .notes {
+            max-width: 600px;
+            margin: 15px auto;
+            background: #1e293b;
+            border: 1px dashed #64748b;
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 11px;
+            color: #94a3b8;
+        }
+        .notes h4 { color: #60a5fa; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+<h1>PJ's Daily Schedule</h1>
+<p class="subtitle">Wake 6:00 AM | Office 9:30 AM - 8:00 PM | Sleep 10:30 PM | 7.5 hr sleep</p>
+
+<div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div> Exercise</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> Meals</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> Routine</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div> Family</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#06b6d4"></div> Spiritual</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#6366f1"></div> Sleep</div>
+</div>
+
+<div class="timeline">
+
+    <div class="block routine">
+        <span class="time-label">6:00</span>
+        <div class="block-title">Wake + Get Ready</div>
+        <div class="block-detail">Alarm, bathroom, brush, 500ml water, change into gym clothes</div>
+    </div>
+
+    <div class="block exercise">
+        <span class="time-label">6:45</span>
+        <div class="block-title">GYM or RUN (1.5 hr)</div>
+        <div class="block-detail">Mon/Wed/Fri = Gym | Tue/Thu = Run 5km | Sat/Sun = Run or Rest</div>
+        <div class="block-detail">Exhale on every exertion (NPDR). Never hold breath.</div>
+    </div>
+
+    <div class="block family">
+        <span class="time-label">8:15</span>
+        <div class="block-title">Snowy Morning Walk (30 min)</div>
+        <div class="block-detail">Dog walk + cool down from workout</div>
+    </div>
+
+    <div class="block meal">
+        <span class="time-label">8:45</span>
+        <div class="block-title">BREAKFAST</div>
+        <div class="block-cal">250 cal | ~34g protein</div>
+        <div class="block-detail">150g cucumber FIRST &rarr; egg whites/cheela &rarr; 1 bread &rarr; 15g whey in 200ml buttermilk + water</div>
+    </div>
+
+    <div class="block routine">
+        <span class="time-label">9:00</span>
+        <div class="block-title">Shower + Dress for Office</div>
+        <div class="block-detail">30 min to get ready</div>
+    </div>
+
+    <div class="block office">
+        <span class="time-label">9:30</span>
+        <div class="block-title">OFFICE</div>
+        <div class="block-detail">9:30 AM &mdash; 8:00 PM</div>
+    </div>
+
+    <div class="block meal">
+        <span class="time-label">12:30</span>
+        <div class="block-title">LUNCH + 10 min walk after</div>
+        <div class="block-cal">350 cal | ~12-15g protein</div>
+        <div class="block-detail">100g cucumber FIRST &rarr; 1.5 roti + 150g sabzi (1 tsp oil) + buttermilk<br>OR 1.5 dosa (dry) + 150ml sambhar + chutney</div>
+    </div>
+
+    <div class="block meal">
+        <span class="time-label">4:00</span>
+        <div class="block-title">SNACK</div>
+        <div class="block-cal">250 cal | ~31g protein</div>
+        <div class="block-detail">150g guava + 2-3 egg whites (boiled) + 15g whey in 200ml buttermilk + water</div>
+    </div>
+
+    <div class="block family">
+        <span class="time-label">8:00</span>
+        <div class="block-title">Parents Call (during commute)</div>
+        <div class="block-detail">15 min call while heading home</div>
+    </div>
+
+    <div class="block routine">
+        <span class="time-label">8:15</span>
+        <div class="block-title">Freshen Up</div>
+        <div class="block-detail">Change clothes, wash up</div>
+    </div>
+
+    <div class="block meal">
+        <span class="time-label">8:30</span>
+        <div class="block-title">DINNER</div>
+        <div class="block-cal">350 cal | ~12-20g protein</div>
+        <div class="block-detail">100g cucumber FIRST &rarr; 1.5-2 roti + 150-200g sabzi + buttermilk<br>OR 1.5 dosa + sambhar | OR 50g dry noodles/pasta + 200g veg</div>
+    </div>
+
+    <div class="block family">
+        <span class="time-label">9:00</span>
+        <div class="block-title">Snowy Night Walk + Post-Dinner Walk (30 min)</div>
+        <div class="block-detail">Two habits in one: dog walk + 10 min post-meal movement</div>
+    </div>
+
+    <div class="block family">
+        <span class="time-label">9:30</span>
+        <div class="block-title">Wife Time (45 min)</div>
+        <div class="block-detail">Together time, talking, unwinding</div>
+    </div>
+
+    <div class="block spiritual">
+        <span class="time-label">10:15</span>
+        <div class="block-title">Me-Time + Kriya (15 min)</div>
+        <div class="block-detail">Dharana 1 &mdash; 15 min kriya. Om Namah Shivay.</div>
+    </div>
+
+    <div class="block sleep-block">
+        <span class="time-label">10:30</span>
+        <div class="block-title">LIGHTS OUT</div>
+        <div class="block-detail">7.5 hr sleep &rarr; 6:00 AM</div>
+    </div>
+
+</div>
+
+<div class="habit-grid">
+    <h3>ALL HABITS MAPPED</h3>
+    <div class="habit-row">
+        <span class="habit-name">Gym OR Run</span>
+        <span class="habit-when">6:45 - 8:15 AM</span>
+    </div>
+    <div class="habit-row">
+        <span class="habit-name">Steps (10k+)</span>
+        <span class="habit-when">Snowy walks + commute + post-meal walks</span>
+    </div>
+    <div class="habit-row">
+        <span class="habit-name">Diet 1,200 cal</span>
+        <span class="habit-when">BF 250 + L 350 + S 250 + D 350</span>
+    </div>
+    <div class="habit-row">
+        <span class="habit-name">Protein &le;90g</span>
+        <span class="habit-when">Spread across 4 meals</span>
+    </div>
+    <div class="habit-row">
+        <span class="habit-name">Veg FIRST</span>
+        <span class="habit-when">Cucumber before every meal</span>
+    </div>
+    <div class="habit-row">
+        <span class="habit-name">Post-meal walk 10 min</span>
+        <span class="habit-when">After lunch (office) + Snowy walk (dinner)</span>
+    </div>
+    <div class="habit-row">
+        <span class="habit-name">3L water</span>
+        <span class="habit-when">Throughout day</span>
+    </div>
+    <div class="habit-row">
+        <span class="habit-name">Kriya (Dharana 1)</span>
+        <span class="habit-when">10:15 PM</span>
+    </div>
+    <div class="habit-row">
+        <span class="habit-name">Parents call</span>
+        <span class="habit-when">8:00 PM (commute home)</span>
+    </div>
+    <div class="habit-row">
+        <span class="habit-name">No weed</span>
+        <span class="habit-when">Always</span>
+    </div>
+    <div class="habit-row">
+        <span class="habit-name">Snowy walks</span>
+        <span class="habit-when">8:15 AM + 9:00 PM</span>
+    </div>
+    <div class="habit-row">
+        <span class="habit-name">Wife time</span>
+        <span class="habit-when">9:30 - 10:15 PM</span>
+    </div>
+</div>
+
+<div class="notes">
+    <h4>SCHEDULE NOTES</h4>
+    <p><strong>Weekend adjustment:</strong> No office block. Use 9:30 AM - 8:00 PM for hobbies, errands, extra rest, longer wife time.</p>
+    <p><strong>Sick day:</strong> Skip gym/run. Raise calories to 1,400. Keep kriya + Snowy walks + parents call.</p>
+    <p><strong>Rest day (1/week):</strong> Replace gym/run with extra 30 min sleep (wake 6:30). Still do Snowy walks.</p>
+    <p><strong>If office runs late:</strong> Wife time &rarr; 30 min minimum. Kriya &rarr; 10 min minimum. Never skip sleep below 7 hr.</p>
+</div>
+
+</body>
+</html>

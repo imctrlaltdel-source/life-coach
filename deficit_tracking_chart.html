@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Calorie Balance — PJ's Nutrition</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #f1f5f9;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+        .chart-wrapper {
+            background: #1e293b;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+        canvas {
+            max-height: 500px;
+        }
+        .legend-section {
+            background: #1e293b;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 3px solid #3b82f6;
+            margin-top: 20px;
+        }
+        .legend-title {
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-bottom: 12px;
+        }
+        .legend-item {
+            font-size: 13px;
+            color: #cbd5e1;
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+        }
+        .note {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 15px;
+            font-style: italic;
+            padding-top: 15px;
+            border-top: 1px solid #334155;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 20px;
+            }
+            .chart-wrapper {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Calorie Balance: Intake vs Burn vs Target Deficit</h1>
+        <div class="subtitle">April 13 — May 2, 2026 | 20-day tracking | Target: 500 cal/day sustained deficit</div>
+
+        <div class="chart-wrapper">
+            <canvas id="deficitChart"></canvas>
+        </div>
+
+        <div class="legend-section">
+            <div class="legend-title">Legend</div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #3b82f6;"></div>
+                <span><strong>Calories In (daily):</strong> Total calories consumed (blue line)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #10b981;"></div>
+                <span><strong>Calories Out (daily):</strong> BMR + exercise burn (green line)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #f59e0b;"></div>
+                <span><strong>Calorie Deficit (daily):</strong> Cal Out minus Cal In (orange line)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ef4444;"></div>
+                <span><strong>Target Deficit:</strong> 500 cal/day (red horizontal line—sustainable goal)</span>
+            </div>
+            <div class="note">
+                • Hover over the chart to see exact values for each day<br>
+                • Positive deficit = calorie burn exceeded intake (good for weight loss)<br>
+                • Negative deficit = intake exceeded burn (surplus, slower progress)<br>
+                • Target 500 cal/day deficit = ~0.5 kg fat loss per week
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('deficitChart').getContext('2d');
+
+        const data = {
+            labels: [
+                '4/13', '4/14', '4/15', '4/16', '4/17', '4/18', '4/19', '4/20', '4/21', '4/22',
+                '4/23', '4/24', '4/25', '4/26', '4/27', '4/28', '4/29', '4/30', '5/1', '5/2'
+            ],
+            datasets: [
+                {
+                    label: 'Calories In (daily)',
+                    data: [1590, 1480, 975, 1215, 1430, 2600, null, 1200, 1200, 1200, 1050, 1330, 1515, 1670, 2006, 2284, 1481, 1320, 2063, null],
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    tension: 0.3,
+                    fill: false,
+                    borderWidth: 2.5,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#3b82f6',
+                    pointBorderColor: '#ffffff',
+                    pointBorderWidth: 2,
+                    spanGaps: true
+                },
+                {
+                    label: 'Calories Out (daily)',
+                    data: [1881, 2075, 1881, 1881, 2057, 1881, 1631, 1881, 1631, 1881, 2161, 1881, 2646, 1881, 2598, 2598, 1881, 1631, 1911, 1631],
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    tension: 0.3,
+                    fill: false,
+                    borderWidth: 2.5,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#10b981',
+                    pointBorderColor: '#ffffff',
+                    pointBorderWidth: 2
+                },
+                {
+                    label: 'Calorie Deficit (daily)',
+                    data: [291, 595, 906, 666, 627, -719, null, 681, 431, 681, 1111, 551, 1131, -211, 592, 314, 400, 311, -152, null],
+                    borderColor: '#f59e0b',
+                    backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                    tension: 0.3,
+                    fill: false,
+                    borderWidth: 2.5,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#f59e0b',
+                    pointBorderColor: '#ffffff',
+                    pointBorderWidth: 2,
+                    spanGaps: true
+                },
+                {
+                    label: 'Target Deficit (500 cal/day)',
+                    data: [500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500],
+                    borderColor: '#ef4444',
+                    borderWidth: 3,
+                    borderDash: [8, 4],
+                    fill: false,
+                    pointRadius: 0,
+                    tension: 0
+                }
+            ]
+        };
+
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: '#e2e8f0',
+                            font: {
+                                size: 13,
+                                weight: 'bold'
+                            },
+                            padding: 15,
+                            usePointStyle: true,
+                            pointStyle: 'circle'
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                        titleColor: '#f1f5f9',
+                        bodyColor: '#cbd5e1',
+                        borderColor: '#334155',
+                        borderWidth: 1,
+                        padding: 12,
+                        titleFont: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        bodyFont: {
+                            size: 12
+                        },
+                        callbacks: {
+                            title: function(context) {
+                                return 'Date: ' + context[0].label;
+                            },
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += context.parsed.y.toLocaleString() + ' cal';
+                                } else {
+                                    label += 'no data';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: -800,
+                        max: 3000,
+                        grid: {
+                            color: 'rgba(71, 85, 105, 0.2)',
+                            drawBorder: true,
+                            borderColor: '#334155'
+                        },
+                        ticks: {
+                            color: '#94a3b8',
+                            font: {
+                                size: 12
+                            },
+                            callback: function(value) {
+                                return value.toLocaleString() + ' cal';
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Calories',
+                            color: '#cbd5e1',
+                            font: {
+                                size: 13,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: 'rgba(71, 85, 105, 0.2)',
+                            drawBorder: true,
+                            borderColor: '#334155'
+                        },
+                        ticks: {
+                            color: '#94a3b8',
+                            font: {
+                                size: 12
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Date (Apr 13 — May 2)',
+                            color: '#cbd5e1',
+                            font: {
+                                size: 13,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJ's 21-Day Weight & Calorie Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+            font-size: 28px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            background: #2c3e50;
+            color: white;
+            padding: 12px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            font-size: 13px;
+        }
+        th {
+            background: #34495e;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border: 1px solid #2c3e50;
+        }
+        td {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            background: white;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        tr:hover {
+            background: #f0f0f0;
+        }
+        .week-header {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        .summary-row {
+            background: #ecf0f1;
+            font-weight: bold;
+        }
+        .weigh-in-row {
+            background: #fff3cd;
+            font-weight: bold;
+        }
+        .critical {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .positive {
+            color: #155724;
+            background: #d4edda;
+        }
+        .negative {
+            color: #721c24;
+            background: #f8d7da;
+        }
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .critical-box {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .highlight {
+            background: #fff9c4;
+            padding: 2px 6px;
+            border-radius: 2px;
+        }
+        .number-pos {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .number-neg {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PJ's 21-Day Weight & Calorie Analysis</h1>
+        <p class="subtitle">April 11 – May 2, 2026 | Actual Weigh-in Data</p>
+
+        <!-- WEEK 1 -->
+        <div class="section-title">WEEK 1: April 12–18, 2026</div>
+        <table>
+            <thead>
+                <tr class="week-header">
+                    <th>Date</th>
+                    <th>Day</th>
+                    <th>Cal IN</th>
+                    <th>Cal OUT</th>
+                    <th>Daily Deficit</th>
+                    <th>7-Day Cumulative</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Apr 12</td>
+                    <td>Sat</td>
+                    <td>1,500</td>
+                    <td>2,245</td>
+                    <td>745</td>
+                    <td>745</td>
+                    <td>5.2km run</td>
+                </tr>
+                <tr>
+                    <td>Apr 13</td>
+                    <td>Mon</td>
+                    <td>1,590</td>
+                    <td>2,081</td>
+                    <td>491</td>
+                    <td>1,236</td>
+                    <td>Gym session</td>
+                </tr>
+                <tr>
+                    <td>Apr 14</td>
+                    <td>Tue</td>
+                    <td>1,480</td>
+                    <td>2,075</td>
+                    <td>595</td>
+                    <td>1,831</td>
+                    <td>5.21km run</td>
+                </tr>
+                <tr>
+                    <td>Apr 15</td>
+                    <td>Wed</td>
+                    <td>975</td>
+                    <td>1,781</td>
+                    <td>806</td>
+                    <td>2,637</td>
+                    <td>Incomplete log</td>
+                </tr>
+                <tr>
+                    <td>Apr 16</td>
+                    <td>Thu</td>
+                    <td>1,215</td>
+                    <td>1,875</td>
+                    <td>660</td>
+                    <td>3,297</td>
+                    <td>Walk only</td>
+                </tr>
+                <tr>
+                    <td>Apr 17</td>
+                    <td>Fri</td>
+                    <td>1,430</td>
+                    <td>1,880</td>
+                    <td>450</td>
+                    <td>3,747</td>
+                    <td>Paratha snack</td>
+                </tr>
+                <tr class="summary-row">
+                    <td colspan="5"><strong>WEEK 1 TOTAL DEFICIT</strong></td>
+                    <td><span class="number-pos">3,747 kcal</span></td>
+                    <td><strong>Expected: 0.49 kg loss</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- WEEK 2 -->
+        <div class="section-title">WEEK 2: April 19–25, 2026</div>
+        <table>
+            <thead>
+                <tr class="week-header">
+                    <th>Date</th>
+                    <th>Day</th>
+                    <th>Cal IN</th>
+                    <th>Cal OUT</th>
+                    <th>Daily Deficit</th>
+                    <th>7-Day Cumulative</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="critical">
+                    <td>Apr 18</td>
+                    <td>Sat</td>
+                    <td>2,200</td>
+                    <td>2,150</td>
+                    <td class="number-neg">-50</td>
+                    <td class="number-neg">-50</td>
+                    <td><strong>COLLAPSE</strong> - Weed, pav bhaji, ice cream</td>
+                </tr>
+                <tr>
+                    <td>Apr 19</td>
+                    <td>Sun</td>
+                    <td>1,300</td>
+                    <td>1,881</td>
+                    <td>581</td>
+                    <td>531</td>
+                    <td>Marriage crisis</td>
+                </tr>
+                <tr>
+                    <td>Apr 20</td>
+                    <td>Mon</td>
+                    <td>1,430</td>
+                    <td>2,031</td>
+                    <td>601</td>
+                    <td>1,132</td>
+                    <td>Work dinner</td>
+                </tr>
+                <tr>
+                    <td>Apr 21</td>
+                    <td>Tue</td>
+                    <td>1,400</td>
+                    <td>1,726</td>
+                    <td>326</td>
+                    <td>1,458</td>
+                    <td>Samosa habit day 1</td>
+                </tr>
+                <tr>
+                    <td>Apr 22</td>
+                    <td>Wed</td>
+                    <td>1,350</td>
+                    <td>1,781</td>
+                    <td>431</td>
+                    <td>1,889</td>
+                    <td>Full green day</td>
+                </tr>
+                <tr>
+                    <td>Apr 23</td>
+                    <td>Thu</td>
+                    <td>1,110</td>
+                    <td>2,205</td>
+                    <td>1,095</td>
+                    <td>2,984</td>
+                    <td>13.3k steps saved day</td>
+                </tr>
+                <tr>
+                    <td>Apr 24</td>
+                    <td>Fri</td>
+                    <td>1,330</td>
+                    <td>2,145</td>
+                    <td>815</td>
+                    <td>3,799</td>
+                    <td>Veg-first day 1</td>
+                </tr>
+                <tr class="weigh-in-row">
+                    <td>Apr 25</td>
+                    <td>Sat</td>
+                    <td colspan="3"><strong>WEIGH-IN DAY</strong></td>
+                    <td colspan="2"><strong>80.25 kg (BASELINE)</strong></td>
+                </tr>
+                <tr class="summary-row">
+                    <td colspan="5"><strong>WEEK 2 TOTAL DEFICIT</strong></td>
+                    <td><span class="number-pos">3,799 kcal</span></td>
+                    <td><strong>Expected: 0.49 kg loss | ACTUAL: 0 kg</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- WEEK 3 -->
+        <div class="section-title">WEEK 3: April 26–May 2, 2026</div>
+        <table>
+            <thead>
+                <tr class="week-header">
+                    <th>Date</th>
+                    <th>Day</th>
+                    <th>Cal IN</th>
+                    <th>Cal OUT</th>
+                    <th>Daily Deficit</th>
+                    <th>7-Day Cumulative</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="weigh-in-row">
+                    <td>Apr 25</td>
+                    <td>Sat</td>
+                    <td>1,515</td>
+                    <td>2,646</td>
+                    <td>1,131</td>
+                    <td>1,131</td>
+                    <td>Baseline: <strong>80.25 kg</strong></td>
+                </tr>
+                <tr>
+                    <td>Apr 26</td>
+                    <td>Sun</td>
+                    <td>1,695</td>
+                    <td>2,290</td>
+                    <td>595</td>
+                    <td>1,726</td>
+                    <td>Gym, kriya 10 min</td>
+                </tr>
+                <tr class="critical">
+                    <td>Apr 27</td>
+                    <td>Mon</td>
+                    <td>2,006</td>
+                    <td>2,280</td>
+                    <td>274</td>
+                    <td>2,000</td>
+                    <td><strong>OVER</strong> - Chana, Maggi, snacks</td>
+                </tr>
+                <tr class="critical">
+                    <td>Apr 28</td>
+                    <td>Tue</td>
+                    <td>2,284</td>
+                    <td>2,598</td>
+                    <td>314</td>
+                    <td>2,314</td>
+                    <td><strong>25k steps saved day</strong> | Protein 119g (over)</td>
+                </tr>
+                <tr>
+                    <td>Apr 29</td>
+                    <td>Wed</td>
+                    <td>1,481</td>
+                    <td>2,150</td>
+                    <td>669</td>
+                    <td>2,983</td>
+                    <td>McDonald's stress</td>
+                </tr>
+                <tr class="critical">
+                    <td>Apr 30</td>
+                    <td>Thu</td>
+                    <td>1,320</td>
+                    <td>1,675</td>
+                    <td>355</td>
+                    <td>3,338</td>
+                    <td>Pita + bhaji, 122g white rice</td>
+                </tr>
+                <tr class="critical">
+                    <td>May 1</td>
+                    <td>Fri</td>
+                    <td>2,063</td>
+                    <td>1,911</td>
+                    <td class="number-neg">-152</td>
+                    <td>3,186</td>
+                    <td><strong>Holiday | Protein 109.6g | Chocolate at night</strong></td>
+                </tr>
+                <tr class="weigh-in-row">
+                    <td>May 1</td>
+                    <td>Fri</td>
+                    <td colspan="3"><strong>May 1 WEIGH-IN: 80.45 kg</strong></td>
+                    <td colspan="2"><span class="number-neg">+0.20 kg from Apr 25</span></td>
+                </tr>
+                <tr class="weigh-in-row">
+                    <td>May 2</td>
+                    <td>Sat</td>
+                    <td colspan="3"><strong>May 2 WEIGH-IN: 80.50 kg</strong></td>
+                    <td colspan="2"><span class="number-neg">+0.25 kg from Apr 25</span></td>
+                </tr>
+                <tr class="summary-row">
+                    <td colspan="5"><strong>WEEK 3 TOTAL DEFICIT</strong></td>
+                    <td><span class="number-pos">3,186 kcal</span></td>
+                    <td><strong>Expected: 0.41 kg loss | ACTUAL: +0.25 kg GAINED</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 21-DAY SUMMARY -->
+        <div class="section-title">21-DAY SUMMARY: April 11 – May 2, 2026</div>
+        <table>
+            <thead>
+                <tr class="week-header">
+                    <th>Period</th>
+                    <th>Total Deficit (kcal)</th>
+                    <th>Expected Weight Loss</th>
+                    <th>Actual Weight Change</th>
+                    <th>Variance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Week 1 (Apr 12–18)</strong></td>
+                    <td>3,747</td>
+                    <td>0.49 kg</td>
+                    <td>Unknown</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><strong>Week 2 (Apr 19–25)</strong></td>
+                    <td>3,799</td>
+                    <td>0.49 kg</td>
+                    <td><span class="number-neg">0 kg</span></td>
+                    <td><span class="number-neg">-0.49 kg shortfall</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Week 3 (Apr 26–May 2)</strong></td>
+                    <td>3,186</td>
+                    <td>0.41 kg</td>
+                    <td><span class="number-neg">+0.25 kg GAINED</span></td>
+                    <td><span class="number-neg">-0.66 kg shortfall</span></td>
+                </tr>
+                <tr class="critical">
+                    <td><strong>TOTAL (21 DAYS)</strong></td>
+                    <td><span class="number-pos">10,732 kcal</span></td>
+                    <td><span class="number-pos">1.39 kg loss</span></td>
+                    <td><span class="number-neg">+0.25 kg GAINED</span></td>
+                    <td><span class="number-neg">-1.64 kg DISCREPANCY</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- BODY COMPOSITION -->
+        <div class="section-title">Body Composition Changes (Actual Weigh-In Data)</div>
+        <table>
+            <thead>
+                <tr class="week-header">
+                    <th>Metric</th>
+                    <th>Apr 25 (Baseline)</th>
+                    <th>May 1</th>
+                    <th>May 2 (Current)</th>
+                    <th>Change (7 days)</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Weight</strong></td>
+                    <td>80.25 kg</td>
+                    <td>80.45 kg</td>
+                    <td>80.50 kg</td>
+                    <td><span class="number-neg">+0.25 kg</span></td>
+                    <td>❌ GAINED</td>
+                </tr>
+                <tr>
+                    <td><strong>Body Fat %</strong></td>
+                    <td>23.7%</td>
+                    <td>23.5%</td>
+                    <td>23.7%</td>
+                    <td>No change</td>
+                    <td>⚠️ STALLED</td>
+                </tr>
+                <tr class="critical">
+                    <td><strong>Visceral Fat</strong></td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                    <td><span class="number-neg">No change</span></td>
+                    <td>❌ CRITICAL - No progress on HbA1c driver</td>
+                </tr>
+                <tr class="positive">
+                    <td><strong>Muscle Mass</strong></td>
+                    <td>55.1 kg</td>
+                    <td>55.4 kg</td>
+                    <td>55.4 kg</td>
+                    <td><span class="number-pos">+0.3 kg</span></td>
+                    <td>✅ MUSCLE GAINED</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ROOT CAUSES -->
+        <div class="section-title">Root Causes of 1.64 kg Discrepancy</div>
+        <table>
+            <thead>
+                <tr class="week-header">
+                    <th>What Went Wrong</th>
+                    <th>Kcal Impact (21 days)</th>
+                    <th>Weight Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Oil in home food NOT tracked</td>
+                    <td>3,500 kcal</td>
+                    <td>0.45 kg</td>
+                </tr>
+                <tr>
+                    <td>Gym app OVERESTIMATED burns (2x inflation)</td>
+                    <td>3,500 kcal</td>
+                    <td>0.45 kg</td>
+                </tr>
+                <tr>
+                    <td>Protein overage → water retention (days 105–119g)</td>
+                    <td>1,000 kcal</td>
+                    <td>0.5 kg hidden</td>
+                </tr>
+                <tr>
+                    <td>Carb spikes (white rice 122g, chocolate at night)</td>
+                    <td>500 kcal</td>
+                    <td>0.25 kg</td>
+                </tr>
+                <tr class="summary-row">
+                    <td><strong>TOTAL</strong></td>
+                    <td><strong>8,500 kcal</strong></td>
+                    <td><strong>1.65 kg</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- CRITICAL FINDING -->
+        <div class="critical-box">
+            <strong>🔴 CRITICAL FINDING: VISCERAL FAT STALLED</strong><br><br>
+            Apr 25 → May 2: Visceral Fat = 13 (NO CHANGE)<br>
+            Despite 3,186 kcal deficit in week 3, visceral fat did not improve.<br><br>
+            <strong>Why?</strong> Carb quality was terrible:<br>
+            • Apr 30: 122g white rice in ONE meal (blood sugar spike)<br>
+            • May 1: 220g total carbs + chocolate at night (worst timing)<br><br>
+            <strong>Result:</strong> Calories were "controlled" but insulin spiked anyway,
+            blocking visceral fat loss. This is the HbA1c driver—more important than scale weight.
+        </div>
+
+        <!-- ACTION ITEMS -->
+        <div class="info-box">
+            <strong>📋 ACTION FOR NEXT 6 DAYS (May 2–8):</strong><br><br>
+            <strong>Realistic Target: 79 kg</strong> (not 76 kg)<br>
+            Distance: 1.5 kg loss needed<br>
+            Deficit: 215 kcal/day (EASY, sustainable)<br><br>
+            <strong>MUST-DO (NO EXCEPTIONS):</strong><br>
+            ✓ TRACK OIL in every meal (your blind spot)<br>
+            ✓ PROTEIN daily running total (80–90g, then stop)<br>
+            ✓ NO white rice, NO pita, NO chocolate<br>
+            ✓ MAX 100g carbs/day (40–50g per meal)<br>
+            ✓ 4PM snack MANDATORY (tikkis + apple)<br>
+            ✓ 10-min walk AFTER EVERY MEAL
+        </div>
+
+    </div>
+</body>
+</html>

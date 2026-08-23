@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJ 7-Day Meal Plan</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, sans-serif;
+            background: #1a1a2e;
+            color: #e2e8f0;
+            padding: 15px;
+            font-size: 14px;
+        }
+        h1 { text-align: center; color: #3b82f6; margin-bottom: 5px; font-size: 20px; }
+        .subtitle { text-align: center; color: #94a3b8; font-size: 11px; margin-bottom: 15px; }
+        .constraints {
+            background: #2d1b1b;
+            border: 1px solid #ef4444;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        .constraints h3 { color: #ef4444; margin-bottom: 5px; }
+        .constraints li { margin: 3px 0; margin-left: 15px; }
+        .rules {
+            background: #1b2d1b;
+            border: 1px solid #22c55e;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        .rules h3 { color: #22c55e; margin-bottom: 5px; }
+        .rules li { margin: 3px 0; margin-left: 15px; }
+        .day {
+            background: #16213e;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            padding: 12px;
+            border-left: 4px solid #3b82f6;
+        }
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .day-title { font-weight: bold; color: #3b82f6; font-size: 16px; }
+        .day-activity { color: #f59e0b; font-size: 12px; }
+        .day-totals { color: #94a3b8; font-size: 11px; }
+        .meal {
+            background: #0f172a;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 8px;
+        }
+        .meal:last-child { margin-bottom: 0; }
+        .meal-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+        .meal-name { font-weight: bold; font-size: 13px; }
+        .meal-name.bf { color: #f59e0b; }
+        .meal-name.lunch { color: #22c55e; }
+        .meal-name.snack { color: #a78bfa; }
+        .meal-name.dinner { color: #f87171; }
+        .meal-cal { color: #fbbf24; font-weight: bold; font-size: 13px; }
+        .meal-macros { color: #64748b; font-size: 11px; }
+        .meal-items {
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        .meal-items li {
+            margin-left: 15px;
+            list-style: none;
+            position: relative;
+        }
+        .meal-items li::before {
+            content: "→";
+            position: absolute;
+            left: -15px;
+            color: #64748b;
+        }
+        .meal-items .order-first::before {
+            content: "①";
+            color: #22c55e;
+        }
+        .grams { color: #60a5fa; font-weight: bold; }
+        .cal-note { color: #94a3b8; font-size: 11px; }
+        .weekly-summary {
+            background: #16213e;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+        }
+        .weekly-summary h3 { color: #3b82f6; margin-bottom: 8px; }
+        table { width: 100%; border-collapse: collapse; font-size: 12px; }
+        th { background: #0f172a; color: #94a3b8; padding: 6px; text-align: center; border: 1px solid #334155; }
+        td { padding: 6px; text-align: center; border: 1px solid #334155; }
+        .edit-note {
+            background: #1e293b;
+            border: 1px dashed #64748b;
+            border-radius: 6px;
+            padding: 10px;
+            margin-top: 15px;
+            font-size: 11px;
+            color: #94a3b8;
+        }
+        .edit-note h4 { color: #60a5fa; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+<h1>PJ's 7-Day Meal Plan</h1>
+<p class="subtitle">Target: 1,200 cal/day | Protein ≤90g | Carbs ~120g | Oil: 1 tsp/meal max</p>
+
+<div class="constraints">
+    <h3>⚠️ HEALTH CONSTRAINTS</h3>
+    <ul>
+        <li><strong>Kidney:</strong> Protein MAX 80-90g/day (Urine Protein 2+)</li>
+        <li><strong>Diabetes:</strong> HbA1c 6.8% — fiber/veg FIRST, then protein, carbs LAST</li>
+        <li><strong>NPDR (left eye):</strong> Exhale on exertion, never hold breath</li>
+        <li><strong>BP:</strong> Low sodium, never skip meds</li>
+    </ul>
+</div>
+
+<div class="rules">
+    <h3>✅ RULES (every meal)</h3>
+    <ul>
+        <li><strong>VEG FIRST</strong> — cucumber/salad eaten BEFORE every meal</li>
+        <li><strong>10 min walk after every meal</strong> (or lunges 4×15 at home)</li>
+        <li><strong>Oil:</strong> MAX 1 tsp (5ml) per meal = 4 tsp/day</li>
+        <li><strong>Dosa:</strong> Dry roast only — NO oil on tawa</li>
+        <li><strong>Noodle/pasta:</strong> Max 50g dry weight</li>
+        <li><strong>If protein >90g:</strong> Drop 1 egg white from snack</li>
+    </ul>
+</div>
+
+<!-- ===== DAY 1 ===== -->
+<div class="day">
+    <div class="day-header">
+        <span class="day-title">DAY 1 — Sunday</span>
+        <span class="day-activity">REST DAY</span>
+    </div>
+    <div class="day-totals">Total: 1,206 cal | 90g protein | 142g carbs | Deficit: ~579 cal</div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name bf">BREAKFAST</span>
+            <span class="meal-cal">251 cal</span>
+        </div>
+        <div class="meal-macros">P: 34g | C: 23g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">150g</span> sliced <span class="cal-note">(15 cal)</span></li>
+            <li>Egg whites <span class="grams">4 nos</span> in 1 tsp oil <span class="cal-note">(68 + 45 cal)</span></li>
+            <li>Brown bread <span class="grams">1 slice (35g)</span> <span class="cal-note">(85 cal)</span></li>
+            <li>Whey <span class="grams">15g</span> in <span class="grams">200ml</span> buttermilk + <span class="grams">200ml</span> water <span class="cal-note">(60 + 36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name lunch">LUNCH</span>
+            <span class="meal-cal">350 cal</span>
+        </div>
+        <div class="meal-macros">P: 14g | C: 52g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">100g</span> <span class="cal-note">(15 cal)</span></li>
+            <li>Wheat roti <span class="grams">2 nos (60g)</span> <span class="cal-note">(170 cal)</span></li>
+            <li>Lauki kofta <span class="grams">150g</span> with 1 tsp oil <span class="cal-note">(120 + 45 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name snack">SNACK (4PM)</span>
+            <span class="meal-cal">249 cal</span>
+        </div>
+        <div class="meal-macros">P: 31g | C: 26g</div>
+        <ul class="meal-items">
+            <li>Guava <span class="grams">150g</span> (1 medium) <span class="cal-note">(102 cal)</span></li>
+            <li>Egg whites <span class="grams">3 nos</span> boiled <span class="cal-note">(51 cal)</span></li>
+            <li>Whey <span class="grams">15g</span> in <span class="grams">200ml</span> buttermilk + <span class="grams">200ml</span> water <span class="cal-note">(60 + 36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name dinner">DINNER</span>
+            <span class="meal-cal">356 cal</span>
+        </div>
+        <div class="meal-macros">P: 12g | C: 41g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">100g</span> <span class="cal-note">(15 cal)</span></li>
+            <li>Wheat roti <span class="grams">1.5 nos (45g)</span> <span class="cal-note">(127 cal)</span></li>
+            <li>Baigan bharta <span class="grams">200g</span> with 1 tsp oil <span class="cal-note">(133 + 45 cal)</span></li>
+            <li>Buttermilk <span class="grams">200ml</span> <span class="cal-note">(36 cal)</span></li>
+        </ul>
+    </div>
+</div>
+
+<!-- ===== DAY 2 ===== -->
+<div class="day">
+    <div class="day-header">
+        <span class="day-title">DAY 2 — Monday</span>
+        <span class="day-activity">GYM DAY</span>
+    </div>
+    <div class="day-totals">Total: 1,201 cal | 86g protein | 136g carbs | Deficit: ~834 cal</div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name bf">BREAKFAST</span>
+            <span class="meal-cal">251 cal</span>
+        </div>
+        <div class="meal-macros">P: 34g | C: 23g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">150g</span> sliced <span class="cal-note">(15 cal)</span></li>
+            <li>Egg whites <span class="grams">4 nos</span> in 1 tsp oil <span class="cal-note">(68 + 45 cal)</span></li>
+            <li>Brown bread <span class="grams">1 slice (35g)</span> <span class="cal-note">(85 cal)</span></li>
+            <li>Whey <span class="grams">15g</span> in <span class="grams">200ml</span> buttermilk + <span class="grams">200ml</span> water <span class="cal-note">(60 + 36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name lunch">LUNCH</span>
+            <span class="meal-cal">344 cal</span>
+        </div>
+        <div class="meal-macros">P: 10g | C: 45g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">100g</span> <span class="cal-note">(15 cal)</span></li>
+            <li>Dosa <span class="grams">1.5 nos (75g batter, dry roast)</span> <span class="cal-note">(195 cal)</span></li>
+            <li>Sambhar <span class="grams">150ml</span> <span class="cal-note">(97 cal)</span></li>
+            <li>Coconut chutney <span class="grams">20g</span> <span class="cal-note">(37 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name snack">SNACK (4PM)</span>
+            <span class="meal-cal">249 cal</span>
+        </div>
+        <div class="meal-macros">P: 31g | C: 26g</div>
+        <ul class="meal-items">
+            <li>Guava <span class="grams">150g</span> (1 medium) <span class="cal-note">(102 cal)</span></li>
+            <li>Egg whites <span class="grams">3 nos</span> boiled <span class="cal-note">(51 cal)</span></li>
+            <li>Whey <span class="grams">15g</span> in <span class="grams">200ml</span> buttermilk + <span class="grams">200ml</span> water <span class="cal-note">(60 + 36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name dinner">DINNER</span>
+            <span class="meal-cal">347 cal</span>
+        </div>
+        <div class="meal-macros">P: 12g | C: 49g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">100g</span> <span class="cal-note">(15 cal)</span></li>
+            <li>Wheat roti <span class="grams">2 nos (60g)</span> <span class="cal-note">(170 cal)</span></li>
+            <li>Mix veg <span class="grams">150g</span> with 1 tsp oil <span class="cal-note">(90 + 45 cal)</span></li>
+            <li>Buttermilk <span class="grams">150ml</span> <span class="cal-note">(27 cal)</span></li>
+        </ul>
+    </div>
+</div>
+
+<!-- ===== DAY 3 ===== -->
+<div class="day">
+    <div class="day-header">
+        <span class="day-title">DAY 3 — Tuesday</span>
+        <span class="day-activity">RUN DAY</span>
+    </div>
+    <div class="day-totals">Total: 1,183 cal | 90g protein | 131g carbs | Deficit: ~1,002 cal</div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name bf">BREAKFAST</span>
+            <span class="meal-cal">251 cal</span>
+        </div>
+        <div class="meal-macros">P: 34g | C: 23g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">150g</span> sliced <span class="cal-note">(15 cal)</span></li>
+            <li>Egg whites <span class="grams">4 nos</span> in 1 tsp oil <span class="cal-note">(68 + 45 cal)</span></li>
+            <li>Brown bread <span class="grams">1 slice (35g)</span> <span class="cal-note">(85 cal)</span></li>
+            <li>Whey <span class="grams">15g</span> in <span class="grams">200ml</span> buttermilk + <span class="grams">200ml</span> water <span class="cal-note">(60 + 36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name lunch">LUNCH</span>
+            <span class="meal-cal">343 cal</span>
+        </div>
+        <div class="meal-macros">P: 15g | C: 35g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">100g</span> <span class="cal-note">(15 cal)</span></li>
+            <li>Wheat roti <span class="grams">1.5 nos (45g)</span> <span class="cal-note">(127 cal)</span></li>
+            <li>Palak paneer (paneer <span class="grams">30g</span> only) <span class="grams">150g</span> with 1 tsp oil <span class="cal-note">(120 + 45 cal)</span></li>
+            <li>Buttermilk <span class="grams">200ml</span> <span class="cal-note">(36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name snack">SNACK (4PM)</span>
+            <span class="meal-cal">249 cal</span>
+        </div>
+        <div class="meal-macros">P: 31g | C: 26g</div>
+        <ul class="meal-items">
+            <li>Guava <span class="grams">150g</span> (1 medium) <span class="cal-note">(102 cal)</span></li>
+            <li>Egg whites <span class="grams">3 nos</span> boiled <span class="cal-note">(51 cal)</span></li>
+            <li>Whey <span class="grams">15g</span> in <span class="grams">200ml</span> buttermilk + <span class="grams">200ml</span> water <span class="cal-note">(60 + 36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name dinner">DINNER</span>
+            <span class="meal-cal">340 cal</span>
+        </div>
+        <div class="meal-macros">P: 11g | C: 47g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">100g</span> <span class="cal-note">(15 cal)</span></li>
+            <li>Dosa <span class="grams">1.5 nos (75g batter, dry roast)</span> <span class="cal-note">(195 cal)</span></li>
+            <li>Sambhar <span class="grams">200ml</span> <span class="cal-note">(130 cal)</span></li>
+        </ul>
+    </div>
+</div>
+
+<!-- ===== DAY 4 ===== -->
+<div class="day">
+    <div class="day-header">
+        <span class="day-title">DAY 4 — Wednesday</span>
+        <span class="day-activity">GYM DAY</span>
+    </div>
+    <div class="day-totals">Total: 1,174 cal | 90g protein | 139g carbs | Deficit: ~878 cal</div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name bf">BREAKFAST</span>
+            <span class="meal-cal">251 cal</span>
+        </div>
+        <div class="meal-macros">P: 34g | C: 23g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">150g</span> sliced <span class="cal-note">(15 cal)</span></li>
+            <li>Egg whites <span class="grams">4 nos</span> in 1 tsp oil <span class="cal-note">(68 + 45 cal)</span></li>
+            <li>Brown bread <span class="grams">1 slice (35g)</span> <span class="cal-note">(85 cal)</span></li>
+            <li>Whey <span class="grams">15g</span> in <span class="grams">200ml</span> buttermilk + <span class="grams">200ml</span> water <span class="cal-note">(60 + 36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name lunch">LUNCH</span>
+            <span class="meal-cal">335 cal</span>
+        </div>
+        <div class="meal-macros">P: 10.5g | C: 40g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">100g</span> <span class="cal-note">(15 cal)</span></li>
+            <li>Wheat roti <span class="grams">1.5 nos (45g)</span> <span class="cal-note">(127 cal)</span></li>
+            <li>Bhaji (pav bhaji style, no pav) <span class="grams">150g</span> with 1 tsp oil <span class="cal-note">(130 + 45 cal)</span></li>
+            <li>Buttermilk <span class="grams">100ml</span> <span class="cal-note">(18 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name snack">SNACK (4PM)</span>
+            <span class="meal-cal">232 cal</span>
+        </div>
+        <div class="meal-macros">P: 27g | C: 26g</div>
+        <ul class="meal-items">
+            <li>Guava <span class="grams">150g</span> (1 medium) <span class="cal-note">(102 cal)</span></li>
+            <li>Egg whites <span class="grams">2 nos</span> boiled <span class="cal-note">(34 cal)</span></li>
+            <li>Whey <span class="grams">15g</span> in <span class="grams">200ml</span> buttermilk + <span class="grams">200ml</span> water <span class="cal-note">(60 + 36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name dinner">DINNER — NOODLES</span>
+            <span class="meal-cal">339 cal</span>
+        </div>
+        <div class="meal-macros">P: 18g | C: 50g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">100g</span> <span class="cal-note">(15 cal)</span></li>
+            <li>Wheat noodles <span class="grams">50g dry</span> <span class="cal-note">(175 cal)</span></li>
+            <li>Mixed veg (cabbage, carrot, beans, capsicum) <span class="grams">200g</span> <span class="cal-note">(60 cal)</span></li>
+            <li>Egg whites <span class="grams">2 nos</span> <span class="cal-note">(34 cal)</span></li>
+            <li>Oil <span class="grams">1 tsp (5ml)</span> <span class="cal-note">(45 cal)</span></li>
+            <li>Soy sauce <span class="grams">1 tbsp</span> <span class="cal-note">(10 cal)</span></li>
+        </ul>
+    </div>
+</div>
+
+<!-- ===== DAY 5 ===== -->
+<div class="day">
+    <div class="day-header">
+        <span class="day-title">DAY 5 — Thursday</span>
+        <span class="day-activity">RUN DAY</span>
+    </div>
+    <div class="day-totals">Total: 1,216 cal | 90g protein | 138g carbs | Deficit: ~969 cal</div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name bf">BREAKFAST</span>
+            <span class="meal-cal">251 cal</span>
+        </div>
+        <div class="meal-macros">P: 34g | C: 23g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">150g</span> sliced <span class="cal-note">(15 cal)</span></li>
+            <li>Egg whites <span class="grams">4 nos</span> in 1 tsp oil <span class="cal-note">(68 + 45 cal)</span></li>
+            <li>Brown bread <span class="grams">1 slice (35g)</span> <span class="cal-note">(85 cal)</span></li>
+            <li>Whey <span class="grams">15g</span> in <span class="grams">200ml</span> buttermilk + <span class="grams">200ml</span> water <span class="cal-note">(60 + 36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name lunch">LUNCH</span>
+            <span class="meal-cal">359 cal</span>
+        </div>
+        <div class="meal-macros">P: 13.5g | C: 44g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">100g</span> <span class="cal-note">(15 cal)</span></li>
+            <li>Wheat roti <span class="grams">1.5 nos (45g)</span> <span class="cal-note">(127 cal)</span></li>
+            <li>Lauki kofta <span class="grams">150g</span> with 1 tsp oil <span class="cal-note">(120 + 45 cal)</span></li>
+            <li>Thin dal <span class="grams">75ml</span> <span class="cal-note">(34 cal)</span></li>
+            <li>Buttermilk <span class="grams">100ml</span> <span class="cal-note">(18 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name snack">SNACK (4PM)</span>
+            <span class="meal-cal">249 cal</span>
+        </div>
+        <div class="meal-macros">P: 31g | C: 26g</div>
+        <ul class="meal-items">
+            <li>Guava <span class="grams">150g</span> (1 medium) <span class="cal-note">(102 cal)</span></li>
+            <li>Egg whites <span class="grams">3 nos</span> boiled <span class="cal-note">(51 cal)</span></li>
+            <li>Whey <span class="grams">15g</span> in <span class="grams">200ml</span> buttermilk + <span class="grams">200ml</span> water <span class="cal-note">(60 + 36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name dinner">DINNER</span>
+            <span class="meal-cal">357 cal</span>
+        </div>
+        <div class="meal-macros">P: 12g | C: 45g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">100g</span> <span class="cal-note">(15 cal)</span></li>
+            <li>Wheat roti <span class="grams">2 nos (60g)</span> <span class="cal-note">(170 cal)</span></li>
+            <li>Baigan bharta <span class="grams">150g</span> with 1 tsp oil <span class="cal-note">(100 + 45 cal)</span></li>
+            <li>Buttermilk <span class="grams">150ml</span> <span class="cal-note">(27 cal)</span></li>
+        </ul>
+    </div>
+</div>
+
+<!-- ===== DAY 6 ===== -->
+<div class="day">
+    <div class="day-header">
+        <span class="day-title">DAY 6 — Friday</span>
+        <span class="day-activity">GYM DAY</span>
+    </div>
+    <div class="day-totals">Total: 1,147 cal | 88g protein | 137g carbs | Deficit: ~888 cal</div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name bf">BREAKFAST</span>
+            <span class="meal-cal">251 cal</span>
+        </div>
+        <div class="meal-macros">P: 34g | C: 23g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">150g</span> sliced <span class="cal-note">(15 cal)</span></li>
+            <li>Egg whites <span class="grams">4 nos</span> in 1 tsp oil <span class="cal-note">(68 + 45 cal)</span></li>
+            <li>Brown bread <span class="grams">1 slice (35g)</span> <span class="cal-note">(85 cal)</span></li>
+            <li>Whey <span class="grams">15g</span> in <span class="grams">200ml</span> buttermilk + <span class="grams">200ml</span> water <span class="cal-note">(60 + 36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name lunch">LUNCH</span>
+            <span class="meal-cal">303 cal</span>
+        </div>
+        <div class="meal-macros">P: 9g | C: 38g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">100g</span> <span class="cal-note">(15 cal)</span></li>
+            <li>Dosa <span class="grams">1 no (50g batter, dry roast)</span> <span class="cal-note">(130 cal)</span></li>
+            <li>Sambhar <span class="grams">200ml</span> <span class="cal-note">(130 cal)</span></li>
+            <li>Coconut chutney <span class="grams">15g</span> <span class="cal-note">(28 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name snack">SNACK (4PM)</span>
+            <span class="meal-cal">232 cal</span>
+        </div>
+        <div class="meal-macros">P: 27g | C: 26g</div>
+        <ul class="meal-items">
+            <li>Guava <span class="grams">150g</span> (1 medium) <span class="cal-note">(102 cal)</span></li>
+            <li>Egg whites <span class="grams">2 nos</span> boiled <span class="cal-note">(34 cal)</span></li>
+            <li>Whey <span class="grams">15g</span> in <span class="grams">200ml</span> buttermilk + <span class="grams">200ml</span> water <span class="cal-note">(60 + 36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name dinner">DINNER — PASTA</span>
+            <span class="meal-cal">344 cal</span>
+        </div>
+        <div class="meal-macros">P: 19g | C: 53g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">100g</span> <span class="cal-note">(15 cal)</span></li>
+            <li>Wheat pasta <span class="grams">50g dry</span> <span class="cal-note">(175 cal)</span></li>
+            <li>Mixed veg (broccoli, zucchini, mushroom, capsicum) <span class="grams">200g</span> <span class="cal-note">(60 cal)</span></li>
+            <li>Egg whites <span class="grams">2 nos</span> <span class="cal-note">(34 cal)</span></li>
+            <li>Oil <span class="grams">1 tsp (5ml)</span> <span class="cal-note">(45 cal)</span></li>
+            <li>Tomato sauce (no sugar) <span class="grams">30g</span> <span class="cal-note">(15 cal)</span></li>
+        </ul>
+    </div>
+</div>
+
+<!-- ===== DAY 7 ===== -->
+<div class="day">
+    <div class="day-header">
+        <span class="day-title">DAY 7 — Saturday</span>
+        <span class="day-activity">REST DAY</span>
+    </div>
+    <div class="day-totals">Total: 1,187 cal | 87g protein | 140g carbs | Deficit: ~598 cal</div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name bf">BREAKFAST</span>
+            <span class="meal-cal">251 cal</span>
+        </div>
+        <div class="meal-macros">P: 34g | C: 23g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">150g</span> sliced <span class="cal-note">(15 cal)</span></li>
+            <li>Egg whites <span class="grams">4 nos</span> in 1 tsp oil <span class="cal-note">(68 + 45 cal)</span></li>
+            <li>Brown bread <span class="grams">1 slice (35g)</span> <span class="cal-note">(85 cal)</span></li>
+            <li>Whey <span class="grams">15g</span> in <span class="grams">200ml</span> buttermilk + <span class="grams">200ml</span> water <span class="cal-note">(60 + 36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name lunch">LUNCH</span>
+            <span class="meal-cal">343 cal</span>
+        </div>
+        <div class="meal-macros">P: 12g | C: 46g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">100g</span> <span class="cal-note">(15 cal)</span></li>
+            <li>Wheat roti <span class="grams">1.5 nos (45g)</span> <span class="cal-note">(127 cal)</span></li>
+            <li>Mix veg <span class="grams">200g</span> with 1 tsp oil <span class="cal-note">(120 + 45 cal)</span></li>
+            <li>Buttermilk <span class="grams">200ml</span> <span class="cal-note">(36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name snack">SNACK (4PM)</span>
+            <span class="meal-cal">249 cal</span>
+        </div>
+        <div class="meal-macros">P: 31g | C: 26g</div>
+        <ul class="meal-items">
+            <li>Guava <span class="grams">150g</span> (1 medium) <span class="cal-note">(102 cal)</span></li>
+            <li>Egg whites <span class="grams">3 nos</span> boiled <span class="cal-note">(51 cal)</span></li>
+            <li>Whey <span class="grams">15g</span> in <span class="grams">200ml</span> buttermilk + <span class="grams">200ml</span> water <span class="cal-note">(60 + 36 cal)</span></li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <div class="meal-header">
+            <span class="meal-name dinner">DINNER</span>
+            <span class="meal-cal">344 cal</span>
+        </div>
+        <div class="meal-macros">P: 10g | C: 45g</div>
+        <ul class="meal-items">
+            <li class="order-first">Cucumber <span class="grams">100g</span> <span class="cal-note">(15 cal)</span></li>
+            <li>Dosa <span class="grams">1.5 nos (75g batter, dry roast)</span> <span class="cal-note">(195 cal)</span></li>
+            <li>Sambhar <span class="grams">150ml</span> <span class="cal-note">(97 cal)</span></li>
+            <li>Coconut chutney <span class="grams">20g</span> <span class="cal-note">(37 cal)</span></li>
+        </ul>
+    </div>
+</div>
+
+<!-- ===== WEEKLY SUMMARY ===== -->
+<div class="weekly-summary">
+    <h3>WEEKLY SUMMARY</h3>
+    <table>
+        <tr>
+            <th>Day</th>
+            <th>Activity</th>
+            <th>Calories</th>
+            <th>Protein</th>
+            <th>Carbs</th>
+            <th>Deficit</th>
+        </tr>
+        <tr>
+            <td>Sun (Day 1)</td>
+            <td>Rest</td>
+            <td>1,206</td>
+            <td>90g</td>
+            <td>142g</td>
+            <td style="color:#22c55e">579</td>
+        </tr>
+        <tr>
+            <td>Mon (Day 2)</td>
+            <td>Gym</td>
+            <td>1,201</td>
+            <td>86g</td>
+            <td>136g</td>
+            <td style="color:#22c55e">834</td>
+        </tr>
+        <tr>
+            <td>Tue (Day 3)</td>
+            <td>Run</td>
+            <td>1,183</td>
+            <td>90g</td>
+            <td>131g</td>
+            <td style="color:#22c55e">1,002</td>
+        </tr>
+        <tr>
+            <td>Wed (Day 4)</td>
+            <td>Gym</td>
+            <td>1,174</td>
+            <td>90g</td>
+            <td>139g</td>
+            <td style="color:#22c55e">878</td>
+        </tr>
+        <tr>
+            <td>Thu (Day 5)</td>
+            <td>Run</td>
+            <td>1,216</td>
+            <td>90g</td>
+            <td>138g</td>
+            <td style="color:#22c55e">969</td>
+        </tr>
+        <tr>
+            <td>Fri (Day 6)</td>
+            <td>Gym</td>
+            <td>1,147</td>
+            <td>88g</td>
+            <td>137g</td>
+            <td style="color:#22c55e">888</td>
+        </tr>
+        <tr>
+            <td>Sat (Day 7)</td>
+            <td>Rest</td>
+            <td>1,187</td>
+            <td>87g</td>
+            <td>140g</td>
+            <td style="color:#22c55e">598</td>
+        </tr>
+        <tr style="font-weight:bold; background:#0f172a;">
+            <td colspan="2">WEEKLY AVG</td>
+            <td>1,185</td>
+            <td>89g</td>
+            <td>138g</td>
+            <td style="color:#22c55e">821/day</td>
+        </tr>
+    </table>
+</div>
+
+<!-- ===== BURRITO BOWL TEMPLATE ===== -->
+<div class="rules" style="margin-bottom:15px;">
+    <h3 style="color:#f59e0b;">🥣 CALIFORNIA BURRITO BOWL — 350 CAL TEMPLATE</h3>
+    <p style="margin-bottom:8px; font-size:12px; color:#94a3b8;">Use for lunch OR dinner. Replaces roti+sabzi. Fixes the dinner overage problem structurally.</p>
+    <table style="width:100%; font-size:12px; border-collapse:collapse;">
+        <tr style="color:#f59e0b;">
+            <th style="text-align:left; padding:4px;">Layer</th>
+            <th style="text-align:left; padding:4px;">Ingredient</th>
+            <th style="text-align:right; padding:4px;">Amount</th>
+            <th style="text-align:right; padding:4px;">Visual</th>
+            <th style="text-align:right; padding:4px;">Cal</th>
+        </tr>
+        <tr style="border-top:1px solid #334155;">
+            <td style="padding:4px; color:#22c55e;">Base</td>
+            <td style="padding:4px;">Stir-fry veg (capsicum, beans, carrot, onion — 1 tsp oil)</td>
+            <td style="text-align:right; padding:4px;">150g</td>
+            <td style="text-align:right; padding:4px;">1 full medium bowl</td>
+            <td style="text-align:right; padding:4px;">96</td>
+        </tr>
+        <tr style="border-top:1px solid #334155;">
+            <td style="padding:4px; color:#3b82f6;">Protein</td>
+            <td style="padding:4px;">Rajma OR kabuli chana (boiled, spiced)</td>
+            <td style="text-align:right; padding:4px;">80g</td>
+            <td style="text-align:right; padding:4px;">5 tbsp / half small katori</td>
+            <td style="text-align:right; padding:4px;">125</td>
+        </tr>
+        <tr style="border-top:1px solid #334155;">
+            <td style="padding:4px; color:#f59e0b;">Carb</td>
+            <td style="padding:4px;">Black rice OR white rice (cooked)</td>
+            <td style="text-align:right; padding:4px;">40g</td>
+            <td style="text-align:right; padding:4px;">3 heaped tablespoons</td>
+            <td style="text-align:right; padding:4px;">64</td>
+        </tr>
+        <tr style="border-top:1px solid #334155;">
+            <td style="padding:4px; color:#f87171;">Fresh</td>
+            <td style="padding:4px;">Pico de gallo (tomato + onion + coriander + lime)</td>
+            <td style="text-align:right; padding:4px;">50g</td>
+            <td style="text-align:right; padding:4px;">2-3 tbsp on top</td>
+            <td style="text-align:right; padding:4px;">20</td>
+        </tr>
+        <tr style="border-top:1px solid #334155; font-weight:bold; background:#0f172a;">
+            <td colspan="4" style="padding:4px;">BOWL TOTAL (+20% home correction)</td>
+            <td style="text-align:right; padding:4px; color:#22c55e;">~346</td>
+        </tr>
+    </table>
+    <p style="margin-top:8px; font-size:11px; color:#94a3b8;"><strong>Eating order:</strong> Veg first (all 150g) → beans → rice last &nbsp;|&nbsp; <strong>Alongside:</strong> 200ml plain buttermilk (+36 cal) &nbsp;|&nbsp; <strong>With whey:</strong> add half scoop to buttermilk (+60 cal, +15g protein)</p>
+    <p style="margin-top:4px; font-size:11px; color:#94a3b8;"><strong>Why this works:</strong> No roti/paratha that can double. Rice is fixed at 3 tbsp and can't grow. Veg volume fills stomach first.</p>
+</div>
+
+<!-- ===== EDIT GUIDE ===== -->
+<div class="edit-note">
+    <h4>HOW TO EDIT THIS PLAN</h4>
+    <p><strong>Swap a sabzi:</strong> Replace any sabzi name + grams. Keep to 150-200g with 1 tsp oil. Calorie range: 90-180 cal depending on sabzi.</p>
+    <p><strong>Swap roti ↔ dosa:</strong> 1 roti (85 cal) ≈ 0.65 dosa (85 cal). So 1.5 roti = 1 dosa.</p>
+    <p><strong>Add/remove egg whites:</strong> Each egg white = 17 cal, 3.6g protein. Adjust snack count to stay under 90g protein/day.</p>
+    <p><strong>Change guava:</strong> 150g guava (102 cal) ≈ 1 medium apple (95 cal) ≈ 200g papaya (86 cal). Avoid banana (90 cal but GI 62).</p>
+    <p><strong>Noodle/pasta days:</strong> Always cap at 50g dry. Always reduce snack egg whites by 1. Always add 200g+ veg.</p>
+    <p><strong>Calorie reference per item:</strong></p>
+    <ul>
+        <li>Egg white: 17 cal | Brown bread (1 slice): 85 cal | Roti (1): 85 cal</li>
+        <li>Dosa (1, dry): 130 cal | Whey 15g: 60 cal | Buttermilk 200ml: 36 cal</li>
+        <li>Oil 1 tsp: 45 cal | Guava 150g: 102 cal | Cucumber 100g: 15 cal</li>
+        <li>Lauki kofta 150g: 120 cal | Baigan bharta 150g: 100 cal</li>
+        <li>Mix veg 150g: 90 cal | Bhaji 150g: 130 cal | Palak paneer 150g: 150 cal</li>
+        <li>Sambhar 150ml: 97 cal | Coconut chutney 20g: 37 cal | Dal 100ml: 45 cal</li>
+        <li>Noodles 50g dry: 175 cal | Pasta 50g dry: 175 cal</li>
+    </ul>
+</div>
+
+</body>
+</html>
