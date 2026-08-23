@@ -8,6 +8,20 @@ Prateek Jain (PJ), 37, Bangalore. Full profile in memory: `user_pj_profile.md`
 
 Core identity: *"I am a disciplined, high-energy builder who takes care of his body, his mind, and his relationships."*
 
+## ACTIVE RESTART — since 2026-08-23 (read this before anything else below)
+PJ went silent for ~2 weeks (Delhi, then Ahmedabad for a work summit) — travel, not a diet/gym collapse, and per the Travel Discipline Paradox pattern below, travel itself usually isn't where he slips; the days right after returning are the real risk window. Watch this window closely.
+
+Starting 2026-08-23 he committed to a reset. What he actually said, recorded as stated:
+- Wake early, except weekends
+- On most days: gym → snowy walk → high-protein breakfast, no [unconfirmed food — he said "Sato", possibly Sattu; ask him directly rather than guessing, it changes the breakfast content]
+- Office lunch: vegetables + moong dal cheela + sabzi (a shift from the V2 plan's roti-based lunch — confirm whether this replaces roti at lunch going forward or he misspoke)
+- Snack: eggs, hung curd, sabzi
+- Dinner: zero carbs, one item only (e.g. paneer) — this is *tighter* than the V2 plan's existing dinner allowance (which permits moong dal cheela, ~18g carbs, at dinner). Treat zero-carb-one-item as the new dinner rule unless he says otherwise.
+- 30-minute run every single day — this reads as *in addition to* gym on gym days, not instead of it (he separately said gym happens "on a lot of days"). If so, that's gym + daily run + 8h sleep target simultaneously — worth one direct check on recovery capacity rather than silently accepting or silently overriding.
+- Sleep by 10:00 PM, target 8 hours
+
+**Do not silently overwrite the V2 Low-Carb Plan or the Daily Non-Negotiables below with this** — confirm the roti-at-lunch and gym+run-both-daily points with PJ, then formally version this as V3 once confirmed, the way V2 superseded the 250/350 split.
+
 ## Critical Health Constraints
 - **PROTEIN MAX 80-90g/day** — kidney constraint (Urine Protein 2+). Non-negotiable.
 - **CARBS MAX 120g/day** — V2 plan target (tightened from 130g). Track every single day. Average was 183g — that's why visceral fat won't move. Dinner: 0–15g only (no roti at dinner).
@@ -65,6 +79,25 @@ Core identity: *"I am a disciplined, high-energy builder who takes care of his b
 10. Dharana 1 (15 min kriya)
 11. Call parents
 12. No weed
+
+### Kriya / Mantra Practice — phased protocol (full detail in `cheat-sheet.md`)
+Started June 2026, extends in phases: **Phase 1** (June) — 5-min floor: Nadi Shodhana ×3, Om ×3, Soham on breath, close Om. **Phase 2** (Jul–Aug, roughly where PJ should be now) — extends to ~10 min, Soham block replaced by Om Namah Shivaya ×108 on mala, close Shivoham ×3. **Phase 3** (Sept+) — full 15–20 min sadhana adding Dharana 1 (5 min, awareness on the inhale/exhale gap at the heart). If PJ's practice doesn't match the phase the calendar says he should be in, don't force it — ask where he actually is and meet him there.
+
+**Pranayama safety — NPDR/BP relevant, do not suggest the unsafe ones:**
+| Practice | Safe? | Why |
+|---|---|---|
+| Nadi Shodhana (alternate nostril) | ✅ | Lowers BP, improves HRV |
+| Bhramari (humming bee) | ✅ | Vagal tone, evening/sleep prep |
+| Ujjayi (victorious breath) | ✅ | During yoga/stretching |
+| Kapalabhati (skull-shining) | ❌ NEVER | Raises BP + intracranial pressure — NPDR risk |
+| Bhastrika (bellows) | ❌ NEVER | Same reason |
+| Kumbhaka (breath retention) | ❌ NEVER | BP spike + ocular pressure risk |
+
+### Weed Protocol (specific, not just "no weed")
+- Sunday–Thursday: zero, non-negotiable.
+- Friday/Saturday (if at all): eat dinner FIRST, no high-carb snacks accessible, lights out by midnight.
+- Every other night, the engineered off-switch: sauna/NSDR + magnesium glycinate 400mg at 9:30pm.
+- Framing: he doesn't quit by deciding to quit — he makes it obsolete by building better off-switches than the urge.
 
 ## Meal Plan — V2 Low-Carb Plan (CURRENT — Aug 2, 2026)
 
@@ -253,6 +286,10 @@ Read the current week's deficit from logs. If deficit is behind pace, cardio tak
 - Party/event yesterday? Note recovery state explicitly.
 - Long run tomorrow? Don't destroy legs today.
 - Heavy session yesterday? Opposing muscle group only (push after pull, etc.)
+- **Never run on consecutive days** unless the previous run was <4km easy.
+- **Never train the same muscle group on consecutive days.**
+- If 2+ consecutive rest days → prioritise the most-lagging muscle group.
+- Saturday/Sunday are flexible — use them to fill whatever got missed Mon–Fri.
 
 **STEP 5 — Apply PPL plan from coaching-plan.md as the baseline.**
 The 5-day PPL (Push A → Pull A → Legs → Push B → Pull B) is the default. Only deviate when steps 1–4 give a concrete reason. When deviating, state the reason explicitly.
@@ -608,9 +645,18 @@ Insert a `mood` event with subtype `day_summary` and full data payload:
 python3 scripts/coach_log.py event mood day_summary --data '{"arc":"motivated→vulnerable","win":"1113 cal deficit","miss":"pre-meal whey","tomorrow":"scale first thing"}'
 ```
 
-## Key Pattern to Watch
-**Weed → cravings → diet breaks → guilt → skips gym**
-This is the single highest-leverage pattern. Flag early signs immediately.
+## Key Patterns to Watch (evidence-based, from log history)
+
+1. **The Collapse Chain (highest priority):** Weed/alcohol → cravings → diet break → guilt → skips gym → identity slides → multi-day collapse. Documented 5+ times (Apr–Jul 2026). Flag early signs immediately.
+2. **Monday Late Wake:** Social/rest Sunday → can't wake Monday → misses morning gym → low steps → low protein day. 3+ confirmed occurrences.
+3. **Post-Vacation/Post-Travel Collapse:** Returns from a trip → 2 days legitimate fatigue → extends to 4+ days via inertia → gym streak fully broken. Evidence: post-Munnar (Jul 7–10), 4 consecutive no-gym days.
+4. **Travel Discipline Paradox — important, counterintuitive:** PJ actually tracks *well* during travel itself (e.g. Munnar Jul 2–5: double gym sessions, post-dinner walks, every meal logged). **The collapse happens AFTER returning, not during the trip.** Travel isn't the risk — reentry is. When he comes back from a trip, treat the first 2–3 days as the highest-risk window, not the trip itself.
+5. **Snack Block > Lunch:** On no-gym days, an unstructured afternoon snack becomes the day's largest meal (masala dosa + vada, nippattu + samosa blocks).
+6. **Protein Neglect on No-Gym Days:** Protein drops to 30–40g (vs 75–80g target) — no gym → no whey trigger → no eggs → muscle catabolism. With urine protein 2+ and NPDR, muscle loss is both harder to rebuild and more dangerous than for a healthy person.
+
+**Long-term weight vision (beyond the 76kg medium-term target above):** 59–60kg with maximum muscle mass preserved — the mountaineer's body (BMI ~22, ~8-10% body fat if muscle holds at 54-55kg). This is a functional performance target for altitude/pack-carrying, not a vanity number, on a multi-year horizon.
+
+**Open question, not yet resolved — don't answer from memory if asked again:** PJ has asked about semaglutide/Ozempic twice. Given his profile (T2D HbA1c 6.8%, VF13, NPDR, kidney protein 2+), this needs a real literature check before any opinion, not a reflexive answer either way.
 
 ## PJ's 6 Life Goals
 1. Health — 76kg target (set May 2026, date lapsed unmet — last weigh-in 78.85kg Jul 17; re-anchor a realistic date next weigh-in); HbA1c <6.5%
