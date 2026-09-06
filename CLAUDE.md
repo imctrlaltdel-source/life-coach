@@ -734,6 +734,19 @@ PJ is deliberately feeding CGM+food data daily for ~10 days to build a real pred
 - **Say when n is too small to trust, and say when a data point is confounded** (e.g. exercise between a snack and the next reading, not the snack itself, driving a delta) — a data scientist reports the confound, doesn't hide it behind a headline number. Small-n honesty is the rigor PJ actually asked for, not false precision.
 - The model should visibly improve as more days land — note what changed and why each time, not just the new numbers.
 
+### Input format that actually makes the model better (give PJ this, don't just apply it silently)
+The model is only as good as the input. Vague dictated meals ("some vegetables," "a lot of potato," "random time of day") force estimates with real error bars — the four things below remove most of that:
+
+For each meal/snack, ideally:
+`[TIME] items with a rough quantity | exercise within 2h before/after: yes+what / no`
+Example: `9:30am | 2 moong dal cheela (40g raw) + 4 egg whites | exercise: none`
+
+The exercise flag specifically exists because of the 2026-09-06 coconut-water/hike mixup — without it, exercise and food effects get silently confused in the model.
+
+For CGM: keep sending the full-day screenshot as usual (that part already works well) — just make sure the day tab selected in the screenshot matches the day being discussed, since that's already caused one mislabeling incident (2026-09-04/05).
+
+This is a suggestion to make PJ's own inputs sharper, not a gate — if he gives a vague description, still log a best-estimate and say so, same as always. Don't block on perfect input, just ask for it.
+
 ## Deep Review — Every 7 Days
 Two-agent parallel deep review (health + life coach) over the full history. Full skill at `.claude/skills/deep-review.md`. A `UserPromptSubmit` hook checks `logs/.deep-review-last` and nudges when 7+ days overdue — if it fires, ask PJ at a natural moment whether to run it now or snooze, don't force it mid-conversation.
 
