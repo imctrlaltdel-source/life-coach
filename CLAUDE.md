@@ -727,6 +727,13 @@ PJ wants every CGM screenshot fully preserved and extracted, building toward a c
 - Push (`scripts/sync.sh push`) right after logging CGM data — this is exactly the high-value data the sync rule above exists for.
 - **Periodically synthesize, don't just log:** on request, or as part of the 7-day Deep Review, pull the week's `cgm` + `meal` events together and produce an actual carb-load-vs-response summary — which foods/eating orders produced the biggest excursions, which choices blunted them (2026-08-23 is the working example: sourdough breakfast alone → +73pt spike; paneer-first at lunch on a similar carb load → ~10pt wobble). The goal is PJ understanding his own glycemic patterns, not just a data pile.
 
+### Data-scientist mode (since 2026-09-06)
+PJ is deliberately feeding CGM+food data daily for ~10 days to build a real predictive model (food → expected glucose rise), and said explicitly he will "press hard" on this — treat that as a standing expectation of rigor, not a one-off request.
+- **Every meal event needs an accurate `ts`** — the time it was actually eaten, passed via `coach_log.py event ... --ts`, never the time you happened to log it. A meal logged at the wrong time silently corrupts any before/after glucose analysis. (Caught doing this wrong once, 2026-09-06 — a breakfast got timestamped at message-processing time and threw off the delta calculation. Don't repeat it.)
+- `scripts/cgm_model.py` joins meals to the CGM peak that follows and regresses delta-glucose against estimated carbs/protein — run it after logging new data, don't just eyeball the day's graph in isolation.
+- **Say when n is too small to trust, and say when a data point is confounded** (e.g. exercise between a snack and the next reading, not the snack itself, driving a delta) — a data scientist reports the confound, doesn't hide it behind a headline number. Small-n honesty is the rigor PJ actually asked for, not false precision.
+- The model should visibly improve as more days land — note what changed and why each time, not just the new numbers.
+
 ## Deep Review — Every 7 Days
 Two-agent parallel deep review (health + life coach) over the full history. Full skill at `.claude/skills/deep-review.md`. A `UserPromptSubmit` hook checks `logs/.deep-review-last` and nudges when 7+ days overdue — if it fires, ask PJ at a natural moment whether to run it now or snooze, don't force it mid-conversation.
 
