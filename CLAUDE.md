@@ -349,6 +349,22 @@ Deficit banked: X,XXX cal | Remaining: X,XXX | Days left: N
 
 **MAX HR WARNING (active flag):** PJ's Max HR has been 154–167 in recent sessions — consistently above NPDR safe ceiling of 138. Flag this in every gym recommendation. Slow tempo on heavy sets. Exhale sharply at peak contraction.
 
+### Calorie-Burn Progression Module (installed 2026-09-06) — CHECK THIS ON EVERY EXERCISE ASK
+A 90-session progressive run/walk/calisthenics track PJ supplied as a module. Full spec: `fitness/calorie_burn_module/calorie_burn_module_spec.md`. Tables: `cb_plan_config`, `cb_sessions_plan`, `cb_workout_logs`, `cb_disruption_events`, `cb_party_events` (all in `db/coach.db`).
+
+**On every exercise/gym question, in addition to the 7-step gym process above:**
+1. Read `cb_plan_config.current_session_index`, then the matching `cb_sessions_plan` row — **prescribe that row**, don't improvise a plausible-sounding session.
+2. If PJ just supplied watch data, insert a full `cb_workout_logs` row first (store the entire raw payload verbatim in `raw_watch_payload` — never drop fields).
+3. Recompute baseline kcal/min, current multiplier, and ETA from actual DB rows and **show the numbers** — "great progress" without a number attached is not an acceptable answer from this module.
+4. Never skip the Section F gating check (elevated resting HR / poor sleep / RPE≥8 under HR cap → repeat the session, don't advance) to make a plan look more impressive.
+5. Gap-based step-back is mandatory (Section D): 4-7d gap → cap at 2 sessions earlier; 8-14d → back one full block; >14d → 60% detraining restart, log a `cb_disruption_events` row. Progression is indexed by `session_index`, never calendar date, so travel doesn't break it.
+6. After any `cb_*` write, snapshot all five tables to `fitness/calorie_burn_module/state/state_<UTC>.json` and push. DB stays the source of truth; the JSON is a versioned mirror.
+7. This module owns only this track's warmup/main-set/cooldown, HR cap, kcal/min target and progression. It does **not** own diet, sleep, or the PPL gym plan — surface calories burned to the deficit tracker, don't let it overwrite anything else.
+
+**⚠️ NPDR HR OVERRIDE — APPLIED AT INSTALL, DO NOT SILENTLY UNDO.** The seed prescribed 80-85% max-HR caps (≈146-156 bpm at PJ's est. max of 183) on 23 of 90 sessions, starting at session 29. That **exceeds PJ's documented NPDR retinopathy ceiling of 138 bpm.** All 90 sessions are clamped to 75.4% (=138 bpm) in the DB; the original value is recorded in each affected row's `status` field. Do not restore the higher caps without explicit ophthalmologist clearance, no matter how the progression stalls.
+
+**Two open tensions to raise with PJ rather than paper over:** (a) the module's 3× kcal/min target may be physiologically unreachable *while* capped at 138 bpm — efficiency gains at a fixed HR have limits, so the ETA projection may simply never converge; report "not currently trending toward target" honestly if so rather than inventing a date. (b) The Section E post-party makeup session is compensatory exercise after eating — the spec's own guardrail (flag it if requested more than ~1×/fortnight) matters double for PJ given his documented shame-spiral and collapse-chain history. Honor that guardrail actively; don't just comply on request.
+
 ### Meal Logging — AUTOMATIC, NO EXCEPTIONS
 When PJ describes ANY food or meal:
 1. Extract the meal description

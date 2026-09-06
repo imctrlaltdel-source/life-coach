@@ -1,0 +1,91 @@
+session_index,block,phase,is_deload,session_type,warmup,main_set,cooldown,total_min_approx,hr_cap_pct_max_hr,target_kcal_per_min,status
+1,1,Phase 1: Base Building,False,RunWalkA,5 min easy walk + dynamic mobility,Run 60s / Walk 150s x 6 rounds,5 min slow walk + static stretch,31,70,5.5,scheduled
+2,1,Phase 1: Base Building,False,Calisthenics,5 min easy walk + dynamic mobility,"2 rounds: Squat x10, Push-up x8, Glute bridge x12, Plank 20s, Knee raise x10/side, March 30s. Rest 60-90s/round.",5 min slow walk + static stretch,22,70,5.0,scheduled
+3,1,Phase 1: Base Building,False,RunWalkB,5 min easy walk + dynamic mobility,Run 60s / Walk 150s x 6 rounds,5 min slow walk + static stretch,31,70,6.0,scheduled
+4,1,Phase 1: Base Building,False,Combined,5 min easy walk + dynamic mobility,"Steady brisk walk 30 min continuous, Zone 2 (conversational pace)",5 min slow walk + static stretch,30,70,6.0,scheduled
+5,1,Phase 1: Base Building,False,RunWalkC,5 min easy walk + dynamic mobility,Run 60s / Walk 150s x 6 rounds,5 min slow walk + static stretch,31,70,6.5,scheduled
+6,2,Phase 1: Base Building,False,RunWalkA,5 min easy walk + dynamic mobility,Run 68s / Walk 145s x 6 rounds,5 min slow walk + static stretch,31,70,6.1,scheduled
+7,2,Phase 1: Base Building,False,Calisthenics,5 min easy walk + dynamic mobility,"2 rounds: Squat x11, Push-up x9, Glute bridge x13, Plank 21s, Knee raise x11/side, March 31s. Rest 60-90s/round.",5 min slow walk + static stretch,22,70,5.5,scheduled
+8,2,Phase 1: Base Building,False,RunWalkB,5 min easy walk + dynamic mobility,Run 68s / Walk 145s x 6 rounds,5 min slow walk + static stretch,31,70,6.6,scheduled
+9,2,Phase 1: Base Building,False,Combined,5 min easy walk + dynamic mobility,"Steady brisk walk 30 min continuous, Zone 2 (conversational pace)",5 min slow walk + static stretch,30,70,6.7,scheduled
+10,2,Phase 1: Base Building,False,RunWalkC,5 min easy walk + dynamic mobility,Run 68s / Walk 145s x 6 rounds,5 min slow walk + static stretch,31,70,7.1,scheduled
+11,3,Phase 1: Base Building,False,RunWalkA,5 min easy walk + dynamic mobility,Run 76s / Walk 140s x 6 rounds,5 min slow walk + static stretch,32,70,6.6,scheduled
+12,3,Phase 1: Base Building,False,Calisthenics,5 min easy walk + dynamic mobility,"2 rounds: Squat x12, Push-up x10, Glute bridge x14, Plank 22s, Knee raise x12/side, March 32s. Rest 60-90s/round.",5 min slow walk + static stretch,22,70,5.9,scheduled
+13,3,Phase 1: Base Building,False,RunWalkB,5 min easy walk + dynamic mobility,Run 76s / Walk 140s x 6 rounds,5 min slow walk + static stretch,32,70,7.2,scheduled
+14,3,Phase 1: Base Building,False,Combined,5 min easy walk + dynamic mobility,"Steady brisk walk 30 min continuous, Zone 2 (conversational pace)",5 min slow walk + static stretch,30,70,7.4,scheduled
+15,3,Phase 1: Base Building,False,RunWalkC,5 min easy walk + dynamic mobility,Run 76s / Walk 140s x 6 rounds,5 min slow walk + static stretch,32,70,7.7,scheduled
+16,4,Phase 1: Base Building,True,RunWalkA,5 min easy walk + dynamic mobility,Run 63s / Walk 155s x 5 rounds,5 min slow walk + static stretch,28,65,5.4,scheduled
+17,4,Phase 1: Base Building,True,Calisthenics,5 min easy walk + dynamic mobility,"2 rounds: Squat x10, Push-up x8, Glute bridge x12, Plank 20s, Knee raise x10/side, March 30s. Rest 60-90s/round.",5 min slow walk + static stretch,22,65,4.8,scheduled
+18,4,Phase 1: Base Building,True,RunWalkB,5 min easy walk + dynamic mobility,Run 63s / Walk 155s x 5 rounds,5 min slow walk + static stretch,28,65,5.8,scheduled
+19,4,Phase 1: Base Building,True,Combined,5 min easy walk + dynamic mobility,"Steady brisk walk 30 min continuous, Zone 2 (conversational pace)",5 min slow walk + static stretch,30,65,6.1,scheduled
+20,4,Phase 1: Base Building,True,RunWalkC,5 min easy walk + dynamic mobility,Run 63s / Walk 155s x 5 rounds,5 min slow walk + static stretch,28,65,6.3,scheduled
+21,5,Phase 1: Base Building,False,RunWalkA,5 min easy walk + dynamic mobility,Run 92s / Walk 130s x 7 rounds,5 min slow walk + static stretch,36,70,7.7,scheduled
+22,5,Phase 1: Base Building,False,Calisthenics,5 min easy walk + dynamic mobility,"3 rounds: Squat x14, Push-up x12, Glute bridge x16, Plank 24s, Knee raise x14/side, March 34s. Rest 60-90s/round.",5 min slow walk + static stretch,28,70,6.9,scheduled
+23,5,Phase 1: Base Building,False,RunWalkB,5 min easy walk + dynamic mobility,Run 92s / Walk 130s x 7 rounds,5 min slow walk + static stretch,36,70,8.4,scheduled
+24,5,Phase 1: Base Building,False,Combined,5 min easy walk + dynamic mobility,"Steady brisk walk 30 min continuous, Zone 2 (conversational pace)",5 min slow walk + static stretch,30,70,8.8,scheduled
+25,5,Phase 1: Base Building,False,RunWalkC,5 min easy walk + dynamic mobility,Run 92s / Walk 130s x 7 rounds,5 min slow walk + static stretch,36,70,9.0,scheduled
+26,6,Phase 1: Base Building,False,RunWalkA,5 min easy walk + dynamic mobility,Run 100s / Walk 125s x 7 rounds,5 min slow walk + static stretch,36,70,8.3,scheduled
+27,6,Phase 1: Base Building,False,Calisthenics,5 min easy walk + dynamic mobility,"3 rounds: Squat x15, Push-up x13, Glute bridge x17, Plank 25s, Knee raise x15/side, March 35s. Rest 60-90s/round.",5 min slow walk + static stretch,28,70,7.4,scheduled
+28,6,Phase 1: Base Building,False,RunWalkB,5 min easy walk + dynamic mobility,Run 100s / Walk 125s x 7 rounds,5 min slow walk + static stretch,36,70,8.9,scheduled
+29,6,Phase 1: Base Building,False,Combined,5 min easy walk + dynamic mobility,EMOM x 2 rounds (4 min/round): jog-in-place / squats / push-ups / plank-rest,5 min slow walk + static stretch,18,80,9.5,scheduled
+30,6,Phase 1: Base Building,False,RunWalkC,5 min easy walk + dynamic mobility,Run 100s / Walk 125s x 7 rounds,5 min slow walk + static stretch,36,70,9.6,scheduled
+31,7,Phase 2: Build,False,RunWalkA,5 min easy walk + dynamic mobility,Run 108s / Walk 120s x 8 rounds,5 min slow walk + static stretch,40,75,8.9,scheduled
+32,7,Phase 2: Build,False,Calisthenics,5 min easy walk + dynamic mobility,"3 rounds: Squat x16, Push-up x14, Glute bridge x18, Plank 26s, Knee raise x16/side, March 36s. Rest 60-90s/round.",5 min slow walk + static stretch,28,70,7.8,scheduled
+33,7,Phase 2: Build,False,RunWalkB,5 min easy walk + dynamic mobility,Run 108s / Walk 120s x 8 rounds,5 min slow walk + static stretch,40,75,9.5,scheduled
+34,7,Phase 2: Build,False,Combined,5 min easy walk + dynamic mobility,EMOM x 3 rounds (4 min/round): jog-in-place / squats / push-ups / plank-rest,5 min slow walk + static stretch,22,80,10.2,scheduled
+35,7,Phase 2: Build,False,RunWalkC,5 min easy walk + dynamic mobility,Run 108s / Walk 120s x 8 rounds,5 min slow walk + static stretch,40,75,10.2,scheduled
+36,8,Phase 2: Build,True,RunWalkA,5 min easy walk + dynamic mobility,Run 87s / Walk 132s x 6 rounds,5 min slow walk + static stretch,32,70,7.1,scheduled
+37,8,Phase 2: Build,True,Calisthenics,5 min easy walk + dynamic mobility,"2 rounds: Squat x13, Push-up x11, Glute bridge x15, Plank 23s, Knee raise x13/side, March 33s. Rest 60-90s/round.",5 min slow walk + static stretch,22,65,6.2,scheduled
+38,8,Phase 2: Build,True,RunWalkB,5 min easy walk + dynamic mobility,Run 87s / Walk 132s x 6 rounds,5 min slow walk + static stretch,32,70,7.6,scheduled
+39,8,Phase 2: Build,True,Combined,5 min easy walk + dynamic mobility,EMOM x 2 rounds (4 min/round): jog-in-place / squats / push-ups / plank-rest,5 min slow walk + static stretch,18,75,8.2,scheduled
+40,8,Phase 2: Build,True,RunWalkC,5 min easy walk + dynamic mobility,Run 87s / Walk 132s x 6 rounds,5 min slow walk + static stretch,32,70,8.1,scheduled
+41,9,Phase 2: Build,False,RunWalkA,5 min easy walk + dynamic mobility,Run 124s / Walk 110s x 8 rounds,5 min slow walk + static stretch,41,75,10.0,scheduled
+42,9,Phase 2: Build,False,Calisthenics,5 min easy walk + dynamic mobility,"4 rounds: Squat x18, Push-up x16, Glute bridge x20, Plank 28s, Knee raise x18/side, March 38s. Rest 60-90s/round.",5 min slow walk + static stretch,34,70,8.8,scheduled
+43,9,Phase 2: Build,False,RunWalkB,5 min easy walk + dynamic mobility,Run 124s / Walk 110s x 8 rounds,5 min slow walk + static stretch,41,75,10.7,scheduled
+44,9,Phase 2: Build,False,Combined,5 min easy walk + dynamic mobility,EMOM x 5 rounds (4 min/round): jog-in-place / squats / push-ups / plank-rest,5 min slow walk + static stretch,30,80,11.6,scheduled
+45,9,Phase 2: Build,False,RunWalkC,5 min easy walk + dynamic mobility,Run 124s / Walk 110s x 8 rounds,5 min slow walk + static stretch,41,75,11.4,scheduled
+46,10,Phase 2: Build,False,RunWalkA,5 min easy walk + dynamic mobility,Run 132s / Walk 105s x 9 rounds,5 min slow walk + static stretch,46,75,10.5,scheduled
+47,10,Phase 2: Build,False,Calisthenics,5 min easy walk + dynamic mobility,"4 rounds: Squat x19, Push-up x17, Glute bridge x21, Plank 29s, Knee raise x19/side, March 39s. Rest 60-90s/round.",5 min slow walk + static stretch,34,70,9.2,scheduled
+48,10,Phase 2: Build,False,RunWalkB,5 min easy walk + dynamic mobility,Run 132s / Walk 105s x 9 rounds,5 min slow walk + static stretch,46,75,11.3,scheduled
+49,10,Phase 2: Build,False,Combined,5 min easy walk + dynamic mobility,EMOM x 6 rounds (4 min/round): jog-in-place / squats / push-ups / plank-rest,5 min slow walk + static stretch,34,80,12.4,scheduled
+50,10,Phase 2: Build,False,RunWalkC,5 min easy walk + dynamic mobility,Run 132s / Walk 105s x 9 rounds,5 min slow walk + static stretch,46,75,12.1,scheduled
+51,11,Phase 2: Build,False,RunWalkA,5 min easy walk + dynamic mobility,Run 140s / Walk 100s x 9 rounds,5 min slow walk + static stretch,46,75,11.1,scheduled
+52,11,Phase 2: Build,False,Calisthenics,5 min easy walk + dynamic mobility,"4 rounds: Squat x20, Push-up x18, Glute bridge x22, Plank 30s, Knee raise x20/side, March 40s. Rest 60-90s/round.",5 min slow walk + static stretch,34,70,9.7,scheduled
+53,11,Phase 2: Build,False,RunWalkB,5 min easy walk + dynamic mobility,Run 140s / Walk 100s x 9 rounds,5 min slow walk + static stretch,46,75,11.9,scheduled
+54,11,Phase 2: Build,False,Combined,5 min easy walk + dynamic mobility,EMOM x 7 rounds (4 min/round): jog-in-place / squats / push-ups / plank-rest,5 min slow walk + static stretch,38,80,13.1,scheduled
+55,11,Phase 2: Build,False,RunWalkC,5 min easy walk + dynamic mobility,Run 140s / Walk 100s x 9 rounds,5 min slow walk + static stretch,46,75,12.7,scheduled
+56,12,Phase 2: Build,True,RunWalkA,5 min easy walk + dynamic mobility,Run 111s / Walk 109s x 7 rounds,5 min slow walk + static stretch,36,70,8.7,scheduled
+57,12,Phase 2: Build,True,Calisthenics,5 min easy walk + dynamic mobility,"3 rounds: Squat x17, Push-up x15, Glute bridge x19, Plank 27s, Knee raise x17/side, March 37s. Rest 60-90s/round.",5 min slow walk + static stretch,28,65,7.6,scheduled
+58,12,Phase 2: Build,True,RunWalkB,5 min easy walk + dynamic mobility,Run 111s / Walk 109s x 7 rounds,5 min slow walk + static stretch,36,70,9.4,scheduled
+59,12,Phase 2: Build,True,Combined,5 min easy walk + dynamic mobility,EMOM x 6 rounds (4 min/round): jog-in-place / squats / push-ups / plank-rest,5 min slow walk + static stretch,34,75,10.3,scheduled
+60,12,Phase 2: Build,True,RunWalkC,5 min easy walk + dynamic mobility,Run 111s / Walk 109s x 7 rounds,5 min slow walk + static stretch,36,70,10.0,scheduled
+61,13,Phase 2: Build,False,RunWalkA,5 min easy walk + dynamic mobility,Run 156s / Walk 90s x 10 rounds,5 min slow walk + static stretch,51,75,12.2,scheduled
+62,13,Phase 2: Build,False,Calisthenics,5 min easy walk + dynamic mobility,"5 rounds: Squat x22, Push-up x20, Glute bridge x24, Plank 32s, Knee raise x22/side, March 42s. Rest 60-90s/round.",5 min slow walk + static stretch,40,70,10.6,scheduled
+63,13,Phase 2: Build,False,RunWalkB,5 min easy walk + dynamic mobility,Run 156s / Walk 90s x 10 rounds,5 min slow walk + static stretch,51,75,13.1,scheduled
+64,13,Phase 2: Build,False,Combined,5 min easy walk + dynamic mobility,EMOM x 9 rounds (4 min/round): jog-in-place / squats / push-ups / plank-rest,5 min slow walk + static stretch,46,85,14.5,scheduled
+65,13,Phase 2: Build,False,RunWalkC,5 min easy walk + dynamic mobility,Run 156s / Walk 90s x 10 rounds,5 min slow walk + static stretch,51,75,13.9,scheduled
+66,14,Phase 3: Peak Circuits,False,RunWalkA,5 min easy walk + dynamic mobility,Run 164s / Walk 85s x 10 rounds,5 min slow walk + static stretch,52,80,12.8,scheduled
+67,14,Phase 3: Peak Circuits,False,Calisthenics,5 min easy walk + dynamic mobility,"5 rounds: Squat x23, Push-up x21, Glute bridge x25, Plank 33s, Knee raise x23/side, March 43s. Rest 60-90s/round.",5 min slow walk + static stretch,40,70,11.1,scheduled
+68,14,Phase 3: Peak Circuits,False,RunWalkB,5 min easy walk + dynamic mobility,Run 164s / Walk 85s x 10 rounds,5 min slow walk + static stretch,52,80,13.6,scheduled
+69,14,Phase 3: Peak Circuits,False,Combined,5 min easy walk + dynamic mobility,EMOM x 10 rounds (4 min/round): jog-in-place / squats / push-ups / plank-rest,5 min slow walk + static stretch,50,85,15.2,scheduled
+70,14,Phase 3: Peak Circuits,False,RunWalkC,5 min easy walk + dynamic mobility,Run 164s / Walk 85s x 10 rounds,5 min slow walk + static stretch,52,80,14.5,scheduled
+71,15,Phase 3: Peak Circuits,False,RunWalkA,5 min easy walk + dynamic mobility,Run 172s / Walk 80s x 10 rounds,5 min slow walk + static stretch,52,80,13.3,scheduled
+72,15,Phase 3: Peak Circuits,False,Calisthenics,5 min easy walk + dynamic mobility,"5 rounds: Squat x24, Push-up x22, Glute bridge x26, Plank 34s, Knee raise x24/side, March 44s. Rest 60-90s/round.",5 min slow walk + static stretch,40,70,11.6,scheduled
+73,15,Phase 3: Peak Circuits,False,RunWalkB,5 min easy walk + dynamic mobility,Run 172s / Walk 80s x 10 rounds,5 min slow walk + static stretch,52,80,14.2,scheduled
+74,15,Phase 3: Peak Circuits,False,Combined,5 min easy walk + dynamic mobility,EMOM x 10 rounds (4 min/round): jog-in-place / squats / push-ups / plank-rest,5 min slow walk + static stretch,50,85,15.9,scheduled
+75,15,Phase 3: Peak Circuits,False,RunWalkC,5 min easy walk + dynamic mobility,Run 172s / Walk 80s x 10 rounds,5 min slow walk + static stretch,52,80,15.1,scheduled
+76,16,Phase 3: Peak Circuits,True,RunWalkA,5 min easy walk + dynamic mobility,Run 135s / Walk 86s x 8 rounds,5 min slow walk + static stretch,39,75,10.4,scheduled
+77,16,Phase 3: Peak Circuits,True,Calisthenics,5 min easy walk + dynamic mobility,"4 rounds: Squat x21, Push-up x19, Glute bridge x23, Plank 31s, Knee raise x21/side, March 41s. Rest 60-90s/round.",5 min slow walk + static stretch,34,65,9.0,scheduled
+78,16,Phase 3: Peak Circuits,True,RunWalkB,5 min easy walk + dynamic mobility,Run 135s / Walk 86s x 8 rounds,5 min slow walk + static stretch,39,75,11.1,scheduled
+79,16,Phase 3: Peak Circuits,True,Combined,5 min easy walk + dynamic mobility,EMOM x 8 rounds (4 min/round): jog-in-place / squats / push-ups / plank-rest,5 min slow walk + static stretch,42,80,12.4,scheduled
+80,16,Phase 3: Peak Circuits,True,RunWalkC,5 min easy walk + dynamic mobility,Run 135s / Walk 86s x 8 rounds,5 min slow walk + static stretch,39,75,11.8,scheduled
+81,17,Phase 3: Peak Circuits,False,RunWalkA,5 min easy walk + dynamic mobility,Run 180s / Walk 70s x 10 rounds,5 min slow walk + static stretch,52,80,14.4,scheduled
+82,17,Phase 3: Peak Circuits,False,Calisthenics,5 min easy walk + dynamic mobility,"5 rounds: Squat x26, Push-up x24, Glute bridge x28, Plank 36s, Knee raise x26/side, March 46s. Rest 60-90s/round.",5 min slow walk + static stretch,40,70,12.5,scheduled
+83,17,Phase 3: Peak Circuits,False,RunWalkB,5 min easy walk + dynamic mobility,Run 180s / Walk 70s x 10 rounds,5 min slow walk + static stretch,52,80,15.4,scheduled
+84,17,Phase 3: Peak Circuits,False,Combined,5 min easy walk + dynamic mobility,EMOM x 10 rounds (4 min/round): jog-in-place / squats / push-ups / plank-rest,5 min slow walk + static stretch,50,85,17.3,scheduled
+85,17,Phase 3: Peak Circuits,False,RunWalkC,5 min easy walk + dynamic mobility,Run 180s / Walk 70s x 10 rounds,5 min slow walk + static stretch,52,80,16.4,scheduled
+86,18,Phase 3: Peak Circuits,False,RunWalkA,5 min easy walk + dynamic mobility,Run 180s / Walk 65s x 10 rounds,5 min slow walk + static stretch,51,80,15.0,scheduled
+87,18,Phase 3: Peak Circuits,False,Calisthenics,5 min easy walk + dynamic mobility,"5 rounds: Squat x27, Push-up x25, Glute bridge x29, Plank 37s, Knee raise x27/side, March 47s. Rest 60-90s/round.",5 min slow walk + static stretch,40,70,13.0,scheduled
+88,18,Phase 3: Peak Circuits,False,RunWalkB,5 min easy walk + dynamic mobility,Run 180s / Walk 65s x 10 rounds,5 min slow walk + static stretch,51,80,16.0,scheduled
+89,18,Phase 3: Peak Circuits,False,Combined,5 min easy walk + dynamic mobility,EMOM x 10 rounds (4 min/round): jog-in-place / squats / push-ups / plank-rest,5 min slow walk + static stretch,50,85,18.0,scheduled
+90,18,Phase 3: Peak Circuits,False,RunWalkC,5 min easy walk + dynamic mobility,Run 180s / Walk 65s x 10 rounds,5 min slow walk + static stretch,51,80,17.0,scheduled
