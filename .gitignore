@@ -10,3 +10,5 @@ _archive_pre_db/
 
 # Old large files (superseded)
 allmem.txt
+.coach_hook/
+_backup_*/

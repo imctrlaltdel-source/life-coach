@@ -13,7 +13,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(dirname "$SCRIPT_DIR")"
 DB="$ROOT/db/coach.db"
 CACHE="$ROOT/db/ctx_cache.txt"
-BMR=1635
+BMR=1625
 STEP_CAL=15
 
 if ! command -v sqlite3 >/dev/null 2>&1; then

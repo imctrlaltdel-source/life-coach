@@ -233,7 +233,7 @@ Close with: **Shivoham × 3**
 | Metric | Target | Current | Notes |
 |--------|--------|---------|-------|
 | Calories | ≤1,200/day | ~1,400–1,600 | Dinner is the only leak |
-| Protein | ≤80g/day | Violations: 120–156g | HARD LIMIT — kidney constraint |
+| Protein | 75g/day | Violations: 120–156g | HARD LIMIT — kidney constraint |
 | Steps | 15,000/day | ✅ Hitting | 15k streak active |
 | Dinner | ≤350 cal | Frequently over | 1.5 roti + 1 sabzi MAX |
 | Weigh-in | Every Saturday | Last: 79.1kg (May 9) | HealthU+ scale, first thing AM |

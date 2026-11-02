@@ -31,7 +31,7 @@ _pull() {
 }
 
 _push() {
-  git add db/coach.db logs/ CLAUDE.md cgm/ 2>/dev/null || true
+  git add db/coach.db logs/ CLAUDE.md cgm/ playbooks/ coaching-plan.md FABLE_PRIMER.md cheat-sheet.md scripts/ .claude/settings.json .gitignore 2>/dev/null || true
   if ! git diff --cached --quiet; then
     git commit -m "sync: $(date '+%Y-%m-%d %H:%M IST')" -q
   fi

@@ -1,5 +1,9 @@
 # Primer for Fable: PJ's Life Coach Project
 
+> **Role of this file:** the BACKGROUND BRIEFING. Who PJ is, his history, the body-composition timeline, his behavioural patterns, his spiritual frame, and the six big questions he wants a deep dive on. Read it before a deep dive, a review, or a long-horizon plan. Written Jul 2026 for Fable's 360-degree plan.
+> **Not this file's job:** day-to-day targets or the training plan (that is `coaching-plan.md`), or the rules Coach follows on every message (that is `CLAUDE.md`).
+> **If a number here disagrees with the "Health core" table in `CLAUDE.md`, CLAUDE.md wins.** Reconciled with PJ's decisions on 2026-11-02. The tables below describe the situation as of Jul 2026; for anything newer (weight, CGM, labs) query the database. A snapshot is kept in DB memory (`doc_fable_primer`).
+
 ## Who You Are Reading About
 
 **Prateek Jain (PJ)**, 37 years old, Bangalore, India. Software entrepreneur, spiritually inclined (Kashmir Shaivism practitioner), married, deeply motivated but struggles with consistency after disruptions. He has a profound long-term vision: **technical Himalayan mountaineering** — climbing at altitude with a 20kg pack. Everything in this project connects to that vision.
@@ -25,14 +29,14 @@ The logs are raw therapist-style notes — unfiltered, honest, capturing what's 
 | Condition | Constraint |
 |-----------|-----------|
 | **T2D (HbA1c 6.8%)** | Low GI diet, veg-first eating order, 10-min walk after every meal, Metformin |
-| **Kidney (Urine Protein 2+)** | MAX 80–90g protein/day. Max 20g/meal. NO creatine, NO protein bars |
+| **Kidney (Urine Protein 2+)** | 75g protein/day (PJ's decision, 2 Nov 2026). Max 20g/meal. NO creatine, NO protein bars |
 | **NPDR (Non-Proliferative Diabetic Retinopathy, left eye)** | Exhale on EVERY rep. No Valsalva maneuver. No conventional deadlifts. No heavy overhead barbell |
 | **Hypertension (on meds)** | Never skip BP meds. Rest 75–90 sec between sets. 10+ reps always |
 | **Uric Acid 8.1** | No red meat, organ meats, shellfish |
 | **Sacral/L4-L5 injury** | No conventional deadlifts. RDL with DBs only. Glute bridge warm-up mandatory |
 | **Left shoulder** | No upright rows. No behind-neck press. Landmine press PERMANENTLY REMOVED (causes pain) |
 
-**BMR:** 1,625 kcal (from HealthU+ scan Jul 1, 2026)
+**BMR:** 1,625 kcal (HealthU+ scan Jul 1, 2026; PJ confirmed using this value on 2 Nov 2026)
 **TDEE formula:** BMR + (daily steps × 15/1,000). Never double-count run + steps.
 
 ---
@@ -56,7 +60,7 @@ The logs are raw therapist-style notes — unfiltered, honest, capturing what's 
 
 ## Why 59–60 kg Is the Real Target
 
-PJ is 5'4" (163 cm). At 59–60 kg:
+PJ is 5'5" (165 cm, confirmed by PJ 2 Nov 2026). At 59–60 kg:
 - BMI: ~22 (healthy range)
 - If muscle mass preserved/grown to 54–55 kg: body fat ~8–10%
 - This is the physique of a technical mountaineer — power-to-weight ratio optimized for altitude, pack carrying, and sustained aerobic output at 5,000m+
@@ -68,7 +72,7 @@ This is NOT a vanity goal. It is a functional performance target with a 5-year h
 ## The Coaching System
 
 ### Weekly Calorie Deficit Target
-7,000 cal/week = ~1 kg fat/week theoretical maximum. Week runs Saturday–Friday.
+7,000 cal/week = ~1 kg fat/week theoretical maximum. Week runs Sunday–Saturday (PJ's decision, 2 Nov 2026).
 
 ### Calorie Targets by Day
 | Day Type | Target |
@@ -83,20 +87,12 @@ This is NOT a vanity goal. It is a functional performance target with a 5-year h
 - Restaurant food: +30% correction
 
 ### Protein Protocol
-- Target: 75–80g/day (kidney ceiling 80–90g absolute max)
+- Target and ceiling: 75g/day (PJ's decision, 2 Nov 2026), max 20g per meal
 - Primary sources: egg whites, whey (10–15g/serving), curd, fish, chicken
 - Problem in Jun 2026: averaging only 57–68g/day → muscle catabolism
 
-### Weekly Training Split (coaching-plan.md)
-| Day | AM | PM |
-|-----|----|----|
-| Mon | Shoulders Heavy | Legs Isolation |
-| Tue | Back Heavy | Chest + Core |
-| Wed | MAF Run 5–6 km | REST |
-| Thu | Legs Heavy | Shoulders ISO + Arms |
-| Fri | Chest + Triceps | Back + Biceps |
-| Sat | Long Run 6–8 km + Weigh-in | REST |
-| Sun | Dog walk + mobility | REST |
+### Weekly Training Split
+The training split is the **5-day PPL in `coaching-plan.md`** (Push A, Pull A, Legs, Push B, Pull B, plus MAF runs and a long run or swim on Saturday). An older Mon-to-Sun shoulders/back/legs split that used to be listed here was dropped on 2026-11-02 at PJ's instruction.
 
 MAF HR ceiling: 138 bpm (180 − 37 − 5 medical deductions)
 
@@ -151,7 +147,8 @@ MAF HR ceiling: 138 bpm (180 − 37 − 5 medical deductions)
 
 ```
 /life-coach/
-├── CLAUDE.md                    ← Full coaching instructions (800+ lines). Read this first.
+├── CLAUDE.md                    ← Rules Coach follows every message + the Health core table (short). Read this first.
+├── playbooks/                   ← Longer how-tos, read only when the topic comes up
 ├── FABLE_PRIMER.md              ← This file
 ├── coaching-plan.md             ← Fast-reference: weekly split, all exercises+weights, diet targets
 ├── exercise-plan.md             ← Exercise history and progressions
@@ -175,11 +172,11 @@ MAF HR ceiling: 138 bpm (180 − 37 − 5 medical deductions)
 
 PJ wants a **360-degree transformation plan** covering:
 
-1. **Physical:** How to reach 59–60 kg with maximum muscle in 3–4 months. What does scientific research say about body recomposition for his specific profile (T2D, NPDR, hypertension, uric acid, kidney constraint, short stature 163cm, age 37)?
+1. **Physical:** How to reach 59–60 kg with maximum muscle in 3–4 months. What does scientific research say about body recomposition for his specific profile (T2D, NPDR, hypertension, uric acid, kidney constraint, short stature 165cm, age 37)?
 
 2. **Behavioral:** Why does he collapse post-vacation/post-disruption? What specific behavioral architecture (not willpower — systems) prevents this? What does psychology + habit science say?
 
-3. **Mountaineering preparation:** What does a 163cm, 37-year-old man need to do physically, mentally, and logistically to be ready for technical Himalayan mountaineering in 3–5 years?
+3. **Mountaineering preparation:** What does a 165cm, 37-year-old man need to do physically, mentally, and logistically to be ready for technical Himalayan mountaineering in 3–5 years?
 
 4. **Meditation/spiritual:** What meditation practices specifically support body transformation, discipline, and mountaineering preparation? How does Kashmir Shaivism align with this journey?
 

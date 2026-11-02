@@ -40,7 +40,7 @@ import urllib.error
 MODEL          = "claude-haiku-4-5"          # fast & cheap for calorie lookup
 TODAY          = date.today().isoformat()    # "YYYY-MM-DD"
 TARGET_KCAL    = 1200                        # dietician target intake
-BMR            = 1631                        # PJ's BMR — device-measured Apr 25, 2026
+BMR            = 1625                        # PJ's BMR — device-measured Apr 25, 2026
 TDEE_15K       = 2120                        # TDEE at gym+walking day (no run)
 CAL_PER_1K     = 40                          # calories burned per 1 000 steps (80 kg)
 PROTEIN_WARN   = 80                          # g/day — kidney ceiling warning

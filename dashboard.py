@@ -31,7 +31,7 @@ BASE = Path(__file__).resolve().parent
 INDEX_FILE = BASE / "logs/index.json"
 TODAY = date.today()
 
-BMR = 1635
+BMR = 1625
 WEIGHT_GOAL = 76.0
 VF_GOAL = 10
 BF_GOAL = 18.0

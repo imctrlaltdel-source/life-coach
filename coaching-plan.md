@@ -1,16 +1,17 @@
 # PJ's Coaching Plan — Fast Reference
+
+> **Role of this file:** the OPERATING PLAN. Training split and exercises, meal and diet targets, supplements and medication timing, PRs. Read it when a question is about what to do or eat. It came from PJ_PLAN_V2.pdf (Fable 5 + Opus 4.8).
+> **Not this file's job:** the background story and behavioural patterns (that is `FABLE_PRIMER.md`), or the rules Coach follows on every message (that is `CLAUDE.md`).
+> **If this file ever disagrees with the "Health core" table in `CLAUDE.md`, CLAUDE.md wins.** Reconciled with PJ's decisions on 2026-11-02: height 165 cm, BMR 1,625, week Sunday to Saturday, protein 75 g/day, dinner carbs up to 12 g. A snapshot of this file is kept in DB memory (`doc_coaching_plan`).
 **Source:** PJ_PLAN_V2.pdf (Fable 5 + Opus 4.8, compiled 11 Jul 2026)
 **Supersedes:** All prior exercise-plan.md, meal_plan.html, coaching-plan versions
 
 ---
 
 ## FILE PATHS
-- **GPX/TCX workout files:** `/storage/emulated/0/Download/Zepp*.gpx` or `*.tcx`
-- **Workout screenshots:** `/storage/emulated/0/DCIM/Screenshots/`
-- **Camera photos:** `/storage/emulated/0/DCIM/Camera/`
-- **Daily logs:** `/storage/emulated/0/Documents/claude/life-coach/logs/YYYY-MM-DD.md`
-- **Index:** `/storage/emulated/0/Documents/claude/life-coach/logs/index.json`
-- **Source plan:** `/storage/emulated/0/Download/PJ_PLAN_V2.pdf`
+- **Phone paths retired 2026-11-02** (PJ no longer uses Termux). Updates now come from the Diary app, which stores them in `db/coach.db`.
+- **Daily logs before 15 Aug 2026:** `logs/YYYY-MM-DD.md` (history only). Everything since lives in `db/coach.db`.
+- **Source plan:** PJ_PLAN_V2.pdf (original on the old phone; this file is its working copy).
 
 ---
 
@@ -19,7 +20,7 @@
 | Condition | Hard Constraint |
 |-----------|----------------|
 | T2D (HbA1c 6.8%) | Low-GI, veg-first every meal, 10-min walk after meals, Metformin |
-| Kidney (protein 2+) | **75–85g protein/day MAX. ≤20g/meal.** No creatine, no protein bars |
+| Kidney (protein 2+) | **75g protein/day (PJ's decision, 2 Nov 2026). ≤20g/meal.** No creatine, no protein bars |
 | NPDR (left eye) | **Exhale every rep. No Valsalva. No conventional deadlift. No heavy overhead barbell. Failure only on machine/cable arm+delt isolation. No inverted positions.** Heavy days: 6–10 reps only (never 1–3) |
 | Hypertension | Never skip BP meds. 10+ reps. Rest 75–90 sec between sets. No breath-holding |
 | Uric acid 8.1 | No red/organ meat, shellfish. Hydrate |
@@ -95,7 +96,7 @@
 |--------|-------|------|
 | Hard ceiling | 120g | No exceptions |
 | Ideal | 100g | Aim for this |
-| Dinner | 0–15g | Zero roti at dinner. Vegetables only. |
+| Dinner | up to 12g | No roti at dinner. Moong dal cheela, mushroom + paneer bhurji, or hung curd + egg whites. |
 | ⚠️ Red zone | >120g | Flag immediately |
 
 **PJ's actual meal times (IST):**
@@ -324,7 +325,7 @@ Wide pulldown 4×10–12 · Seated row 3 · Incline DB curl **[L]** 4 · Single-
 
 **Deficit tracker format (show every response):**
 ```
-📊 Week Deficit Tracker (Mon–Sun)
+📊 Week Deficit Tracker (Sun–Sat)
 Banked: X,XXX cal | Remaining: X,XXX cal | Days left: N
 Today's target: XXX cal deficit
 ```

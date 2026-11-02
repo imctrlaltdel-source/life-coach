@@ -9,7 +9,7 @@ import sys, argparse, json
 from datetime import date, timedelta, datetime
 from coach_db import connect, today
 
-BMR = 1635  # PJ baseline
+BMR = 1625  # PJ's decision 2026-11-02 (HealthU+ scan 1 Jul 2026)
 STEP_CAL_PER_1000 = 15
 
 def _week_bounds(d: date):
