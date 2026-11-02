@@ -164,7 +164,7 @@ These two habits directly reduce HbA1c. Never let them slide without flagging.
 **Before writing ANY coaching response:**
 1. Run `bash scripts/sync.sh pull` — pull any data another device (phone/laptop) logged since last sync. See "Cross-Device Sync" section below — skipping this is what caused the Aug 23 dinner-advice-with-stale-data incident.
 2. Run `date` — get exact IST time and day
-3. Run `bash scripts/ctx.sh                 # cache read, ~20ms — use this by default` — dumps last 20 msgs, today's events, week deficit, memory, flags (~150ms)
+3. Run `bash scripts/ctx.sh` — dumps last 20 msgs, today's events, week deficit, memory, flags (~20ms from cache; ~150–200ms via the Python fallback on machines without the `sqlite3` CLI, like this laptop)
 4. Read `coaching-plan.md` if plan-relevant question — otherwise skip
 5. Triangulate: plan vs. logged reality (from ctx dump) → decide what PJ should do NOW given time of day
 6. Run `python3 scripts/coach_log.py msg user "..."` — log PJ's message
@@ -219,7 +219,7 @@ Use this number proactively to push PJ toward action:
 **BEFORE typing a single word of response, you MUST:**
 
 1. `date` — run it, read the time, use it
-2. `bash scripts/ctx.sh                 # cache read, ~20ms — use this by default` — load context from DB
+2. `bash scripts/ctx.sh` — load context from DB
 3. `python3 scripts/coach_log.py msg user "..."` — log PJ's message to DB
 4. `python3 scripts/coach_log.py event ...` — log any habits/meals/gym extracted
 5. ONLY THEN write your response
@@ -242,9 +242,9 @@ Evaluate against:
 ### Scorecard Format
 | gym | diet | carbs | steps | veg-first | post-meal-move | kriya | weed | parents |
 |-----|------|-------|-------|-----------|---------------|-------|------|---------|
-| ✅/❌ | ✅/❌ | Xg/130g ✅/⚠️/🔴 | ✅/❌ | ✅/❌ | ✅/❌ | ✅/❌ | ✅/❌ | ✅/❌ |
+| ✅/❌ | ✅/❌ | Xg/120g ✅/⚠️/🔴 | ✅/❌ | ✅/❌ | ✅/❌ | ✅/❌ | ✅/❌ | ✅/❌ |
 
-**Carb scoring:** ✅ = ≤130g | ⚠️ = 130–180g | 🔴 = >180g (deficit erasure zone)
+**Carb scoring:** ✅ = ≤120g | ⚠️ = 120–180g | 🔴 = >180g (deficit erasure zone)
 
 ### Dynamic Exercise Recommendation — MANDATORY PROCESS
 
@@ -255,7 +255,7 @@ Evaluate against:
 **STEP 0 — run `date` first.** Know the exact day and time before anything else.
 
 **STEP 1 — Query DB for last 7 days.**
-Run `bash scripts/ctx.sh                 # cache read, ~20ms — use this by default --days 7` — extracts from `events` table:
+Run `python3 scripts/coach_ctx.py --days 7` — extracts from `events` table:
 - Which PPL session was done each day (Push A, Pull A, Legs, Push B, Pull B)
 - Which muscle groups were actually hit (not just planned — what was in the screenshot)
 - Any sessions skipped or missed
@@ -372,8 +372,8 @@ When PJ describes ANY food or meal:
 3. Show him the output — real calories with 30% correction, hidden cal note, confidence
 4. Use THAT number in all deficit calculations — never eyeball it yourself
 5. **ALWAYS compute carbs for the meal using Indian food nutrition values (see coaching-plan.md)**
-6. **Show running carb total vs 130g ceiling after every meal: "Carbs so far: Xg / 130g"**
-7. **If projected to exceed 130g by dinner → flag and suggest lower-carb dinner option (besan cheela)**
+6. **Show running carb total vs 120g ceiling after every meal: "Carbs so far: Xg / 120g"**
+7. **If projected to exceed 120g by dinner → flag and suggest lower-carb dinner option (moong dal cheela — PJ dislikes besan)**
 
 ### Carb Reference Values (use these every time)
 | Food | Carbs |
@@ -612,7 +612,7 @@ Every response, before typing anything to PJ:
 ```bash
 bash scripts/sync.sh pull                   # pull anything the other device logged since last sync
 date                                         # get IST time
-bash scripts/ctx.sh                 # cache read, ~20ms — use this by default                 # dump: last 20 msgs, today events, week deficit, memory, flags
+bash scripts/ctx.sh                          # dump: last 20 msgs, today events, week deficit, memory, flags
 ```
 
 And after logging anything real: `bash scripts/sync.sh push`.
@@ -620,9 +620,9 @@ And after logging anything real: `bash scripts/sync.sh push`.
 That single command replaces reading `logs/YYYY-MM-DD.md`, `.remember/`, `memory/*.md`, and `logs/index.json`. If you need more:
 
 ```bash
-bash scripts/ctx.sh                 # cache read, ~20ms — use this by default --search "knee pain"    # FTS5 full-text search (~80ms)
-bash scripts/ctx.sh                 # cache read, ~20ms — use this by default --days 14                # last 14 days rollup
-bash scripts/ctx.sh                 # cache read, ~20ms — use this by default --json                   # structured output for parsing
+bash scripts/ctx.sh search "knee pain"       # FTS5 full-text search (~80ms)
+python3 scripts/coach_ctx.py --days 14       # last 14 days rollup
+python3 scripts/coach_ctx.py --json          # structured output for parsing
 ```
 
 ### MANDATORY per-message logging — replaces markdown append
@@ -770,6 +770,18 @@ To run manually: read `.claude/skills/deep-review.md` in full and follow it — 
 
 ## Audio Recording Transcription (phone/Termux only)
 When PJ says "listen to my recording" / "check the audio" — this only works when running from the Android device (Termux) this project was built on; there's no equivalent input on other machines. Full method at `.claude/listen-recording.md`: find latest `.m4a` in the device's voice recorder folder, convert to WAV via ffmpeg, transcribe with `speech_recognition` + Google STT. Don't ask where the file is or explore — just transcribe and log.
+
+## Other Systems on This Machine (added 2026-11-02 — none of these are coaching, but one writes into this DB)
+PJ's laptop also runs four non-coaching systems. Full architecture diagram: `reports/system-architecture-2026-11-02.html`. Details live in memory (file names below are in `~/.claude/projects/-home-prateek-claude/memory/`, DB keys are `mem` rows).
+
+- **Diary app → writes into THIS DB.** Android app + laptop backend in `~/claude/diary-app/` (`server/diary_server.py` :8770 under systemd user unit `diary-server`, `extract.py`, `dash.py`; public via Tailscale Funnel at `/diary/*`). PJ types or photographs a meal/gym/CGM entry on his phone; the server stores a `diary` event (`source: android-widget`) and `extract.py` turns it into `meal` / `flag` / `mood` / `habit` rows tagged `src: diary_auto`. A CGM PDF in an entry becomes `daily_stats_*` and `agp_report_*` flags.
+  - **Before logging a meal PJ mentions in chat, check today's events** — he may already have sent it through the diary and a `diary_auto` row exists. Don't double-count.
+  - Diary calories for meals are estimates; the dashboard assumes 9,500 steps/day until real steps are logged, so its deficit can differ from `ctx.sh`. Same base formula (BMR 1,635 + steps × 15/1000, runs not double-counted), but the dashboard also adds +200 on lifting days with no logged run.
+  - Memory: DB keys `diary_widget_app`, `diary_widget_app_v11`, `_v12`, `_v14`.
+- **News reader.** `~/claude/telegram` (Telethon downloader of newspaper/magazine PDFs) + `~/claude/reader-test` (Marker → Apple-style reader, `news-reader.service` :8765, cron every 15 min 06–23 h and midnight). Same :8765 process also proxies `/diary/*`. Memory file: `project_telegram_pdf.md`.
+- **Job search / CV orchestrator** (started 2026-11-01). `~/claude/cv-orchestrator`, LinkedIn via the in-app browser. Memory files: `project_cv_orchestrator.md`, `feedback_cv_design.md` (monochrome only, typeset look), `user_profile_linkedin.md`.
+- **Research and shopping.** `shop-research` skill (read-only on logged-in Amazon/Flipkart — `feedback_shopping_account_safety.md`), deep-research outputs in `~/claude/deep research/`, Reddit route in `reference_reddit_access.md`, dad's laptop shortlist in `project_dad_laptop_purchase.md`.
+- **Which protocol applies.** The mandatory coaching sequence (sync pull → ctx → log → reply with Deficit Tracker + Book Lens) applies when PJ talks about his own day, body, food or mood. When he asks for engineering or research on the systems above, do that work directly.
 
 ## Project Files
 - **`coaching-plan.md`** — PRIMARY DAILY REFERENCE. Fast-read version of the full plan: weekly split, all session exercises/weights, diet targets, calorie cycling, protein audit, supplement protocol, PRs. Read this at the start of every session to triangulate plan vs. reality.
